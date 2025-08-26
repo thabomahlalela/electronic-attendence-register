@@ -1,0 +1,78 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+ table {
+    border-collapse: collapse;
+    box-shadow: 0 5px 10px lightslategray;
+    background-color: white;
+    text-align: left;
+    overflow: hidden;
+ }
+
+ thead {
+    box-shadow: 0 5px 10px lightgrey;
+     
+ }
+
+ 
+ th {
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: 0.7rem;
+    font-weight: 900;
+ }
+
+ td {
+   padding: 1rem 2rem;
+   color: grey;
+ }
+
+ tr:nth-child(even) {
+   background-color: whitesmoke;
+ }
+
+ tr:hover {
+    box-shadow: 0 5px 10px lightslategray;
+
+ }
+
+ #my-div {
+   width: 100%;
+   height: 60px;
+   /* border: solid lightslategray; */
+ }
+
+ #container {
+   width: 1115px;
+ }
+
+ .search-bar  {
+   width: 300px;
+   height: 40px;
+   border: solid lightslategray;
+   margin-left: 20px;
+   margin-top: 5px;
+ }
+
+ #btn {
+  position: absolute;
+  margin-left: 900px;
+  margin-top: -10px;
+ }
+
+ .de-register-div {
+    width: 300px;
+   height: 40px;
+   border: solid lightslategray;
+    margin-left: 400px;
+   margin-top: -40px;
+ }
+
+  
+

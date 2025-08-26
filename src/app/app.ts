@@ -1,9 +1,11 @@
-import { Component, signal } from '@angular/core';
-import { CompanyRegistrationForm } from './components/company-registration-form/company-registration-form';
+import{Component,signal} from '@angular/core'
+import { ViewCompanies } from './components/view-companies/view-companies';
+import { RouterOutlet } from '@angular/router';
+ 
 
 @Component({
   selector: 'app-root',
-  imports: [CompanyRegistrationForm],
+  imports: [ViewCompanies,RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
