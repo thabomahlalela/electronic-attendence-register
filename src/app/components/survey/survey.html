@@ -1,1 +1,43 @@
 <p>survey works!</p>
+
+ <div id="outerBox">
+    <!-- @for(survey of surveys ;track survey.title){
+         <h1>{{survey.title}}</h1>
+         @for(question of survey.question;track question.question){
+            <ul>
+                <li>{{question.question}}</li>
+                <input type="text">
+             </ul>
+             }
+    } -->
+
+
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div formArrayName="options">
+                            <div *ngFor="let control of options.controls; let i = index">
+                                <label>
+                                    <!-- @for(question of surveys[i].question;track question.question){ -->
+                                        <ul>
+                                            <li>{{survey.question![i].question}}</li>
+                                            <input type="text" [formControlName] = "i">
+                                            <!-- <input type="text"> -->
+                                        </ul>
+                                    <!-- } -->
+                                    
+
+                                </label>
+
+                            </div>
+                    </div>
+
+                    <Button>submit</Button>
+    </form>
+      
+ </div>
+
+ 
+
+     
+    
+
