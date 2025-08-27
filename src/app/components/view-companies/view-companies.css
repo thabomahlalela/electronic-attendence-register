@@ -6,7 +6,11 @@
     padding: 0;
 }
 
+ 
+
  table {
+   
+    width: 1550px;
     border-collapse: collapse;
     box-shadow: 0 5px 10px lightslategray;
     background-color: white;
@@ -48,22 +52,22 @@
    /* border: solid lightslategray; */
  }
 
- #container {
+ /* #container {
    width: 1115px;
- }
+ } */
 
  .search-bar  {
    width: 300px;
    height: 40px;
    border: solid lightslategray;
-   margin-left: 20px;
+   margin-left: 150px;
    margin-top: 5px;
  }
 
  #btn {
   position: absolute;
-  margin-left: 950px;
-  margin-top: -30px;
+  margin-left: 1430px;
+  margin-top: -20px;
   font-size: 30px;
  }
 
@@ -71,8 +75,17 @@
     width: 300px;
    height: 40px;
    border: solid lightslategray;
-    margin-left: 400px;
+    margin-left: 500px;
    margin-top: -40px;
+ }
+
+ #container {
+  width: 1550px;
+  height: auto;
+  margin-left: -20px;
+  margin-top: -500px;
+  /* border: solid darkblue; */
+  background-color: white;
  }
 
   

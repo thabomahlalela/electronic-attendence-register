@@ -9,7 +9,7 @@
             
         </div>
 
-        <button id="btn" mat-raised-button>+</button>
+        <button (click)="onAdd()" id="btn" mat-raised-button>+</button>
     </div>
  <table>
      
@@ -38,9 +38,6 @@
                 <td>{{company.email}}</td>
                 <td>{{company.telNo}}</td>
                 <td>{{company.status}}</td>
-                <td>
-                    <p class="status status-active">active</p>
-                </td>
             </tr>
                 }
           

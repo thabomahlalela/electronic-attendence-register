@@ -39,8 +39,30 @@ export class ClientService{
         }
     ]
 
+    clientOptions= [
+        {
+            id:'1',
+            name:'home',
+            path:'',
+        },
+         {
+            id:'2',
+            name:'companies',
+            path:'/view-companies',
+        },
+         {
+            id:'3',
+            name:'log-out',
+            path:'register-company',
+        }
+    ]
+
     get getCompanies() {
         return this.companies
+    }
+
+    get getOptions() {
+        return this.clientOptions
     }
 }
    
