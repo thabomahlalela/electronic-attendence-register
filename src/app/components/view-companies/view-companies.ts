@@ -2,11 +2,11 @@ import { Component, inject } from '@angular/core';
 import { ClientService } from '../../clientService';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
-import { Router } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-view-companies',
-  imports: [MatButtonModule,MatMenuModule],
+  imports: [MatButtonModule,MatMenuModule, RouterOutlet],
   templateUrl: './view-companies.html',
   styleUrl: './view-companies.css'
 })

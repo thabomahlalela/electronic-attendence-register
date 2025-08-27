@@ -36,7 +36,48 @@ export class ClientService{
             email:'metaware@gmail.com',
             telNo:'0126783',
             status:'active',
-        }
+        },
+        {
+            id:2,
+            name:'meta',
+            city:'Orkney',
+            address:'smalet street',
+            sector:'email',
+            email:'metaware@gmail.com',
+            telNo:'0126783',
+            status:'active',
+        },
+        {
+            id:2,
+            name:'meta',
+            city:'Orkney',
+            address:'smalet street',
+            sector:'email',
+            email:'metaware@gmail.com',
+            telNo:'0126783',
+            status:'active',
+        },
+        {
+            id:2,
+            name:'meta',
+            city:'Orkney',
+            address:'smalet street',
+            sector:'email',
+            email:'metaware@gmail.com',
+            telNo:'0126783',
+            status:'active',
+        },
+         {
+            id:2,
+            name:'meta',
+            city:'Orkney',
+            address:'smalet street',
+            sector:'email',
+            email:'metaware@gmail.com',
+            telNo:'0126783',
+            status:'active',
+        },
+
     ]
     //  private apiUrl = '/api/companies';
 
