@@ -1,1 +1,36 @@
-<p>client-admin-home works!</p>
+<div id="container">
+    
+
+
+    <div id="menu">
+        <mat-menu #appMenu="matMenu" xPosition="after" yPosition="below">
+            <button mat-menu-item>Company List</button>
+            <button mat-menu-item>Survey List</button>
+            <button mat-menu-item>Complaints List</button>
+            <button mat-menu-item>Complements List</button>
+        </mat-menu>
+    </div>
+
+    <div >
+        <button  id="menus" mat-raised-button [matMenuTriggerFor]="appMenu">Home</button>
+         <button id= "register" mat-raised-button>Register</button>
+        <button id="logOut" mat-raised-button>LogOut</button>  
+    </div>
+    
+
+<div id="sub-container">
+    <div id="header">
+        <h1>MYCOMPANY</h1>
+        <button id="logo" mat-raised-button>Logo</button>
+        <hr id="horizontal-line"/>
+
+    </div>
+</div>
+<div class="backgroud">
+<div class="vertical-line"></div>
+</div>
+
+
+
+
+</div>

@@ -1,0 +1,65 @@
+#container{
+    height: 100vh;
+    width: 100%; 
+    background-color: whitesmoke; 
+     
+}
+#sub-container{
+    height: 890px;
+    width: 1500px;
+   
+    margin-left: 350px;
+    margin-top: -10px;
+}
+  #header{
+    height: 50px;
+    width: 900px;
+    background-color: aquamarine;
+    transform: translate(290px,-17px);
+}
+h1{
+    transform: translate(330px,18px);
+
+}
+#logo{
+    transform: translate(240px,-35px);
+}
+ #menus{
+    transform: translate(50px,150px);
+    background-color:whitesmoke;
+    color: black; 
+    
+   
+    
+ 
+} 
+
+#register{
+    transform: translate(-40px,210px);
+    background-color: whitesmoke;
+    color: black;
+}
+#logOut{
+  transform: translate(-140px,270px); 
+    background-color: whitesmoke;
+    color: black;
+}
+
+#horizontal-line{
+    width: 2072px;
+    transform: translate(-800px,-20px);
+    
+}
+.background{
+    background-color: white;
+    height: 100vh;
+    position: relative;
+}
+.vertical-line{
+  position: absolute;
+  top: 5px;
+  left: 245px;
+  border-left: 1px solid black;
+  height: 935px;
+}
+
