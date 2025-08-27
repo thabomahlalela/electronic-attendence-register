@@ -25,8 +25,8 @@ h1{
     transform: translate(240px,-35px);
 }
  #menus{
-     transform: translate(5px,100px);
-      background-color:whitesmoke;
+    transform: translate(50px,150px);
+    background-color:whitesmoke;
     color: black; 
     
    
@@ -35,18 +35,18 @@ h1{
 } 
 
 #register{
-    transform: translate(-85px,150px);
+    transform: translate(-40px,210px);
     background-color: whitesmoke;
     color: black;
 }
 #logOut{
-  transform: translate(-183px,200px); 
+  transform: translate(-140px,270px); 
     background-color: whitesmoke;
     color: black;
 }
 
 #horizontal-line{
-    width: 2000px;
+    width: 2072px;
     transform: translate(-800px,-20px);
     
 }
@@ -57,9 +57,9 @@ h1{
 }
 .vertical-line{
   position: absolute;
-  top: 100px;
+  top: 5px;
   left: 245px;
   border-left: 1px solid black;
-  height: 800px;
+  height: 935px;
 }
 
