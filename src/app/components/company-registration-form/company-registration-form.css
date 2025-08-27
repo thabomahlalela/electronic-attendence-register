@@ -1,0 +1,52 @@
+.registration{
+    width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px  rgba(0, 0, 0,0.1);
+   
+}
+
+h2{
+    text-align : center;
+    margin-top: 20px;
+
+}
+#one{
+    width: 237px;
+}
+#two{
+  width: 227px;  
+
+}
+#three{
+    width: 230px;
+
+}
+
+#four{
+    width: 230px;
+}
+button{
+    /* width: 18%; */
+    height: 25px;
+    background-color: #8e918e;
+    color: #fff;
+    border:none;
+    border-radius: 5px;
+    cursor: pointer;
+    
+
+}
+:hover button{
+    background-color: #5a6773;
+}
+input{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}

@@ -38,6 +38,7 @@ export class ClientService{
             status:'active',
         }
     ]
+    //  private apiUrl = '/api/companies';
 
     clientOptions= [
         {
@@ -60,6 +61,14 @@ export class ClientService{
     get getCompanies() {
         return this.companies
     }
+    //   constructor(private http:HttpClient){}
+
+      registerCompany(company : Company) :void{
+
+        
+      }
+
+    
 
     get getOptions() {
         return this.clientOptions
