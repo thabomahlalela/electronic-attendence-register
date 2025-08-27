@@ -21,4 +21,8 @@ export class ViewCompanies {
   onAdd() {
     this.router.navigate(['/register-company'])
   }
+
+  onCompany(){
+    this.router.navigate(['/edit-company'])
+  }
 }

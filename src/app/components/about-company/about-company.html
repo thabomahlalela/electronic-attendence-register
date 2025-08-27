@@ -1,19 +1,14 @@
 
- <div id="container">
-    <div id="my-div">
-        <div class="search-bar">
 
-        </div>
+<div class="container">
+    <div id="heading">
 
-         <div class="de-register-div">
-            
-        </div>
-
-        <button (click)="onAdd()" id="btn" mat-raised-button>+</button>
     </div>
- <table>
-     
-        <thead>
+    
+    <div id="title">
+        <button id="btn">edit</button>
+        <table>
+            <thead>
             <tr>
                 <th>Id</th>
                 <th>Name</th>
@@ -27,10 +22,10 @@
         </thead>
 
         <tbody>
-             @for(company of myCompanies; track company.id) {
-                  <tr  (click)="onCompany()">
+             <!-- @for(company of myCompanies; track company.id) {
+                  <tr  (click)="onCompany()"> -->
                
-                <td>{{company.id}}</td>
+                <!-- <td>{{company.id}}</td>
                 <td>{{company.name}}</td>
                 <td>{{company.city}}</td>
                 <td>{{company.address}}</td>
@@ -40,9 +35,30 @@
                 <td>{{company.status}}</td>
             </tr>
                 }
-          
+           -->
 
             
         </tbody>
- </table>
- </div>
+        </table>
+
+
+       
+    <!-- </div>
+    <div  id="userlist">
+        <h2>userlist</h2>
+         <button id="btn">edit</button>
+
+    </div>
+    <div id="suveylist">
+        <h2>suveylist</h2>
+         <button id="btn">edit</button>
+
+
+    </div>
+    <div id="unknown">
+        <h2>....list</h2>
+         <button id="btn">edit</button>
+
+    </div> -->
+
+</div>
