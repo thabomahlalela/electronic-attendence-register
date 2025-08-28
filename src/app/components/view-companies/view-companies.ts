@@ -6,7 +6,7 @@ import { Router, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-view-companies',
-  imports: [MatButtonModule,MatMenuModule, RouterOutlet],
+  imports: [MatButtonModule,MatMenuModule],
   templateUrl: './view-companies.html',
   styleUrl: './view-companies.css'
 })
@@ -20,5 +20,9 @@ export class ViewCompanies {
 
   onAdd() {
     this.router.navigate(['/register-company'])
+  }
+
+  onCompany(){
+    this.router.navigate(['/edit-company'])
   }
 }
