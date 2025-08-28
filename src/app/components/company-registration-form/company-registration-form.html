@@ -1,28 +1,29 @@
-
-<div>
+<div class="registration">
     <h2>Registration form</h2>
-    <form [formGroup]="form" (ngSubmit)="onSubmit()">
-        <p>
+    <form [formGroup]="form" (ngSubmit)="registerCompany()">
+        <p> 
             <label>Company-name:</label>
             <input name="Company-name" type="text" formControlName="companyName" >
         </p>
         <p>
             <label>City:</label>
-            <input  name="city" type="text" formControlName="city">
+            <input  id="one" name="city" type="text" formControlName="city">
         </p>
         <p>
             <label>Sector:</label>
-            <input  name="sector" type="text" formControlName="sector">
+            <input  id="two" name="sector" type="text" formControlName="sector">
         </p>
         <p>
             <label>Email:</label>
-            <input  name="email" type="text" formControlName="email">
+            <input id="three" name="email" type="text" formControlName="email">
         </p>
         <p>
             <label>TelNo:</label>
-            <input  name="telNo" type="text" formControlName="telNo">
+            <input  id="four" name="telNo" type="text" formControlName="telNo">
         </p>
         <button type="submit">Register</button>
 
     </form>
+   
 </div>
+

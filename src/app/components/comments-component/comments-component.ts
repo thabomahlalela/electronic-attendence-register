@@ -40,6 +40,7 @@ export class CommentsComponent {
 
     
     const answering: Question ={
+      id:0,
     question:this.answer,
     answers:[this.reason]
 

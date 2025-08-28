@@ -1,13 +1,12 @@
-import { Component, signal } from '@angular/core';
+import{Component,signal} from '@angular/core'
 import { RouterOutlet } from '@angular/router';
- import { ClientAdminHome } from './components/client-admin-home/client-admin-home';
-import { CommentsComponent } from './components/comments-component/comments-component';
-import { ViewComplaintsComponent } from './components/view-complaints-component/view-complaints-component';
-import { ViewComplimentsComponent } from './components/view-compliments-component/view-compliments-component';
+import { Survey } from "./components/survey/survey";
+import { AboutCompany } from "./components/about-company/about-company";
+ 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,ClientAdminHome,CommentsComponent,ViewComplaintsComponent,ViewComplimentsComponent],
+  imports: [RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
