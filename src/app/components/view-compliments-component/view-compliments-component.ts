@@ -9,6 +9,7 @@ import { Question } from '../../models/question.model';
 })
 export class ViewComplimentsComponent {
   newQuestion:Question = {
+    id:0,
       question:"No",
       answers:["I am not happy not so happy not sooooooooooo happpyyyyyyyyyyyyyyy","hfyt","I am not happy not so happy not sooooooooooo happpyyyyyyyyyyyyyyy",
         "I am not happy not so happy not sooooooooooo happpyyyyyyyyyyyyyyy","I am not happy not so happy not sooooooooooo happpyyyyyyyyyyyyyyy",
