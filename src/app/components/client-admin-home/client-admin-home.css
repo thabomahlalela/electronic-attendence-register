@@ -1,0 +1,128 @@
+#container{
+    height: 100vh;
+    width: 100%; 
+    background-color: whitesmoke; 
+     
+}
+#sub-container{
+    height: 945px;
+    width: 100%;
+    margin-left: 300px;
+    margin-top: -940px;
+    border: solid white;
+    background-color: whitesmoke;
+}
+
+#container {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+ 
+
+#view-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+    width: 1610px;
+    height: 100vh;
+    /* border: solid red; */
+    margin-top: 40px;
+}
+
+h1 {
+    margin-left: 350px;
+}
+
+#logo {
+    margin-left: 350px;
+}
+
+#menu-options {
+    height: 938px;
+    width: 300px;
+    /* border: solid darkblue; */
+    background-color: white;
+}
+
+  #header{
+     
+    height: 50px;
+    width: 100%;
+    background-color: white;
+    margin-top: -17px;
+    /* transform: translate(290px,-17px); */
+}
+
+#option {
+    display: flex;
+    /* justify-content: space-between; */
+    gap: 100px;
+    align-items: center;
+    width: 100%;
+    height: 30px;
+    border: solid darkblue;
+    font-weight: 900;
+}
+
+/* .admin-option:nth-child(even) {
+    background-color: lightslategray;
+} */
+
+#options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    margin-top: 80px;
+    /* border: solid black; */
+}
+
+
+h1{
+    transform: translate(330px,18px);
+
+}
+#logo{
+    transform: translate(240px,-35px);
+}
+ 
+#icons {
+    width: 30px;
+    height: 30px;
+}
+
+#register{
+    transform: translate(-40px,210px);
+    background-color: whitesmoke;
+    color: black;
+}
+#logOut{
+  transform: translate(-140px,270px); 
+    background-color: whitesmoke;
+    color: black;
+}
+
+#horizontal-line{
+    width: 2072px;
+    transform: translate(-800px,-20px);
+    
+}
+.background{
+    background-color: white;
+    height: 100vh;
+    position: relative;
+}
+.vertical-line{
+  position: absolute;
+  top: 5px;
+  left: 245px;
+  border-left: 1px solid black;
+  height: 935px;
+}
+

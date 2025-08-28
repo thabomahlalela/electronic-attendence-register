@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import {DUMMY_SURVEY} from '../dummy-survey';
-import {Survey}from '../../models/survey.model'
-import { FormArray, FormBuilder, FormControl, FormGroup, NgForm, NgModel, ReactiveFormsModule } from '@angular/forms';
+import {SurveyObj}from '../../models/survey.model'
+import { FormArray, FormBuilder, FormControl, FormGroup, NgForm, NgModel, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 
@@ -11,15 +11,15 @@ import { CommonModule } from '@angular/common';
   templateUrl: './survey.html',
   styleUrl: './survey.css'
 })
-export class Surveycomp implements OnInit {
+export class Survey implements OnInit {
     
-    survey : Survey  = DUMMY_SURVEY;
+    survey : SurveyObj  = DUMMY_SURVEY;
     private fb = inject(FormBuilder);;
     form! : FormGroup;
 
     ngOnInit(): void {
      this.form = new FormGroup({
-         options : this.fb.array(this.survey.question!.map(s =>new FormControl()))
+         options : this.fb.array(this.survey.question!.map(s =>new FormControl(),Validators.required))
      })
     }
 
@@ -36,6 +36,7 @@ export class Surveycomp implements OnInit {
       }
 
       console.log(this.survey.question)
+      console.log()
      }
 
 

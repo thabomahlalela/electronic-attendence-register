@@ -1,1 +1,59 @@
-<p>client-admin-home works!</p>
+<div id="container">
+    
+
+ 
+
+    <div id="menu-options">
+        <div id="options-container">
+
+            <!-- @for(option of options; track option.id) { -->
+             
+            <div class="admin-option" id="option" (click)="onHome()">
+                <button id="icons" matMiniFab>
+                 <mat-icon>home</mat-icon>
+               </button>Home
+            </div>
+
+            <div class="admin-option" id="option" (click)="onCompanies()">
+                 <button id="icons" matMiniFab>
+                 <mat-icon>work</mat-icon>
+               </button>Companies
+            </div>
+               <div id="option" (click)="onLogout()">
+                 <button id="icons" matMiniFab>
+                 <mat-icon>exit_to_app</mat-icon>
+               </button>LogOut
+            </div>
+               
+            <!-- } -->
+        </div>
+
+    </div>
+    
+
+<div id="sub-container">
+    <div id="header">
+        <header>
+            <h1>MYCOMPANY</h1>
+        </header>
+        <button id="logo" matMiniFab>
+            
+                 <mat-icon>weekend</mat-icon>
+
+        </button>
+        
+    </div>
+    
+    <div id="view-container">
+          <router-outlet/>
+         
+    </div>
+    
+   
+</div>
+<div class="backgroud">
+<!-- <div class="vertical-line"></div> -->
+</div>
+
+
+</div>
