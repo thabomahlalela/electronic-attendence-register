@@ -4,9 +4,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { debounceTime, distinctUntilChanged, Subscription } from 'rxjs';
 import { MatIcon } from '@angular/material/icon';
-
+import { debounceTime, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-view-companies',
@@ -62,5 +61,9 @@ export class ViewCompanies {
 
   onAdd() {
     this.router.navigate(['/register-company'])
+  }
+
+  onCompany(){
+    this.router.navigate(['/edit-company'])
   }
 }
