@@ -1,0 +1,39 @@
+
+<div class="box" >
+    <form  [formGroup]="form" (ngSubmit)="captureSurvey()">
+        <h2>capture survey</h2>
+
+    <p>
+        <label>Title:</label>
+        <input type="text" name="title" formControlName="title">
+    </p>
+
+    <p>
+        <label >Questions:</label>
+        <input type="text"  name="questions"   formControlName="question">
+    </p>
+
+    <p>
+        <label>Description:</label>
+        
+         <mat-form-field class="example-full-width">
+    <mat-label>add description</mat-label>
+    <textarea matInput name="description"  formControlName="description"></textarea>
+  </mat-form-field>
+    </p>
+    
+    <p>
+        <button type="submit">submit</button>
+    </p>
+    <p>
+        <button type="reset" id="add"  (click)="addClick()">+</button>
+    </p>
+
+    </form>
+
+</div>
+
+
+ 
+
+  
