@@ -2,10 +2,13 @@ import { ChangeDetectionStrategy, Component, OnInit, signal } from '@angular/cor
 import { MatExpansionModule } from '@angular/material/expansion';
  
  import { DUMMY_SURVEY } from '../components/dummies/dummy-survey';
+import { MatIcon } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { SurveyObj } from '../models/survey.model';
 
 @Component({
   selector: 'app-view-surveys',
-  imports: [MatExpansionModule],
+  imports: [MatExpansionModule, MatIcon, MatButtonModule],
   templateUrl: './view-surveys.html',
   styleUrl: './view-surveys.css',
    changeDetection: ChangeDetectionStrategy.OnPush,
@@ -22,6 +25,16 @@ export class ViewSurveys implements OnInit {
 
 }
 
+
+onDeleteSurvey(survey:SurveyObj) {
+  let a = this.data.filter((s)=>s.title !== survey.title);
+  this.data = a;
+  
+  for(let i = 0; i < this.data.length;i++) {
+    console.log(this.data[i].title)
+  }
+   
+}
 
 get getSurvey() {
   return this.data;

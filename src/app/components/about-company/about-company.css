@@ -188,19 +188,27 @@ h1 {
 }
 
 h2 {
-   color: darkblue;
-   font-size: smaller;
+   color: #5D688A;
+   font-size: medium;
+
 }
+
+
 
 #update-info-btn {
    margin-left: 1030px;
    width: 70px;
 }
-.icons {
-   width: 40px;
+
+#c-header {
+   width: 1089px;
    height: 40px;
-   background-color: white;
+   border: solid #5D688A;
+   border-bottom-left-radius: 10px;
+   border-bottom-right-radius: 10px;
+   border-top: unset;
 }
+
 #view-users{
    height: 600px;
    overflow-y: scroll;

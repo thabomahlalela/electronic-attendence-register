@@ -1,17 +1,22 @@
  <div id="container">
+  
     <div id="survey">
 
 
 @for(q of getSurvey; track q.id) {
 
-             <mat-accordion>
-  <mat-expansion-panel hideToggle>
+             <mat-accordion id="div">
+  <!-- <mat-expansion-panel hideToggle>
     <p>This is the primary content of the panel.</p>
-  </mat-expansion-panel>
+  </mat-expansion-panel> -->
   <mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
     <mat-expansion-panel-header>
-      <mat-panel-title></mat-panel-title>
-      <mat-panel-description>
+      <mat-panel-title>
+        <button (click)="onDeleteSurvey(q)" matMiniFab>
+                 <mat-icon>delete_outline</mat-icon>
+        </button>
+      </mat-panel-title>
+      <mat-panel-description id="my-header">
          {{q.title}}
       </mat-panel-description>
     </mat-expansion-panel-header>
@@ -45,3 +50,7 @@
 
     
  </div>
+  <button class="add-button" matMiniFab>
+                 +
+            </button>
+    <div id="survey">
