@@ -1,0 +1,29 @@
+<p>view-users works!</p>
+ <table>
+     
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Surname</th>
+                 <th>Employee_No</th>
+                <th>Email</th>
+                
+            </tr>
+        </thead>
+
+        <tbody>
+             @for(user of getUsers; track user.id) {
+                  <tr  >
+               
+                <td>{{user.name}}</td>
+                <td>{{user.surname}}</td>
+                 <td>{{user.employNO}}</td>
+                <td>{{user.email}}</td>
+                
+            </tr>
+                }
+          
+
+            
+        </tbody>
+ </table>
