@@ -3,6 +3,7 @@ import { Injectable } from "@angular/core";
 import { Company } from "./models/company.models";
 import { Survey } from "./components/survey/survey";
 import { SurveyObj } from "./models/survey.model";
+import { Meeting } from "./models/meeting.models";
 
 @Injectable({
     providedIn : 'root'
@@ -88,7 +89,7 @@ export class ClientService{
         },
 
     ]
-    //  private apiUrl = '/api/companies';
+    
 
     clientOptions= [
         {
@@ -119,9 +120,12 @@ export class ClientService{
       }
 
       captureSurvey(survey: SurveyObj):void{
-        console.log(survey)
+        // console.log(survey)
 
       }
+
+    captureMeeting(meeting: Meeting):void{
+     }  
 
     
 

@@ -1,0 +1,42 @@
+
+
+<div class="box"  [formGroup]="form"  (ngSubmit)="captureMeeting()">
+    <form>
+        
+        <p>
+            <h2>Meeting Title</h2>
+        <p>
+            <label>title</label>
+            <input type="text" name="title" formControlName="title" >
+        </p>
+        <p>
+            <label>description</label>
+            <input type="txt" name="description" formControlName ="description">
+        </p>
+        <p>
+            <label>startTime</label>
+            <input type="txt" name="startTime" formControlName="startTime">
+        </p>
+        <p>
+            <label>endTime</label>
+            <input type="text" name="endTime" formControlName ="endTime">
+        </p>
+        <p>
+            <label>location</label>
+            <input type="txt" name="location" formControlName ="location">
+        </p>
+        <p>
+            <label>status</label>
+            <input type="txt" name="status" formControlName="status">
+        </p>
+        <p>
+            <label>attendees</label>
+            <input type="text" name="attendees" formControlName="attendees">
+        </p>
+        <p>
+            <button type="submit">create meeting</button>
+
+           
+        </p>
+    </form>
+</div>
