@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
 import {DUMMY_USERS} from '../dummies/dummy-user'
 import { User } from '../../models/user.model';
+import { EditUser } from '../../edit-user';
+import { MatIcon } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+
 
 @Component({
   selector: 'app-view-users',
-  imports: [],
+  imports: [EditUser, MatIcon, MatButtonModule],
   templateUrl: './view-users.html',
   styleUrl: './view-users.css'
 })

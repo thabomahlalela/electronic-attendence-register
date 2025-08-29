@@ -121,10 +121,10 @@ h1 {
 
 #user {
    position: absolute;
-   width: 500px;
+   width: 580px;
    height: 650px;
    margin-top: 250px;
-   margin-left: 1368px;
+   margin-left: 1320px;
    /* border: solid darkgray; */
    box-shadow: -0 -2px 4px grey;
    border-radius: 10px;
@@ -193,6 +193,14 @@ h2 {
 
 }
 
+#generate-div {
+   position: absolute;
+   width: 200px;
+   height: 30px;
+   margin-top: 55px;
+   margin-left: 40px;
+   /* border: solid red; */
+}
 
 
 #update-info-btn {

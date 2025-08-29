@@ -7,6 +7,7 @@
 
     
     <div id="container2">
+       
         <div id="stats">
             <div id="date">
         <button></button>
@@ -49,16 +50,7 @@
 
     <div id="user">
         <h2 id="users-header">company-users</h2>
-        <div id="user-icons">
-            <button class="icons" matMiniFab>
-                 <mat-icon>delete_outline</mat-icon>
-            </button>
-            <button class="icons" matMiniFab>
-                 +
-            </button>
-            
-            
-        </div>
+        
         <div id="view-users">
             <app-view-users></app-view-users>
         </div>
@@ -67,7 +59,9 @@
     
 
     <div id="meetings">
-        <h2 id="meetings-header">scheduled meetings</h2>
+        <div id="c-header">
+            <h2 id="meetings-header">scheduled meetings</h2>
+        </div>
         <div id="meeting-icons">
             <button class="icons" matMiniFab>
                  <mat-icon>delete_outline</mat-icon>
@@ -82,6 +76,15 @@
 
     </div>
 
+     <div id="generate-div">
+        <button   mat-raised-button [matMenuTriggerFor]="menu">Generate Qr code</button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>Meeting</button>
+            <button mat-menu-item>Survey</button>
+          </mat-menu>
+        </div>
+
     </div>
+    
     <router-outlet/>
 </div>
