@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {DUMMY_USERS} from '../dummies/dummy-user'
 import { User } from '../../models/user.model';
 import { EditUser } from '../../edit-user';
 import { MatIcon } from '@angular/material/icon';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,9 +13,16 @@ import { MatIcon } from '@angular/material/icon';
   styleUrl: './view-users.css'
 })
 export class ViewUsers {
-  users : User[] = DUMMY_USERS
+
+
+private users : User[] = DUMMY_USERS
+private router = inject(Router)
 
   get getUsers(){
     return this.users
+  }
+
+  onClick() {
+      this.router.navigate(['create-user'])
   }
 }
