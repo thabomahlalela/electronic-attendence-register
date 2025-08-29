@@ -1,4 +1,4 @@
-import { SurveyObj } from "../models/survey.model";
+import { SurveyObj } from "../../models/survey.model";
 
 
 export const DUMMY_SURVEY : SurveyObj[]= [

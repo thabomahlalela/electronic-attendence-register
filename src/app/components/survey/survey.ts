@@ -1,5 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
-import {DUMMY_SURVEY} from '../dummy-survey';
+import {DUMMY_SURVEY} from '../dummies/dummy-survey';
 import {SurveyObj}from '../../models/survey.model'
 import { FormArray, FormBuilder, FormControl, FormGroup, NgForm, NgModel, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
