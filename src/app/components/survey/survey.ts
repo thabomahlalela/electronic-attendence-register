@@ -39,5 +39,9 @@ export class Survey implements OnInit {
       console.log()
      }
 
+     get survey() {
+      return this.surveys.find((s)=>s.title==='health')
+     }
+
 
 }

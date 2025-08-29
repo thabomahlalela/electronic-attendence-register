@@ -1,8 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit, signal } from '@angular/core';
 import { MatExpansionModule } from '@angular/material/expansion';
  
-import { SurveyObj } from '../models/survey.model';
-import { DUMMY_SURVEY } from '../components/dummy-survey';
+ import { DUMMY_SURVEY } from '../components/dummies/dummy-survey';
 
 @Component({
   selector: 'app-view-surveys',
