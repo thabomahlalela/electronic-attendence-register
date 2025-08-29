@@ -13,13 +13,13 @@ import { CommonModule } from '@angular/common';
 })
 export class Survey implements OnInit {
     
-    survey : SurveyObj  = DUMMY_SURVEY;
+    surveys : SurveyObj[]  = DUMMY_SURVEY;
     private fb = inject(FormBuilder);;
     form! : FormGroup;
 
     ngOnInit(): void {
      this.form = new FormGroup({
-         options : this.fb.array(this.survey.question!.map(s =>new FormControl(),Validators.required))
+         options : this.fb.array(this.surveys.find((s)=>s.title==='health')!.question!.map(s =>new FormControl(),Validators.required))
      })
     }
 
@@ -30,13 +30,17 @@ export class Survey implements OnInit {
      onSubmit(){
       console.log(this.form.value.options[0],this.form.value.options[1],this.form.value.options[2],this.form.value.options[3],this.form.value.options[3])
 
-      for(let i =0;i < this.survey.question!.length;i++){
-        this.survey.question![i].answers = this.form.value.options[i]
-        console.log(  this.survey.question![i].question +" Answer " + this.form.value.options[i] )
+      for(let i =0;i < this.surveys.find((s)=>s.title==='health')!.question!.length;i++){
+        this.surveys.find((s)=>s.title==='health')!.question![i].answers = this.form.value.options[i]
+        console.log(this.surveys.find((s)=>s.title==='health')!.question![i].question +" Answer " + this.form.value.options[i] )
       }
 
-      console.log(this.survey.question)
+      console.log(this.surveys.find((s)=>s.title==='health')!.question)
       console.log()
+     }
+
+     get survey() {
+      return this.surveys.find((s)=>s.title==='health')
      }
 
 

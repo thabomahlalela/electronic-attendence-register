@@ -7,6 +7,7 @@
 
     
     <div id="container2">
+       
         <div id="stats">
             <div id="date">
         <button></button>
@@ -24,7 +25,11 @@
         
 
     <div id="comapany-info">
-        <h2 id="company-header">company-info</h2>
+        <div id="c-header">
+             
+            <h2 id="company-header">company-info</h2>
+        </div>
+        
         <button id="update-info-btn" class="icons" matFab>
                   update
             </button>
@@ -32,15 +37,15 @@
     </div>
 
     <div id="surveys">
-        <h2 id="surveys-header">surveys</h2>
+        <div id="c-header">
+            <h2 id="surveys-header">surveys</h2>
+        </div>
         <div id="survey-icons">
-            <button class="icons" matMiniFab>
-                 <mat-icon>delete_outline</mat-icon>
-            </button>
-            <button class="icons" matMiniFab>
-                 +
-            </button>
-            
+             
+        </div>
+        <div>
+
+            <app-view-surveys/>
         </div>
     </div>
 
@@ -55,22 +60,30 @@
     
 
     <div id="meetings">
-        <h2 id="meetings-header">scheduled meetings</h2>
-        <!-- <div id="meeting-icons">
-            <button class="icons" matMiniFab>
-                 <mat-icon>delete_outline</mat-icon>
-            </button>
-            <button class="icons" matMiniFab>
-                 +
-            </button>
-            
-        </div> -->
+        <div id="c-header">
+            <h2 id="meetings-header">scheduled meetings</h2>
+        </div>
+         
 
         <div id="view-meetings">
             <app-view-meetings-component></app-view-meetings-component>
         </div>
+         
+    
 
     </div>
 
     </div>
-</div>
+
+     <div id="generate-div">
+        <button   mat-raised-button [matMenuTriggerFor]="menu">Generate Qr code</button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>Meeting</button>
+            <button mat-menu-item>Survey</button>
+          </mat-menu>
+        </div>
+
+    </div>
+    
+    <router-outlet/>
+ 
