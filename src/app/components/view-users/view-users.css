@@ -40,3 +40,18 @@ p{
     box-shadow: 0 5px 10px lightslategray;
 
  }
+ .icons {
+    width: 40px; 
+   height: 40px; 
+
+   background-color: white;
+}
+.add-Icon{
+   margin: 15px;
+   margin-left: 500px;
+    width: 40px; 
+   height: 40px; 
+   background-color: white;
+}
+
+
