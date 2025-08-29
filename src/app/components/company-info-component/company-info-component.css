@@ -17,11 +17,12 @@
 #city{
     position: absolute;
    margin-top: 40px;
-   margin-left: -220px;
+   margin-left: -240px;
 
 }
 .city{
-    margin-left: 45px;
+    border: none;
+    margin-left: 35px;
     margin-top: 20px;
 
 }
@@ -30,6 +31,7 @@
     margin-left: 45px;
 }
 .name{
+    border: none;
     margin-left: 4px;
 
 }
@@ -37,24 +39,28 @@
 #sector{
     position: absolute;
     margin-top: 60px;
-    margin-left: -220px;
+    margin-left: -230px;
 }
 .sector{
+    border: none;
+    
     position: absolute;
     margin-top: 60px;
-    margin-left: -170px;
+    margin-left: -180px;
 }
 #address{
     position: absolute;
     margin-top: 100px;
-    margin-left: -220px;
+    margin-left: -230px;
 }
 .address{
+    border: none;
      position: absolute;
     margin-top: 100px;
-    margin-left: -160px;
+    margin-left: -170px;
 }
 .status{
+    border: none;
     position: absolute;
     margin-top: -3px;
     margin-left: 10px;
@@ -65,6 +71,7 @@
     margin-left: -43px;
 }
 .email{
+    border: none;
    position: absolute;
     margin-top: 45px;
     margin-left: 8px;  
@@ -75,6 +82,7 @@
     margin-left: -43px;    
 }
 .telNo{
+    border: none;
   position: absolute;
     margin-top: 90px;
     margin-left: 8px;  
@@ -86,8 +94,12 @@
 
 }
 .registrationNo{
+   border: none; 
    position: absolute;
     margin-top: 130px;
     margin-left: 59px;  
  
+}
+input{
+    font-size: 15px;
 }
