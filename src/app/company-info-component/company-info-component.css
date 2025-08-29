@@ -1,0 +1,93 @@
+#divone{
+    margin-left: 30px;
+    
+   
+    width: 250px;
+    height: 150px;
+}
+
+#divtwo{
+    position: relative;
+    left: 380px;
+    bottom: 158px;
+    
+    width: 250px;
+    height: 150px;
+}
+#city{
+    position: absolute;
+   margin-top: 40px;
+   margin-left: -220px;
+
+}
+.city{
+    margin-left: 45px;
+    margin-top: 20px;
+
+}
+#name{
+    margin-top: -20px;
+    margin-left: 45px;
+}
+.name{
+    margin-left: 4px;
+
+}
+
+#sector{
+    position: absolute;
+    margin-top: 60px;
+    margin-left: -220px;
+}
+.sector{
+    position: absolute;
+    margin-top: 60px;
+    margin-left: -170px;
+}
+#address{
+    position: absolute;
+    margin-top: 100px;
+    margin-left: -220px;
+}
+.address{
+     position: absolute;
+    margin-top: 100px;
+    margin-left: -160px;
+}
+.status{
+    position: absolute;
+    margin-top: -3px;
+    margin-left: 10px;
+}
+#email{
+    position: absolute;
+    margin-top: 45px;
+    margin-left: -43px;
+}
+.email{
+   position: absolute;
+    margin-top: 45px;
+    margin-left: 8px;  
+}
+#telNo{
+  position: absolute;
+    margin-top: 90px;
+    margin-left: -43px;    
+}
+.telNo{
+  position: absolute;
+    margin-top: 90px;
+    margin-left: 8px;  
+}
+#registrationNo{
+   position: absolute;
+    margin-top: 130px;
+    margin-left: -43px;  
+
+}
+.registrationNo{
+   position: absolute;
+    margin-top: 130px;
+    margin-left: 59px;  
+ 
+}
