@@ -197,7 +197,7 @@ h2 {
    position: absolute;
    width: 200px;
    height: 30px;
-   margin-top: 55px;
+   margin-top: 155px;
    margin-left: 40px;
    /* border: solid red; */
 }
@@ -226,5 +226,10 @@ h2 {
 h3{
    color: red;
 }
+ #view-meetings{
+   height: 400px;
+   
+   overflow-y: scroll;
+} 
 
  

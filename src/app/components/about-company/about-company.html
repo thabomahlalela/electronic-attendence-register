@@ -33,6 +33,7 @@
         <button id="update-info-btn" class="icons" matFab>
                   update
             </button>
+             <app-company-info-component></app-company-info-component> 
     </div>
 
     <div id="surveys">
@@ -62,17 +63,15 @@
         <div id="c-header">
             <h2 id="meetings-header">scheduled meetings</h2>
         </div>
-        <div id="meeting-icons">
-            <button class="icons" matMiniFab>
-                 <mat-icon>delete_outline</mat-icon>
-            </button>
-            <button class="icons" matMiniFab>
-                 +
-            </button>
-            
+         
+
+        <div id="view-meetings">
+            <app-view-meetings-component></app-view-meetings-component>
         </div>
          
     
+
+    </div>
 
     </div>
 
@@ -87,4 +86,4 @@
     </div>
     
     <router-outlet/>
-</div>
+ 
