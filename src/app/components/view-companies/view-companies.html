@@ -3,9 +3,9 @@
     <div id="my-div">
         <div class="search-bar">
              <form id="formSearch" [formGroup]="form">
-                <button id="icons" matMiniFab>
+                <button id="icon-btn"  matMiniFab>
                 
-                 <mat-icon>search</mat-icon>
+                 <mat-icon id="icon">search</mat-icon>
                  
                </button>
              
@@ -17,9 +17,9 @@
 
          <div class="de-register-div">
              <form id="formSearch" [formGroup]="formDeregister" (ngSubmit)="onDeregister()">
-                 <button id="icons" matMiniFab>
+                 <button id="icon-btn"  matMiniFab>
                 
-                 <mat-icon>remove_circle</mat-icon>
+                 <mat-icon >remove_circle</mat-icon>
                  
                </button>
                <input  type="text" name="enteredDeregistedStudent" [placeholder]="'de-register'"  formControlName ="deregisterControl"/>

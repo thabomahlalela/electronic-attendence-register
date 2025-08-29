@@ -4,6 +4,7 @@ import { ViewCompanies } from './components/view-companies/view-companies';
 import { CompanyRegistrationForm } from './components/company-registration-form/company-registration-form';
 import { AboutCompany } from './components/about-company/about-company';
 import { CreateUser } from './components/create-user/create-user';
+import { ViewSurveys } from './view-surveys/view-surveys';
 
 export const routes: Routes = [
     {
