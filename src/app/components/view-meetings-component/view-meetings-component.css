@@ -4,6 +4,7 @@ p{
 }
 
  table {
+   width:1090px
    
     /* width: 1550px;
     border-collapse: collapse;
@@ -16,6 +17,17 @@ p{
  thead {
     box-shadow: 0 5px 10px lightgrey;
      
+ }
+
+  table {
+     margin-top: 100px;
+  }
+
+ #add-button {
+    position: absolute;
+    margin-top: -900px;
+    margin-left: 990px;
+    background-color: white;
  }
 
  
@@ -40,18 +52,11 @@ p{
     box-shadow: 0 5px 10px lightslategray;
 
  }
+
  .icons {
-    width: 40px; 
-   height: 40px; 
-
-   background-color: white;
-}
-.add-Icon{
-   margin: 15px;
-   margin-left: 500px;
-    width: 40px; 
-   height: 40px; 
+   width: 40px;
+   height: 40px;
    background-color: white;
 }
 
-
+ 

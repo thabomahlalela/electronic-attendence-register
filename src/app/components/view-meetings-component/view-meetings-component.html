@@ -1,0 +1,53 @@
+
+<table>
+     
+        <thead>
+            <tr>
+                <th>Tittle</th>
+                <th>Description</th>
+                <th>startTime</th>
+                <th>endTime</th>
+                <th>Location</th>
+                <th>Status</th>
+                <th></th>
+                
+                
+                
+            </tr>
+        </thead>
+
+        <tbody>
+             @for(user of meetings; track user.id) {
+                  <tr  >
+               
+                <td>{{user.tittle}}</td>
+                <td>{{user.description}}</td>
+                <td>{{user.startTime}}</td>
+                <td>{{user.endTime}}</td>
+                <td>{{user.location}}</td>
+                <td>{{user.status}}</td>
+                <td> 
+                    
+                    <button class="icons" matMiniFab>
+                            <mat-icon>delete_outline</mat-icon>
+                    </button>
+                </td>
+
+
+         
+                
+                
+            </tr>
+        }
+          
+
+            
+        </tbody>
+
+
+ </table>
+
+ <button id="add-button">
+            <button class="icons" matMiniFab>
+                 +
+ </button>

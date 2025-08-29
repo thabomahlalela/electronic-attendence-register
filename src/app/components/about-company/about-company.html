@@ -28,6 +28,7 @@
         <button id="update-info-btn" class="icons" matFab>
                   update
             </button>
+             <app-company-info-component></app-company-info-component> 
     </div>
 
     <div id="surveys">
@@ -45,16 +46,7 @@
 
     <div id="user">
         <h2 id="users-header">company-users</h2>
-        <div id="user-icons">
-            <button class="icons" matMiniFab>
-                 <mat-icon>delete_outline</mat-icon>
-            </button>
-            <button class="icons" matMiniFab>
-                 +
-            </button>
-            
-            
-        </div>
+        
         <div id="view-users">
             <app-view-users></app-view-users>
         </div>
@@ -64,7 +56,7 @@
 
     <div id="meetings">
         <h2 id="meetings-header">scheduled meetings</h2>
-        <div id="meeting-icons">
+        <!-- <div id="meeting-icons">
             <button class="icons" matMiniFab>
                  <mat-icon>delete_outline</mat-icon>
             </button>
@@ -72,7 +64,12 @@
                  +
             </button>
             
+        </div> -->
+
+        <div id="view-meetings">
+            <app-view-meetings-component></app-view-meetings-component>
         </div>
+
     </div>
 
     </div>

@@ -1,5 +1,13 @@
 
+
+        <div id="user-icons">
+             <button class="add-Icon" matMiniFab>
+                 +
+            </button>
+            
+        </div>
  <table>
+        
      
         <thead>
             <tr>
@@ -15,10 +23,13 @@
              @for(user of getUsers; track user.id) {
                   <tr  >
                
-                <td>{{user.name}}</td>
-                <td>{{user.surname}}</td>
-                 <td>{{user.employNO}}</td>
-                <td>{{user.email}}</td>
+                <td appEditUser [empNO]="user.employNO">{{user.name}}</td>
+                <td appEditUser [empNO]="user.employNO">{{user.surname}}</td>
+                <td appEditUser [empNO]="user.employNO">{{user.employNO}}</td>
+                <td appEditUser [empNO]="user.employNO">{{user.email}}</td>
+                <td><button class="icons" matMiniFab>
+                 <mat-icon appEditUser [empNO]="user.employNO">delete_outline</mat-icon>
+            </button></td>
                 
             </tr>
                 }

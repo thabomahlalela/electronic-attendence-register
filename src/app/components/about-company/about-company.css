@@ -121,10 +121,10 @@ h1 {
 
 #user {
    position: absolute;
-   width: 500px;
+   width: 580px;
    height: 650px;
    margin-top: 250px;
-   margin-left: 1368px;
+   margin-left: 1320px;
    /* border: solid darkgray; */
    box-shadow: -0 -2px 4px grey;
    border-radius: 10px;
@@ -206,5 +206,11 @@ h2 {
    overflow-y: scroll;
    /* background-color: black; */
 }
+
+ #view-meetings{
+   height: 400px;
+   
+   overflow-y: scroll;
+} 
 
  
