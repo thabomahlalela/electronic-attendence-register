@@ -1,7 +1,7 @@
 import { SurveyObj } from "../models/survey.model";
 
 
-export const DUMMY_SURVEY : SurveyObj= 
+export const DUMMY_SURVEY : SurveyObj[]= [
     {
           id : 0,
           title:'health',
@@ -12,28 +12,51 @@ export const DUMMY_SURVEY : SurveyObj=
           question : [
             {
                 id :0,
-                question:'How satisfied are you with our products/service?'
+                question:'How satisfied are you with our products/service?',
+                answers:[
+                    'hjgdyegfygegf',
+                  'kjhdjkshd'
+                ]
             },
             {
                  id :0,
-                question:'how would you rate the quality of our products/services?'
+                question:'how would you rate the quality of our products/services?',
+                answers:[
+                    'its okay',
+                    'its fine'
+                
+                ]
             },
             {
                  id :0,
-                question:'How would you rate the quality of our products/services?'
+                question:'How would you rate the quality of our products/services?',
+                answers:[
+                     'its okay',
+                    'its fine'
+                ]
             },
             {
                  id :0,
-                question:'Have you contacted our custormer support teat in the past?'
+                question:'Have you contacted our custormer support teat in the past?',
+                answers:[
+                     'its okay',
+                    'its fine'
+                ]
             },
             {
                  id :0,
-                question:'if yes how would you rate the responsiveness of our customer supporrt team?'
+                question:'if yes how would you rate the responsiveness of our customer supporrt team?',
+                answers:[
+                    'its okay',
+                    'its fine'
+                ]
             },
              
    
           ]
             
          }
+]
+    
             
     ;

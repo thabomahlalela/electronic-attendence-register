@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ClientService } from '../../clientService';
-import { ViewSurvey } from "../../view-survey/view-survey";
-import { Survey } from "../survey/survey";
+ 
+ 
 
  
 @Component({
