@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ClientService } from '../../clientService';
  
 @Component({
@@ -9,16 +9,25 @@ import { ClientService } from '../../clientService';
   styleUrl: './company-registration-form.css'
 })
 export class CompanyRegistrationForm {
+  companyNamePlaceholder = '';
+  cityPlaceholder = '';
+  addressPlaceholder= '';
+  sectorPlaceholder ='';
+  emailPlaceholder ='';
+  telNoPlaceholder ='';
+
+
     constructor(private clientService : ClientService){}
   
 
 
   form = new FormGroup({
-    companyName :new FormControl(''),
-    city : new FormControl(''),
-    sector : new FormControl(''), 
-     email : new FormControl(''),
-     telNo : new FormControl(''), 
+    companyName :new FormControl('',[Validators.required,Validators.minLength(3),Validators.maxLength(10)]),
+    city : new FormControl('',[Validators.required]),
+    address: new FormControl('',[Validators.required]),
+    sector : new FormControl('',[Validators.required]), 
+     email : new FormControl('',[Validators.required]),
+     telNo : new FormControl('',[Validators.required]), 
 
   });
 
@@ -35,15 +44,58 @@ export class CompanyRegistrationForm {
     telNo:this.form.value.telNo!,
     status:'',
     })
-    console.log(this.form.value.companyName,
-    //   this.form.value.city,
-    //   this.form.value.email,
-    //   this.form.value.sector,
-    //   this.form.value.telNo,
-     
-    )
 
- 
+    
+
+    
+    if(this.form.controls['companyName'].pristine){
+      this.companyNamePlaceholder= 'required'
+      // if(this.form.controls['companyName']){
+      //   this.companyNamePlaceholder= ' exceed max[20]'
+      // }
+     }
+
+
+
+    if(this.form.controls['city'].pristine){
+      this.cityPlaceholder= 'required city'
+    }
+
+    if(this.form.controls['address'].pristine){
+      this.addressPlaceholder= 'required adress'
+    }
+
+    if(this.form.controls['sector'].pristine){
+      this.sectorPlaceholder= 'required sector'
+    }
+
+    if(this.form.controls['email'].pristine){
+      this.emailPlaceholder= 'required email'
+      
+
+      }
+    
+
+    if(this.form.controls['telNo'].pristine){
+      this.telNoPlaceholder= 'required telNo'
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    console.log(this.form.value)
+
 
 }
 }

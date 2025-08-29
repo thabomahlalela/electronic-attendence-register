@@ -1,0 +1,58 @@
+.box{
+   
+    width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px  rgba(0, 0, 0,0.1);
+ 
+}
+input{
+     width: 95%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button{
+    
+    height: 25px;
+    background-color: #8e918e;
+    color: #fff;
+    border:none;
+    border-radius: 5px;
+    cursor: pointer;
+    
+
+}
+:hover button{
+    background-color: #5a6773;
+
+}
+
+/* .example-form {
+  min-width: 150px;
+  max-width: 0px;
+  width: 100%;
+} */
+
+.example-full-width {
+  width: 95%;
+}
+
+
+h2{
+    text-align : center;
+    margin-top: 20px;
+}
+
+#add{
+    margin-left: 480px;
+    position: absolute;
+    margin-top: -243px;
+    height: 35px;
+   
+}

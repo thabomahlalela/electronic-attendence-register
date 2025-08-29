@@ -1,6 +1,7 @@
  
 import { Injectable } from "@angular/core";
 import { Company } from "./models/company.models";
+import { Survey } from "./components/survey/survey";
 
 @Injectable({
     providedIn : 'root'
@@ -61,11 +62,16 @@ export class ClientService{
     get getCompanies() {
         return this.companies
     }
-    //   constructor(private http:HttpClient){}
+    
 
       registerCompany(company : Company) :void{
 
         
+      }
+
+      captureSurvey(survey: Survey):void{
+        console.log(survey)
+
       }
 
     
