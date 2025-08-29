@@ -3,23 +3,30 @@
     <form [formGroup]="form" (ngSubmit)="registerCompany()">
         <p> 
             <label>Company-name:</label>
-            <input name="Company-name" type="text" formControlName="companyName" >
+            <input [placeholder]="companyNamePlaceholder" name="Company-name" type="text" formControlName="companyName" required minlength="3" maxlength="20">
+
         </p>
         <p>
             <label>City:</label>
-            <input  id="one" name="city" type="text" formControlName="city">
+            <input [placeholder]="cityPlaceholder" id="one" name="city" type="text" formControlName="city">
         </p>
+
+        <p>
+            <label>Address:</label>
+            <input [placeholder]="addressPlaceholder" id="four" name="address" type="text" formControlName="address">
+        </p>
+
         <p>
             <label>Sector:</label>
-            <input  id="two" name="sector" type="text" formControlName="sector">
+            <input  [placeholder]="sectorPlaceholder" id="two" name="sector" type="text" formControlName="sector">
         </p>
         <p>
             <label>Email:</label>
-            <input id="three" name="email" type="text" formControlName="email">
+            <input [placeholder]="emailPlaceholder" id="three" name="email" type="text" formControlName="email">
         </p>
         <p>
             <label>TelNo:</label>
-            <input  id="four" name="telNo" type="text" formControlName="telNo">
+            <input  [placeholder]="telNoPlaceholder" id="four" name="telNo" type="text" formControlName="telNo">
         </p>
         <button type="submit">Register</button>
 
