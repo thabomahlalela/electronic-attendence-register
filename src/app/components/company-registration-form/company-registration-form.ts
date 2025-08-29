@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ClientService } from '../../clientService';
+import { ViewSurvey } from "../../view-survey/view-survey";
+import { Survey } from "../survey/survey";
+
  
 @Component({
   selector: 'app-company-registration-form',
-  imports: [ReactiveFormsModule ],
+  imports: [ReactiveFormsModule],
   templateUrl: './company-registration-form.html',
   styleUrl: './company-registration-form.css'
 })
@@ -38,6 +41,7 @@ export class CompanyRegistrationForm {
        id:0,
     name: this.form.value.companyName!,
     city:this.form.value.city!,
+      registrationNO : '',
     address:'',
     sector:this.form.value.sector!,
     email: this.form.value.email!,

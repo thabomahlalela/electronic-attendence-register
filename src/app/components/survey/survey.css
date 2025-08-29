@@ -1,0 +1,25 @@
+#outerBox{
+    border: 2px solid black
+}
+
+
+.registration{
+    width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px  rgba(0, 0, 0,0.1);
+   
+}
+textarea{
+    /* background-color: blue; */
+    width: 500pt;
+}
+header{
+    font-size: larger;
+    font-weight: 500px;
+    color: black;
+    margin-left: 370px;
+    padding: 20px;
+}

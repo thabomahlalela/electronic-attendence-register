@@ -15,7 +15,7 @@ export const routes: Routes = [
         component:ViewCompanies,
         
     },
-    {
+         {
         path:'register-company',
         component:CompanyRegistrationForm,
     },

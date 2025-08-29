@@ -1,64 +1,79 @@
-
-
 <div class="container">
-    <div id="heading">
+    <div>
+        <header id="header">
+            <h1>my company</h1>
+        </header>
+    </div>
 
+    
+    <div id="container2">
+        <div id="stats">
+            <div id="date">
+        <button></button>
+        
+    </div>
+
+    <div id="number-of-users">
+        <button></button>
+    </div>
+
+     <div id="number-of-scheduled-meetings">
+        <button></button>
+    </div>
+        </div>
+        
+
+    <div id="comapany-info">
+        <h2 id="company-header">company-info</h2>
+        <button id="update-info-btn" class="icons" matFab>
+                  update
+            </button>
+    </div>
+
+    <div id="surveys">
+        <h2 id="surveys-header">surveys</h2>
+        <div id="survey-icons">
+            <button class="icons" matMiniFab>
+                 <mat-icon>delete_outline</mat-icon>
+            </button>
+            <button class="icons" matMiniFab>
+                 +
+            </button>
+            
+        </div>
+    </div>
+
+    <div id="user">
+        <h2 id="users-header">company-users</h2>
+        <div id="user-icons">
+            <button class="icons" matMiniFab>
+                 <mat-icon>delete_outline</mat-icon>
+            </button>
+            <button class="icons" matMiniFab>
+                 +
+            </button>
+            
+            
+        </div>
+        <div id="view-users">
+            <app-view-users></app-view-users>
+        </div>
+         
     </div>
     
-    <div id="title">
-        <button id="btn">edit</button>
-        <table>
-            <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>city</th>
-                <th>address</th>
-                <th>sector</th>
-                <th>Email</th>
-                <th>Tel_No</th>
-                <th>status</th>
-            </tr>
-        </thead>
 
-        <tbody>
-             <!-- @for(company of myCompanies; track company.id) {
-                  <tr  (click)="onCompany()"> -->
-               
-                <!-- <td>{{company.id}}</td>
-                <td>{{company.name}}</td>
-                <td>{{company.city}}</td>
-                <td>{{company.address}}</td>
-                <td>{{company.sector}}</td>
-                <td>{{company.email}}</td>
-                <td>{{company.telNo}}</td>
-                <td>{{company.status}}</td>
-            </tr>
-                }
-           -->
-
+    <div id="meetings">
+        <h2 id="meetings-header">scheduled meetings</h2>
+        <div id="meeting-icons">
+            <button class="icons" matMiniFab>
+                 <mat-icon>delete_outline</mat-icon>
+            </button>
+            <button class="icons" matMiniFab>
+                 +
+            </button>
             
-        </tbody>
-        </table>
-
-
-       
-    <!-- </div>
-    <div  id="userlist">
-        <h2>userlist</h2>
-         <button id="btn">edit</button>
+        </div>
+    </div>
 
     </div>
-    <div id="suveylist">
-        <h2>suveylist</h2>
-         <button id="btn">edit</button>
-
-
-    </div>
-    <div id="unknown">
-        <h2>....list</h2>
-         <button id="btn">edit</button>
-
-    </div> -->
-
 </div>

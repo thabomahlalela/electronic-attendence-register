@@ -2,6 +2,7 @@
 import { Injectable } from "@angular/core";
 import { Company } from "./models/company.models";
 import { Survey } from "./components/survey/survey";
+import { SurveyObj } from "./models/survey.model";
 
 @Injectable({
     providedIn : 'root'
@@ -12,6 +13,7 @@ export class ClientService{
             id:1,
             name:'metaware',
             city:'Orkney',
+            registrationNO : '1234',
             address:'smalet street',
             sector:'Tech',
             email:'metaware@gmail.com',
@@ -22,6 +24,7 @@ export class ClientService{
             id:2,
             name:'meta',
             city:'Orkney',
+              registrationNO : '12345',
             address:'smalet street',
             sector:'email',
             email:'metaware@gmail.com',
@@ -32,12 +35,58 @@ export class ClientService{
             id:2,
             name:'meta',
             city:'Orkney',
+              registrationNO : '12346',
             address:'smalet street',
             sector:'email',
             email:'metaware@gmail.com',
             telNo:'0126783',
             status:'active',
-        }
+        },
+        {
+            id:2,
+            name:'meta',
+            city:'Orkney',
+            registrationNO : '12346',
+            address:'smalet street',
+            sector:'email',
+            email:'metaware@gmail.com',
+            telNo:'0126783',
+            status:'active',
+        },
+        {
+            id:2,
+            name:'meta',
+            city:'Orkney',
+            registrationNO : '12346',
+            address:'smalet street',
+            sector:'email',
+            email:'metaware@gmail.com',
+            telNo:'0126783',
+            status:'active',
+        },
+        {
+            id:2,
+            name:'meta',
+            city:'Orkney',
+            registrationNO : '12346',
+            address:'smalet street',
+            sector:'email',
+            email:'metaware@gmail.com',
+            telNo:'0126783',
+            status:'active',
+        },
+         {
+            id:2,
+            name:'meta',
+            registrationNO : '12346',
+            city:'Orkney',
+            address:'smalet street',
+            sector:'email',
+            email:'metaware@gmail.com',
+            telNo:'0126783',
+            status:'active',
+        },
+
     ]
     //  private apiUrl = '/api/companies';
 
@@ -69,7 +118,7 @@ export class ClientService{
         
       }
 
-      captureSurvey(survey: Survey):void{
+      captureSurvey(survey: SurveyObj):void{
         console.log(survey)
 
       }

@@ -2,10 +2,29 @@
  <div id="container">
     <div id="my-div">
         <div class="search-bar">
+             <form id="formSearch" [formGroup]="form">
+                <button id="icons" matMiniFab>
+                
+                 <mat-icon>search</mat-icon>
+                 
+               </button>
+             
+             <input type="text" name="enteredSearchedStudent" [placeholder]="'search'"  formControlName ="searchControl" />
+             <button type="submit">submit</button>
+        </form>
 
         </div>
 
          <div class="de-register-div">
+             <form id="formSearch" [formGroup]="formDeregister" (ngSubmit)="onDeregister()">
+                 <button id="icons" matMiniFab>
+                
+                 <mat-icon>remove_circle</mat-icon>
+                 
+               </button>
+               <input  type="text" name="enteredDeregistedStudent" [placeholder]="'de-register'"  formControlName ="deregisterControl"/>
+               <button type="submit" >submit</button>
+            </form>
             
         </div>
 
@@ -17,6 +36,7 @@
             <tr>
                 <th>Id</th>
                 <th>Name</th>
+                 <th>Registration_NO</th>
                 <th>city</th>
                 <th>address</th>
                 <th>sector</th>
@@ -28,10 +48,11 @@
 
         <tbody>
              @for(company of myCompanies; track company.id) {
-                  <tr  (click)="onCompany()">
+                  <tr  (dblclick)="onCompany()">
                
                 <td>{{company.id}}</td>
                 <td>{{company.name}}</td>
+                 <td>{{company.registrationNO}}</td>
                 <td>{{company.city}}</td>
                 <td>{{company.address}}</td>
                 <td>{{company.sector}}</td>
@@ -45,4 +66,5 @@
             
         </tbody>
  </table>
+ 
  </div>

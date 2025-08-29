@@ -14,6 +14,7 @@ import { MatInputModule } from '@angular/material/input';
 })
 export class CaptureSurvey {
   questions : Question[] = []
+  question!:Question
   
   constructor(private clientService : ClientService){}
 
@@ -28,7 +29,10 @@ export class CaptureSurvey {
 
 
   addClick(){
-    this.questions.push({question:this.form.value.question!})!
+    
+    this.question.id =0;
+    this.question.question = this.form.value.question!;
+    this.questions.push(this.question)!
     console.log(this.questions)
    
   }
@@ -36,7 +40,8 @@ export class CaptureSurvey {
 
 captureSurvey() :void{
  this.clientService.captureSurvey({
-  title :this.form.value.title,
+  id:0,
+  title:this.form.value.title!,
   description :this.form.value.description!,
   question : this.questions
     

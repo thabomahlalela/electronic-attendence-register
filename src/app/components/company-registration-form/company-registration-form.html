@@ -1,8 +1,7 @@
-
 <div class="registration">
     <h2>Registration form</h2>
     <form [formGroup]="form" (ngSubmit)="registerCompany()">
-        <p>
+        <p> 
             <label>Company-name:</label>
             <input [placeholder]="companyNamePlaceholder" name="Company-name" type="text" formControlName="companyName" required minlength="3" maxlength="20">
 
@@ -32,4 +31,6 @@
         <button type="submit">Register</button>
 
     </form>
+   
 </div>
+

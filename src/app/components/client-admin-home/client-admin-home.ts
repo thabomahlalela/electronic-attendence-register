@@ -4,9 +4,11 @@ import { MatMenuModule } from '@angular/material/menu';
 import { Router, RouterOutlet } from '@angular/router';
 import { ClientService } from '../../clientService';
 import { MatIcon } from '@angular/material/icon';
+import { Survey } from "../survey/survey";
+ 
 @Component({
   selector: 'app-client-admin-home',
-  imports: [MatButtonModule,MatMenuModule,MatIcon,RouterOutlet],
+  imports: [MatButtonModule, MatMenuModule, MatIcon, RouterOutlet],
   templateUrl: './client-admin-home.html',
   styleUrl: './client-admin-home.css'
 })

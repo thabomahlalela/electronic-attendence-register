@@ -56,7 +56,19 @@
    width: 1115px;
  } */
 
+ #formSearch{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  /* justify-content: space-evenly; */
+ }
+
+
  .search-bar  {
+  display: flex;
+  
+  justify-content:space-evenly;
+  /* align-items: center; */
    width: 300px;
    height: 40px;
    border: solid lightslategray;
@@ -72,6 +84,9 @@
  }
 
  .de-register-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
     width: 300px;
    height: 40px;
    border: solid lightslategray;
