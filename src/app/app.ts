@@ -7,7 +7,7 @@ import { CompanyInfoComponent } from './components/company-info-component/compan
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,CompanyInfoComponent],
+  imports: [RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
