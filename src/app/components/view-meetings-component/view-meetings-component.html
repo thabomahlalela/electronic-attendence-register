@@ -28,7 +28,8 @@
                 <td>{{user.status}}</td>
                 <td> 
                     
-                    <button class="icons" matMiniFab>
+                    
+                    <button (click)="onSubmit(user.id)" class="icons" matMiniFab >
                             <mat-icon>delete_outline</mat-icon>
                     </button>
                 </td>
