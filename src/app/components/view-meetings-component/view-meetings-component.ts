@@ -15,7 +15,7 @@ export class ViewMeetingsComponent {
 
 
   meetings:Meeting[] = [{
-    id:0,
+    id:1,
     tittle:"Project",
     description:"Register Attendence",
     startTime:"07:00",
@@ -26,7 +26,7 @@ export class ViewMeetingsComponent {
   },
 {
 
-    id:0,
+    id:2,
     tittle:"Project",
     description:"Register Attendence",
     startTime:"07:00",
@@ -37,19 +37,7 @@ export class ViewMeetingsComponent {
 },
 {
 
-    id:0,
-    tittle:"Project",
-    description:"Register Attendence",
-    startTime:"07:00",
-    endTime:"10:00",
-    location:"03 Smollet road",
-    status:"Happening",
-    
-},
-
-{
-
-    id:0,
+    id:3,
     tittle:"Project",
     description:"Register Attendence",
     startTime:"07:00",
@@ -61,7 +49,7 @@ export class ViewMeetingsComponent {
 
 {
 
-    id:0,
+    id:4,
     tittle:"Project",
     description:"Register Attendence",
     startTime:"07:00",
@@ -73,7 +61,7 @@ export class ViewMeetingsComponent {
 
 {
 
-    id:0,
+    id:5,
     tittle:"Project",
     description:"Register Attendence",
     startTime:"07:00",
@@ -85,7 +73,7 @@ export class ViewMeetingsComponent {
 
 {
 
-    id:0,
+    id:6,
     tittle:"Project",
     description:"Register Attendence",
     startTime:"07:00",
@@ -97,7 +85,7 @@ export class ViewMeetingsComponent {
 
 {
 
-    id:0,
+    id:7,
     tittle:"Project",
     description:"Register Attendence",
     startTime:"07:00",
@@ -109,7 +97,7 @@ export class ViewMeetingsComponent {
 
 {
 
-    id:0,
+    id:8,
     tittle:"Project",
     description:"Register Attendence",
     startTime:"07:00",
@@ -121,7 +109,19 @@ export class ViewMeetingsComponent {
 
 {
 
-    id:0,
+    id:9,
+    tittle:"Project",
+    description:"Register Attendence",
+    startTime:"07:00",
+    endTime:"10:00",
+    location:"03 Smollet road",
+    status:"Happening",
+    
+},
+
+{
+
+    id:10,
     tittle:"Project",
     description:"Register Attendence",
     startTime:"07:00",
