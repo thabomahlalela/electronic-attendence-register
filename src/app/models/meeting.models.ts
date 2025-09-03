@@ -8,5 +8,5 @@ export interface Meeting{
     endTime :string;
     location : string;
     status : string;
-    // attendees?:User[];
+     attendees?:User[];
 }

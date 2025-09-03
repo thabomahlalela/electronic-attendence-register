@@ -1,0 +1,74 @@
+
+<table>
+     
+        <thead>
+            <tr>
+                <th>Tittle</th>
+                <th>Description</th>
+                <th>startTime</th>
+                <th>endTime</th>
+                <th>Location</th>
+                <th>Status</th>
+                <th>Attendee</th>
+                <th></th>
+                
+                
+                
+            </tr>
+        </thead>
+
+        <tbody>
+             @for(meeting of meetings; track meeting.id) {
+                  <tr  >
+               
+                <td>{{meeting.title}}</td>
+                <td>{{meeting.description}}</td>
+                <td>{{meeting.startTime}}</td>
+                <td>{{meeting.endTime}}</td>
+                <td>{{meeting.location}}</td>
+                <td>{{meeting.status}}</td>
+            <td>
+                <div id="box">
+
+
+                     @for(user of meeting.attendees; track user.id){
+                        <div>
+                                   {{user.name}}  {{user.surname}}
+
+                        </div>
+                        
+                    
+
+                }
+
+
+
+                </div>
+            </td>
+               
+
+                <td> 
+                    
+                    
+                    <button (click)="onSubmit(meeting.id)" class="icons" matMiniFab >
+                            <mat-icon>delete_outline</mat-icon>
+                    </button>
+                </td>
+
+
+         
+                
+                
+            </tr>
+        }
+          
+
+            
+        </tbody>
+
+
+ </table>
+
+ <button id="add-button" class="icons" matMiniFab>
+            +
+ </button>

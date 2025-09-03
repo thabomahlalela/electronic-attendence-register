@@ -26,4 +26,8 @@ private router = inject(Router)
   onClick() {
       this.router.navigate(['create-user'])
   }
+
+  removeUser(user : string){
+    this.users = this.users.filter((s)=> s.employNO !== user)
+  }
 }

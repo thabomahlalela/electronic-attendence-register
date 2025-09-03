@@ -26,10 +26,10 @@
     margin-top: 20px;
 
 }
-#name{
+/* #name{
     margin-top: -20px;
     margin-left: 45px;
-}
+} */
 .name{
     border: none;
     margin-left: 4px;
@@ -43,7 +43,6 @@
 }
 .sector{
     border: none;
-    
     position: absolute;
     margin-top: 60px;
     margin-left: -180px;
@@ -102,6 +101,7 @@
 }
 input{
     font-size: 15px;
+    color: grey;
 }
 
 #logo {

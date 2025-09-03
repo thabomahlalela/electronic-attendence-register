@@ -1,21 +1,18 @@
 import { Component } from '@angular/core';
-import { Meeting } from '../../models/meeting.models';
-import { MatIcon } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { FormsModule } from '@angular/forms';
-
+import { MatIcon } from '@angular/material/icon';
+import { Meeting } from '../../models/meeting.models';
 
 @Component({
-  selector: 'app-view-meetings-component',
-  imports: [MatIcon,MatButtonModule,FormsModule],
-  templateUrl: './view-meetings-component.html',
-  styleUrl: './view-meetings-component.css'
+  selector: 'app-past-meetings-component',
+  imports: [MatIcon,MatButtonModule],
+  templateUrl: './past-meetings-component.html',
+  styleUrl: './past-meetings-component.css'
 })
-export class ViewMeetingsComponent {
+export class PastMeetingsComponent {
 
 
-
-  meetings:Meeting[] = [
+meetings:Meeting[] = [
     {
     id:1,
     title:"Project",
@@ -24,6 +21,54 @@ export class ViewMeetingsComponent {
     endTime:"10:00",
     location:"03 Smollet road",
     status:"Happening",
+    attendees:[
+      {
+        id:1,
+        name:"Peggy",
+        surname:"Scheepers",
+        email:"",
+        employNO:"",
+      },
+
+{
+        id:1,
+        name:"Thabo",
+        surname:"Mahlalela",
+        email:"",
+        employNO:"",
+      },
+
+
+{
+        id:1,
+        name:"Jabu",
+        surname:"Sibiya",
+        email:"",
+        employNO:"",
+      },
+
+
+
+     {
+        id:1,
+        name:"Tehilla",
+        surname:"Sokoti",
+        email:"",
+        employNO:"",
+      } 
+
+
+
+
+
+
+
+
+
+
+
+
+    ]
     
   },
 {
@@ -151,21 +196,7 @@ onSubmit(id:number){
 
 
 }
-             
+
+
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

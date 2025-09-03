@@ -25,10 +25,10 @@
                
                 <td appEditUser [empNO]="user.employNO">{{user.name}}</td>
                 <td appEditUser [empNO]="user.employNO">{{user.surname}}</td>
-                <td appEditUser [empNO]="user.employNO">{{user.employNO}}</td>
+                <td>{{user.employNO}}</td>
                 <td appEditUser [empNO]="user.employNO">{{user.email}}</td>
                 <td><button class="icons" matMiniFab>
-                 <mat-icon appEditUser [empNO]="user.employNO">delete_outline</mat-icon>
+                 <mat-icon appEditUser [empNO]="user.employNO"  (click)="removeUser(user.employNO)">delete_outline</mat-icon>
             </button></td>
                 
             </tr>

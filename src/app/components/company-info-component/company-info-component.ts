@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { Company } from '../../models/company.models';
+import { EditCompanyInfo } from '../../edit-company-info';
 
 @Component({
   selector: 'app-company-info-component',
-  imports: [],
+  imports: [EditCompanyInfo],
   templateUrl: './company-info-component.html',
   styleUrl: './company-info-component.css'
 })

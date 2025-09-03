@@ -1,0 +1,77 @@
+p{
+    margin-top: 100px;
+    margin-left: 180px;
+}
+
+ table {
+   width:1090px
+   
+    /* width: 1550px;
+    border-collapse: collapse;
+    box-shadow: 0 5px 10px lightslategray;
+    background-color: white;
+    text-align: left;
+    overflow: hidden; */
+ }
+
+ thead {
+    box-shadow: 0 5px 10px lightgrey;
+     
+ }
+
+  table {
+     margin-top: 100px;
+  }
+
+ #add-button {
+    position: absolute;
+    margin-top: -900px;
+    margin-left: 990px;
+    background-color: white;
+ }
+
+ 
+  /* th {
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: 0.7rem;
+    font-weight: 900;
+ } */
+
+  td {
+   padding: 20px;
+   color: grey;
+ } 
+
+ tr:nth-child(even) {
+   background-color: whitesmoke;
+ }
+
+ tr:hover {
+    box-shadow: 0 5px 10px lightslategray;
+
+ }
+
+ .icons {
+   width: 40px;
+   height: 40px;
+   background-color: white;
+}
+
+ #box{
+    width: 130px;
+    height: 24px;
+    margin-top: 8px;
+    overflow-y: scroll;
+    white-space: normal;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    
+    
+    scroll-behavior: smooth;
+
+}
+box::-webkit-scrollbar{
+    display: none;
+}
