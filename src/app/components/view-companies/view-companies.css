@@ -10,7 +10,7 @@
 
  table {
    
-    width: 1550px;
+    width: 1599px;
     border-collapse: collapse;
     box-shadow: 0 5px 10px lightslategray;
     background-color: white;
@@ -42,7 +42,24 @@
     letter-spacing: 0.1rem;
     font-size: 0.7rem;
     font-weight: 900;
+    color: darkblue;
  }
+
+ input {
+  text-align: center;
+ }
+
+::placeholder{
+  color: darkblue;
+}
+
+.my-btn {
+  width: 25px;
+  height: 25px;
+  background-color: white;
+  /* border: solid darkblue; */
+  border-radius: 10px;
+}
 
  td {
    padding: 1rem 2rem;
@@ -107,10 +124,10 @@
  }
 
  #container {
-  width: 1550px;
+  width: 1599px;
   height: auto;
-  margin-left: -20px;
-  margin-top: -500px;
+  margin-left: -150px;
+  margin-top: -460px;
   /* border: solid darkblue; */
   background-color: white;
  }

@@ -1,0 +1,8 @@
+<div id="container">
+  @if(isLoading) {
+    <img width="500" height="500" src="https://assets-v2.lottiefiles.com/a/ec4394a2-1151-11ee-ab60-b3dd36237565/iRrhKmHkKY.gif"/>
+  } @else {
+   
+    <qrcode [colorLight]="'#0000000'" [qrdata]="'http://localhost:4200/edit-company/surveys/generate-qr-code'" [width]="500" [errorCorrectionLevel]="'M'"></qrcode>
+  }
+</div>

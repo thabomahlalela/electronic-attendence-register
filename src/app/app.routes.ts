@@ -4,6 +4,8 @@ import { ViewCompanies } from './components/view-companies/view-companies';
 import { CompanyRegistrationForm } from './components/company-registration-form/company-registration-form';
 import { AboutCompany } from './components/about-company/about-company';
 import { ViewSurveys } from './view-surveys/view-surveys';
+import { CaptureSurvey } from './components/capture-survey/capture-survey';
+import { GenerateQrCode } from './components/generate-qr-code/generate-qr-code';
 
 export const routes: Routes = [
     {
@@ -25,6 +27,24 @@ export const routes: Routes = [
     {
         path:'edit-company',
         component:AboutCompany,
+        children:[
+            {
+                path:'surveys',
+                component:ViewSurveys,
+                children:[
+                    {
+                path:'add-survey',
+                component:CaptureSurvey
+            },
+            {
+                path:'generate-qr-code',
+                component:GenerateQrCode
+            }
+                ]
+            },
+
+            
+        ]
     }
 
 
