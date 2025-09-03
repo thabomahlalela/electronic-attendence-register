@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, OnInit, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, inject, OnInit, Output, signal } from '@angular/core';
 import { MatExpansionModule } from '@angular/material/expansion';
  
  import { DUMMY_SURVEY } from '../components/dummies/dummy-survey';
@@ -20,6 +20,7 @@ import { Router, RouterOutlet } from '@angular/router';
    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ViewSurveys implements OnInit {
+  @Output() url = new EventEmitter();
  private _snackBar = inject(MatSnackBar);
  private router = inject(Router);
  message = 'survey deleted';
@@ -50,10 +51,12 @@ onList() {
     this.router.navigate(['/edit-company/surveys/add-survey']);
   }
 
-  onGenerateQRCode() {
+  onGenerateQRCode(survey:SurveyObj) {
     this.isSurveyClicked = false;
-
-    this.router.navigate(['/edit-company/surveys/generate-qr-code']);
+    const title = survey.title
+    // this.url.emit('/survey');
+    console.log('emit')
+    this.router.navigate(['/edit-company/surveys/generate-qr-code',  `${title}`]);
 
   }
 

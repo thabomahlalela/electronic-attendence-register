@@ -7,6 +7,7 @@ import { CreateUser } from './components/create-user/create-user';
 import { ViewSurveys } from './view-surveys/view-surveys';
 import { CaptureSurvey } from './components/capture-survey/capture-survey';
 import { GenerateQrCode } from './components/generate-qr-code/generate-qr-code';
+import { Survey } from './components/survey/survey';
 
 export const routes: Routes = [
     {
@@ -41,7 +42,7 @@ export const routes: Routes = [
                 component:CaptureSurvey
             },
             {
-                path:'generate-qr-code',
+                path:'generate-qr-code/:title',
                 component:GenerateQrCode
             }
                 ]
@@ -49,6 +50,10 @@ export const routes: Routes = [
 
             
         ]
+    },
+    {
+        path:'survey:title',
+        component:Survey,
     }
 
 

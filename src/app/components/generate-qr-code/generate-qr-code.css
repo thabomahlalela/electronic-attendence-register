@@ -8,3 +8,10 @@
     padding: 32px;
     
 }
+
+#url {
+     width: 250px;
+     height: 30px;
+     border-radius: 30px;
+     margin-left: 110px;
+}

@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject} from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { Router, RouterOutlet } from '@angular/router';
 import { ViewSurveys } from '../../view-surveys/view-surveys';
@@ -23,6 +23,7 @@ import { MatListModule } from '@angular/material/list';
 })
 export class AboutCompany {
   router = inject(Router);
+  
 
   onSurveys() {
     this.router.navigate(['edit-company/surveys'])

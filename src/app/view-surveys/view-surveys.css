@@ -1,8 +1,8 @@
 #container{
      
-     border: solid red;
+     /* border: solid red; */
      width: 100%;
-    min-height: 800px;
+    min-height: auto;
 
     
 }
@@ -52,11 +52,13 @@ button {
 #list-of-surveys {
      position: absolute;
      width: 1000px;
-     min-height: 600px;
-     border: solid darkblue;
+     min-height: auto;
+     /* border: solid darkblue; */
      margin-left: 30px;
      margin-top: 10px;
 }
+
+
 
 #more-about-survey {
      width: 800px;
