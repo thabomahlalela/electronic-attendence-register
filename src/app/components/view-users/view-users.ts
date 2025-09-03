@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {DUMMY_USERS} from '../dummies/dummy-user'
 import { User } from '../../models/user.model';
 import { EditUser } from '../../edit-user';
 import { MatIcon } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -13,9 +14,20 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './view-users.css'
 })
 export class ViewUsers {
-  users : User[] = DUMMY_USERS
+
+
+private users : User[] = DUMMY_USERS
+private router = inject(Router)
 
   get getUsers(){
     return this.users
+  }
+
+  onClick() {
+      this.router.navigate(['create-user'])
+  }
+
+  removeUser(user : string){
+    this.users = this.users.filter((s)=> s.employNO !== user)
   }
 }

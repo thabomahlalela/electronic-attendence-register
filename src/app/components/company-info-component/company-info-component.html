@@ -3,36 +3,38 @@
 
 <div>  
      <div id="divone">
-        <label>Name:</label>
-    
-      <input class="name" [placeholder]="info.name" />
+      
+         <label>Name:</label>
+         <input class="name"  [value]="info.name"  readonly appEditCompanyInfo [company]="info" />
+            
+            
+            
+         <label id="city">City:</label>
+         <input  class="city" [value]="info.city"  readonly appEditCompanyInfo [company]="info" />
 
-     <label id="city">City:</label>
-     <input  class="city" [placeholder]="info.city" />
+         
+         <label id="sector">Sector:</label>
+         <input class="sector" [value]="info.sector" readonly appEditCompanyInfo [company]="info" />
 
-   
-    <label id="sector">Sector:</label>
-    <input class="sector" [placeholder]="info.sector"  />
-
-   
-     <label id="address">Address:</label>
-     <input class="address" [placeholder]="info.address"  />
+         
+         <label id="address">Address:</label>
+         <input class="address" [value]="info.address" readonly appEditCompanyInfo [company]="info" />
 
    
 
      </div>                                                         
     <div id="divtwo">
     <label id="status" >Status:</label>
-    <input class="status" [placeholder]="info.status"/>
+    <input class="status" [value]="info.status"  readonly appEditCompanyInfo [company]="info"/>
 
      <label id="email">Email:</label>
-    <input class="email" [placeholder]="info.email" />
+    <input class="email" [value]="info.email" readonly appEditCompanyInfo [company]="info" />
 
      <label id="telNo">TelNo:</label>
-    <input class="telNo" [placeholder]="info.telNo" />
+    <input class="telNo" [value]="info.telNo" readonly appEditCompanyInfo [company]="info" />
 
     <label id="registrationNo">RegistrationNo:</label>
-    <input class="registrationNo" [placeholder]="info.registrationNO"  />
+    <input class="registrationNo" [value]="info.registrationNO" readonly appEditCompanyInfo [company]="info" />
     <div id="logo">
 
     </div>

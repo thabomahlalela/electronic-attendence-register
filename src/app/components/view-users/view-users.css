@@ -4,6 +4,7 @@ p{
 }
 
  table {
+      /* overflow-y: scroll; */
    
     /* width: 1550px;
     border-collapse: collapse;

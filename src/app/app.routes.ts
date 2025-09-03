@@ -3,6 +3,7 @@ import { ClientAdminHome } from './components/client-admin-home/client-admin-hom
 import { ViewCompanies } from './components/view-companies/view-companies';
 import { CompanyRegistrationForm } from './components/company-registration-form/company-registration-form';
 import { AboutCompany } from './components/about-company/about-company';
+import { CreateUser } from './components/create-user/create-user';
 import { ViewSurveys } from './view-surveys/view-surveys';
 import { CaptureSurvey } from './components/capture-survey/capture-survey';
 import { GenerateQrCode } from './components/generate-qr-code/generate-qr-code';
@@ -16,6 +17,9 @@ export const routes: Routes = [
     {
         path:'view-companies',
         component:ViewCompanies,
+        children :[
+            
+        ]
         
     },
          {
