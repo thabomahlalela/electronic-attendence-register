@@ -5,5 +5,5 @@ export interface SurveyObj {
     id : number,
     title:string;
     description:string;
-    question?:Question[];
+    questions?:Question[];
 }

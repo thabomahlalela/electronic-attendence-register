@@ -18,58 +18,59 @@ import { PastMeetingsComponent } from './components/past-meetings-component/past
 export class App {
   protected readonly title = signal('attendece-register');
 
-meetings:Meeting[] = [
-    {
-    id:1,
-    title:"Jabu",
-    description:"Register Attendence 2",
-    startTime:"07:00",
-    endTime:"10:00",
-    location:"03 Smollet road",
-    status:"Happening",
+// meetings:Meeting[] = [
+//     {
+//     id:1,
+//     title:"Jabu",
+//     description:"Register Attendence 2",
+//     startTime:"07:00",
+//     endTime:"10:00",
+//     location:"03 Smollet road",
+//     status:"Happening",
     
-  },
+//   },
 
 
-{
-    id:1,
-    title:"Peggy",
-    description:"Register Attendence 2",
-    startTime:"07:00",
-    endTime:"10:00",
-    location:"03 Smollet road",
-    status:"Happening",
+// {
+//     id:1,
+//     title:"Peggy",
+//     description:"Register Attendence 2",
+//     startTime:"07:00",
+//     endTime:"10:00",
+//     location:"03 Smollet road",
+//     status:"Happening",
     
-  },
+//   },
 
-{
-    id:1,
-    title:"Tehilla",
-    description:"Register Attendence 2",
-    startTime:"07:00",
-    endTime:"10:00",
-    location:"03 Smollet road",
-    status:"Happening",
+// {
+//     id:1,
+//     title:"Tehilla",
+//     description:"Register Attendence 2",
+//     startTime:"07:00",
+//     endTime:"10:00",
+//     location:"03 Smollet road",
+//     status:"Happening",
     
-  },
+//   },
 
 
 
-  {
-    id:1,
-    title:"Thabo",
-    description:"Register Attendence 2",
-    startTime:"07:00",
-    endTime:"10:00",
-    location:"03 Smollet road",
-    status:"Happening",
+//   {
+//     id:1,
+//     title:"Thabo",
+//     description:"Register Attendence 2",
+//     startTime:"07:00",
+//     endTime:"10:00",
+//     location:"03 Smollet road",
+//     status:"Happening",
     
-  },
+//   },
 
 
 
 
 
 
-]
+// ]
+// }
 }

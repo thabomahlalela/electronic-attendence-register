@@ -38,15 +38,15 @@ export class CompanyRegistrationForm {
 
   registerCompany(): void {
     this.clientService.registerCompany({
-       id:0,
-    name: this.form.value.companyName!,
-    city:this.form.value.city!,
-      registrationNO : '',
-    address:'',
-    sector:this.form.value.sector!,
-    email: this.form.value.email!,
-    telNo:this.form.value.telNo!,
-    status:'',
+        id:0,
+        name: this.form.value.companyName!,
+        city:this.form.value.city!,
+        registrationNO : '',
+        address:'',
+        sector:this.form.value.sector!,
+        email: this.form.value.email!,
+        telNo:this.form.value.telNo!,
+        status:'',
     })
 
     

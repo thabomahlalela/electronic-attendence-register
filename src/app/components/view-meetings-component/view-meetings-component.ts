@@ -19,9 +19,14 @@ export class ViewMeetingsComponent {
     {
     id:1,
     title:"Project",
+<<<<<<< HEAD
     description:"Register Attendence 2",
+=======
+    description:"Register Attendence",
+>>>>>>> 8fe8111e2302e88c481655f4917fe071c036f613
     startTime:"07:00",
     endTime:"10:00",
+    date : '',
     location:"03 Smollet road",
     status:"Happening",
     
@@ -34,6 +39,7 @@ export class ViewMeetingsComponent {
     description:"Register Attendence",
     startTime:"07:00",
     endTime:"10:00",
+    date : '',
     location:"03 Smollet road",
     status:"Happening",
     
@@ -46,6 +52,7 @@ export class ViewMeetingsComponent {
     description:"Register Attendence",
     startTime:"07:00",
     endTime:"10:00",
+    date : '',
     location:"03 Smollet road",
     status:"Happening",
     
@@ -59,6 +66,7 @@ export class ViewMeetingsComponent {
     description:"Register Attendence",
     startTime:"07:00",
     endTime:"10:00",
+    date : '',
     location:"03 Smollet road",
     status:"Happening",
     
@@ -72,6 +80,7 @@ export class ViewMeetingsComponent {
     description:"Register Attendence",
     startTime:"07:00",
     endTime:"10:00",
+    date : '',
     location:"03 Smollet road",
     status:"Happening",
     
@@ -82,6 +91,10 @@ export class ViewMeetingsComponent {
     
     id:6,
     title:"Project",
+<<<<<<< HEAD
+=======
+    date : '',
+>>>>>>> 8fe8111e2302e88c481655f4917fe071c036f613
     description:"Register Attendence",
     startTime:"07:00",
     endTime:"10:00",
@@ -97,6 +110,7 @@ export class ViewMeetingsComponent {
     title:"Project",
     description:"Register Attendence",
     startTime:"07:00",
+    date : '',
     endTime:"10:00",
     location:"03 Smollet road",
     status:"Happening",
@@ -111,6 +125,7 @@ export class ViewMeetingsComponent {
     description:"Register Attendence",
     startTime:"07:00",
     endTime:"10:00",
+    date : '',
     location:"03 Smollet road",
     status:"Happening",
     
@@ -124,6 +139,7 @@ export class ViewMeetingsComponent {
     description:"Register Attendence",
     startTime:"07:00",
     endTime:"10:00",
+    date : '',
     location:"03 Smollet road",
     status:"Happening",
     
@@ -137,6 +153,7 @@ export class ViewMeetingsComponent {
     description:"Register Attendence",
     startTime:"07:00",
     endTime:"10:00",
+    date : '',
     location:"03 Smollet road",
     status:"Happening",
     

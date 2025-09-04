@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import {DUMMY_USERS} from '../dummies/dummy-user'
-import { User } from '../../models/user.model';
+import { Person } from '../../models/person.model';
 import { EditUser } from '../../edit-user';
 import { MatIcon } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -16,7 +16,7 @@ import { Router, RouterOutlet } from '@angular/router';
 export class ViewUsers {
 
 
-private users : User[] = DUMMY_USERS
+private users : Person[] = DUMMY_USERS
 private router = inject(Router)
 
   get getUsers(){

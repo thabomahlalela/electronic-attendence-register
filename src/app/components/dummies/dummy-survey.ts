@@ -9,7 +9,7 @@ export const DUMMY_SURVEY : SurveyObj[]= [
           this survey should take 10 minustes to complete and your feed back should take about 10 minutes to complete ,and your feedback will help\
           us understand what we\'re doing well and where we can improve.Your input is invaluable to us ,and we\'ll use it to make informed decisions \
           about our products/service.all responses will be kept confidential and anynomous  ',
-          question : [
+          questions : [
             {
                 id :0,
                 question:'How satisfied are you with our products/service?',
@@ -64,7 +64,7 @@ export const DUMMY_SURVEY : SurveyObj[]= [
           this survey should take 10 minustes to complete and your feed back should take about 10 minutes to complete ,and your feedback will help\
           us understand what we\'re doing well and where we can improve.Your input is invaluable to us ,and we\'ll use it to make informed decisions \
           about our products/service.all responses will be kept confidential and anynomous  ',
-          question : [
+          questions : [
             {
                 id :0,
                 question:'How satisfied are you with our products/service?',
@@ -119,7 +119,7 @@ export const DUMMY_SURVEY : SurveyObj[]= [
           this survey should take 10 minustes to complete and your feed back should take about 10 minutes to complete ,and your feedback will help\
           us understand what we\'re doing well and where we can improve.Your input is invaluable to us ,and we\'ll use it to make informed decisions \
           about our products/service.all responses will be kept confidential and anynomous  ',
-          question : [
+          questions : [
             {
                 id :0,
                 question:'How satisfied are you with our products/service?',
@@ -174,7 +174,7 @@ export const DUMMY_SURVEY : SurveyObj[]= [
           this survey should take 10 minustes to complete and your feed back should take about 10 minutes to complete ,and your feedback will help\
           us understand what we\'re doing well and where we can improve.Your input is invaluable to us ,and we\'ll use it to make informed decisions \
           about our products/service.all responses will be kept confidential and anynomous  ',
-          question : [
+          questions : [
             {
                 id :0,
                 question:'How satisfied are you with our products/service?',

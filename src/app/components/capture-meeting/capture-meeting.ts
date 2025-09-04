@@ -44,6 +44,7 @@ captureMeeting():void{
   description:this.form.value.description!,
   startTime : this.form.value.startTime!,
   endTime :this.form.value.endTime!,
+  date : '2025-09-03',
   location:this.form.value.location!,
   status: this.form.value.status!
   // attendees :''

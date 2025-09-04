@@ -15,6 +15,11 @@ input{
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
+
+}
+h2{
+    text-align : center;
+    margin-top: 20px;
 }
 
 button{
@@ -31,28 +36,4 @@ button{
 :hover button{
     background-color: #5a6773;
 
-}
-
-/* .example-form {
-  min-width: 150px;
-  max-width: 0px;
-  width: 100%;
-} */
-
-.example-full-width {
-  width: 95%;
-}
-
-
-h2{
-    text-align : center;
-    margin-top: 20px;
-}
-
-#add{
-    margin-left: 480px;
-    position: absolute;
-    margin-top: -70px;
-    height: 35px;
-   
 }

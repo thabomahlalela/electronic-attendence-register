@@ -58,7 +58,7 @@
             <header>Questions</header>
           </div>
           <ul>
-          @for(question of getClickedSurvey.question; track question.id) {
+          @for(question of getClickedSurvey.questions; track question.id) {
             <li (click)="onQuestion(question)" >{{question.question}}</li>
           }
           </ul>

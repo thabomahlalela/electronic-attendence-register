@@ -7,11 +7,16 @@
         <label>Title:</label>
         <input type="text" name="title" formControlName="title">
     </p>
-
-    <p>
+    <form>
+        <p>
         <label >Questions:</label>
         <input type="text"  name="questions"   formControlName="question">
     </p>
+     <p>
+        <button type="reset" id="add"  (click)="addClick()">+</button>
+    </p>
+    </form>
+    
 
     <p>
         <label>Description:</label>
@@ -25,9 +30,7 @@
     <p>
         <button type="submit">submit</button>
     </p>
-    <p>
-        <button type="reset" id="add"  (click)="addClick()">+</button>
-    </p>
+   
 
     </form>
 
