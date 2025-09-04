@@ -13,6 +13,7 @@ import { inject } from "@angular/core";
 })
 export class ClientService{
     private httpClient = inject(HttpClient);
+    private viewedCompany!:Company
 
 comments(comment:Question){
         this.httpClient.post("/api/add-comment",comment).subscribe( {
@@ -153,6 +154,11 @@ comments(comment:Question){
     get getCompanies() {
         return this.companies
     }
+
+    setClickedCompany(company:Company) {
+        this.viewedCompany = company;
+        console.log(this.viewedCompany.name)
+    }
     
 
       registerCompany(company : Company) :void{
@@ -172,6 +178,10 @@ comments(comment:Question){
 
     get getOptions() {
         return this.clientOptions
+    }
+
+    get company(){
+        return this.viewedCompany
     }
 
 

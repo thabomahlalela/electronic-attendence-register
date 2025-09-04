@@ -10,6 +10,7 @@ import { PastMeetingsComponent } from './components/past-meetings-component/past
 
 @Component({
   selector: 'app-root',
+
   imports: [RouterOutlet, AboutCompany, CommentsComponent, ViewComplaintsComponent,PastMeetingsComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'

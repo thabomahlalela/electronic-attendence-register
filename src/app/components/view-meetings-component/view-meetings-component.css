@@ -1,3 +1,27 @@
+#container {
+   width: 1895px;
+   min-height: 1000px;
+   /* border: solid red; */
+}
+
+#header {
+    width: 1895px;
+     height: 50px;
+     border: solid darkblue;
+     border-bottom-left-radius: 30px;
+     border-bottom-right-radius: 30px;
+     text-align: center;
+     color: darkblue;
+}
+
+#list-of-meetings {
+   width:1090px;
+   min-height: 500px;
+   border: solid darkblue;
+   margin-left: 30px;
+   margin-top: 70px;
+}
+
 p{
     margin-top: 100px;
     margin-left: 180px;
@@ -19,9 +43,7 @@ p{
      
  }
 
-  table {
-     margin-top: 100px;
-  }
+   
 
  #add-button {
     position: absolute;
@@ -57,6 +79,18 @@ p{
    width: 40px;
    height: 40px;
    background-color: white;
+}
+
+ #qr-code-btn {
+     margin-left: 20px;
+ }
+
+#routed-view {
+   width: 700px;
+   min-height: 500px;
+   margin-left: 1180px;
+   margin-top: -850px;
+   border: solid darkblue;
 }
 
  

@@ -1,8 +1,8 @@
 #container{
      
-     border: solid red;
+     /* border: solid red; */
      width: 100%;
-    min-height: 800px;
+    min-height: auto;
 
     
 }
@@ -52,11 +52,13 @@ button {
 #list-of-surveys {
      position: absolute;
      width: 1000px;
-     min-height: 600px;
-     border: solid darkblue;
+     min-height: auto;
+     /* border: solid darkblue; */
      margin-left: 30px;
      margin-top: 10px;
 }
+
+
 
 #more-about-survey {
      width: 800px;
@@ -114,6 +116,7 @@ button {
 
 #btn-icon {
      margin-top: 10px;
+     margin-left: 400px;
      width: 30px;
      height: 30px;
 }
@@ -148,6 +151,8 @@ table {
     color: darkblue;
  }
 
+
+
   tr:nth-child(even) {
    background-color: whitesmoke;
  }
@@ -172,7 +177,7 @@ table {
 #routed-view {
      width: 750px;
      min-height: 500px;
-     border: solid darkblue;
+     /* border: solid darkblue; */
      margin-left: 1060px;
      margin-top: 10px;
 }

@@ -1,19 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Meeting } from '../../models/meeting.models';
 import { MatIcon } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { FormsModule } from '@angular/forms';
+import { Router, RouterOutlet } from '@angular/router';
+ 
 
 
 @Component({
   selector: 'app-view-meetings-component',
-  imports: [MatIcon,MatButtonModule,FormsModule],
+  imports: [MatIcon, MatButtonModule, RouterOutlet],
   templateUrl: './view-meetings-component.html',
   styleUrl: './view-meetings-component.css'
 })
 export class ViewMeetingsComponent {
-
-
+    router = inject(Router)
 
   meetings:Meeting[] = [
     {
@@ -152,6 +152,16 @@ onSubmit(id:number){
 
 }
              
+onAdd() {
+    this.router.navigate(['/edit-company/meetings/add-meeting']);
+}
+
+onQrCode(meeting:Meeting) {
+     const title = meeting.title;
+    const surveyORMeeting = "MEETING";
+    this.router.navigate(['/edit-company/meetings/generate-qr-code', `${title}`, `${surveyORMeeting}`]);
+}
+
 }
 
 
