@@ -12,13 +12,14 @@ import id from '@angular/common/locales/extra/id';
 })
 export class CaptureMeeting {
 
-  title ='';
-  description = '';
-  startTime = '';
-  endTime ='';
-  location ='';
-  status ='';
-  attendees ='';
+  // title ='';
+  // description = '';
+  // startTime = '';
+  // endTime ='';
+  // location ='';
+  // status ='';
+  // attendees ='';
+  // meeting = '';
 
   constructor(private clientService : ClientService){}
   
@@ -30,9 +31,11 @@ export class CaptureMeeting {
     description: new FormControl(''),
     startTime : new FormControl(''),
     endTime : new FormControl(''),
+    date : new FormControl(''),
     location : new FormControl(''),
     status : new FormControl(''),
-    attendees : new FormControl('')
+    attendees : new FormControl(''),
+    
 
   })
 
@@ -44,7 +47,7 @@ captureMeeting():void{
   description:this.form.value.description!,
   startTime : this.form.value.startTime!,
   endTime :this.form.value.endTime!,
-  date : '2025-09-03',
+  date : this.form.value.date!,
   location:this.form.value.location!,
   status: this.form.value.status!
   // attendees :''

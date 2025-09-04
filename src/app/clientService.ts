@@ -6,6 +6,7 @@ import { SurveyObj } from "./models/survey.model";
 import { Meeting } from "./models/meeting.models";
 import { HttpClient } from "@angular/common/http";
 import { Person } from "./models/person.model";
+import { Attendance } from "./models/attendance.model";
 
 @Injectable({
     providedIn : 'root'
@@ -193,9 +194,9 @@ private http = inject(HttpClient)
 
      }
 
-       captureAttences(arg0: { attendeeId: number; user: { id: number; name: string; surname: string; phoneNumber: string; email: string; }; meeting: { id: number; title: string; description: string; startTime: string; endTime: string; location: string; status: string; date: string; }; }) {
-    throw new Error('Method not implemented.');
-  }
+  captureAttences(meeting : Meeting) {
+      this.http.patch("/api/update-meeting",meeting).subscribe()
+   }
     
 
     

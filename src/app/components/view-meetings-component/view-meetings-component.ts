@@ -146,7 +146,8 @@ export class ViewMeetingsComponent {
 
 
 onAdd() {
-    this.router.navigate(['/edit-company/meetings/add-meeting']);
+    // this.router.navigate(['/edit-company/meetings/add-meeting']);
+    this.router.navigate(['attendace-register'])
 }
 
 onQrCode(meeting:Meeting) {

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ClientService } from '../../clientService';
+import { Meeting } from '../../models/meeting.models';
+import { Person } from '../../models/person.model';
 
 @Component({
   selector: 'app-attence-register',
@@ -9,14 +11,19 @@ import { ClientService } from '../../clientService';
   styleUrl: './attence-register.css'
 })
 export class AttenceRegister {
+   meetings:Meeting[] = [{
+      id:1,
+      title:"Project",
+      description:"Register Attendence",
+      startTime:"07:00",
+      endTime:"10:00",
+      date : '',
+      location:"03 Smollet road",
+      status:"Happening",
+      
+    },]
 
   constructor(private clientService : ClientService){}
-
-  name ='';
-  surname = '';
-  email ='';
-  phoneNumber ='';
-  date ='';
   form = new FormGroup({
     name :new FormControl(''),
     surname : new FormControl(''),
@@ -24,41 +31,25 @@ export class AttenceRegister {
     phoneNumber : new FormControl(''),
     date : new FormControl('') ,
 
-    tittle :new FormControl(''),
-    description:new FormControl(''),
-    startTime :new FormControl(''),
-    endTime : new FormControl(''),
-    location : new FormControl(''),
-    status: new FormControl(''),
+    
     })
    
 
    captureAttendecy(){
-    this.clientService.captureAttences({
-      attendeeId :0,
-      user : {
-        id:0,
+   let  meeting : Meeting = this.meetings.find((meeting)=>meeting.id == 1)!
+   let people : Person[] =[
+      {
+      id :0,
         name :this.form.value.name!,
         surname :this.form.value.surname!,
-        phoneNumber : this .form.value.phoneNumber!,
+        employNO : '',
         email : this.form.value.email!
-      },
-      meeting : {
+    }
+   ]
+   meeting.people = people
 
-          id:0,
-  title :this.form.value.tittle!,
-  description: this.form.value.description!,
-  startTime: this.form.value.startTime!,
-  endTime: this.form.value.endTime!,
-  location : this.form.value.location!,
-  status : this.form.value.startTime!,
-  date:this.form.value.date!
-
-      }
-
-    })
-    const attence = this.form.value
-  console.log(attence)
+    this.clientService.captureAttences(meeting)
+  
 
    }
 

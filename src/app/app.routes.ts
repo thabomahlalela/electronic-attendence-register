@@ -11,6 +11,7 @@ import { Survey } from './components/survey/survey';
 import { ViewUsers } from './components/view-users/view-users';
 import { ViewMeetingsComponent } from './components/view-meetings-component/view-meetings-component';
 import { CaptureMeeting } from './components/capture-meeting/capture-meeting';
+import { AttenceRegister } from './components/attedance-register/attence-register';
 
 export const routes: Routes = [
     {
@@ -84,6 +85,10 @@ export const routes: Routes = [
         path:'survey:title',
         component:Survey,
     },
+    {
+        path : 'attendace-register',
+        component : AttenceRegister
+    }
 
     
 
