@@ -1,4 +1,15 @@
 
+
+ <div id="container">
+    <div id="header">
+        <header>
+            <h3>
+                meetings
+            </h3>
+        </header>
+    </div>
+    <div id="list-of-meetings">
+        
 <table>
      
         <thead>
@@ -17,19 +28,24 @@
         </thead>
 
         <tbody>
-             @for(user of meetings; track user.id) {
+             @for(meeting of meetings; track meeting.id) {
                   <tr  >
                
-                <td>{{user.tittle}}</td>
-                <td>{{user.description}}</td>
-                <td>{{user.startTime}}</td>
-                <td>{{user.endTime}}</td>
-                <td>{{user.location}}</td>
-                <td>{{user.status}}</td>
+                <td>{{meeting.tittle}}</td>
+                <td>{{meeting.tittle}}</td>
+                <td>{{meeting.description}}</td>
+                <td>{{meeting.startTime}}</td>
+                <td>{{meeting.endTime}}</td>
+                <td>{{meeting.location}}</td>
+                <td>{{meeting.status}}</td>
                 <td> 
                     
                     <button class="icons" matMiniFab>
                             <mat-icon>delete_outline</mat-icon>
+                    </button>
+
+                    <button id="qr-code-btn" class="icons" matMiniFab (click)="onQrCode(meeting)">
+                            <mat-icon>qr_code</mat-icon>
                     </button>
                 </td>
 
@@ -47,6 +63,11 @@
 
  </table>
 
- <button id="add-button" class="icons" matMiniFab>
+ <button id="add-button" class="icons" matMiniFab (click)="onAdd()">
             +
  </button>
+    </div>
+    <div id="routed-view">
+        <router-outlet/> 
+    </div>
+ </div>

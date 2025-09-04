@@ -3,16 +3,7 @@ p{
     margin-left: 180px;
 }
 
- table {
-      /* overflow-y: scroll; */
-   
-    /* width: 1550px;
-    border-collapse: collapse;
-    box-shadow: 0 5px 10px lightslategray;
-    background-color: white;
-    text-align: left;
-    overflow: hidden; */
- }
+ 
 
  thead {
     box-shadow: 0 5px 10px lightgrey;

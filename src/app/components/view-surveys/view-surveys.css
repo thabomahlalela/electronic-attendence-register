@@ -151,6 +151,8 @@ table {
     color: darkblue;
  }
 
+
+
   tr:nth-child(even) {
    background-color: whitesmoke;
  }

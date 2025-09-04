@@ -1,7 +1,7 @@
 <div class="container">
     <div>
         <header id="header">
-            <h1>my company</h1>
+            <h1>{{getCompany.name}}</h1>
         </header>
     </div>
 
@@ -12,7 +12,7 @@
             <li>Home</li>
             <li (click)="onSurveys()">Surveys</li>
             <li (click)="onUsers()">Users</li>
-            <li>Meetings</li>
+            <li (click)="onMeetings()">Meetings</li>
          </ul>
        </div>
         <div id="view-container">

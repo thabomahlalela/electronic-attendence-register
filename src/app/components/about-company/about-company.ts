@@ -1,7 +1,7 @@
 import { Component, inject} from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { Router, RouterOutlet } from '@angular/router';
-import { ViewSurveys } from '../../view-surveys/view-surveys';
+import { ViewSurveys } from '../view-surveys/view-surveys';
 import { ViewUsers } from "../view-users/view-users";
 
 
@@ -13,6 +13,7 @@ import { QRCodeComponent } from 'angularx-qrcode';
 import { GenerateQrCode } from '../generate-qr-code/generate-qr-code';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatListModule } from '@angular/material/list';
+import { ClientService } from '../../clientService';
 
  
 @Component({
@@ -23,6 +24,8 @@ import { MatListModule } from '@angular/material/list';
 })
 export class AboutCompany {
   router = inject(Router);
+  service = inject(ClientService);
+   
   
 
   onSurveys() {
@@ -31,5 +34,13 @@ export class AboutCompany {
 
   onUsers() {
      this.router.navigate(['edit-company/users']);
+  }
+
+  onMeetings() {
+    this.router.navigate(['edit-company/meetings'])
+  }
+
+  get getCompany() {
+    return this.service.company;
   }
 }

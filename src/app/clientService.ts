@@ -9,6 +9,7 @@ import { Meeting } from "./models/meeting.models";
     providedIn : 'root'
 })
 export class ClientService{
+    private viewedCompany!:Company;
     companies:Company[]= [
         {
             id:1,
@@ -112,6 +113,11 @@ export class ClientService{
     get getCompanies() {
         return this.companies
     }
+
+    setClickedCompany(company:Company) {
+        this.viewedCompany = company;
+        console.log(this.viewedCompany.name)
+    }
     
 
       registerCompany(company : Company) :void{
@@ -131,6 +137,10 @@ export class ClientService{
 
     get getOptions() {
         return this.clientOptions
+    }
+
+    get company() {
+        return this.viewedCompany;
     }
 }
    

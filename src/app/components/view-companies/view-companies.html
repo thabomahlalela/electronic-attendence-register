@@ -3,7 +3,7 @@
     <div id="my-div">
         <div class="search-bar">
              <form id="formSearch" [formGroup]="form">
-                <button  matMiniFab>
+                <button  id="icon-btn" matMiniFab>
                 
                  <mat-icon id="icon">search</mat-icon>
                  
@@ -48,7 +48,7 @@
 
         <tbody>
              @for(company of myCompanies; track company.id) {
-                  <tr  (dblclick)="onCompany()">
+                  <tr  (click)="onCompany(company)">
                
                 <td>{{company.id}}</td>
                 <td>{{company.name}}</td>

@@ -18,21 +18,21 @@ route = inject(ActivatedRoute);
 cdr = inject(ChangeDetectorRef);
 router = inject(Router);
 title!:string;
-url ='';
+surveyORMeeting!:string;
+incomingURL ='';
+url ='url';
 isLoading = false;
 isGenerate = true;
 destroy = inject(DestroyRef);
 
  
 ngOnInit(): void {
-       
-        
-     
 
         this.route.paramMap.subscribe(param => {
         this.title = param.get('title')!;
-
-        this.url = '/survey/' + this.title;
+        this.surveyORMeeting = param.get('surveyORMeeting')!;
+        
+          
       });
       
       
@@ -46,6 +46,14 @@ ngOnInit(): void {
      this.cdr.detectChanges()
      console.log(this.isLoading)
         },5000)  
+
+
+
+        if(this.surveyORMeeting === "MEETING") {
+            this.url = '/attendece-register';
+          } else {
+            this.url = 'http://localhost:4200/edit-company/surveys';
+          }
   }
 
   onView() {
