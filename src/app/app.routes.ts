@@ -4,8 +4,12 @@ import { ViewCompanies } from './components/view-companies/view-companies';
 import { CompanyRegistrationForm } from './components/company-registration-form/company-registration-form';
 import { AboutCompany } from './components/about-company/about-company';
 import { CreateUser } from './components/create-user/create-user';
-import { ViewSurveys } from './view-surveys/view-surveys';
+import { ViewSurveys } from './components/view-surveys/view-surveys';
 import { CaptureSurvey } from './components/capture-survey/capture-survey';
+import { GenerateQrCode } from './components/generate-qr-code/generate-qr-code';
+import { Survey } from './components/survey/survey';
+import { ViewUsers } from './components/view-users/view-users';
+import { ViewMeetingsComponent } from './components/view-meetings-component/view-meetings-component';
 import { CaptureMeeting } from './components/capture-meeting/capture-meeting';
 
 export const routes: Routes = [
@@ -31,23 +35,57 @@ export const routes: Routes = [
     {
         path:'edit-company',
         component:AboutCompany,
+        children:[
+            {
+                path:'surveys',
+                component:ViewSurveys,
+                children:[
+                    {
+                path:'add-survey',
+                component:CaptureSurvey
+            },
+            {
+                path:'generate-qr-code/:title/:surveyORMeeting',
+                component:GenerateQrCode
+            },
+            
+                  ]
+            },
+            {
+         
+                path:'users',
+               component:ViewUsers,
+               children: [
+                {
+                    path:'create-user',
+                    component:CreateUser,
+                }
+               ]
+    
+            },
+            {
+                path:'meetings',
+                component:ViewMeetingsComponent,
+                children:[
+                    {
+                        path:'add-meeting',
+                        component:CaptureMeeting
+                    },
+                    {
+                        path:'generate-qr-code/:title/:surveyORMeeting',
+                        component:GenerateQrCode,
+                    }
+                ]
+            }
+            
+        ]
+    },
+    {
+        path:'survey:title',
+        component:Survey,
+    },
 
-    },{
-        path : 'create-user',
-        component :CreateUser
-    },
-    {
-        path : 'capture-survey',
-        component : CaptureSurvey
-    }
-    ,{
-        path : 'capture-meeting',
-        component : CaptureMeeting
-    },
-    {
-        // path : 'capture-attendance',
-        // component : 
-    }
+    
 
 
   

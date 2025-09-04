@@ -12,6 +12,7 @@ import { Person } from "./models/person.model";
 })
 export class ClientService{
 private http = inject(HttpClient)
+    private viewedCompany!:Company;
     companies:Company[]= [
         {
             id:1,
@@ -115,6 +116,11 @@ private http = inject(HttpClient)
     get getCompanies() {
         return this.companies
     }
+
+    setClickedCompany(company:Company) {
+        this.viewedCompany = company;
+        console.log(this.viewedCompany.name)
+    }
     
 
       registerCompany(company : Company) :void{
@@ -196,6 +202,10 @@ private http = inject(HttpClient)
 
     get getOptions() {
         return this.clientOptions
+    }
+
+    get company() {
+        return this.viewedCompany;
     }
 }
    

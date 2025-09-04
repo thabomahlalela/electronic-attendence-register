@@ -4,12 +4,12 @@ import { Person } from '../../models/person.model';
 import { EditUser } from '../../edit-user';
 import { MatIcon } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { Router } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 
 
 @Component({
   selector: 'app-view-users',
-  imports: [EditUser, MatIcon, MatButtonModule],
+  imports: [EditUser, MatIcon, MatButtonModule, RouterOutlet],
   templateUrl: './view-users.html',
   styleUrl: './view-users.css'
 })
@@ -24,7 +24,7 @@ private router = inject(Router)
   }
 
   onClick() {
-      this.router.navigate(['create-user'])
+      this.router.navigate(['/edit-company/users/create-user'])
   }
 
   removeUser(user : string){

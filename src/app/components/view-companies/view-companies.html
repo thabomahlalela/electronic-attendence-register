@@ -3,14 +3,14 @@
     <div id="my-div">
         <div class="search-bar">
              <form id="formSearch" [formGroup]="form">
-                <button id="icon-btn"  matMiniFab>
+                <button  id="icon-btn" matMiniFab>
                 
                  <mat-icon id="icon">search</mat-icon>
                  
                </button>
              
              <input type="text" name="enteredSearchedStudent" [placeholder]="'search'"  formControlName ="searchControl" />
-             <button type="submit">submit</button>
+             <button type="submit" class="my-btn" matButton="elevated">submit</button>
         </form>
 
         </div>
@@ -23,7 +23,7 @@
                  
                </button>
                <input  type="text" name="enteredDeregistedStudent" [placeholder]="'de-register'"  formControlName ="deregisterControl"/>
-               <button type="submit" >submit</button>
+               <button type="submit" class="my-btn" matButton="elevated">submit</button>
             </form>
             
         </div>
@@ -48,7 +48,7 @@
 
         <tbody>
              @for(company of myCompanies; track company.id) {
-                  <tr  (dblclick)="onCompany()">
+                  <tr  (click)="onCompany(company)">
                
                 <td>{{company.id}}</td>
                 <td>{{company.name}}</td>

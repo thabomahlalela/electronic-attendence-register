@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatIcon } from '@angular/material/icon';
 import { debounceTime, Subscription } from 'rxjs';
+import { Company } from '../../models/company.models';
 
 @Component({
   selector: 'app-view-companies',
@@ -63,7 +64,8 @@ export class ViewCompanies {
     this.router.navigate(['/register-company'])
   }
 
-  onCompany(){
+  onCompany(company:Company){
+    this.service.setClickedCompany(company);
     this.router.navigate(['/edit-company'])
   }
 }

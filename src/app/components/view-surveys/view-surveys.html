@@ -1,0 +1,94 @@
+ <div id="container">
+  
+  <div id="header">
+    <header >
+      <h3>
+        Survey
+      </h3>
+    </header>
+  </div>
+    
+        <div id="list-of-surveys">
+          
+          <button matMiniFab (click)="onAdd()">
+            <mat-icon>add_circle_outline</mat-icon>
+          </button>
+         <table>
+     
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+           
+              @for(survey of getSurvey; track survey.id) {
+                 <tr > 
+                <th>01</th>
+                <th (click)="onSurvey(survey)">{{survey.title}}</th>
+                 <button id="btn-icon" matMiniFab (click)="onDeleteSurvey(survey)">
+                  <mat-icon id="icon">delete</mat-icon>
+                 </button>
+                 <button  id="btn-icon-delete" matMiniFab (click)="onGenerateQRCode(survey)">
+                   <mat-icon>qr_code</mat-icon>
+                 </button>
+                </tr>
+              }
+            
+        </tbody>
+ </table>
+        </div>
+  
+
+   
+
+    @if(isSurveyClicked) {
+       <div id="more-about-survey">
+        <div id="title">
+          <header >
+           <h4>{{clickedSurvey.title}}</h4>
+          </header>
+        </div>
+
+        <div id="questions">
+          <div id="questions-header">
+            <header>Questions</header>
+          </div>
+          <ul>
+          @for(question of getClickedSurvey.question; track question.id) {
+            <li (click)="onQuestion(question)" >{{question.question}}</li>
+          }
+          </ul>
+        </div>
+        <div id="answers">
+          <div id="amswers-header">
+            <header>Answers</header>
+             
+         
+           
+          @if(isQuesttionClicked) {
+             <ul>
+          @for(answer of getClickedQuestion.answers ; track $index+1) {
+            <li >{{answer}}</li>
+          }
+          </ul>
+          }
+          
+          </div>
+        </div>
+    </div>
+    }
+
+    <div id="routed-view">
+      <router-outlet/>
+    </div>
+ 
+ </div>
+   
+      
+ 
+ 
+

@@ -1,97 +1,26 @@
 <div class="container">
     <div>
         <header id="header">
-            <h1>my company</h1>
+            <h1>{{getCompany.name}}</h1>
         </header>
     </div>
 
     
     <div id="container2">
-       
-        <div id="stats">
-            <div id="date">
-        <button></button>
-        <label class="labels">Number of surveys</label>
-        <span class="numbers">30</span>
-    </div>
-
-    <div id="number-of-users">
-        <button></button>
-        <label class="labels">Number of users</label>
-        <span class="numbers">30</span>
-
-    </div>
-
-     <div id="number-of-scheduled-meetings">
-        <button></button>
-        <label class="labels">Number of scheduled-meetings</label>
-        <span class="numbers">30</span>
-    </div>
+       <div id="menu">
+         <ul>
+            <li>Home</li>
+            <li (click)="onSurveys()">Surveys</li>
+            <li (click)="onUsers()">Users</li>
+            <li (click)="onMeetings()">Meetings</li>
+         </ul>
+       </div>
+        <div id="view-container">
+             <router-outlet/>
         </div>
-        
 
-    <div id="comapany-info">
-        <div id="c-header">
-             
-            <h2 id="company-header">company-info</h2>
-        </div>
-        
-        <button id="update-info-btn" class="icons" matFab>
-                  update
-            </button>
-             <app-company-info-component></app-company-info-component> 
-    </div>
-
-    <div id="surveys">
-        <div id="c-header">
-            <h2 id="surveys-header">surveys</h2>
-        </div>
-        <div id="survey-icons">
-             
-        </div>
-        <div>
-
-            <app-view-surveys/>
-        </div>
-    </div>
-
-    <div id="user">
-        <h2 id="users-header">company-users</h2>
-        
-        <div id="view-users">
-            <app-view-users></app-view-users>
-            
-        </div>
-        <!-- <router-outlet></router-outlet> -->
-         
-    </div>
-    
-
-    <div id="meetings">
-        <div id="c-header">
-            <h2 id="meetings-header">scheduled meetings</h2>
-        </div>
-         
-
-        <div id="view-meetings">
-            <app-view-meetings-component></app-view-meetings-component>
-        </div>
-         
-    
-
-    </div>
-
-    </div>
-
-     <div id="generate-div">
-        <button   mat-raised-button [matMenuTriggerFor]="menu">Generate Qr code</button>
-          <mat-menu #menu="matMenu">
-            <button mat-menu-item>Meeting</button>
-            <button mat-menu-item>Survey</button>
-          </mat-menu>
-        </div>
 
     </div>
     
-    <router-outlet/>
+   
  

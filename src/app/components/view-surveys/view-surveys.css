@@ -1,0 +1,183 @@
+#container{
+     
+     /* border: solid red; */
+     width: 100%;
+    min-height: auto;
+
+    
+}
+
+/* #div {
+     width: 100%;
+} */
+
+#survey {
+     display: flex;
+     flex-direction: column;
+     gap: 15px;
+     width: 1090px;
+     height: auto;
+     position: absolute;
+     margin-top: -30px;
+     /* border: solid darkblue; */
+}
+
+#my-header {
+       margin-left: 180px;
+}
+
+ul {
+     display: flex;
+     flex-direction: column;
+     list-style: none;
+     gap: 15px;
+}
+
+.add-button {
+   position: fixed;
+   position: absolute;
+   margin-top: -80px;
+   margin-left: 1000px;
+   width: 40px;
+   height: 40px;
+   background-color: white;
+}
+
+button {
+     background-color: white;
+}
+
+ 
+
+#list-of-surveys {
+     position: absolute;
+     width: 1000px;
+     min-height: auto;
+     /* border: solid darkblue; */
+     margin-left: 30px;
+     margin-top: 10px;
+}
+
+
+
+#more-about-survey {
+     width: 800px;
+     min-height: 200px;
+     margin-left: 1050px;
+     margin-top: 10px;
+     border: solid darkblue;
+     border-radius: 30px;
+
+}
+
+#questions {
+     width: 390px;
+     min-height: 300px;
+     border: solid darkblue;
+}
+
+#amswers-header {
+     width: 100%;
+     height: 20px;
+     text-align: center;
+     border: solid darkblue;
+}
+
+#questions-header {
+     width: 100%;
+     height: 20px;
+     text-align: center;
+     border: solid darkblue;
+}
+
+#answers {
+     /* position: absolute; */
+     width: 50%;
+     min-height: 300px;
+     border: solid darkblue;
+     margin-left: 400px;
+     margin-top: -305px;
+}
+
+ 
+#title {
+     width: 100%;
+     height: 50px;
+     /* border: solid darkblue; */
+     text-align: center;
+     color: darkblue;
+}
+
+ 
+#icon {
+     margin-top: 5px;
+    
+}
+
+#btn-icon {
+     margin-top: 10px;
+     margin-left: 400px;
+     width: 30px;
+     height: 30px;
+}
+
+#btn-icon-delete {
+     position: absolute;
+      margin-top: 14px;
+      margin-left: 15px;
+     width: 30px;
+     height: 30px;
+}
+
+table {
+     width: 100%;
+      border-collapse: collapse;
+    box-shadow: 0 5px 10px lightslategray;
+    background-color: white;
+    text-align: left;
+    overflow: hidden;
+}
+
+ thead {
+    box-shadow: 0 5px 10px lightgrey;
+ }
+
+  th {
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: 0.7rem;
+    font-weight: 900;
+    color: darkblue;
+ }
+
+
+
+  tr:nth-child(even) {
+   background-color: whitesmoke;
+ }
+
+ tr:hover {
+    box-shadow: 0 5px 10px lightslategray;
+
+ }
+
+
+
+#header {
+     width: 1885px;
+     height: 50px;
+     border: solid darkblue;
+     border-bottom-left-radius: 30px;
+     border-bottom-right-radius: 30px;
+     text-align: center;
+     color: darkblue;
+}
+
+#routed-view {
+     width: 750px;
+     min-height: 500px;
+     /* border: solid darkblue; */
+     margin-left: 1060px;
+     margin-top: 10px;
+}
