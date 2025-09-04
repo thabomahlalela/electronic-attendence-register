@@ -28,4 +28,26 @@ export class ViewComplaintsComponent {
 
 
 
+ newQuestion2:Question = {
+    id:0,
+      question:"No",
+      answers:["I am not happy not so happy not sooooooooooo happpyyyyyyyyyyyyyyy","hfyt","I am not happy not so happy not sooooooooooo happpyyyyyyyyyyyyyyy",
+        "I am not happy not so happy not sooooooooooo happpyyyyyyyyyyyyyyy","I am not happy not so happy not sooooooooooo happpyyyyyyyyyyyyyyy",
+        "I am not happy not so happy not sooooooooooo happpyyyyyyyyyyyyyyy","I am not happy not so happy not sooooooooooo happpyyyyyyyyyyyyyyy",
+        "I am not happy not so happy not sooooooooooo happpyyyyyyyyyyyyyyy","I am not happy not so happy not sooooooooooo happpyyyyyyyyyyyyyyy",
+        "I am not happy not so happy not sooooooooooo happpyyyyyyyyyyyyyyy","I am not happy not so happy not sooooooooooo happpyyyyyyyyyyyyyyy",
+        "I am not happy not so happy not sooooooooooo happpyyyyyyyyyyyyyyy","I am not happy not so happy not sooooooooooo happpyyyyyyyyyyyyyyy",
+      ]
+    };
+  
+
+get reason(){
+    return this.newQuestion;
+  }
+
+
+
+
+
+
 }

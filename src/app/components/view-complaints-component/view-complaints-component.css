@@ -1,11 +1,11 @@
-#box{
+#box1{
     width:500px;
     height: 500px;
     margin: 50px auto;;
     border: 1px solid #ccc;
-     overflow-y: auto;  
-    margin-left: 800px;
-    margin-top: 300px;
+    overflow-y: auto;  
+    margin-left: 1200px;
+    margin-top: 200px;
     
     padding: 20px;
     border-radius: 10px;
@@ -19,3 +19,24 @@ h3{
     padding: 20px;
 }
 
+#box{
+     width:500px;
+    height: 500px;
+    margin: 50px auto;;
+    border: 1px solid #ccc;
+     overflow-y: auto;  
+    margin-left: 300px;
+    margin-top: -600px;
+    
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+}
+#header{
+     font-size: large;
+    font-weight: 500px;
+    color: black;
+    margin-left: 160px;
+    padding: 20px;
+}

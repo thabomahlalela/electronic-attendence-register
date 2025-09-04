@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { Question } from '../../models/question.model';
-
+import { ClientService } from '../../clientService';
 
 @Component({
   selector: 'app-comments-component',
@@ -11,6 +11,10 @@ import { Question } from '../../models/question.model';
   styleUrl: './comments-component.css'
 })
 export class CommentsComponent {
+
+  constructor( private dataService:ClientService){
+
+  }
   reasons?:Question[];
   click =false;
   
@@ -37,22 +41,36 @@ export class CommentsComponent {
   }
 
   onSubmit(){
-
-    
-    const answering: Question ={
+    this.dataService.comments({
       id:0,
-    question:this.answer,
-    answers:[this.reason]
+      question:this.answer,
+      answers:[
+        this.reason
+        
 
-  }
-  this.reasons?.push(answering)
+      ]
+    }
+
+
+    )
+  
+   }
+  
+    
+  //   const answering: Question ={
+  //     id:0,
+  //   question:this.answer,
+  //   answers:[this.reason]
+
+  // }
+  // this.reasons?.push(answering)
  
 
 
     
-   console.log(answering)
+  //  console.log(answering)
 
-   }
+   
 
   
 

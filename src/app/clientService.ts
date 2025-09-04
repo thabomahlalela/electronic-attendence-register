@@ -4,11 +4,52 @@ import { Company } from "./models/company.models";
 import { Survey } from "./components/survey/survey";
 import { SurveyObj } from "./models/survey.model";
 import { Meeting } from "./models/meeting.models";
+import { Question } from "./models/question.model";
+import { HttpClient } from "@angular/common/http";
+import { inject } from "@angular/core";
 
 @Injectable({
     providedIn : 'root'
 })
 export class ClientService{
+    private httpClient = inject(HttpClient);
+
+comments(comment:Question){
+        this.httpClient.post("/api/add-comment",comment).subscribe( {
+            // next:(resData) => {
+            //     alert(resData.message)
+
+            // }
+        }
+
+        )
+        console.log(comment)
+
+    
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     companies:Company[]= [
         {
             id:1,
@@ -132,5 +173,9 @@ export class ClientService{
     get getOptions() {
         return this.clientOptions
     }
+
+
+    
 }
+
    

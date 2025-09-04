@@ -1,0 +1,10 @@
+#container {
+    width: 500px;
+    min-height: 500px;
+    margin-left: 110px;
+    border: solid darkblue;
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+    
+}
