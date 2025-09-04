@@ -179,8 +179,7 @@ export const DUMMY_SURVEY : SurveyObj[]= [
                 id :0,
                 question:'How satisfied are you with our products/service?',
                 answers:[
-                    'its okay',
-                    'its fine'
+                    'im very satisfied with the product'
                 ]
             },
             {

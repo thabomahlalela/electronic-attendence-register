@@ -116,7 +116,7 @@ button {
 
 #btn-icon {
      margin-top: 10px;
-     margin-left: 400px;
+     margin-left: 40px;
      width: 30px;
      height: 30px;
 }
@@ -165,7 +165,7 @@ table {
 
 
 #header {
-     width: 1885px;
+     width: 1899px;
      height: 50px;
      border: solid darkblue;
      border-bottom-left-radius: 30px;
@@ -180,4 +180,9 @@ table {
      /* border: solid darkblue; */
      margin-left: 1060px;
      margin-top: 10px;
+}
+
+li {
+     background-color: grey;
+     margin-left: -44px;
 }

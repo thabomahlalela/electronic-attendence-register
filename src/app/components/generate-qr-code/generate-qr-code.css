@@ -9,15 +9,17 @@
     
 }
 
-#url {
+#heading {
      width: 250px;
      height: 30px;
      border-radius: 30px;
-     margin-left: 150px;
+     margin-left: 220px;
+     font-weight: 900;
+     color: darkblue;
 }
 
 #generate-btn {
-    width: 200px;
+    width: 300px;
 }
 
 #view-btn {
@@ -52,6 +54,6 @@ input {
     gap: 40px;
     width: 300px;
     height: 50px;
-    margin-left: 120px;
+    margin-left: 90px;
     /* border: solid darkblue; */
 }

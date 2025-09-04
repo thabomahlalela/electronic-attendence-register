@@ -45,7 +45,7 @@ export const routes: Routes = [
                 component:CaptureSurvey
             },
             {
-                path:'generate-qr-code/:title/:surveyORMeeting',
+                path:'generate-qr-code/:id/:surveyORMeeting',
                 component:GenerateQrCode
             },
             
@@ -81,9 +81,14 @@ export const routes: Routes = [
         ]
     },
     {
-        path:'survey:title',
+        path:'survey/:id',
         component:Survey,
     },
+
+    {
+        path:'qr-code-full-screen',
+        component:GenerateQrCode,
+    }
 
     
 

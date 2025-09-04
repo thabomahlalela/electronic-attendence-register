@@ -67,12 +67,10 @@
           <div id="amswers-header">
             <header>Answers</header>
              
-         
-           
           @if(isQuesttionClicked) {
              <ul>
           @for(answer of getClickedQuestion.answers ; track $index+1) {
-            <li >{{answer}}</li>
+            <li ><p>{{answer}}</p></li>
           }
           </ul>
           }

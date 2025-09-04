@@ -1,13 +1,17 @@
 
 <div id="container">
-
-    <div id="header">
+      <div id="header">
         <header>
             <h3>
                Users
             </h3>
         </header>
     </div>
+
+
+
+    <div id="list-of-users">
+      
         <div id="user-icons">
              <button  (click)="onClick()" class="add-Icon" matMiniFab>
                  +
@@ -46,7 +50,11 @@
             
         </tbody>
  </table>
+    </div>
+    
 
- <router-outlet/>
+<div id="routed-view">
+    <router-outlet/>
+</div>
 </div>
 

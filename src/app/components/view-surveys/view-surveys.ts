@@ -49,6 +49,7 @@ onList() {
     this.isSurveyClicked = true;
      
     this.clickedSurvey = survey;
+     this.cdr.detectChanges()
 
      this.router.navigate(['/edit-company/surveys']);
   }
@@ -62,11 +63,12 @@ onList() {
 
   onGenerateQRCode(survey:SurveyObj) {
     this.isSurveyClicked = false;
-    const title = survey.title
+    const id = survey.id;
     const surveyORMeeting = "SURVEY";
+     
     // this.url.emit('/survey');
     console.log('emit')
-    this.router.navigate(['/edit-company/surveys/generate-qr-code',  `${title}`, `${surveyORMeeting}`]);
+    this.router.navigate(['/edit-company/surveys/generate-qr-code', `${id}`, `${surveyORMeeting}`]);
 
   }
 

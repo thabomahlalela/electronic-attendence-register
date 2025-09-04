@@ -3,6 +3,7 @@ import {DUMMY_SURVEY} from '../dummies/dummy-survey';
 import {SurveyObj}from '../../models/survey.model'
 import { FormArray, FormBuilder, FormControl, FormGroup, NgForm, NgModel, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -13,13 +14,21 @@ import { CommonModule } from '@angular/common';
 })
 export class Survey implements OnInit {
     
+    route = inject(ActivatedRoute);
     surveys : SurveyObj[]  = DUMMY_SURVEY;
     private fb = inject(FormBuilder);;
     form! : FormGroup;
+    id!:number;
 
     ngOnInit(): void {
+      this.route.paramMap.subscribe(param => {
+        this.id = parseInt(param.get('id')!) ;
+        console.log(this.id)
+      
+      });
      this.form = new FormGroup({
-         options : this.fb.array(this.surveys.find((s)=>s.title==='health')!.questions!.map(s =>new FormControl(),Validators.required))
+         options : this.fb.array(this.surveys.find((s)=>s.id==this.id)!.questions!.map(s =>new FormControl(),Validators.required))
+
      })
     }
 
@@ -30,9 +39,9 @@ export class Survey implements OnInit {
      onSubmit(){
       console.log(this.form.value.options[0],this.form.value.options[1],this.form.value.options[2],this.form.value.options[3],this.form.value.options[3])
 
-      for(let i =0;i < this.surveys.find((s)=>s.title==='health')!.questions!.length;i++){
-        this.surveys.find((s)=>s.title==='health')!.questions![i].answers = this.form.value.options[i]
-        console.log(this.surveys.find((s)=>s.title==='health')!.questions![i].question +" Answer " + this.form.value.options[i] )
+      for(let i =0;i < this.surveys.find((s)=>s.id== this.id)!.questions!.length;i++){
+        this.surveys.find((s)=>s.id== this.id)!.questions![i].answers = this.form.value.options[i]
+        console.log(this.surveys.find((s)=>s.id== this.id)!.questions![i].question +" Answer " + this.form.value.options[i] )
       }
 
       console.log(this.surveys.find((s)=>s.title==='health')!.questions)
@@ -40,7 +49,7 @@ export class Survey implements OnInit {
      }
 
      get survey() {
-      return this.surveys.find((s)=>s.title==='health')
+      return this.surveys.find((s)=>s.id== this.id)
      }
 
 
