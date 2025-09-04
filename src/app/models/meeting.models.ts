@@ -1,3 +1,4 @@
+import { Person } from "./person.model";
 
 
 export interface Meeting{
@@ -9,5 +10,5 @@ export interface Meeting{
     date :string;
     location : string;
     status : string;
-    // attendees?:User[];
+    people?:Person[];
 }

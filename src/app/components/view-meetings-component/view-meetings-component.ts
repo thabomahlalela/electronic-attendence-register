@@ -146,13 +146,14 @@ export class ViewMeetingsComponent {
 
 
 onAdd() {
-    this.router.navigate(['/edit-company/meetings/add-meeting']);
+    // this.router.navigate(['/edit-company/meetings/add-meeting']);
+    this.router.navigate(['attendace-register'])
 }
 
 onQrCode(meeting:Meeting) {
-     const title = meeting.title;
+     const id = meeting.id;
     const surveyORMeeting = "MEETING";
-    this.router.navigate(['/edit-company/meetings/generate-qr-code', `${title}`, `${surveyORMeeting}`]);
+    this.router.navigate(['/edit-company/meetings/generate-qr-code', `${id}`, `${surveyORMeeting}`]);
 }
 
 }

@@ -50,7 +50,7 @@ ngOnInit(): void {
 
 
         if(this.surveyORMeeting === "MEETING") {
-            this.url = '/attendece-register';
+            this.url = `http://localhost:4200/attendace-register/${this.id}`;
           } else {
             this.url = `http://localhost:4200/survey/${this.id}`;
           }
