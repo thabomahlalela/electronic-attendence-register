@@ -1,10 +1,11 @@
-import { ChangeDetectionStrategy, Component, OnInit, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit, signal } from '@angular/core';
 import { MatExpansionModule } from '@angular/material/expansion';
  
  import { DUMMY_SURVEY } from '../components/dummies/dummy-survey';
 import { MatIcon } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { SurveyObj } from '../models/survey.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-view-surveys',
@@ -19,6 +20,7 @@ export class ViewSurveys implements OnInit {
 
  readonly panelOpenState = signal(false);
  data = DUMMY_SURVEY;
+ private router = inject(Router)
 
   ngOnInit(): void {
     
@@ -34,6 +36,10 @@ onDeleteSurvey(survey:SurveyObj) {
     console.log(this.data[i].title)
   }
    
+}
+
+addSurvey(){
+  this.router.navigate(['/capture-survey'])
 }
 
 get getSurvey() {

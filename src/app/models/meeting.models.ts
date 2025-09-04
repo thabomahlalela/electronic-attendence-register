@@ -1,4 +1,4 @@
-import { User } from "./user.model";
+
 
 export interface Meeting{
     id :number;
@@ -6,6 +6,7 @@ export interface Meeting{
     description: string;
     startTime :string;
     endTime :string;
+    date :string;
     location : string;
     status : string;
     // attendees?:User[];

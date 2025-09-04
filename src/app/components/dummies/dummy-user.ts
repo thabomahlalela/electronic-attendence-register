@@ -1,6 +1,6 @@
-import { User } from "../../models/user.model";
+import { Person } from "../../models/person.model";
 
-export const DUMMY_USERS : User[] = [{
+export const DUMMY_USERS : Person[] = [{
         id : 1,
         name : 'Jabu',
         surname : 'sibiya',

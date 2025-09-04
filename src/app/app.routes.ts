@@ -5,6 +5,8 @@ import { CompanyRegistrationForm } from './components/company-registration-form/
 import { AboutCompany } from './components/about-company/about-company';
 import { CreateUser } from './components/create-user/create-user';
 import { ViewSurveys } from './view-surveys/view-surveys';
+import { CaptureSurvey } from './components/capture-survey/capture-survey';
+import { CaptureMeeting } from './components/capture-meeting/capture-meeting';
 
 export const routes: Routes = [
     {
@@ -33,6 +35,18 @@ export const routes: Routes = [
     },{
         path : 'create-user',
         component :CreateUser
+    },
+    {
+        path : 'capture-survey',
+        component : CaptureSurvey
+    }
+    ,{
+        path : 'capture-meeting',
+        component : CaptureMeeting
+    },
+    {
+        // path : 'capture-attendance',
+        // component : 
     }
 
 

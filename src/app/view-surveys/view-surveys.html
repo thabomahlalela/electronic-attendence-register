@@ -23,7 +23,7 @@
 
     <p>questions</p>
     <ul>
-        @for (q of q.question; track q.id) {
+        @for (q of q.questions; track q.id) {
             <li>
                   <mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
     <mat-expansion-panel-header>
@@ -50,7 +50,7 @@
 
     
  </div>
-  <button class="add-button" matMiniFab>
+  <button class="add-button" (click)="addSurvey()" matMiniFab>
                  +
             </button>
     <div id="survey">

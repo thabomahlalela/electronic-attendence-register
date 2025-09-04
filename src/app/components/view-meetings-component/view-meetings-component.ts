@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
-import { Meeting } from '../../models/capture-meeting';
+import { Component, inject } from '@angular/core';
+import {Meeting} from '../../models/meeting.models'
 import { MatIcon } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,15 +12,16 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './view-meetings-component.css'
 })
 export class ViewMeetingsComponent {
-
+ private router = inject(Router);
 
 
   meetings:Meeting[] = [{
     id:1,
-    tittle:"Project",
+    title:"Project",
     description:"Register Attendence",
     startTime:"07:00",
     endTime:"10:00",
+    date : '',
     location:"03 Smollet road",
     status:"Happening",
     
@@ -27,10 +29,11 @@ export class ViewMeetingsComponent {
 {
 
     id:2,
-    tittle:"Project",
+    title:"Project",
     description:"Register Attendence",
     startTime:"07:00",
     endTime:"10:00",
+    date : '',
     location:"03 Smollet road",
     status:"Happening",
     
@@ -38,10 +41,11 @@ export class ViewMeetingsComponent {
 {
 
     id:3,
-    tittle:"Project",
+    title:"Project",
     description:"Register Attendence",
     startTime:"07:00",
     endTime:"10:00",
+    date : '',
     location:"03 Smollet road",
     status:"Happening",
     
@@ -50,10 +54,11 @@ export class ViewMeetingsComponent {
 {
 
     id:4,
-    tittle:"Project",
+    title:"Project",
     description:"Register Attendence",
     startTime:"07:00",
     endTime:"10:00",
+    date : '',
     location:"03 Smollet road",
     status:"Happening",
     
@@ -62,10 +67,11 @@ export class ViewMeetingsComponent {
 {
 
     id:5,
-    tittle:"Project",
+    title:"Project",
     description:"Register Attendence",
     startTime:"07:00",
     endTime:"10:00",
+    date : '',
     location:"03 Smollet road",
     status:"Happening",
     
@@ -74,7 +80,8 @@ export class ViewMeetingsComponent {
 {
 
     id:6,
-    tittle:"Project",
+    title:"Project",
+    date : '',
     description:"Register Attendence",
     startTime:"07:00",
     endTime:"10:00",
@@ -86,9 +93,10 @@ export class ViewMeetingsComponent {
 {
 
     id:7,
-    tittle:"Project",
+    title:"Project",
     description:"Register Attendence",
     startTime:"07:00",
+    date : '',
     endTime:"10:00",
     location:"03 Smollet road",
     status:"Happening",
@@ -98,10 +106,11 @@ export class ViewMeetingsComponent {
 {
 
     id:8,
-    tittle:"Project",
+    title:"Project",
     description:"Register Attendence",
     startTime:"07:00",
     endTime:"10:00",
+    date : '',
     location:"03 Smollet road",
     status:"Happening",
     
@@ -110,10 +119,11 @@ export class ViewMeetingsComponent {
 {
 
     id:9,
-    tittle:"Project",
+    title:"Project",
     description:"Register Attendence",
     startTime:"07:00",
     endTime:"10:00",
+    date : '',
     location:"03 Smollet road",
     status:"Happening",
     
@@ -122,34 +132,21 @@ export class ViewMeetingsComponent {
 {
 
     id:10,
-    tittle:"Project",
+    title:"Project",
     description:"Register Attendence",
     startTime:"07:00",
     endTime:"10:00",
+    date : '',
     location:"03 Smollet road",
     status:"Happening",
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ]
+
+
+addMeeting(){
+    this.router.navigate(['/capture-meeting'])
+}
 
 
 
