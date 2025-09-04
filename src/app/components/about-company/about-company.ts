@@ -28,4 +28,8 @@ export class AboutCompany {
   onSurveys() {
     this.router.navigate(['edit-company/surveys'])
   }
+
+  onUsers() {
+     this.router.navigate(['edit-company/users']);
+  }
 }

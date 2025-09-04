@@ -116,6 +116,7 @@ button {
 
 #btn-icon {
      margin-top: 10px;
+     margin-left: 400px;
      width: 30px;
      height: 30px;
 }
@@ -174,7 +175,7 @@ table {
 #routed-view {
      width: 750px;
      min-height: 500px;
-     border: solid darkblue;
+     /* border: solid darkblue; */
      margin-left: 1060px;
      margin-top: 10px;
 }

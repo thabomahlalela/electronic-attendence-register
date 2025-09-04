@@ -1,34 +1,33 @@
-import { Component, DestroyRef, inject, Input, OnInit } from '@angular/core';
-import { RequiredValidator } from '@angular/forms';
+import { ChangeDetectorRef, Component, DestroyRef, inject, Input, OnInit } from '@angular/core';
+import { FormsModule, RequiredValidator } from '@angular/forms';
 import { MatButton } from '@angular/material/button';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { QRCodeComponent } from 'angularx-qrcode';
 import { interval } from 'rxjs';
 
 
 @Component({
   selector: 'app-generate-qr-code',
-  imports: [QRCodeComponent, MatButton],
+  imports: [QRCodeComponent, MatButton, FormsModule],
   templateUrl: './generate-qr-code.html',
   styleUrl: './generate-qr-code.css'
 })
 export class GenerateQrCode implements OnInit {
   
-
 route = inject(ActivatedRoute);
+cdr = inject(ChangeDetectorRef);
+router = inject(Router);
 title!:string;
-url =''
-isLoading = true;
+url ='';
+isLoading = false;
+isGenerate = true;
 destroy = inject(DestroyRef);
 
  
 ngOnInit(): void {
        
         
-      setTimeout(() =>{
-          this.a
-
-      }, 500)
+     
 
         this.route.paramMap.subscribe(param => {
         this.title = param.get('title')!;
@@ -39,8 +38,23 @@ ngOnInit(): void {
       
   }
 
-  a() {
-    this.isLoading = false;
+  onGenerate() {
+     this.isLoading=true;
+     this.isGenerate = false;
+        setTimeout(()=> {
+     this.isLoading=!this.isLoading;
+     this.cdr.detectChanges()
+     console.log(this.isLoading)
+        },5000)  
+  }
+
+  onView() {
+    
+  }
+
+
+  get getIsloading() {
+    return this.isLoading;
   }
 
  

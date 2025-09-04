@@ -1,14 +1,23 @@
 <div id="container">
-  <input id="url"/>
+  <input id="url" [(ngModel)]="url"/>
+   
 
-  @if(isLoading) {
+   
+    @if(getIsloading) {
     <img width="500" height="500" src="https://cdn-icons-gif.flaticon.com/7994/7994392.gif"/>
-  } 
-  
-  @if(!isLoading) {
+  }@else {
     <qrcode [colorLight]="'#0000000'" [qrdata]="url" [width]="500" [errorCorrectionLevel]="'M'"></qrcode>
-  }
 
-  <button mat-raised-button>Generate</button>
+  }
   
+   
+
+  
+
+  <div id="btns">
+
+    <button id="generate-btn" mat-raised-button (click)="onGenerate()">Generate</button>
+    <button [disabled]="isGenerate" id="view-btn" mat-raised-button (click)="onView()">View</button>
+    
+  </div>
 </div>

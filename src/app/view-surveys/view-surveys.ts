@@ -29,6 +29,8 @@ export class ViewSurveys implements OnInit {
  clickedSurvey!:SurveyObj;
  clickedQuestion!:Question;
  isSurveyClicked=false;
+ isGenerateQrCode = false;
+ isAddSurvey = false;
  isQuesttionClicked = false;
  readonly panelOpenState = signal(false);
  data = DUMMY_SURVEY;
@@ -44,10 +46,16 @@ onList() {
 
   onSurvey(survey:SurveyObj) {
     this.isSurveyClicked = true;
+     
     this.clickedSurvey = survey;
+
+     this.router.navigate(['/edit-company/surveys']);
   }
 
+  
+
   onAdd() {
+     this.isSurveyClicked = false;
     this.router.navigate(['/edit-company/surveys/add-survey']);
   }
 
