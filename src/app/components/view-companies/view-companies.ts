@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectorRef, Component, inject } from '@angular/core';
 import { ClientService } from '../../clientService';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
@@ -18,7 +18,8 @@ export class ViewCompanies {
 
  private service = inject(ClientService);
  private router = inject(Router);
- private companies = this.service.getCompanies
+ private companies! : Company[] 
+private cdr = inject(ChangeDetectorRef);
  subscription! : Subscription;
  form = new FormGroup({
       searchControl : new FormControl()
@@ -30,6 +31,14 @@ export class ViewCompanies {
 
 
    constructor(){
+    this.service.viewCompanies().subscribe(
+        {
+            next : (s)=>{
+              this.companies = s
+              this.cdr.detectChanges()
+            } 
+        }
+    )
      this.subscription = this.form.controls.searchControl.valueChanges.pipe(debounceTime(300)).subscribe((value : string)=>{
       this.companies=this.service.getCompanies.filter(item => item.name.toLowerCase().startsWith(value.toLowerCase()))
       console.log(value)

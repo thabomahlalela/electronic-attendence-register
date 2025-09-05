@@ -197,6 +197,14 @@ private http = inject(HttpClient)
   captureAttences(meeting : Meeting) {
       this.http.patch("/api/update-meeting",meeting).subscribe()
    }
+
+   captureSurveyAnswers(survey : SurveyObj){
+        this.http.patch("/api/update-question",survey).subscribe();
+   }
+
+   viewCompanies(){
+     return this.http.get<Company[]>("/api/view-companies")
+   }
     
 
     

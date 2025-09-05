@@ -59,7 +59,7 @@ export class AttenceRegister {
    
 
    captureAttendecy(){
-   let  meeting : Meeting = this.meetings.find((meeting)=>meeting.id == 1)!
+   let  meeting : Meeting = this.meetings.find((meeting)=>meeting.id == this.id)!
    let people : Person[] =[
       {
       id :0,
