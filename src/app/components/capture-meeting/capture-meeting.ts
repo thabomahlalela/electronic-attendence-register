@@ -49,7 +49,7 @@ captureMeeting():void{
   endTime :this.form.value.endTime!,
   date : this.form.value.date!,
   location:this.form.value.location!,
-  status: this.form.value.status!
+  status: 'UPCOMING'
   // attendees :''
 
   })

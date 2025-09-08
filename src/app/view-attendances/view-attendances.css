@@ -1,0 +1,84 @@
+p{
+    margin-top: 100px;
+    margin-left: 180px;
+}
+
+ 
+
+ thead {
+    box-shadow: 0 5px 10px lightgrey;
+     
+ }
+
+ 
+  #routed-view {
+   width: 500px;
+   height: 400px;
+   margin-left: 1300px;
+   margin-top: -410px;
+   /* border: solid darkblue; */
+  }
+
+  #list-of-users {
+   /* width: 700px;
+   height: 500px; */
+   /* border: solid darkblue; */
+   margin-left: 30px;
+   margin-top: 30px;
+  }
+
+  td {
+   padding: 5px;
+   color: grey;
+ } 
+
+ tr:nth-child(even) {
+   background-color: whitesmoke;
+ }
+
+ tr:hover {
+    box-shadow: 0 5px 10px lightslategray;
+
+ }
+
+ 
+
+ .icons {
+    width: 40px; 
+   height: 40px; 
+
+   background-color: white;
+}
+.add-Icon{
+   margin: 15px;
+   margin-left: 500px;
+    width: 40px; 
+   height: 40px; 
+   background-color: white;
+}
+
+table {
+   width: 600px;
+}
+
+#container {
+   width: 600px;
+   min-height: 500px;
+   /* border: solid red; */
+}
+
+#header {
+    width: 600px;
+     height: 40px;
+     border: solid darkblue;
+     border-bottom-left-radius: 30px;
+     border-bottom-right-radius: 30px;
+     text-align: center;
+     color: darkblue;
+} 
+
+#user-icons {
+   margin-left: 570px;
+}
+
+

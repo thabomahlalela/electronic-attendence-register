@@ -7,6 +7,7 @@ import { Meeting } from "./models/meeting.models";
 import { HttpClient } from "@angular/common/http";
 import { Person } from "./models/person.model";
 import { Attendance } from "./models/attendance.model";
+import { Question } from "./models/question.model";
 
 @Injectable({
     providedIn : 'root'
@@ -14,88 +15,8 @@ import { Attendance } from "./models/attendance.model";
 export class ClientService{
 private http = inject(HttpClient)
     private viewedCompany!:Company;
-    companies:Company[]= [
-        {
-            id:1,
-            name:'metaware',
-            city:'Orkney',
-            registrationNO : '1234',
-            address:'smalet street',
-            sector:'Tech',
-            email:'metaware@gmail.com',
-            telNo:'0123783',
-            status:'active',
-        },
-         {
-            id:2,
-            name:'meta',
-            city:'Orkney',
-              registrationNO : '12345',
-            address:'smalet street',
-            sector:'email',
-            email:'metaware@gmail.com',
-            telNo:'0126783',
-            status:'active',
-        },
-        {
-            id:2,
-            name:'meta',
-            city:'Orkney',
-              registrationNO : '12346',
-            address:'smalet street',
-            sector:'email',
-            email:'metaware@gmail.com',
-            telNo:'0126783',
-            status:'active',
-        },
-        {
-            id:2,
-            name:'meta',
-            city:'Orkney',
-            registrationNO : '12346',
-            address:'smalet street',
-            sector:'email',
-            email:'metaware@gmail.com',
-            telNo:'0126783',
-            status:'active',
-        },
-        {
-            id:2,
-            name:'meta',
-            city:'Orkney',
-            registrationNO : '12346',
-            address:'smalet street',
-            sector:'email',
-            email:'metaware@gmail.com',
-            telNo:'0126783',
-            status:'active',
-        },
-        {
-            id:2,
-            name:'meta',
-            city:'Orkney',
-            registrationNO : '12346',
-            address:'smalet street',
-            sector:'email',
-            email:'metaware@gmail.com',
-            telNo:'0126783',
-            status:'active',
-        },
-         {
-            id:2,
-            name:'meta',
-            registrationNO : '12346',
-            city:'Orkney',
-            address:'smalet street',
-            sector:'email',
-            email:'metaware@gmail.com',
-            telNo:'0126783',
-            status:'active',
-        },
-
-    ]
-    
-
+    private viewedSurvey! : SurveyObj;
+    private viewedMeeting! : Meeting;
     clientOptions= [
         {
             id:'1',
@@ -114,10 +35,7 @@ private http = inject(HttpClient)
         }
     ]
 
-    get getCompanies() {
-        return this.companies
-    }
-
+   
     setClickedCompany(company:Company) {
         this.viewedCompany = company;
         console.log(this.viewedCompany.name)
@@ -133,43 +51,18 @@ private http = inject(HttpClient)
       captureSurvey(survey: SurveyObj):void{
         console.log(survey)
         let surveys : SurveyObj[] = []
-        surveys.push(survey)
-        let company : Company = {
-                id : 1,
-                name:'metawre',
-                city:'orkney',
-                registrationNO : '12343556',
-                address: 'smollet str 3',
-                sector:'Tech',
-                email: 'metaware@co.za',
-                telNo: '124453662',
-                status:'ACTIVE',
-                surveys : surveys
-        }
-
-        this.http.patch("/api/capture-surveys",company).subscribe();
+        surveys.push(survey) 
+        this.company.surveys = surveys
+        this.http.patch("/api/capture-surveys",this.company).subscribe();
 
 
       }
 
     captureMeeting(meeting: Meeting):void{
-        console.log(meeting);
         let meetings: Meeting[] = []
         meetings.push(meeting);
-         let company : Company = {
-                id : 1,
-                name:'metawre',
-                city:'orkney',
-                registrationNO : '12343556',
-                address: 'smollet str 3',
-                sector:'Tech',
-                email: 'metaware@co.za',
-                telNo: '124453662',
-                status:'ACTIVE',
-                meetings : meetings
-        }
-
-         this.http.patch("/api/capture-surveys",company).subscribe();
+        this.company.meetings = meetings
+        this.http.patch("/api/capture-surveys",this.company).subscribe();
 
      }  
 
@@ -177,20 +70,8 @@ private http = inject(HttpClient)
          console.log(person);
         let people: Person[] = []
         people.push(person);
-         let company : Company = {
-                id : 1,
-                name:'metawre',
-                city:'orkney',
-                registrationNO : '12343556',
-                address: 'smollet str 3',
-                sector:'Tech',
-                email: 'metaware@co.za',
-                telNo: '124453662',
-                status:'ACTIVE',
-                people : people
-        }
-
-        this.http.post("/api/capture-person",company).subscribe()
+        this.company.people = people
+         this.http.post("/api/capture-person",this.company).subscribe()
 
      }
 
@@ -205,10 +86,36 @@ private http = inject(HttpClient)
    viewCompanies(){
      return this.http.get<Company[]>("/api/view-companies")
    }
-    
 
-    
+   viewSurvey(){
+    console.log(this.company.id)
+     return this.http.get<SurveyObj[]>(`/api/view-surveys/${this.company.id}`)
+   }
+   setClickedSurvey(survey :SurveyObj){
+    this.viewedSurvey = survey;
+   }
+   viewQuestions(){
+        console.log(this.viewedSurvey.id)
+        return this.http.get<Question[]>(`/api/view-Questions/${this.viewedSurvey.id}`)
+   }
 
+   viewAnswers(questionId : number){
+        return this.http.get<Question>(`/api/view-Answers/${questionId}`)
+   }
+
+   viewEmployees(){
+         return this.http.get<Person[]>(`/api/view-Employees/${this.company.id}`)
+   }
+   viewMeetings(){
+        return this.http.get<Meeting[]>(`/api/View-Meetings/${this.company.id}`)
+   }
+
+   viewAttendance(){
+         return this.http.get<Person[]>(`/api/view-attendances/${this.viewedMeeting.id}`)
+   }
+   setClickedMeeting(meeting : Meeting){
+        this.viewedMeeting = meeting
+   }
     get getOptions() {
         return this.clientOptions
     }

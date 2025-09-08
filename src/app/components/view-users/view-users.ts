@@ -1,10 +1,11 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectorRef, Component, Inject, inject } from '@angular/core';
 import {DUMMY_USERS} from '../dummies/dummy-user'
 import { Person } from '../../models/person.model';
 import { EditUser } from '../../edit-user';
 import { MatIcon } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { Router, RouterOutlet } from '@angular/router';
+import { ClientService } from '../../clientService';
 
 
 @Component({
@@ -16,8 +17,18 @@ import { Router, RouterOutlet } from '@angular/router';
 export class ViewUsers {
 
 
-private users : Person[] = DUMMY_USERS
+// private users : Person[] = DUMMY_USERS
+private users! : Person[]
 private router = inject(Router)
+private clientService = inject(ClientService)
+private  cdr = inject(ChangeDetectorRef);
+constructor(){
+  this.clientService.viewEmployees().subscribe({
+    next : (e)=>{
+      this.users = e
+      this.cdr.detectChanges()
+    }})
+}
 
   get getUsers(){
     return this.users

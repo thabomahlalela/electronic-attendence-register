@@ -58,7 +58,7 @@
             <header>Questions</header>
           </div>
           <ul>
-          @for(question of getClickedSurvey.questions; track question.id) {
+          @for(question of getQuestion; track question.id) {
             <li (click)="onQuestion(question)" >{{question.question}}</li>
           }
           </ul>
@@ -69,7 +69,7 @@
              
           @if(isQuesttionClicked) {
              <ul>
-          @for(answer of getClickedQuestion.answers ; track $index+1) {
+          @for(answer of getAnswers ; track $index+1) {
             <li ><p>{{answer}}</p></li>
           }
           </ul>

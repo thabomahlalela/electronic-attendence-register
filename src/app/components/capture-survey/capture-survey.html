@@ -7,7 +7,7 @@
         <label>Title:</label>
         <input type="text" name="title" formControlName="title">
     </p>
-    <form>
+    <form >
         <p>
         <label >Questions:</label>
         <input type="text"  name="questions"   formControlName="question">
@@ -34,6 +34,11 @@
 
     </form>
 
+</div>
+<div>
+    @for (item of questions; track item.id) {
+        <li>{{item.question}}</li>
+    }
 </div>
 
 
