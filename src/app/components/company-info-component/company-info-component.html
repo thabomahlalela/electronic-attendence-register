@@ -62,39 +62,35 @@
       
       
          <label id="name-label">Name:</label>
-         <!-- <input class="name"  [value]="info.name"  readonly appEditCompanyInfo [company]="info" /> -->
+         <input class="name" (click)="onUpdate()"  [value]="info.name"  readonly appEditCompanyInfo [company]="info" />
             
+            <label id="registrationNo">RegistrationNo:</label>
+            <input class="registrationNo" [value]="info.registrationNO" readonly appEditCompanyInfo [company]="info" />
+
+            <label id="sector-label">Sector:</label>
+         <input class="sector" [value]="info.sector" readonly appEditCompanyInfo [company]="info" />
             
-            
-         <!-- <label id="city">City:</label>
+         <label id="city-label">City:</label>
          <input  class="city" [value]="info.city"  readonly appEditCompanyInfo [company]="info" />
 
          
-         <label id="sector">Sector:</label>
-         <input class="sector" [value]="info.sector" readonly appEditCompanyInfo [company]="info" />
+         
 
          
          <label id="address">Address:</label>
-         <input class="address" [value]="info.address" readonly appEditCompanyInfo [company]="info" /> -->
+         <input class="address" [value]="info.address" readonly appEditCompanyInfo [company]="info" />
 
-   
+          <label id="telNo">TelNo:</label>
+        <input class="telNo" [value]="info.telNo" readonly appEditCompanyInfo [company]="info" />
 
-                                                            
-    <!-- <div id="divtwo">
+        <label id="email">Email:</label>
+    <input class="email" [value]="info.email" readonly appEditCompanyInfo [company]="info" />
+
     <label id="status" >Status:</label>
     <input class="status" [value]="info.status"  readonly appEditCompanyInfo [company]="info"/>
 
-     <label id="email">Email:</label>
-    <input class="email" [value]="info.email" readonly appEditCompanyInfo [company]="info" />
-
-     <label id="telNo">TelNo:</label>
-    <input class="telNo" [value]="info.telNo" readonly appEditCompanyInfo [company]="info" />
-
-    <label id="registrationNo">RegistrationNo:</label>
-    <input class="registrationNo" [value]="info.registrationNO" readonly appEditCompanyInfo [company]="info" />
+    <button id="update-btn" mat-raised-button [disabled]="isUpdate">update</button>
     
-    
-     </div> -->
     </div>
 
      
