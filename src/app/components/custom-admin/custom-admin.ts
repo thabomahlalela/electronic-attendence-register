@@ -12,7 +12,6 @@ export class CustomAdmin {
 
   onAdd(){
     this.router.navigate(['/custom-admin/view-surveys'])
-    console.log('click me')
    
   }
 
@@ -25,4 +24,11 @@ export class CustomAdmin {
     this.router.navigate(['/custom-admin/view-meetings'])
 
   }
+
+
+
+
+
+
+
 }

@@ -26,8 +26,13 @@ quee!: Question;
   
   form = new FormGroup({
      title: new FormControl(''),
-     question: new FormControl(''),
+     
      description: new FormControl(''),
+  })
+  form1 = new FormGroup({
+  
+     question: new FormControl(''),
+     
   })
 
 
@@ -36,7 +41,7 @@ quee!: Question;
    
     this.questions.push({
       id : 0,
-      question : this.form.value.question!,
+      question : this.form1.value.question!,
     })!
 
     // console.log(this.form.value.question)
