@@ -50,6 +50,8 @@ private http = inject(HttpClient)
     
 
       registerCompany(company : Company) :void{
+        console.log(company)
+        this.http.post("/api/capture-company",company).subscribe({});
 
         
       }
@@ -132,7 +134,7 @@ private http = inject(HttpClient)
 
 
     getComplaints(): Observable<Question[]>{
-        return this.http.get<Question[]>("/api/viewComplaints")
+        return this.http.get<Question[]>(`/api/viewComplaints/${this.company.id}`)
     }
     deleteComplaints(numbers:number){
         this.http.delete(`/api/deleteComplaints/${numbers}`).subscribe({

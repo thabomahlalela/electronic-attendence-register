@@ -4,8 +4,8 @@
     margin: 50px auto;;
     border: 1px solid #ccc;
     overflow-y: auto;  
-    margin-left: 1200px;
-    margin-top: 200px;
+    margin-left: 700px;
+    margin-top: 50px;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -26,7 +26,7 @@ h3{
     margin: 50px auto;;
     border: 1px solid #ccc;
     overflow-y: auto;  
-    margin-left: 300px;
+    margin-left: 70px;
     margin-top: -600px;
     padding: 20px;
     border-radius: 10px;
@@ -48,15 +48,54 @@ h3{
     width: 100%;
 }
 #rebon{
-    background-color:blue;
-    height: 70px;
+    
+   
+    width: 1899px;
+     height: 50px;
+     border: solid darkblue;
+     border-bottom-left-radius: 30px;
+     border-bottom-right-radius: 30px;
+     text-align: center;
+     
 }
 .icons{
     
    transform: translate(440px,-60px);
-   
 }
+   
+
 .icon{
   transform: translate(440px,-60px);  
+} 
+#headers{
+    margin-top: -5px;
+    margin-left: -20px;
+    color: darkblue;
+    
 }
+#header{
+    color: darkblue;
+}
+#complaints{
+    color: darkblue;
+}
+.icon{
+    background-color: white;
+}
+.icons{
+    background-color: white;
+}
+#qr-code{
 
+ width:500px;
+    height: 500px;
+    margin: 50px auto;;
+    border: 1px solid #ccc;
+     
+    margin-left: 1350px;
+    margin-top: -586px;
+    
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}

@@ -9,10 +9,12 @@
     <div id="container2">
        <div id="menu">
          <ul>
-            <li>Home</li>
-            <li (click)="onSurveys()">Surveys</li>
-            <li (click)="onUsers()">Users</li>
-            <li (click)="onMeetings()">Meetings</li>
+            <li (click)="onHome()">Home</li>
+            <li id="surveys" (click)="onSurveys()">Surveys</li>
+            <li id="users" (click)="onUsers()">Users</li>
+             <li id="comments" (click)="onComments()">Comments</li>  
+            <li id="meetings" (click)="onMeetings()">Meetings</li>
+            <li id="company-info" (click)="onCompanyInfo()">Company-info</li>
          </ul>
        </div>
         <div id="view-container">

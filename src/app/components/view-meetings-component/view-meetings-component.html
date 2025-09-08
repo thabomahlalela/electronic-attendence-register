@@ -39,6 +39,9 @@
                 <td>{{meeting.status}}</td>
                 <td> 
                     
+                    <button (click)="onDeleteMeeting(meeting)" class="icons" matMiniFab>
+                            <mat-icon>delete_outline</mat-icon>
+                    </button>
                     
                    
                     @if(meeting.status === 'UPCOMING'){
