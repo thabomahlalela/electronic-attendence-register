@@ -9,6 +9,8 @@
         </header>
     </div>
     <div id="list-of-meetings">
+
+  <button id="myButton" matMiniFab (click)="onAdd()">+</button>      
         
 <table>
      
@@ -48,7 +50,7 @@
                         </button>
                     }@else {
                         <button id="qr-code-btn" class="icons" matMiniFab (click)="onViewAttendance(meeting)">
-                            <mat-icon>view</mat-icon>
+                            <mat-icon>view_module</mat-icon>
                         </button>
                     }
                     
@@ -67,7 +69,7 @@
 
 
  </table>
- <button  (click)="onAdd()">+</button>
+ 
 
  <button id="add-button" class="icons" matMiniFab (click)="onAdd()">
             +
