@@ -94,6 +94,12 @@ p{
 }
 #myButton{
    margin-left: 1000px;
+   background-color: white;
+}
+#refreshBtn{
+   margin-bottom: -1000px;
+   margin-left: 950px;
+   background-color: white;
 }
 
  
