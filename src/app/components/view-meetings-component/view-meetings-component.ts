@@ -15,11 +15,15 @@ import { ClientService } from '../../clientService';
   styleUrl: './view-meetings-component.css'
 })
 export class ViewMeetingsComponent {
-   private router = inject(Router)
+    private router = inject(Router);
+    private cdr = inject(ChangeDetectorRef);
+    private _snackBar = inject(MatSnackBar);
+    message = 'meeting deleted';
+    action ='undo';
+  
    private meetings! : Meeting[]
    private clientService = inject(ClientService);
-   private  cdr = inject(ChangeDetectorRef);
-
+   
    constructor(){
     this.clientService.viewMeetings().subscribe({
         next : (m)=>{
