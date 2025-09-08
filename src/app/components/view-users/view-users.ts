@@ -6,6 +6,7 @@ import { MatIcon } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { Router, RouterOutlet } from '@angular/router';
 import { ClientService } from '../../clientService';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -22,6 +23,9 @@ private users! : Person[]
 private router = inject(Router)
 private clientService = inject(ClientService)
 private  cdr = inject(ChangeDetectorRef);
+private _snackBar = inject(MatSnackBar);
+message = 'user deleted';
+action = "undo";
 constructor(){
   this.clientService.viewEmployees().subscribe({
     next : (e)=>{
@@ -38,7 +42,18 @@ constructor(){
       this.router.navigate(['/edit-company/users/create-user'])
   }
 
-  removeUser(user : string){
-    this.users = this.users.filter((s)=> s.employNO !== user)
+  removeUser(user : Person){
+    this.users = this.users.filter((s)=> s.employNO !== user.employNO)
+    let snackBarRef = this._snackBar.open(this.message, this.action, {duration:5000});
+
+    snackBarRef.afterDismissed().subscribe(() => {
+      console.log("snackbar dismised")
+    });
+
+    snackBarRef.onAction().subscribe(() => {
+      this.users.push(user);
+        this.cdr.detectChanges()
+    
+    })
   }
 }
