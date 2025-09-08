@@ -13,6 +13,7 @@ import { ViewMeetingsComponent } from './components/view-meetings-component/view
 import { CaptureMeeting } from './components/capture-meeting/capture-meeting';
 import { AttenceRegister } from './components/attedance-register/attence-register';
 import { CompanyInfoComponent } from './components/company-info-component/company-info-component';
+import { ViewAttendances } from './view-attendances/view-attendances';
 
 export const routes: Routes = [
     {
@@ -80,6 +81,10 @@ export const routes: Routes = [
                     {
                         path:'generate-qr-code/:id/:surveyORMeeting',
                         component:GenerateQrCode,
+                    },
+                    {
+                        path : 'view-attendaces',
+                        component : ViewAttendances
                     }
                 ]
             }

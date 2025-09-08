@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectorRef, Component, inject } from '@angular/core';
 import { ClientService } from '../../clientService';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
@@ -18,7 +18,9 @@ export class ViewCompanies {
 
  private service = inject(ClientService);
  private router = inject(Router);
- private companies = this.service.getCompanies
+ private companies! : Company[] 
+ private viewCompanies! : Company[]
+private cdr = inject(ChangeDetectorRef);
  subscription! : Subscription;
  form = new FormGroup({
       searchControl : new FormControl()
@@ -30,16 +32,27 @@ export class ViewCompanies {
 
 
    constructor(){
+    this.service.viewCompanies().subscribe(
+        {
+            next : (s)=>{
+              this.companies = s
+              this.viewCompanies = s
+              this.cdr.detectChanges()
+            } 
+        }
+    )
      this.subscription = this.form.controls.searchControl.valueChanges.pipe(debounceTime(300)).subscribe((value : string)=>{
-      this.companies=this.service.getCompanies.filter(item => item.name.toLowerCase().startsWith(value.toLowerCase()))
+      this.companies = this.getCompanies.filter(item => item.name.toLowerCase().startsWith(value.toLowerCase()))
+      this.cdr.detectChanges()
       console.log(value)
     })
 
 
     this.subscription = this.formDeregister.controls.deregisterControl.valueChanges.pipe(debounceTime(300)).subscribe((value : string)=>{
-      this.companies=this.service.getCompanies.filter(item => item.registrationNO.toLowerCase() === (value.toLowerCase()))
+      this.companies=this.getCompanies.filter(item => item.registrationNO.toLowerCase() === (value.toLowerCase()))
+      this.cdr.detectChanges()
       if(value=== ""){
-        this.companies = this.service.getCompanies
+        this.companies = this.getCompanies
       }
       console.log(value)
     })
@@ -51,9 +64,19 @@ export class ViewCompanies {
   }
 
   onDeregister() {
-       let company = this.companies.find((s)=>s.registrationNO === s.registrationNO)
+    console.log(this.formDeregister.value.deregisterControl)
+       let company = this.getCompanies.find((s)=>s.registrationNO === this.formDeregister.value.deregisterControl)
+    if(company){
+      this.companies = this.getCompanies.filter((s)=>s.registrationNO !== this.formDeregister.value.deregisterControl)
+      this.viewCompanies = this.companies
        console.log(company?.name,company?.email)
+    }
+      
   } 
+
+  get getCompanies(){
+    return this.viewCompanies;
+  }
 
 
   get myCompanies() {
