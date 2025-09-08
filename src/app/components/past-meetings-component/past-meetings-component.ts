@@ -12,52 +12,50 @@ import { Meeting } from '../../models/meeting.models';
 export class PastMeetingsComponent {
 
 
-meetings:Meeting[] = [
-    {
-    id:1,
-    title:"Project",
-    description:"Register Attendence 2",
-    startTime:"07:00",
-    endTime:"10:00",
-    location:"03 Smollet road",
-    status:"Happening",
-    attendees:[
-      {
-        id:1,
-        name:"Peggy",
-        surname:"Scheepers",
-        email:"",
-        employNO:"",
-      },
+// meetings:Meeting[] = [
+//     {
+//     id:1,
+//     title:"Project",
+//     description:"Register Attendence 2",
+//     startTime:"07:00",
+//     endTime:"10:00",
+//     location:"03 Smollet road",
+//     status:"Happening",
+//     attendees:[
+//       {
+//         id:1,
+//         name:"Peggy",
+//         surname:"Scheepers",
+//         email:"",
+//         employNO:"",
+//       },
 
-{
-        id:1,
-        name:"Thabo",
-        surname:"Mahlalela",
-        email:"",
-        employNO:"",
-      },
-
-
-{
-        id:1,
-        name:"Jabu",
-        surname:"Sibiya",
-        email:"",
-        employNO:"",
-      },
+// {
+//         id:1,
+//         name:"Thabo",
+//         surname:"Mahlalela",
+//         email:"",
+//         employNO:"",
+//       },
 
 
+// {
+//         id:1,
+//         name:"Jabu",
+//         surname:"Sibiya",
+//         email:"",
+//         employNO:"",
+//       },
 
-     {
-        id:1,
-        name:"Tehilla",
-        surname:"Sokoti",
-        email:"",
-        employNO:"",
-      } 
 
 
+//      {
+//         id:1,
+//         name:"Tehilla",
+//         surname:"Sokoti",
+//         email:"",
+//         employNO:"",
+//       } 
 
 
 
@@ -68,134 +66,136 @@ meetings:Meeting[] = [
 
 
 
-    ]
+
+
+//     ]
     
-  },
-{
-
-    
-    id:2,
-    title:"Project",
-    description:"Register Attendence",
-    startTime:"07:00",
-    endTime:"10:00",
-    location:"03 Smollet road",
-    status:"Happening",
-    
-},
-{
+//   },
+// {
 
     
-    id:3,
-    title:"Project",
-    description:"Register Attendence",
-    startTime:"07:00",
-    endTime:"10:00",
-    location:"03 Smollet road",
-    status:"Happening",
+//     id:2,
+//     title:"Project",
+//     description:"Register Attendence",
+//     startTime:"07:00",
+//     endTime:"10:00",
+//     location:"03 Smollet road",
+//     status:"Happening",
     
-},
-
-{
-
-    
-    id:4,
-    title:"Project",
-    description:"Register Attendence",
-    startTime:"07:00",
-    endTime:"10:00",
-    location:"03 Smollet road",
-    status:"Happening",
-    
-},
-
-{
+// },
+// {
 
     
-    id:5,
-    title:"Project",
-    description:"Register Attendence",
-    startTime:"07:00",
-    endTime:"10:00",
-    location:"03 Smollet road",
-    status:"Happening",
+//     id:3,
+//     title:"Project",
+//     description:"Register Attendence",
+//     startTime:"07:00",
+//     endTime:"10:00",
+//     location:"03 Smollet road",
+//     status:"Happening",
     
-},
+// },
 
-{
-
-    
-    id:6,
-    title:"Project",
-    description:"Register Attendence",
-    startTime:"07:00",
-    endTime:"10:00",
-    location:"03 Smollet road",
-    status:"Happening",
-    
-},
-
-{
+// {
 
     
-    id:7,
-    title:"Project",
-    description:"Register Attendence",
-    startTime:"07:00",
-    endTime:"10:00",
-    location:"03 Smollet road",
-    status:"Happening",
+//     id:4,
+//     title:"Project",
+//     description:"Register Attendence",
+//     startTime:"07:00",
+//     endTime:"10:00",
+//     location:"03 Smollet road",
+//     status:"Happening",
     
-},
+// },
 
-{
+// {
 
     
-    id:8,
-    title:"Project",
-    description:"Register Attendence",
-    startTime:"07:00",
-    endTime:"10:00",
-    location:"03 Smollet road",
-    status:"Happening",
+//     id:5,
+//     title:"Project",
+//     description:"Register Attendence",
+//     startTime:"07:00",
+//     endTime:"10:00",
+//     location:"03 Smollet road",
+//     status:"Happening",
     
-},
+// },
 
-{
+// {
+
+    
+//     id:6,
+//     title:"Project",
+//     description:"Register Attendence",
+//     startTime:"07:00",
+//     endTime:"10:00",
+//     location:"03 Smollet road",
+//     status:"Happening",
+    
+// },
+
+// {
+
+    
+//     id:7,
+//     title:"Project",
+//     description:"Register Attendence",
+//     startTime:"07:00",
+//     endTime:"10:00",
+//     location:"03 Smollet road",
+//     status:"Happening",
+    
+// },
+
+// {
+
+    
+//     id:8,
+//     title:"Project",
+//     description:"Register Attendence",
+//     startTime:"07:00",
+//     endTime:"10:00",
+//     location:"03 Smollet road",
+//     status:"Happening",
+    
+// },
+
+// {
 
    
-    id:9,
-    title:"Project",
-    description:"Register Attendence",
-    startTime:"07:00",
-    endTime:"10:00",
-    location:"03 Smollet road",
-    status:"Happening",
+//     id:9,
+//     title:"Project",
+//     description:"Register Attendence",
+//     startTime:"07:00",
+//     endTime:"10:00",
+//     location:"03 Smollet road",
+//     status:"Happening",
     
-},
+// },
 
-{
+// {
 
     
-    id:10,
-    title:"Project",
-    description:"Register Attendence",
-    startTime:"07:00",
-    endTime:"10:00",
-    location:"03 Smollet road",
-    status:"Happening",
+//     id:10,
+//     title:"Project",
+//     description:"Register Attendence",
+//     startTime:"07:00",
+//     endTime:"10:00",
+//     location:"03 Smollet road",
+//     status:"Happening",
     
-}
+// }
 
-]
-onSubmit(id:number){
+// ]
+// onSubmit(id:number){
 
-   const arr = this.meetings.filter(item => item.id === id)
+//    const arr = this.meetings.filter(item => item.id === id)
 
-   console.log(arr)
+//    console.log(arr)
 
 
-}
+// }
 
 
 

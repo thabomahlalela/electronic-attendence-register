@@ -19,11 +19,7 @@ export class ViewMeetingsComponent {
     {
     id:1,
     title:"Project",
-<<<<<<< HEAD
-    description:"Register Attendence 2",
-=======
     description:"Register Attendence",
->>>>>>> 8fe8111e2302e88c481655f4917fe071c036f613
     startTime:"07:00",
     endTime:"10:00",
     date : '',
@@ -91,10 +87,7 @@ export class ViewMeetingsComponent {
     
     id:6,
     title:"Project",
-<<<<<<< HEAD
-=======
     date : '',
->>>>>>> 8fe8111e2302e88c481655f4917fe071c036f613
     description:"Register Attendence",
     startTime:"07:00",
     endTime:"10:00",

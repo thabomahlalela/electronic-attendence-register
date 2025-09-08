@@ -3,10 +3,11 @@ import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { Question } from '../../models/question.model';
 import { ClientService } from '../../clientService';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'app-comments-component',
-  imports: [MatButtonModule,FormsModule],
+  imports: [MatButtonModule,FormsModule,MatIcon],
   templateUrl: './comments-component.html',
   styleUrl: './comments-component.css'
 })
@@ -20,25 +21,13 @@ export class CommentsComponent {
   
 
   answer=''
-  tittle=''
-  question=''
   reason=''
 
-   tittlelength = 0;
+   
 
-   get tittles() {
-     return this.tittle
-   }
+   
 
-   get questions() {
-     return this.question
-  }
-
-  submit(){
-   this.click = true;
-
-
-  }
+  
 
   onSubmit(){
     this.dataService.comments({
@@ -57,18 +46,11 @@ export class CommentsComponent {
    }
   
     
-  //   const answering: Question ={
-  //     id:0,
-  //   question:this.answer,
-  //   answers:[this.reason]
+  submits(answers:string){
+    this.answer = answers
+    console.log(this.answer)
 
-  // }
-  // this.reasons?.push(answering)
- 
-
-
-    
-  //  console.log(answering)
+  }
 
    
 

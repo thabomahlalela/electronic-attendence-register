@@ -1,33 +1,77 @@
+
+
+
+
+
+
+<div id="container">
+    <div id="rebon"></div>
+
+
+    
+    
+
 <div id="box1">
-    <h3>Complaints</h3>
+    <h3 id="complaints">Complaints</h3>
 
     <div id="boxOne">
- @for(reason of reasons.answers; track  reasons){
-        <h4>{{reason}}</h4>
-        <hr/>
 
-    }
+           @for(reason of reasons; track  reasons){
+           @if(reason.question === 'No'){
+
+               <h4>{{reason.answers}}</h4>        
+               <hr/>
+               <button  class= "icon" matMiniFab  (click)="onSubmit(reason.id)">
+                           <mat-icon>delete_outline</mat-icon>
+                         </button>
+
+            } 
+        
+
+        }
 
     </div>
    
 
-</div>
+</div> 
 
 
 
-
-
-
-
-
-
-
-<div id="box">
+ <div id="box">
     <h3 id="header">Compliments</h3>
-    @for(reason of reasons.answers; track  reasons){
-        <h4>{{reason}}</h4>
-        <hr/>
 
-    }
+
+   <div id="box2">
+            @for(reason of reasons; track  reasons){
+                 @if(reason.question === 'Yes'){
+                    <h4>{{reason.answers}}</h4>
+                      <hr/>
+                      <button  class= "icons" matMiniFab (click)="onSubmit(reason.id)">
+                           <mat-icon>delete_outline</mat-icon>
+                         </button>
+                }
+       
+
+            }
+
+    </div> 
+
+
+
+
 
 </div>
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+

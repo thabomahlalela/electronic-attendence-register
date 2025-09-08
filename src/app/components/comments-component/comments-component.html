@@ -1,46 +1,41 @@
 
 <div id="container">
 
-    <div id="sub-container"> 
-         
-
-     <!-- </div> 
-     <form (ngSubmit)="submit()" #f="ngForm">
-      <h1 id="action">Compliments/Complaints</h1>
-       <hr id="horizontal-line">   
-       <label id="enterTittle">Enter tittle</label>
-        <input id="tittle" name="tittle"required [(ngModel)]="tittle" />
-
-       <h2 for="questions">Enter your question:</h2>
-      
-       <input id="input-one" name="question" required  [(ngModel)]="question"/>
-       
-
-
-       <button id="mats" mat-icon-button [disabled]="!f.valid" data="disabled">Submit</button> 
-     </form>  -->
-       
-
-<!-- @if(click){ -->
-
-
-<div id="containerTwo">
-
-<form (ngSubmit)="onSubmit()" #f="ngForm">
-       <h1>{{tittles}}</h1>
-      
-           <p><select name="answerOne" id="answerOne" [(ngModel)]="answer" required >
-              <option id="question" disabled selected hidden value="" >{{questions}}</option>
-              
-                     <option>Yes</option>
-                     <option>No</option>
-              </select>
-        </p>
-         
-
+   
+    <div id="containerthree">
+          <h1 id="action">Compliments/Complaints</h1>   
+            <!-- <hr id="horizontal-line">   -->
+   </div>   
      
        
-        
+
+
+
+
+    <div id="containerTwo">
+      
+         
+  
+      
+
+
+
+
+      <h3>Are you happy with our service?</h3>
+      <button id="yes" mat-icon-button (click)="submits(`Yes`)">
+            <mat-icon id="yess">thumb_up</mat-icon>
+      </button>
+      
+
+      <button id="no" mat-icon-button (click)="submits(`No`)">
+           
+             	<mat-icon id="noo">thumb_down</mat-icon>
+      </button>
+      
+          
+     
+       
+        <form (ngSubmit)="onSubmit()" #f="ngForm">
 
         @if(answer == 'Yes' ){
               <h4>Please enter your reason</h4>
@@ -48,11 +43,11 @@
               
               <textarea rows="6" cols="40" name="reason" [(ngModel)]="reason" required></textarea>
               @if(reason.length === 0){
-            <h4>Please fill in the space</h4>
+      
            
 
         }
-           <button id="buttonTwo" mat-icon-button [disabled]="!f.valid" data="disabled">Submit</button>
+           <button id="buttonTwo"  [disabled]="!f.valid" data="disabled">Submit</button>
               
         }
         
@@ -64,20 +59,21 @@
   
               <textarea rows="6" cols="40" name="reason" [(ngModel)]="reason" required></textarea>
               @if(reason.length === 0){
-            <h4>Please fill in the space</h4>
+            
 
         }
-              <button  id="buttonTwo" mat-icon-button  [disabled]="!f.valid" data="disabled">Submit</button>
+              <button  id="buttonTwo"   [disabled]="!f.valid" data="disabled">Submit</button>
 
         }
          
               
        </form>
        
-</div>
-<!-- } -->
+     </div> 
+      
 
-       
-</div>
+     
 
+      
+</div>
 

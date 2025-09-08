@@ -7,11 +7,18 @@ import { Meeting } from "./models/meeting.models";
 import { Question } from "./models/question.model";
 import { HttpClient } from "@angular/common/http";
 import { inject } from "@angular/core";
+import { Observable } from "rxjs";
 
 @Injectable({
     providedIn : 'root'
 })
 export class ClientService{
+  capturePerson(arg0: { id: number; name: any; surname: any; employNO: string; email: any; }) {
+    throw new Error('Method not implemented.');
+  }
+  captureAttences(arg0: { attendeeId: number; user: { id: number; name: string; surname: string; phoneNumber: string; email: string; }; meeting: { id: number; title: string; description: string; startTime: string; endTime: string; location: string; status: string; date: string; }; }) {
+    throw new Error('Method not implemented.');
+  }
     private httpClient = inject(HttpClient);
     private viewedCompany!:Company
 
@@ -182,6 +189,19 @@ comments(comment:Question){
 
     get company(){
         return this.viewedCompany
+    }
+
+
+    getComplaints(): Observable<Question[]>{
+        return this.httpClient.get<Question[]>("/api/viewComplaints")
+    }
+    deleteComplaints(numbers:number){
+        this.httpClient.delete(`/api/deleteComplaints/${numbers}`).subscribe({
+            
+            
+        })
+        
+
     }
 
 
