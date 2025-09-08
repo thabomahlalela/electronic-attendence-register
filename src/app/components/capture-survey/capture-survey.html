@@ -7,7 +7,7 @@
         <label>Title:</label>
         <input type="text" name="title" formControlName="title">
     </p>
-    <form [formGroup]="form" >
+    <form >
         <p>
         <label >Questions:</label>
         <input type="text"  formControlName ="question">
@@ -53,6 +53,11 @@
     
    
 
+</div>
+<div>
+    @for (item of questions; track item.id) {
+        <li>{{item.question}}</li>
+    }
 </div>
 
 

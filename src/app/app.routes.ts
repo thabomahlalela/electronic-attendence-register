@@ -11,7 +11,9 @@ import { Survey } from './components/survey/survey';
 import { ViewUsers } from './components/view-users/view-users';
 import { ViewMeetingsComponent } from './components/view-meetings-component/view-meetings-component';
 import { CaptureMeeting } from './components/capture-meeting/capture-meeting';
-import { CustomAdmin } from './custom-admin/custom-admin.service';
+import { AttenceRegister } from './components/attedance-register/attence-register';
+import { CompanyInfoComponent } from './components/company-info-component/company-info-component';
+import { ViewAttendances } from './view-attendances/view-attendances';
 
 export const routes: Routes = [
     {
@@ -38,6 +40,10 @@ export const routes: Routes = [
         component:AboutCompany,
         children:[
             {
+                path:'',
+                component:CompanyInfoComponent,
+            },
+            {
                 path:'surveys',
                 component:ViewSurveys,
                 children:[
@@ -46,7 +52,7 @@ export const routes: Routes = [
                 component:CaptureSurvey
             },
             {
-                path:'generate-qr-code/:title/:surveyORMeeting',
+                path:'generate-qr-code/:id/:surveyORMeeting',
                 component:GenerateQrCode
             },
             
@@ -73,8 +79,12 @@ export const routes: Routes = [
                         component:CaptureMeeting
                     },
                     {
-                        path:'generate-qr-code/:title/:surveyORMeeting',
+                        path:'generate-qr-code/:id/:surveyORMeeting',
                         component:GenerateQrCode,
+                    },
+                    {
+                        path : 'view-attendaces',
+                        component : ViewAttendances
                     }
                 ]
             }
@@ -82,28 +92,17 @@ export const routes: Routes = [
         ]
     },
     {
-        path:'survey:title',
+        path:'survey/:id',
         component:Survey,
     },
     {
-        path:'custom-admin',
-        component:CustomAdmin,
-        children:[
-            {
-                path:'view-surveys',
-                component:ViewSurveys,
-            },
-            {
-                path:'view-users',
-                component:ViewUsers,
-            },
-            {
-                path:'view-meetings',
-                component:ViewMeetingsComponent
-            }
-            
+        path : 'attendace-register/:id',
+        component : AttenceRegister,
+    },
 
-        ]
+    {
+        path:'qr-code-full-screen',
+        component:GenerateQrCode,
     }
 
     

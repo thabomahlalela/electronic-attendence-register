@@ -17,7 +17,7 @@ export class GenerateQrCode implements OnInit {
 route = inject(ActivatedRoute);
 cdr = inject(ChangeDetectorRef);
 router = inject(Router);
-title!:string;
+id!:number;
 surveyORMeeting!:string;
 incomingURL ='';
 url ='url';
@@ -29,10 +29,10 @@ destroy = inject(DestroyRef);
 ngOnInit(): void {
 
         this.route.paramMap.subscribe(param => {
-        this.title = param.get('title')!;
+        this.id = parseInt(param.get('id')!) ;
         this.surveyORMeeting = param.get('surveyORMeeting')!;
-        
-          
+
+        console.log(this.id)
       });
       
       
@@ -50,9 +50,9 @@ ngOnInit(): void {
 
 
         if(this.surveyORMeeting === "MEETING") {
-            this.url = '/attendece-register';
+            this.url = `http://localhost:4200/attendace-register/${this.id}`;
           } else {
-            this.url = 'http://localhost:4200/edit-company/surveys';
+            this.url = `http://localhost:4200/survey/${this.id}`;
           }
   }
 

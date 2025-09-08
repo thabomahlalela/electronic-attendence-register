@@ -37,7 +37,15 @@ export class AboutCompany {
   }
 
   onMeetings() {
-    this.router.navigate(['edit-company/meetings'])
+    this.router.navigate(['edit-company/meetings']);
+  }
+
+  onCompanyInfo() {
+    this.router.navigate(['edit-company']);
+  }
+
+  onHome() {
+    this.router.navigate(['']);
   }
 
   get getCompany() {

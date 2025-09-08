@@ -17,6 +17,8 @@ export class EditCompanyInfo {
       const siblings = trElement.parentElement!.children;
       const bigBrother = trElement.previousElementSibling;
       
+     
+      
       // for(let i = 0; i < siblings!.length;i++){
       //   if(siblings[i].tagName.toLowerCase() === 'input'){
       //     console.log("im the input");
@@ -25,24 +27,25 @@ export class EditCompanyInfo {
         
       // }
        const parent = trElement.parentNode;
-      const newElement = document.createElement('input')
-      newElement.value = trElement.value
+      const newElement = document.createElement('input');
+      newElement.value = trElement.value;
+    
       // newElement.style.height = '5px'
       // newElement.style.border = 'none'
       if(trElement.className === "name"){
      
-      newElement.style.marginLeft = "4px"
-      
+      newElement.style.marginLeft = "70px";
+      newElement.style.marginTop = "20px";
       
       }else if(trElement.className === "city"){
-           newElement.style.marginLeft = "35px"
-             newElement.style.marginTop = "20px"
+           newElement.style.marginLeft = "55px"
+             newElement.style.marginTop = "260px"
       
         
       }else if(trElement.className === "sector"){
           newElement.style.position = "absolute"
-          newElement.style.marginLeft = "-180px"
-          newElement.style.marginTop = "60px"
+          newElement.style.marginLeft = "80px"
+          newElement.style.marginTop = "170px"
       }else if(trElement.className === "address"){
           newElement.style.position = "absolute"
           newElement.style.marginLeft = "-170px"
@@ -61,8 +64,8 @@ export class EditCompanyInfo {
           newElement.style.marginTop = "90px"
       }else if(trElement.className === "registrationNo"){
           newElement.style.position = "absolute"
-          newElement.style.marginLeft = "59px"
-          newElement.style.marginTop = "130px"
+          newElement.style.marginLeft = "140px"
+          newElement.style.marginTop = "90px"
       }
 
       console.log(bigBrother?.textContent)

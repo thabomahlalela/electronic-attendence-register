@@ -1,67 +1,99 @@
 
 
 
-<div>  
-     <div id="divone">
+<div id="container"> 
+    
+  <div id="header">
+    <header >
+      <h3>
+        Company-info
+      </h3>
+    </header>
+  </div> 
+
+
+  <div id="stats">
+    <mat-card class="example-card" appearance="outlined">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>number of users</mat-card-title>
+    <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+  </mat-card-header>
+  <!-- <img mat-card-image src="https://material.angular.dev/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+  <mat-card-content>
+    
+  </mat-card-content>
+ 
+</mat-card>
+
+<mat-card class="example-card" appearance="outlined">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image-1"></div>
+    <mat-card-title>number of meetings</mat-card-title>
+    <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+  </mat-card-header>
+  <!-- <img mat-card-image src="https://material.angular.dev/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+  <mat-card-content>
+    
+  </mat-card-content>
+ 
+</mat-card>
+
+<mat-card class="example-card" appearance="outlined">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image-2"></div>
+    <mat-card-title>number of surveys</mat-card-title>
+    <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+  </mat-card-header>
+  <!-- <img mat-card-image src="https://material.angular.dev/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+  <mat-card-content>
+    
+  </mat-card-content>
+ 
+</mat-card>
+
+  </div>
+
+  <div id="logo">
+
+    </div>
+
+    <div id="info">
       
-         <label>Name:</label>
-         <input class="name"  [value]="info.name"  readonly appEditCompanyInfo [company]="info" />
+      
+         <label id="name-label">Name:</label>
+         <input class="name" (click)="onUpdate()"  [value]="info.name"  readonly appEditCompanyInfo [company]="info" />
             
+            <label id="registrationNo">RegistrationNo:</label>
+            <input class="registrationNo" [value]="info.registrationNO" readonly appEditCompanyInfo [company]="info" />
+
+            <label id="sector-label">Sector:</label>
+         <input class="sector" [value]="info.sector" readonly appEditCompanyInfo [company]="info" />
             
-            
-         <label id="city">City:</label>
+         <label id="city-label">City:</label>
          <input  class="city" [value]="info.city"  readonly appEditCompanyInfo [company]="info" />
 
          
-         <label id="sector">Sector:</label>
-         <input class="sector" [value]="info.sector" readonly appEditCompanyInfo [company]="info" />
+         
 
          
          <label id="address">Address:</label>
          <input class="address" [value]="info.address" readonly appEditCompanyInfo [company]="info" />
 
-   
+          <label id="telNo">TelNo:</label>
+        <input class="telNo" [value]="info.telNo" readonly appEditCompanyInfo [company]="info" />
 
-     </div>                                                         
-    <div id="divtwo">
+        <label id="email">Email:</label>
+    <input class="email" [value]="info.email" readonly appEditCompanyInfo [company]="info" />
+
     <label id="status" >Status:</label>
     <input class="status" [value]="info.status"  readonly appEditCompanyInfo [company]="info"/>
 
-     <label id="email">Email:</label>
-    <input class="email" [value]="info.email" readonly appEditCompanyInfo [company]="info" />
-
-     <label id="telNo">TelNo:</label>
-    <input class="telNo" [value]="info.telNo" readonly appEditCompanyInfo [company]="info" />
-
-    <label id="registrationNo">RegistrationNo:</label>
-    <input class="registrationNo" [value]="info.registrationNO" readonly appEditCompanyInfo [company]="info" />
-    <div id="logo">
-
-    </div>
+    <button id="update-btn" mat-raised-button [disabled]="isUpdate">update</button>
     
-     </div>
+    </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+     
 
 </div>
 
