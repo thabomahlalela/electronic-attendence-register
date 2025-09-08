@@ -11,6 +11,7 @@ import { Survey } from './components/survey/survey';
 import { ViewUsers } from './components/view-users/view-users';
 import { ViewMeetingsComponent } from './components/view-meetings-component/view-meetings-component';
 import { CaptureMeeting } from './components/capture-meeting/capture-meeting';
+import { CustomAdmin } from './custom-admin/custom-admin.service';
 
 export const routes: Routes = [
     {
@@ -84,6 +85,26 @@ export const routes: Routes = [
         path:'survey:title',
         component:Survey,
     },
+    {
+        path:'custom-admin',
+        component:CustomAdmin,
+        children:[
+            {
+                path:'view-surveys',
+                component:ViewSurveys,
+            },
+            {
+                path:'view-users',
+                component:ViewUsers,
+            },
+            {
+                path:'view-meetings',
+                component:ViewMeetingsComponent
+            }
+            
+
+        ]
+    }
 
     
 

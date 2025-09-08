@@ -13,6 +13,10 @@ import { Person } from "./models/person.model";
 export class ClientService{
 private http = inject(HttpClient)
     private viewedCompany!:Company;
+    private  _questions: string[] =[''];
+
+
+
     companies:Company[]= [
         {
             id:1,
@@ -93,6 +97,13 @@ private http = inject(HttpClient)
         },
 
     ]
+
+    // private questions = [
+    //     {
+    //         firstQuestion :'hvgdgbgecfgnnegE7GLEFNlleclnllcnclhhhluclundcib'
+    //     }
+        
+    // ]
     
 
     clientOptions= [
@@ -207,5 +218,13 @@ private http = inject(HttpClient)
     get company() {
         return this.viewedCompany;
     }
+
+    get questions():string[]{
+        return this._questions
+    }
+
+    // addQuestion():void{
+    //     this._questions.push('');
+    // }
 }
    

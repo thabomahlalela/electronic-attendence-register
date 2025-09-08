@@ -1,11 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { RouterOutlet,Router } from '@angular/router';
 
 @Component({
   selector: 'app-custom-admin',
-  imports: [],
+  imports: [RouterOutlet],
   templateUrl: './custom-admin.html',
   styleUrl: './custom-admin.css'
 })
 export class CustomAdmin {
+  private router = inject(Router);
 
+  onAdd(){
+    this.router.navigate(['/custom-admin/view-surveys'])
+    console.log('click me')
+   
+  }
+
+  addUsers(){
+    this.router.navigate(['/custom-admin/view-users'])
+    
+
+  }
+  addMeeting(){
+    this.router.navigate(['/custom-admin/view-meetings'])
+
+  }
 }
