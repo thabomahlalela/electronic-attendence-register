@@ -1,12 +1,12 @@
-import { ChangeDetectorRef, Component, inject } from '@angular/core';
+import { ChangeDetectorRef, Component, Inject, inject } from '@angular/core';
 import {DUMMY_USERS} from '../dummies/dummy-user'
 import { Person } from '../../models/person.model';
 import { EditUser } from '../../edit-user';
 import { MatIcon } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { Router, RouterOutlet } from '@angular/router';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { ClientService } from '../../clientService';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -16,22 +16,23 @@ import { ClientService } from '../../clientService';
   styleUrl: './view-users.css'
 })
 export class ViewUsers {
-private users!: Person[]
- private cdr = inject(ChangeDetectorRef);
- private clientService = inject(ClientService)
-private router = inject(Router);
+
+
+// private users : Person[] = DUMMY_USERS
+private users! : Person[]
+private router = inject(Router)
+private clientService = inject(ClientService)
+private  cdr = inject(ChangeDetectorRef);
 private _snackBar = inject(MatSnackBar);
- message = 'user deleted';
- action ='undo';
- constructor(){
+message = 'user deleted';
+action = "undo";
+constructor(){
   this.clientService.viewEmployees().subscribe({
-    next:(e) =>{
+    next : (e)=>{
       this.users = e
       this.cdr.detectChanges()
-    }
-  })
- }
-
+    }})
+}
 
   get getUsers(){
     return this.users
@@ -42,19 +43,17 @@ private _snackBar = inject(MatSnackBar);
   }
 
   removeUser(user : Person){
-    this.users = this.users.filter((s)=> s.employNO !== user.employNO);
-
-    let  snackBarRef =this._snackBar.open(this.message, this.action, {duration:5000});
-
-    snackBarRef.afterDismissed().subscribe(()=> {
+    this.users = this.users.filter((s)=> s.employNO !== user.employNO)
+    let snackBarRef = this._snackBar.open(this.message, this.action,{duration:5000});
+    snackBarRef.afterDismissed().subscribe(() => {
       console.log("snackbar dismised")
     });
 
-    snackBarRef.onAction().subscribe(()=>{
-       this.users.push(user);
-     this.cdr.detectChanges()
+    snackBarRef.onAction().subscribe(() => {
+
+      this.users.push(user);
+      this.cdr.detectChanges()
 
     })
-     
   }
 }

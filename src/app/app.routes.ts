@@ -16,8 +16,13 @@ import { CompanyInfoComponent } from './components/company-info-component/compan
 import { ViewAttendances } from './view-attendances/view-attendances';
 import { ViewComplaintsComponent } from './components/view-complaints-component/view-complaints-component';
 import { CommentsComponent } from './components/comments-component/comments-component';
+import { CustomAdmin } from './components/custom-admin/custom-admin.service';
 
 export const routes: Routes = [
+    {
+        path : 'custom-admin',
+        component : CustomAdmin
+    },
     {
         path:'',
         component:ClientAdminHome,
@@ -31,6 +36,7 @@ export const routes: Routes = [
         ]
         
     },
+    
          {
         path:'register-company',
         component:CompanyRegistrationForm,

@@ -15,9 +15,20 @@ export class CompanyInfoComponent {
   isUpdate = true;
   private clientService = inject(ClientService)
 
-info:Company =this.clientService.company
+  info:Company = this.clientService.company
 
- 
+  // info:Company ={
+  //   id:+12,
+  //   name:"Metaware",
+  //   city:"Klerksdorp",
+  //   registrationNO : "653627",
+  //   address:"03 Smollet Street",
+  //   sector:"Tech",
+  //   email:"metaware@gmail.com",
+  //   telNo:"0736457635",
+  //   status:"Active",
+
+  // }
 
 
   onUpdate() {
