@@ -11,6 +11,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { Question } from '../../models/question.model';
 import { Router, RouterOutlet } from '@angular/router';
+import { ClientService } from '../../clientService';
 
 @Component({
   selector: 'app-view-surveys',
@@ -23,6 +24,7 @@ export class ViewSurveys implements OnInit {
   
  private _snackBar = inject(MatSnackBar);
  cdr = inject(ChangeDetectorRef);
+ private clientService = inject(ClientService)
  private router = inject(Router);
  message = 'survey deleted';
  action ='undo';
@@ -35,10 +37,22 @@ export class ViewSurveys implements OnInit {
  isQuesttionClicked = false;
  readonly panelOpenState = signal(false);
  data = DUMMY_SURVEY;
+ questions! : Question[]
+ answers! : string[]
 
   ngOnInit(): void {
     
+    this.clientService.viewSurvey().subscribe({
+      next : (s)=>{
+        this.data = s
+        console.log(s)
+         this.cdr.detectChanges()
 
+
+      }
+    })
+
+    
 }
 
 onList() {
@@ -49,6 +63,15 @@ onList() {
     this.isSurveyClicked = true;
      
     this.clickedSurvey = survey;
+     this.cdr.detectChanges()
+     this.clientService.setClickedSurvey(survey);
+    this.clientService.viewQuestions().subscribe({
+      next:(q) => {
+        this.questions = q
+        this.cdr.detectChanges()
+      }
+      
+    })
 
      this.router.navigate(['/edit-company/surveys']);
   }
@@ -62,17 +85,23 @@ onList() {
 
   onGenerateQRCode(survey:SurveyObj) {
     this.isSurveyClicked = false;
-    const title = survey.title
+    const id = survey.id;
     const surveyORMeeting = "SURVEY";
+     
     // this.url.emit('/survey');
     console.log('emit')
-    this.router.navigate(['/edit-company/surveys/generate-qr-code',  `${title}`, `${surveyORMeeting}`]);
+    this.router.navigate(['/edit-company/surveys/generate-qr-code', `${id}`, `${surveyORMeeting}`]);
 
   }
 
   onQuestion(question:Question) {
     this.isQuesttionClicked = true;
     this.clickedQuestion = question;
+    this.clientService.viewAnswers(question.id).subscribe({
+      next : (s) => {
+        this.answers = s.answers!
+      }
+    })
   }
 
 
@@ -107,4 +136,11 @@ get getClickedSurvey() {
 get getClickedQuestion() {
   return this.clickedQuestion;
 }
+  get getQuestion(){
+    return this.questions;
+  }
+
+  get getAnswers(){
+    return this.answers;
+  }
 }

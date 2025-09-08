@@ -17,7 +17,7 @@
 #list-of-meetings {
    width:1090px;
    min-height: 500px;
-   border: solid darkblue;
+   /* border: solid darkblue; */
    margin-left: 30px;
    margin-top: 70px;
 }
@@ -89,8 +89,8 @@ p{
    width: 700px;
    min-height: 500px;
    margin-left: 1180px;
-   margin-top: -850px;
-   border: solid darkblue;
+   margin-top: -550px;
+   /* border: solid darkblue; */
 }
 
  

@@ -10,5 +10,5 @@ export interface Meeting{
     date :string;
     location : string;
     status : string;
-     attendees?:Person[];
+    people?:Person[];
 }

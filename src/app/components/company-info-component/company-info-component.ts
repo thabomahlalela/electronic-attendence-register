@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { Company } from '../../models/company.models';
 import { EditCompanyInfo } from '../../edit-company-info';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-company-info-component',
-  imports: [EditCompanyInfo],
+  imports: [EditCompanyInfo, MatCardModule],
   templateUrl: './company-info-component.html',
   styleUrl: './company-info-component.css'
 })

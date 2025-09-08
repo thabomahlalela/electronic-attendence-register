@@ -42,7 +42,7 @@ export class CompanyRegistrationForm {
         name: this.form.value.companyName!,
         city:this.form.value.city!,
         registrationNO : '',
-        address:'',
+        address:this.form.value.address!,
         sector:this.form.value.sector!,
         email: this.form.value.email!,
         telNo:this.form.value.telNo!,

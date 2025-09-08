@@ -8,138 +8,22 @@ import { Question } from "./models/question.model";
 import { HttpClient } from "@angular/common/http";
 import { inject } from "@angular/core";
 import { Observable } from "rxjs";
+import { Person } from "./models/person.model";
+import { Attendance } from "./models/attendance.model";
+
 
 @Injectable({
     providedIn : 'root'
 })
 export class ClientService{
-  capturePerson(arg0: { id: number; name: any; surname: any; employNO: string; email: any; }) {
-    throw new Error('Method not implemented.');
-  }
-  captureAttences(arg0: { attendeeId: number; user: { id: number; name: string; surname: string; phoneNumber: string; email: string; }; meeting: { id: number; title: string; description: string; startTime: string; endTime: string; location: string; status: string; date: string; }; }) {
-    throw new Error('Method not implemented.');
-  }
-    private httpClient = inject(HttpClient);
-    private viewedCompany!:Company
-
-comments(comment:Question){
-        this.httpClient.post("/api/add-comment",comment).subscribe( {
-            // next:(resData) => {
-            //     alert(resData.message)
-
-            // }
-        }
-
-        )
-        console.log(comment)
-
+  
+  
     
 
-
-
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    companies:Company[]= [
-        {
-            id:1,
-            name:'metaware',
-            city:'Orkney',
-            registrationNO : '1234',
-            address:'smalet street',
-            sector:'Tech',
-            email:'metaware@gmail.com',
-            telNo:'0123783',
-            status:'active',
-        },
-         {
-            id:2,
-            name:'meta',
-            city:'Orkney',
-              registrationNO : '12345',
-            address:'smalet street',
-            sector:'email',
-            email:'metaware@gmail.com',
-            telNo:'0126783',
-            status:'active',
-        },
-        {
-            id:2,
-            name:'meta',
-            city:'Orkney',
-              registrationNO : '12346',
-            address:'smalet street',
-            sector:'email',
-            email:'metaware@gmail.com',
-            telNo:'0126783',
-            status:'active',
-        },
-        {
-            id:2,
-            name:'meta',
-            city:'Orkney',
-            registrationNO : '12346',
-            address:'smalet street',
-            sector:'email',
-            email:'metaware@gmail.com',
-            telNo:'0126783',
-            status:'active',
-        },
-        {
-            id:2,
-            name:'meta',
-            city:'Orkney',
-            registrationNO : '12346',
-            address:'smalet street',
-            sector:'email',
-            email:'metaware@gmail.com',
-            telNo:'0126783',
-            status:'active',
-        },
-        {
-            id:2,
-            name:'meta',
-            city:'Orkney',
-            registrationNO : '12346',
-            address:'smalet street',
-            sector:'email',
-            email:'metaware@gmail.com',
-            telNo:'0126783',
-            status:'active',
-        },
-         {
-            id:2,
-            name:'meta',
-            registrationNO : '12346',
-            city:'Orkney',
-            address:'smalet street',
-            sector:'email',
-            email:'metaware@gmail.com',
-            telNo:'0126783',
-            status:'active',
-        },
-
-    ]
-    
-
+private http = inject(HttpClient)
+    private viewedCompany!:Company;
+    private viewedSurvey! : SurveyObj;
+    private viewedMeeting! : Meeting;
     clientOptions= [
         {
             id:'1',
@@ -158,10 +42,7 @@ comments(comment:Question){
         }
     ]
 
-    get getCompanies() {
-        return this.companies
-    }
-
+   
     setClickedCompany(company:Company) {
         this.viewedCompany = company;
         console.log(this.viewedCompany.name)
@@ -174,15 +55,73 @@ comments(comment:Question){
       }
 
       captureSurvey(survey: SurveyObj):void{
-        // console.log(survey)
+        console.log(survey)
+        let surveys : SurveyObj[] = []
+        surveys.push(survey) 
+        this.company.surveys = surveys
+        this.http.patch("/api/capture-surveys",this.company).subscribe();
+
 
       }
 
     captureMeeting(meeting: Meeting):void{
+        let meetings: Meeting[] = []
+        meetings.push(meeting);
+        this.company.meetings = meetings
+        this.http.patch("/api/capture-surveys",this.company).subscribe();
+
      }  
 
-    
+     capturePerson(person : Person){
+         console.log(person);
+        let people: Person[] = []
+        people.push(person);
+        this.company.people = people
+         this.http.post("/api/capture-person",this.company).subscribe()
 
+     }
+
+  captureAttences(meeting : Meeting) {
+      this.http.patch("/api/update-meeting",meeting).subscribe()
+   }
+
+   captureSurveyAnswers(survey : SurveyObj){
+        this.http.patch("/api/update-question",survey).subscribe();
+   }
+
+   viewCompanies(){
+     return this.http.get<Company[]>("/api/view-companies")
+   }
+
+   viewSurvey(){
+    console.log(this.company.id)
+     return this.http.get<SurveyObj[]>(`/api/view-surveys/${this.company.id}`)
+   }
+   setClickedSurvey(survey :SurveyObj){
+    this.viewedSurvey = survey;
+   }
+   viewQuestions(){
+        console.log(this.viewedSurvey.id)
+        return this.http.get<Question[]>(`/api/view-Questions/${this.viewedSurvey.id}`)
+   }
+
+   viewAnswers(questionId : number){
+        return this.http.get<Question>(`/api/view-Answers/${questionId}`)
+   }
+
+   viewEmployees(){
+         return this.http.get<Person[]>(`/api/view-Employees/${this.company.id}`)
+   }
+   viewMeetings(){
+        return this.http.get<Meeting[]>(`/api/View-Meetings/${this.company.id}`)
+   }
+
+   viewAttendance(){
+         return this.http.get<Person[]>(`/api/view-attendances/${this.viewedMeeting.id}`)
+   }
+   setClickedMeeting(meeting : Meeting){
+        this.viewedMeeting = meeting
+   }
     get getOptions() {
         return this.clientOptions
     }
@@ -193,16 +132,32 @@ comments(comment:Question){
 
 
     getComplaints(): Observable<Question[]>{
-        return this.httpClient.get<Question[]>("/api/viewComplaints")
+        return this.http.get<Question[]>("/api/viewComplaints")
     }
     deleteComplaints(numbers:number){
-        this.httpClient.delete(`/api/deleteComplaints/${numbers}`).subscribe({
+        this.http.delete(`/api/deleteComplaints/${numbers}`).subscribe({
             
             
         })
         
 
     }
+
+    comments(comment:Question){
+        this.http.post("/api/add-comment",comment).subscribe( {
+           
+        }
+
+        )
+        console.log(comment)
+
+    
+
+
+
+
+
+}
 
 
     
