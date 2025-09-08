@@ -14,8 +14,13 @@ import { CaptureMeeting } from './components/capture-meeting/capture-meeting';
 import { AttenceRegister } from './components/attedance-register/attence-register';
 import { CompanyInfoComponent } from './components/company-info-component/company-info-component';
 import { ViewAttendances } from './view-attendances/view-attendances';
+import { CustomAdmin } from './components/custom-admin/custom-admin.service';
 
 export const routes: Routes = [
+    {
+        path : 'custom-admin',
+        component : CustomAdmin
+    },
     {
         path:'',
         component:ClientAdminHome,
@@ -29,6 +34,7 @@ export const routes: Routes = [
         ]
         
     },
+    
          {
         path:'register-company',
         component:CompanyRegistrationForm,

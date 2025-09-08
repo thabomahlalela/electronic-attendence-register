@@ -1,7 +1,7 @@
 #container {
     width: 1890px;
     min-height: 500px;
-    border: solid darkblue;
+    /* border: solid darkblue; */
 }
 
 #header {
@@ -60,6 +60,96 @@ label {
     margin-left: 20px;
 }
 
+#city-label{
+    position: absolute;
+    margin-left: 20px;
+    margin-top: 260px;
+
+}
+
+.city{
+    position: absolute;
+    margin-top: 260px;
+    margin-left: 55px;
+    border: none;
+}
+
+#sector-label{
+    position: absolute;
+    margin-top: 170px;
+    margin-left: 20px;
+}
+
+.sector{
+    border: none;
+    position: absolute;
+    margin-top: 170px;
+    margin-left: 80px;
+}
+
+#registrationNo{
+   position: absolute;
+    margin-left: 20px;
+    margin-top: 90px;
+}
+.registrationNo{
+   border: none; 
+    position: absolute;
+    margin-top: 90px;
+    margin-left: 138px;
+}
+
+#address{
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 450px;
+}
+
+.address{
+    border: none;
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 520px;
+}
+
+#telNo{
+  position: absolute;
+    margin-top: 90px;
+    margin-left: 450px;    
+}
+
+.telNo{
+    border: none;
+  position: absolute;
+    margin-top: 90px;
+    margin-left: 500px;  
+}
+
+#email{
+    position: absolute;
+    margin-top: 170px;
+    margin-left: 450px;
+}
+.email{
+    border: none;
+   position: absolute;
+    margin-top: 170px;
+    margin-left: 500px;  
+}
+
+#status {
+    position: absolute;
+    margin-left: 450px;
+    margin-top: 260px;
+}
+
+.status{
+    border: none;
+    position: absolute;
+    margin-top: 260px;
+    margin-left: 500px;
+}
+
 
 #divone{
     margin-left: 30px;
@@ -77,96 +167,42 @@ label {
 }
 
 #info {
-    width: 800px;
-    height: 300px;
-    border: solid darkblue;
-    margin-left: 390px;
+    width: 720px;
+    height: 400px;
+    border-radius: 30px;
+    box-shadow: 2px 2px 4px grey;
+    /* border: solid darkblue; */
+    margin-left: 450px;
+    font-size: medium;
 }
-#city{
-   position: absolute;
-   margin-top: 40px;
-   margin-left: -240px;
 
+#update-btn {
+    margin-top: 300px;
+    margin-left: 270px;
 }
-.city{
-    border: none;
-    margin-left: 35px;
-    margin-top: 20px;
 
-}
+
+
 /* #name{
     margin-top: -20px;
     margin-left: 45px;
 } */
 .name{
+    position: absolute;
     border: none;
-    margin-left: 4px;
+    margin-left: 70px;
+    margin-top: 20px;
 
 }
 
-#sector{
-    position: absolute;
-    margin-top: 60px;
-    margin-left: -230px;
-}
-.sector{
-    border: none;
-    position: absolute;
-    margin-top: 60px;
-    margin-left: -180px;
-}
-#address{
-    position: absolute;
-    margin-top: 100px;
-    margin-left: -230px;
-}
-.address{
-    border: none;
-     position: absolute;
-    margin-top: 100px;
-    margin-left: -170px;
-}
-.status{
-    border: none;
-    position: absolute;
-    margin-top: -3px;
-    margin-left: 10px;
-}
-#email{
-    position: absolute;
-    margin-top: 45px;
-    margin-left: -43px;
-}
-.email{
-    border: none;
-   position: absolute;
-    margin-top: 45px;
-    margin-left: 8px;  
-}
-#telNo{
-  position: absolute;
-    margin-top: 90px;
-    margin-left: -43px;    
-}
-.telNo{
-    border: none;
-  position: absolute;
-    margin-top: 90px;
-    margin-left: 8px;  
-}
-#registrationNo{
-   position: absolute;
-    margin-top: 130px;
-    margin-left: -43px;  
 
-}
-.registrationNo{
-   border: none; 
-   position: absolute;
-    margin-top: 130px;
-    margin-left: 59px;  
- 
-}
+
+
+
+
+
+
+
 input{
     font-size: 15px;
     color: grey;
