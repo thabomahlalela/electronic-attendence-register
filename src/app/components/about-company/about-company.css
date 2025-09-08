@@ -64,7 +64,7 @@ ul {
 #view-container {
    width: 1890px;
    min-height: 300px;
-   /* border: solid darkblue; */
+   border: solid darkblue;
    margin-top: 10px;
 }
   
