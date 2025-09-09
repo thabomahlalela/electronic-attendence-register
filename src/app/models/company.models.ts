@@ -1,6 +1,7 @@
 import { Survey } from "../components/survey/survey";
 import { Meeting } from "./meeting.models";
 import { Person } from "./person.model";
+import { Question } from "./question.model";
 import { SurveyObj } from "./survey.model";
 
 export interface Company {
@@ -13,6 +14,7 @@ export interface Company {
     email:string;
     telNo:string;
     status:string;
+    comments?:Question[];
     surveys? :SurveyObj[]
     meetings? : Meeting[]
     people? : Person[]

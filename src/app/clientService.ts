@@ -1,18 +1,22 @@
  
-import { inject, Injectable } from "@angular/core";
+import { Injectable } from "@angular/core";
 import { Company } from "./models/company.models";
 import { Survey } from "./components/survey/survey";
 import { SurveyObj } from "./models/survey.model";
 import { Meeting } from "./models/meeting.models";
+import { Question } from "./models/question.model";
 import { HttpClient } from "@angular/common/http";
+import { inject } from "@angular/core";
+import { Observable } from "rxjs";
 import { Person } from "./models/person.model";
 import { Attendance } from "./models/attendance.model";
-import { Question } from "./models/question.model";
+
 
 @Injectable({
     providedIn : 'root'
 })
 export class ClientService{
+  
 private http = inject(HttpClient)
     private viewedCompany!:Company;
     private viewedSurvey! : SurveyObj;
@@ -43,8 +47,9 @@ private http = inject(HttpClient)
     
 
       registerCompany(company : Company) :void{
-        console.log("capturing company",company);
-        this.http.post("/api/capture-company",company).subscribe();
+        console.log(company)
+        this.http.post("/api/capture-company",company).subscribe({});
+
         
       }
 
@@ -120,8 +125,36 @@ private http = inject(HttpClient)
         return this.clientOptions
     }
 
-    get company() {
-        return this.viewedCompany;
+    get company(){
+        return this.viewedCompany
     }
+
+
+    getComplaints(): Observable<Question[]>{
+        console.log('heeeeyyy')
+        return this.http.get<Question[]>(`/api/viewComplaints/${this.company.id}`)
+    }
+    deleteComplaints(numbers:number){
+        this.http.delete(`/api/deleteComplaints/${numbers}`).subscribe({
+            
+            
+        })
+        
+
+    }
+
+    comments(comment:Question){
+        this.http.post("/api/add-comment",comment).subscribe( {
+           
+        }
+
+        )
+        console.log(comment)
 }
+
+ 
+
+    
+}
+
    
