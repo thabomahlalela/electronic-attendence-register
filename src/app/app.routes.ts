@@ -15,6 +15,8 @@ import { AttenceRegister } from './components/attedance-register/attence-registe
 import { CompanyInfoComponent } from './components/company-info-component/company-info-component';
 import { ViewAttendances } from './view-attendances/view-attendances';
 import { CustomersAdminComponent } from './customers-admin-component/customers-admin-component';
+import { ViewComplaintsComponent } from './components/view-complaints-component/view-complaints-component';
+import { CommentsComponent } from './components/comments-component/comments-component';
 
 export const routes: Routes = [
     {
@@ -22,17 +24,23 @@ export const routes: Routes = [
         component : CustomersAdminComponent,
         children:[
 
-        { path : 'view-surveys',
-        component : ViewSurveys,
-        },
+            { 
+                path :'view-surveys',
+                component : ViewSurveys,
+            },
+            { 
+                path : 'view-users',
+                component : ViewUsers,
+            },
+            {
+                path:'view-meetings',
+                component:ViewMeetingsComponent
 
-        { path : 'view-users',
-        component : ViewUsers,},
-        {
-           path:'view-meetings',
-             component:ViewMeetingsComponent
-
-        }
+            },
+            {
+                path : 'view-comments',
+                component:ViewComplaintsComponent
+            }
         ]
         
     },
@@ -108,10 +116,16 @@ export const routes: Routes = [
                         component : ViewAttendances
                     }
                 ]
+            },
+            {
+                path:'comments',
+                component:ViewComplaintsComponent
             }
+
             
         ]
     },
+
     {
         path:'survey/:id',
         component:Survey,
@@ -124,6 +138,12 @@ export const routes: Routes = [
     {
         path:'qr-code-full-screen',
         component:GenerateQrCode,
+    }
+
+    ,
+    {
+        path :"capture-comments/:id",
+        component:CommentsComponent
     }
 
     

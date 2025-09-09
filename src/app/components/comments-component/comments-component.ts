@@ -1,58 +1,73 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { Question } from '../../models/question.model';
-
+import { ClientService } from '../../clientService';
+import { MatIcon } from '@angular/material/icon';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-comments-component',
-  imports: [MatButtonModule,FormsModule],
+  imports: [MatButtonModule,FormsModule,MatIcon],
   templateUrl: './comments-component.html',
   styleUrl: './comments-component.css'
 })
 export class CommentsComponent {
+
+ private route = inject(ActivatedRoute);
+ private id! : number
+
+  constructor( private dataService:ClientService){
+
+  }
+
+  ngOnInit(): void {
+
+        this.route.paramMap.subscribe(param => {
+        this.id = parseInt(param.get('id')!) ;
+       
+        console.log(this.id)
+      });
+      
+      
+  }
   reasons?:Question[];
   click =false;
   
 
   answer=''
-  tittle=''
-  question=''
   reason=''
 
-   tittlelength = 0;
+   
 
-   get tittles() {
-     return this.tittle
-   }
+   
 
-   get questions() {
-     return this.question
-  }
-
-  submit(){
-   this.click = true;
-
-
-  }
+  
 
   onSubmit(){
+    this.dataService.comments({
+      id:this.id,
+      question:this.answer,
+      answers:[
+        this.reason
+        
 
+      ]
+    }
+
+
+    )
+  
+   }
+  
     
-    const answering: Question ={
-      id:0,
-    question:this.answer,
-    answers:[this.reason]
+  submits(answers:string){
+    this.answer = answers
+    console.log(this.answer)
 
   }
-  this.reasons?.push(answering)
- 
 
-
-    
-   console.log(answering)
-
-   }
+   
 
   
 

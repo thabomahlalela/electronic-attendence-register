@@ -2,29 +2,26 @@
 #container{
     height: 100vh;
     width: 100%;
-     background-color: whitesmoke; 
+     background-color: white; 
+     
+     
    
     
 }
 
-#sub-container{
-     width:500px;
-    height: 50px; 
-     
-    transform: translate(700px,20px);
-}
+
 #action{
-     margin-left: 800px; 
-     margin-top: -10px;
+     /* margin-left: 800px;  */
+     margin-top: 40px;
+     color: white;
 } 
 #horizontal-line{
-    width: 1900px;
-    transform: translate(-700px);
+    width: 2590px;
+    margin-left: -1100px;
+    margin-top: 75px;
 }
-#horizontal-line{
-    width:2600px;
-    margin-left: 15px;
-}
+
+
 
 
 h2{
@@ -32,42 +29,67 @@ h2{
     margin-top: 60px;
 }
 
-#input-one{
-    
-    width: 300px;
-    transform: translate(1000px,-60px);
-}
 
 
-#mats{
-    margin-left: 600px;
-    margin-top: 20px;
-    width: 200px;
-    background-color: gray;
-    color: white;
-}
-#tittle{
-    margin-left: 10px;
-    margin-top: 200px;
-
-}
-#enterTittle{
-    margin-left: 800px;
-    margin-bottom:  -700px;
-    font-weight: bold;
-    font-size: medium;
-}
 
 #containerTwo{
-    margin-left: 50px;
+    margin-left: 650px;
+    margin-top: 100px;
+    height: 400px;
+     width: 700px;
+     
+    
 }
 #buttonTwo{
-    transform: translate(-315px,40px);
+    margin-left:200px ;
+    margin-top: 30px;
+    
     width: 200px;
+    height: 25px;
     background-color: gray;
     color: white; 
 }
-select{
-    width: 300px;
-    height: 50px;
+
+#containerthree{
+    
+    height: 80px;
+    width: 1920px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:darkblue;
+    
+    
+
 }
+h3{
+    margin-left: 220px;
+}
+h4{
+    margin-left: 250px;
+    margin-top: 50px;
+}
+#yes{
+    margin-left: 230px;
+    width: 50px;
+    height: 50px;
+    border: solid;
+}
+#yess{
+    margin-left: -10px;
+}
+
+#no{
+
+    margin-left: 100px;
+    width: 50px;
+    height: 50px;
+    border: solid;
+}
+#noo{
+    margin-left: -10px;
+}
+textarea{
+    margin-left: 200px;
+}
+

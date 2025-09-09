@@ -46,6 +46,8 @@
                     <button (click)="onDeleteMeeting(meeting)" class="icons" matMiniFab>
                             <mat-icon>delete_outline</mat-icon>
                     </button>
+                    
+                   
                     @if(meeting.status === 'UPCOMING'){
                         <button id="qr-code-btn" class="icons" matMiniFab (click)="onQrCode(meeting)">
                             <mat-icon>qr_code</mat-icon>
