@@ -86,10 +86,11 @@ p{
  }
 
 #routed-view {
+   position: fixed;
    width: 700px;
    min-height: 500px;
-   margin-left: 1180px;
-   margin-top: -550px;
+   margin-left: 1130px;
+   margin-top: -370px;
    /* border: solid darkblue; */
 }
 #myButton{
@@ -97,8 +98,10 @@ p{
    background-color: white;
 }
 #refreshBtn{
+   position: absolute;
    /* margin-bottom: -1050px; */
    margin-left: 950px;
+   margin-top: 0px;
    background-color: white;
 }
 

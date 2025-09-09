@@ -85,7 +85,9 @@ table {
 
 
 #refreshBtn{
+   position: absolute;
    /* margin-bottom: -1050px; */
-   /* margin-left: 950px; */
+   margin-top: 15px;
+   margin-left: 450px;
    background-color: white;
 }

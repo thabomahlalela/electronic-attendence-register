@@ -53,7 +53,7 @@ constructor(){
 
     snackBarRef.onAction().subscribe(() => {
       this.users.push(user);
-        this.cdr.detectChanges()
+      this.cdr.detectChanges();
     
     })
   }
