@@ -18,6 +18,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class ViewUsers {
 
 
+
 // private users : Person[] = DUMMY_USERS
 private users! : Person[]
 private router = inject(Router)
@@ -44,16 +45,24 @@ constructor(){
 
   removeUser(user : Person){
     this.users = this.users.filter((s)=> s.employNO !== user.employNO)
-    let snackBarRef = this._snackBar.open(this.message, this.action,{duration:5000});
+    let snackBarRef = this._snackBar.open(this.message, this.action, {duration:5000});
+
     snackBarRef.afterDismissed().subscribe(() => {
       console.log("snackbar dismised")
     });
 
     snackBarRef.onAction().subscribe(() => {
-
       this.users.push(user);
-      this.cdr.detectChanges()
-
+        this.cdr.detectChanges()
+    
     })
+  }
+
+  refresh() {
+    this.clientService.viewEmployees().subscribe({
+    next : (e)=>{
+      this.users = e
+      this.cdr.detectChanges()
+    }})
   }
 }

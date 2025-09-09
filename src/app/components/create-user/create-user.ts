@@ -1,6 +1,7 @@
-import { Component, inject } from '@angular/core';
+import { Component, Inject, inject } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ClientService } from '../../clientService';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-user',
@@ -10,6 +11,7 @@ import { ClientService } from '../../clientService';
 })
 export class CreateUser {
   private clientService = inject(ClientService)
+  private router = inject(Router)
    form : FormGroup = new FormGroup(
     {
       name : new FormControl(''),
@@ -28,6 +30,8 @@ export class CreateUser {
       employNO : '',
       email : this.form.value.email
      })
+
+     this.router.navigate(['edit-company','users'])
 
    }
 }

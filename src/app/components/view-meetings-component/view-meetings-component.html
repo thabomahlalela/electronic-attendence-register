@@ -10,8 +10,12 @@
     </div>
     <div id="list-of-meetings">
 
-
- <button id= "myButton" matMiniFab (click)="onAdd()">+</button>   
+  <button id= "refreshBtn" matMiniFab (click)="refresh()">
+    <mat-icon>cached</mat-icon>
+  </button>  
+ <button id= "myButton" matMiniFab (click)="onAdd()">
+    +
+ </button>   
       
         
 <table>
@@ -73,12 +77,11 @@
 
 
  </table>
-  <!-- <button id= "refreshBtn" matMiniFab >sync</button>   -->
  
 
- <button id="add-button" class="icons" matMiniFab (click)="onAdd()">
+ <!-- <button id="add-button" class="icons" matMiniFab (click)="onAdd()">
             +
- </button>
+ </button> -->
     </div>
     <div id="routed-view">
         <router-outlet/> 
