@@ -145,8 +145,7 @@ private http = inject(HttpClient)
 
     comments(comment:Question){
         this.http.post("/api/add-comment",comment).subscribe( {
-           
-        }
+}
 
         )
         console.log(comment)

@@ -15,6 +15,7 @@ import { ClientService } from '../../clientService';
   styleUrl: './view-meetings-component.css'
 })
 export class ViewMeetingsComponent {
+
     private router = inject(Router);
     private cdr = inject(ChangeDetectorRef);
     private _snackBar = inject(MatSnackBar);
@@ -72,6 +73,16 @@ get getMeetings(){
 onViewAttendance(meeting : Meeting){
     this.clientService.setClickedMeeting(meeting)
      this.router.navigate(['/edit-company/meetings/view-attendaces'])
+}
+
+refresh() {
+    this.clientService.viewMeetings().subscribe({
+        next : (m)=>{
+            this.meetings = m
+            console.log(m)
+            this.cdr.detectChanges()
+        }
+    })
 }
 
 }

@@ -78,7 +78,16 @@ table {
 } 
 
 #user-icons {
+   display: flex;
+   
    margin-left: 570px;
 }
 
 
+#refreshBtn{
+   position: absolute;
+   /* margin-bottom: -1050px; */
+   margin-top: 15px;
+   margin-left: 450px;
+   background-color: white;
+}

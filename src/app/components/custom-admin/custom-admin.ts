@@ -8,22 +8,22 @@ import { RouterOutlet,Router } from '@angular/router';
   styleUrl: './custom-admin.css'
 })
 export class CustomAdmin {
-  private router = inject(Router);
+  // private router = inject(Router);
 
-  onAdd(){
-    this.router.navigate(['/custom-admin/view-surveys'])
+  // onAdd(){
+  //   this.router.navigate(['/custom-admin/view-surveys'])
    
-  }
+  // }
 
-  addUsers(){
-    this.router.navigate(['/custom-admin/view-users'])
+  // addUsers(){
+  //   this.router.navigate(['/custom-admin/view-users'])
     
 
-  }
-  addMeeting(){
-    this.router.navigate(['/custom-admin/view-meetings'])
+  // }
+  // addMeeting(){
+  //   this.router.navigate(['/custom-admin/view-meetings'])
 
-  }
+  // }
 
 
 
