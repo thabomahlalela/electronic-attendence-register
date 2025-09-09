@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ClientService } from '../../clientService';
+import { Router } from '@angular/router';
  
  
 
@@ -19,7 +20,7 @@ export class CompanyRegistrationForm {
   emailPlaceholder ='';
   telNoPlaceholder ='';
 
-
+    private router = inject(Router)
     constructor(private clientService : ClientService){}
   
 
@@ -46,7 +47,7 @@ export class CompanyRegistrationForm {
         sector:this.form.value.sector!,
         email: this.form.value.email!,
         telNo:this.form.value.telNo!,
-        status:'',
+        status:'ACTIVE',
     })
 
     
@@ -96,7 +97,7 @@ export class CompanyRegistrationForm {
 
 
 
-    
+    this.router.navigate(['view-companies']);
 
     console.log(this.form.value)
 

@@ -1,0 +1,105 @@
+#container {
+   width: 1895px;
+   min-height: 1000px;
+   /* border: solid red; */
+}
+
+#header {
+    width: 1895px;
+     height: 50px;
+     border: solid darkblue;
+     border-bottom-left-radius: 30px;
+     border-bottom-right-radius: 30px;
+     text-align: center;
+     color: darkblue;
+}
+
+#list-of-meetings {
+   width:1090px;
+   min-height: 500px;
+   /* border: solid darkblue; */
+   margin-left: 30px;
+   margin-top: 70px;
+}
+
+p{
+    margin-top: 100px;
+    margin-left: 180px;
+}
+
+ table {
+   width:1090px
+   
+    /* width: 1550px;
+    border-collapse: collapse;
+    box-shadow: 0 5px 10px lightslategray;
+    background-color: white;
+    text-align: left;
+    overflow: hidden; */
+ }
+
+ thead {
+    box-shadow: 0 5px 10px lightgrey;
+     
+ }
+
+   
+
+ #add-button {
+    position: absolute;
+    margin-top: -900px;
+    margin-left: 990px;
+    background-color: white;
+ }
+
+ 
+  /* th {
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: 0.7rem;
+    font-weight: 900;
+ } */
+
+  td {
+   padding: 20px;
+   color: grey;
+ } 
+
+ tr:nth-child(even) {
+   background-color: whitesmoke;
+ }
+
+ tr:hover {
+    box-shadow: 0 5px 10px lightslategray;
+
+ }
+
+ .icons {
+   width: 40px;
+   height: 40px;
+   background-color: white;
+}
+
+ #qr-code-btn {
+     margin-left: 20px;
+ }
+
+#routed-view {
+   width: 700px;
+   min-height: 500px;
+   margin-left: 1180px;
+   margin-top: -550px;
+   /* border: solid darkblue; */
+}
+#myButton{
+   margin-left: 1000px;
+   background-color: white;
+}
+#refreshBtn{
+   /* margin-bottom: -1050px; */
+   margin-left: 950px;
+   background-color: white;
+}
+
+ 
