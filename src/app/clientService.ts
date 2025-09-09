@@ -38,6 +38,7 @@ private http = inject(HttpClient)
             path:'register-company',
         }
     ]
+    private _questions: string[] = [];
 
    
     setClickedCompany(company:Company) {
@@ -129,6 +130,13 @@ private http = inject(HttpClient)
         return this.viewedCompany
     }
 
+    get questions():string[]{
+        return this._questions
+    }
+
+    // addQuestion():void{
+    //     this._questions.push('');
+    // }
 
     getComplaints(): Observable<Question[]>{
         console.log('heeeeyyy')

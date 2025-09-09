@@ -7,13 +7,17 @@
         <label>Title:</label>
         <input type="text" name="title" formControlName="title">
     </p>
-    <form >
+    <form [formGroup]="form1" >
         <p>
         <label >Questions:</label>
-        <input type="text"  name="questions"   formControlName="question">
+        <input type="text"  formControlName ="question">
+        <!-- @for(question of questions; track question; let i =$index){
+         <input type="text"  name="questions"  [(ngModel)]="questions[i]" placeholder="Question {{i +1}}">
+        } -->
+        
     </p>
      <p>
-        <button type="reset" id="add"  (click)="addClick()">+</button>
+        <button type="reset" id="add" (click)="addClick()">+</button>
     </p>
     </form>
     
@@ -28,11 +32,26 @@
     </p>
     
     <p>
-        <button type="submit">submit</button>
+        <button type= "submit" >submit</button>
     </p>
    
 
     </form>
+
+    
+    @if(questions.length > 0){
+         <div class="form-conntainer">
+        @for(query of questions; track que){
+
+            <ul >
+              <div ><li > <h4>{{query.question}}</h4><button id="btn"  matMiniFab  (click)=" deleteQuetion(query)"><mat-icon>delete</mat-icon></button></li></div> 
+            </ul>  
+
+        }
+    </div>
+    }
+    
+   
 
 </div>
 <div>
