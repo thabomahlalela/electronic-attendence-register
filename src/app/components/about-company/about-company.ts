@@ -48,6 +48,10 @@ export class AboutCompany {
     this.router.navigate(['']);
   }
 
+  onComments(){
+    this.router.navigate(['edit-company/comments']);
+  }
+
   get getCompany() {
     return this.service.company;
   }

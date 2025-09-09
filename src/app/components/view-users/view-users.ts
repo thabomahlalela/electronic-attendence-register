@@ -18,6 +18,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class ViewUsers {
 
 
+
 // private users : Person[] = DUMMY_USERS
 private users! : Person[]
 private router = inject(Router)
@@ -55,5 +56,13 @@ constructor(){
         this.cdr.detectChanges()
     
     })
+  }
+
+  refresh() {
+    this.clientService.viewEmployees().subscribe({
+    next : (e)=>{
+      this.users = e
+      this.cdr.detectChanges()
+    }})
   }
 }

@@ -1,0 +1,17 @@
+
+div{
+    width: 130px;
+    height: 24px;
+    overflow-y: scroll;
+    white-space: normal;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    border: solid;
+    margin-left: 500px;
+    margin-top: 400px;
+    scroll-behavior: smooth;
+
+}
+div::-webkit-scrollbar{
+    display: none;
+}

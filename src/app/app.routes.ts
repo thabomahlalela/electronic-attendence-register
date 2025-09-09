@@ -14,6 +14,8 @@ import { CaptureMeeting } from './components/capture-meeting/capture-meeting';
 import { AttenceRegister } from './components/attedance-register/attence-register';
 import { CompanyInfoComponent } from './components/company-info-component/company-info-component';
 import { ViewAttendances } from './view-attendances/view-attendances';
+import { ViewComplaintsComponent } from './components/view-complaints-component/view-complaints-component';
+import { CommentsComponent } from './components/comments-component/comments-component';
 import { CustomAdmin } from './components/custom-admin/custom-admin.service';
 
 export const routes: Routes = [
@@ -93,10 +95,16 @@ export const routes: Routes = [
                         component : ViewAttendances
                     }
                 ]
+            },
+            {
+                path:'comments',
+                component:ViewComplaintsComponent
             }
+
             
         ]
     },
+
     {
         path:'survey/:id',
         component:Survey,
@@ -109,6 +117,12 @@ export const routes: Routes = [
     {
         path:'qr-code-full-screen',
         component:GenerateQrCode,
+    }
+
+    ,
+    {
+        path :"capture-comments/:id",
+        component:CommentsComponent
     }
 
     

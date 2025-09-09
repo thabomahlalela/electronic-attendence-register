@@ -15,6 +15,7 @@ import { ClientService } from '../../clientService';
   styleUrl: './view-meetings-component.css'
 })
 export class ViewMeetingsComponent {
+
     private router = inject(Router);
     private cdr = inject(ChangeDetectorRef);
     private _snackBar = inject(MatSnackBar);
@@ -34,136 +35,8 @@ export class ViewMeetingsComponent {
    }
     
 
-//   meetings:Meeting[] = [{
-//     id:1,
-//     title:"Project",
-//     description:"Register Attendence",
-//     startTime:"07:00",
-//     endTime:"10:00",
-//     date : '',
-//     location:"03 Smollet road",
-//     status:"Happening",
-    
-//   },
-// {
 
-//     id:2,
-//     title:"Project",
-//     description:"Register Attendence",
-//     startTime:"07:00",
-//     endTime:"10:00",
-//     date : '',
-//     location:"03 Smollet road",
-//     status:"Happening",
-    
-// },
-// {
-
-//     id:3,
-//     title:"Project",
-//     description:"Register Attendence",
-//     startTime:"07:00",
-//     endTime:"10:00",
-//     date : '',
-//     location:"03 Smollet road",
-//     status:"Happening",
-    
-// },
-
-// {
-
-//     id:4,
-//     title:"Project",
-//     description:"Register Attendence",
-//     startTime:"07:00",
-//     endTime:"10:00",
-//     date : '',
-//     location:"03 Smollet road",
-//     status:"Happening",
-    
-// },
-
-// {
-
-//     id:5,
-//     title:"Project",
-//     description:"Register Attendence",
-//     startTime:"07:00",
-//     endTime:"10:00",
-//     date : '',
-//     location:"03 Smollet road",
-//     status:"Happening",
-    
-// },
-
-// {
-
-//     id:6,
-//     title:"Project",
-//     date : '',
-//     description:"Register Attendence",
-//     startTime:"07:00",
-//     endTime:"10:00",
-//     location:"03 Smollet road",
-//     status:"Happening",
-    
-// },
-
-// {
-
-//     id:7,
-//     title:"Project",
-//     description:"Register Attendence",
-//     startTime:"07:00",
-//     date : '',
-//     endTime:"10:00",
-//     location:"03 Smollet road",
-//     status:"Happening",
-    
-// },
-
-// {
-
-//     id:8,
-//     title:"Project",
-//     description:"Register Attendence",
-//     startTime:"07:00",
-//     endTime:"10:00",
-//     date : '',
-//     location:"03 Smollet road",
-//     status:"Happening",
-    
-// },
-
-// {
-
-//     id:9,
-//     title:"Project",
-//     description:"Register Attendence",
-//     startTime:"07:00",
-//     endTime:"10:00",
-//     date : '',
-//     location:"03 Smollet road",
-//     status:"Happening",
-    
-// },
-
-// {
-
-//     id:10,
-//     title:"Project",
-//     description:"Register Attendence",
-//     startTime:"07:00",
-//     endTime:"10:00",
-//     date : '',
-//     location:"03 Smollet road",
-//     status:"Happening",
-    
-// }
-
-// ]
-
-
+             
 onAdd() {
     this.router.navigate(['/edit-company/meetings/add-meeting']);
     // this.router.navigate(['attendace-register'])
@@ -202,7 +75,22 @@ onViewAttendance(meeting : Meeting){
      this.router.navigate(['/edit-company/meetings/view-attendaces'])
 }
 
+refresh() {
+    this.clientService.viewMeetings().subscribe({
+        next : (m)=>{
+            this.meetings = m
+            console.log(m)
+            this.cdr.detectChanges()
+        }
+    })
 }
+
+}
+
+
+
+
+
 
 
 

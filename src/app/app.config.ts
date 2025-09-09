@@ -8,6 +8,12 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideZonelessChangeDetection(),
-    provideRouter(routes),provideHttpClient()
+    provideRouter(routes),
+    provideHttpClient()
+
   ]
 };
+// export const appConfig: ApplicationConfig = {
+//   providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes,withComponentInputBinding()
+//  , withRouterConfig ({paramsInheritanceStrategy: 'always'})),provideHttpClient()]
+// };
