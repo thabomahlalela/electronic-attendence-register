@@ -14,102 +14,117 @@ import { CaptureMeeting } from './components/capture-meeting/capture-meeting';
 import { AttenceRegister } from './components/attedance-register/attence-register';
 import { CompanyInfoComponent } from './components/company-info-component/company-info-component';
 import { ViewAttendances } from './view-attendances/view-attendances';
-import { CustomAdmin } from './components/custom-admin/custom-admin.service';
+import { CustomersAdminComponent } from './customers-admin-component/customers-admin-component';
 
 export const routes: Routes = [
     {
-        path : '',
-        component : CustomAdmin
-    },
-    // {
-    //     path:'',
-    //     component:ClientAdminHome,
-    //     children:[
-            
-    // {
-    //     path:'view-companies',
-    //     component:ViewCompanies,
-    //     children :[
-            
-    //     ]
-        
-    // },
-    
-    //      {
-    //     path:'register-company',
-    //     component:CompanyRegistrationForm,
-    // },
-    //     ]
-    // },
-    // {
-    //     path:'edit-company',
-    //     component:AboutCompany,
-    //     children:[
-    //         {
-    //             path:'',
-    //             component:CompanyInfoComponent,
-    //         },
-    //         {
-    //             path:'surveys',
-    //             component:ViewSurveys,
-    //             children:[
-    //                 {
-    //             path:'add-survey',
-    //             component:CaptureSurvey
-    //         },
-    //         {
-    //             path:'generate-qr-code/:id/:surveyORMeeting',
-    //             component:GenerateQrCode
-    //         },
-            
-    //               ]
-    //         },
-    //         {
-         
-    //             path:'users',
-    //            component:ViewUsers,
-    //            children: [
-    //             {
-    //                 path:'create-user',
-    //                 component:CreateUser,
-    //             }
-    //            ]
-    
-    //         },
-    //         {
-    //             path:'meetings',
-    //             component:ViewMeetingsComponent,
-    //             children:[
-    //                 {
-    //                     path:'add-meeting',
-    //                     component:CaptureMeeting
-    //                 },
-    //                 {
-    //                     path:'generate-qr-code/:id/:surveyORMeeting',
-    //                     component:GenerateQrCode,
-    //                 },
-    //                 {
-    //                     path : 'view-attendaces',
-    //                     component : ViewAttendances
-    //                 }
-    //             ]
-    //         }
-            
-    //     ]
-    // },
-    // {
-    //     path:'survey/:id',
-    //     component:Survey,
-    // },
-    // {
-    //     path : 'attendace-register/:id',
-    //     component : AttenceRegister,
-    // },
+        path :'custom-admin',
+        component : CustomersAdminComponent,
+        children:[
 
-    // {
-    //     path:'qr-code-full-screen',
-    //     component:GenerateQrCode,
-    // }
+        { path : 'view-surveys',
+        component : ViewSurveys,
+        },
+
+        { path : 'view-users',
+        component : ViewUsers,},
+        {
+           path:'view-meetings',
+             component:ViewMeetingsComponent
+
+        }
+        ]
+        
+    },
+    {
+        path:'',
+        component:ClientAdminHome,
+        children:[
+            
+    {
+        path:'view-companies',
+        component:ViewCompanies,
+        children :[
+            
+        ]
+        
+    },
+    
+         {
+        path:'register-company',
+        component:CompanyRegistrationForm,
+    },
+        ]
+    },
+    {
+        path:'edit-company',
+        component:AboutCompany,
+        children:[
+            {
+                path:'',
+                component:CompanyInfoComponent,
+            },
+            {
+                path:'surveys',
+                component:ViewSurveys,
+                children:[
+                    {
+                path:'add-survey',
+                component:CaptureSurvey
+            },
+            {
+                path:'generate-qr-code/:id/:surveyORMeeting',
+                component:GenerateQrCode
+            },
+            
+                  ]
+            },
+            {
+         
+                path:'users',
+               component:ViewUsers,
+               children: [
+                {
+                    path:'create-user',
+                    component:CreateUser,
+                }
+               ]
+    
+            },
+            {
+                path:'meetings',
+                component:ViewMeetingsComponent,
+                children:[
+                    {
+                        path:'add-meeting',
+                        component:CaptureMeeting
+                    },
+                    {
+                        path:'generate-qr-code/:id/:surveyORMeeting',
+                        component:GenerateQrCode,
+                    },
+                    {
+                        path : 'view-attendaces',
+                        component : ViewAttendances
+                    }
+                ]
+            }
+            
+        ]
+    },
+    {
+        path:'survey/:id',
+        component:Survey,
+    },
+    {
+        path : 'attendace-register/:id',
+        component : AttenceRegister,
+    },
+
+    {
+        path:'qr-code-full-screen',
+        component:GenerateQrCode,
+    }
 
     
 
