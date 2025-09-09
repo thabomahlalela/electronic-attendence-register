@@ -124,6 +124,10 @@ onDeleteSurvey(survey:SurveyObj) {
    
 }
 
+onRefresh() {
+  
+}
+
 get getSurvey() {
   return this.data;
 }

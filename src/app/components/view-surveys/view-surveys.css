@@ -33,11 +33,21 @@ ul {
      gap: 15px;
 }
 
-.add-button {
+#add-btn {
    position: fixed;
    position: absolute;
-   margin-top: -80px;
-   margin-left: 1000px;
+   margin-top: -50px;
+   margin-left: 950px;
+   width: 40px;
+   height: 40px;
+   background-color: white;
+}
+
+#refresh-btn {
+   position: fixed;
+   position: absolute;
+   margin-top: -50px;
+   margin-left: 900px;
    width: 40px;
    height: 40px;
    background-color: white;
@@ -53,9 +63,9 @@ button {
      position: absolute;
      width: 1000px;
      min-height: auto;
-     /* border: solid darkblue; */
+     border: solid darkblue;
      margin-left: 30px;
-     margin-top: 10px;
+     margin-top: 60px;
 }
 
 
