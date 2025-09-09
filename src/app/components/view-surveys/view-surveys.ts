@@ -118,8 +118,7 @@ onDeleteSurvey(survey:SurveyObj) {
 
     snackBarRef.onAction().subscribe(()=>{
        this.data.push(survey);
-     this.cdr.detectChanges()
-
+       this.cdr.detectChanges();
     })
      
    
