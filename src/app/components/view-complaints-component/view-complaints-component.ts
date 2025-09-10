@@ -30,7 +30,7 @@ ngOnInit():  void{
            this.cdr.detectChanges()
         
        
-        console.log(this.newQuestion)
+        console.log(this.newQuestion.length)
   
     }
      

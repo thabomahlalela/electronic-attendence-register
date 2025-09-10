@@ -12,7 +12,7 @@
             <li (click)="onHome()">Home</li>
             <li id="surveys" (click)="onSurveys()">Surveys</li>
             <li id="users" (click)="onUsers()">Users</li>
-             <li id="comments" (click)="onComments()">Comments</li>  
+             <li matBadgeColor="accent" [matBadge]="numberOfComents" matBadgeOverlap="false" id="comments" (click)="onComments()">Complaints/compliments</li>  
             <li id="meetings" (click)="onMeetings()">Meetings</li>
             <li id="company-info" (click)="onCompanyInfo()">Company-info</li>
          </ul>
@@ -20,7 +20,7 @@
         <div id="view-container">
              <router-outlet/>
         </div>
-
+         
 
     </div>
     

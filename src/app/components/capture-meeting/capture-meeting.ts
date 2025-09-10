@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ClientService } from '../../clientService';
 import id from '@angular/common/locales/extra/id';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -14,7 +14,8 @@ import { Router } from '@angular/router';
 export class CaptureMeeting {
 
   private router = inject(Router)
-  constructor(private clientService : ClientService){}
+  
+  constructor(private clientService : ClientService,private route :ActivatedRoute){}
   
 
 
@@ -49,7 +50,7 @@ captureMeeting():void{
 
   const meeting = this.form.value
   console.log(meeting)
- this.router.navigate(['edit-company','meetings'])
+ this.router.navigate(['meetings'],{relativeTo : this.route})
   
 
  }

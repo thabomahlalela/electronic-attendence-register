@@ -1,16 +1,23 @@
 .box{
     background-color: whitesmoke;
-    width: 100%;
-    height: 130px;
+    /* width: 1600px; */
+    /* width: 80%; */
+    width: 1905px;
+     height: 130px;
+
+    
+   
+ /* border: solid darkmagenta; */
     
 }
 
 .header{
-
-   
-    width: 100%;
+    
+    width: 1909px;
     height: 60px;
-    background-color: darkblue
+    background-color: darkblue;
+    /* border: solid yellow; */
+
     
 }
 router{
@@ -27,18 +34,20 @@ h1{
 }
 
 .sub-header{
-    width: 55%;
+    width: 60%;
     height: 60px;
     background-color: darkblue;
     margin-top: 70px;
-    /* margin-left: 830px; */
-    margin-left: 800px;
+    /* border: solid orangered; */
+    /* margin-left: 850px; */
+    
+    margin-left: 733px;
     display: flex;
     flex-direction: row;
     border-bottom-left-radius:40px ;
     color: white;
     font-size: large;
-    font-weight: 400px;
+    font-weight: 300px;
     list-style: none;
    
     

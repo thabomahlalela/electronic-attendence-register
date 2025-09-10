@@ -10,7 +10,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { Question } from '../../models/question.model';
-import { Router, RouterOutlet } from '@angular/router';
+import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
 import { ClientService } from '../../clientService';
 
 @Component({
@@ -39,6 +39,8 @@ export class ViewSurveys implements OnInit {
  data = DUMMY_SURVEY;
  questions! : Question[]
  answers! : string[]
+
+ constructor(private route :ActivatedRoute){}
 
   ngOnInit(): void {
     
@@ -73,14 +75,14 @@ onList() {
       
     })
 
-     this.router.navigate(['/edit-company/surveys']);
+     this.router.navigate(['surveys'],{relativeTo : this.route});
   }
 
   
 
   onAdd() {
      this.isSurveyClicked = false;
-    this.router.navigate(['/edit-company/surveys/add-survey']);
+    this.router.navigate(['add-survey'],{relativeTo : this.route});
   }
 
   onGenerateQRCode(survey:SurveyObj) {
@@ -90,7 +92,7 @@ onList() {
      
     // this.url.emit('/survey');
     console.log('emit')
-    this.router.navigate(['/edit-company/surveys/generate-qr-code', `${id}`, `${surveyORMeeting}`]);
+    this.router.navigate(['generate-qr-code', `${id}`, `${surveyORMeeting}`],{relativeTo : this.route});
 
   }
 
@@ -118,11 +120,23 @@ onDeleteSurvey(survey:SurveyObj) {
 
     snackBarRef.onAction().subscribe(()=>{
        this.data.push(survey);
-     this.cdr.detectChanges()
-
+       this.cdr.detectChanges();
     })
      
    
+}
+
+onRefresh() {
+  this.clientService.viewSurvey().subscribe({
+      next : (s)=>{
+        this.data = s
+        console.log(s)
+         this.cdr.detectChanges()
+
+
+      }
+    })
+
 }
 
 get getSurvey() {

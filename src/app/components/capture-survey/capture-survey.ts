@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormGroup } from '@angular/forms';
 import { Question } from '../../models/question.model';
@@ -7,6 +7,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatIcon } from '@angular/material/icon';
 import { filter } from 'rxjs';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-capture-survey',
@@ -15,12 +16,16 @@ import { filter } from 'rxjs';
   styleUrl: './capture-survey.css'
 })
 export class CaptureSurvey {
+  private router = inject(Router)
   questions : Question[] = []
   que! :[{text:''}]
 quee!: Question;
 
+
+ 
+
   
-  constructor(private clientService : ClientService){}
+  constructor(private clientService : ClientService,private route :ActivatedRoute){}
 
   
   
@@ -58,6 +63,7 @@ captureSurvey() :void{
     
   })
     // console.log(this.form.controls['question'].value)
+    this.router.navigate(['surveys'],{relativeTo : this.route})
 
 
 }

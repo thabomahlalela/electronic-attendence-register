@@ -27,14 +27,45 @@ export const routes: Routes = [
             { 
                 path :'view-surveys',
                 component : ViewSurveys,
+                children : [
+                      {
+                path:'add-survey',
+                component:CaptureSurvey
+            },
+            {
+                path:'generate-qr-code/:id/:surveyORMeeting',
+                component:GenerateQrCode
+            },
+            
+                ]
             },
             { 
                 path : 'view-users',
                 component : ViewUsers,
+                children : [
+                      {
+                    path:'create-user',
+                    component:CreateUser,
+                }
+                ]
             },
             {
                 path:'view-meetings',
-                component:ViewMeetingsComponent
+                component:ViewMeetingsComponent,
+                children :[
+                      {
+                        path:'add-meeting',
+                        component:CaptureMeeting
+                    },
+                     {
+                        path:'generate-qr-code/:id/:surveyORMeeting',
+                        component:GenerateQrCode,
+                    },
+                    {
+                        path : 'view-attendaces',
+                        component : ViewAttendances
+                    }
+                ]
 
             },
             {
@@ -44,6 +75,7 @@ export const routes: Routes = [
             {
                 path:'view-infor',
                 component:CompanyInfoComponent
+                
             }
 
         ]

@@ -1,4 +1,4 @@
-import { Component, inject} from '@angular/core';
+import { ChangeDetectorRef, Component, inject, OnInit} from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { Router, RouterOutlet } from '@angular/router';
 import { ViewSurveys } from '../view-surveys/view-surveys';
@@ -14,17 +14,37 @@ import { GenerateQrCode } from '../generate-qr-code/generate-qr-code';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatListModule } from '@angular/material/list';
 import { ClientService } from '../../clientService';
+import { MatBadgeModule } from '@angular/material/badge';
 
  
 @Component({
   selector: 'app-about-company',
-  imports: [MatListModule, MatSelectModule, MatButtonModule, RouterOutlet, MatTabsModule , MatMenuModule],
+  imports: [MatBadgeModule,MatListModule, MatSelectModule, MatButtonModule, RouterOutlet, MatTabsModule , MatMenuModule],
   templateUrl: './about-company.html',
   styleUrl: './about-company.css'
 })
-export class AboutCompany {
+export class AboutCompany implements OnInit {
+  
   router = inject(Router);
   service = inject(ClientService);
+  cdr = inject(ChangeDetectorRef);
+
+  number = 0;
+
+ngOnInit(): void {
+      this.service.getComplaints().subscribe({
+    next :(resData) => {
+      
+           this.number = resData.length
+           this.cdr.detectChanges()
+        
+       
+         
+    }
+     
+  })
+ 
+  }
    
   
 
@@ -50,6 +70,10 @@ export class AboutCompany {
 
   onComments(){
     this.router.navigate(['edit-company/comments']);
+  }
+
+  get numberOfComents() {
+    return  this.number;
   }
 
   get getCompany() {

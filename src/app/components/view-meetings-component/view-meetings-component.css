@@ -86,20 +86,34 @@ p{
  }
 
 #routed-view {
+   /* position: fixed; */
    width: 700px;
    min-height: 500px;
-   margin-left: 1180px;
-   margin-top: -550px;
+   margin-left: 1130px;
+   margin-top: -20px;
    /* border: solid darkblue; */
 }
 #myButton{
-   margin-left: 1000px;
+   position: absolute;
+   margin-left: 1060px;
+    margin-top: -60px;
    background-color: white;
 }
 #refreshBtn{
+   position: absolute;
    /* margin-bottom: -1050px; */
-   margin-left: 950px;
+   margin-left: 1010px;
+   margin-top: -60px;
    background-color: white;
+}
+
+#list-of-surveys {
+     position: absolute;
+     width: 1085px;
+     min-height: auto;
+     /* border: solid darkblue; */
+     margin-left: 20px;
+     margin-top: 0px;
 }
 
  

@@ -17,9 +17,6 @@ import { Attendance } from "./models/attendance.model";
 })
 export class ClientService{
   
-  
-    
-
 private http = inject(HttpClient)
     private viewedCompany!:Company;
     private viewedSurvey! : SurveyObj;
@@ -142,6 +139,7 @@ private http = inject(HttpClient)
     // }
 
     getComplaints(): Observable<Question[]>{
+        console.log('heeeeyyy')
         return this.http.get<Question[]>(`/api/viewComplaints/${this.company.id}`)
     }
     deleteComplaints(numbers:number){
@@ -155,20 +153,13 @@ private http = inject(HttpClient)
 
     comments(comment:Question){
         this.http.post("/api/add-comment",comment).subscribe( {
-           
-        }
+}
 
         )
         console.log(comment)
-
-    
-
-
-
-
-
 }
 
+ 
 
     
 }
