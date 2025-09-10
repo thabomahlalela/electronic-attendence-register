@@ -65,7 +65,7 @@
          <input class="name" (click)="onUpdate()"  [value]="info.name"  readonly appEditCompanyInfo [company]="info" />
             
             <label id="registrationNo">RegistrationNo:</label>
-            <input class="registrationNo" [value]="info.registrationNO" readonly appEditCompanyInfo [company]="info" />
+            <input class="registrationNo" [value]="info.registrationNO" readonly  />
 
             <label id="sector-label">Sector:</label>
          <input class="sector" [value]="info.sector" readonly appEditCompanyInfo [company]="info" />
@@ -89,7 +89,7 @@
     <label id="status" >Status:</label>
     <input class="status" [value]="info.status"  readonly appEditCompanyInfo [company]="info"/>
 
-    <button id="update-btn" mat-raised-button [disabled]="isUpdate">update</button>
+    <!-- <button id="update-btn" mat-raised-button [disabled]="isUpdate">update</button> -->
     
     </div>
 
