@@ -4,7 +4,7 @@ import { Person } from '../../models/person.model';
 import { EditUser } from '../../edit-user';
 import { MatIcon } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { Router, RouterOutlet } from '@angular/router';
+import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
 import { ClientService } from '../../clientService';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -27,7 +27,7 @@ private  cdr = inject(ChangeDetectorRef);
 private _snackBar = inject(MatSnackBar);
 message = 'user deleted';
 action = "undo";
-constructor(){
+constructor(private route : ActivatedRoute){
   this.clientService.viewEmployees().subscribe({
     next : (e)=>{
       this.users = e
@@ -40,7 +40,7 @@ constructor(){
   }
 
   onClick() {
-      this.router.navigate(['/edit-company/users/create-user'])
+      this.router.navigate(['create-user'],{relativeTo : this.route})
   }
 
   removeUser(user : Person){

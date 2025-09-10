@@ -33,13 +33,15 @@ export class EditCompanyInfo {
       // newElement.style.height = '5px'
       // newElement.style.border = 'none'
       if(trElement.className === "name"){
-     
+      newElement.style.position = "absolute"
       newElement.style.marginLeft = "70px";
       newElement.style.marginTop = "20px";
       
       }else if(trElement.className === "city"){
-           newElement.style.marginLeft = "55px"
-             newElement.style.marginTop = "260px"
+        newElement.style.position = "absolute"
+        newElement.style.marginLeft = "55px"
+         newElement.style.marginTop = "260px"
+        //  newElement.style.border = 'none'
       
         
       }else if(trElement.className === "sector"){
@@ -48,23 +50,26 @@ export class EditCompanyInfo {
           newElement.style.marginTop = "170px"
       }else if(trElement.className === "address"){
           newElement.style.position = "absolute"
-          newElement.style.marginLeft = "-170px"
-          newElement.style.marginTop = "100px"
+          newElement.style.marginLeft = "520px"
+          newElement.style.marginTop = "20px"
+
       }else if(trElement.className === "status"){
           newElement.style.position = "absolute"
-          newElement.style.marginLeft = "10px"
-          newElement.style.marginTop = "-3px"
+          newElement.style.marginLeft = "500px"
+          newElement.style.marginTop = "260px"
+
       }else if(trElement.className === "email"){
           newElement.style.position = "absolute"
-          newElement.style.marginLeft = "8px"
-          newElement.style.marginTop = "45px"
+          newElement.style.marginLeft = "500px"
+          newElement.style.marginTop = "170px"
       }else if(trElement.className === "telNo"){
           newElement.style.position = "absolute"
-          newElement.style.marginLeft = "8px"
+          newElement.style.marginLeft = "500px"
           newElement.style.marginTop = "90px"
+
       }else if(trElement.className === "registrationNo"){
           newElement.style.position = "absolute"
-          newElement.style.marginLeft = "140px"
+          newElement.style.marginLeft = "500px"
           newElement.style.marginTop = "90px"
       }
 

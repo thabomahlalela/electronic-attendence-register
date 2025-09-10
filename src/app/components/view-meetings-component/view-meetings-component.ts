@@ -2,7 +2,7 @@ import { ChangeDetectorRef, Component, inject } from '@angular/core';
 import { Meeting } from '../../models/meeting.models';
 import { MatIcon } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { Router, RouterOutlet } from '@angular/router';
+import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ClientService } from '../../clientService';
 
@@ -22,11 +22,13 @@ export class ViewMeetingsComponent {
     private _snackBar = inject(MatSnackBar);
     message = 'meeting deleted';
     action ='undo';
+ 
+
   
    private meetings! : Meeting[]
    private clientService = inject(ClientService);
    
-   constructor(){
+   constructor(private route :ActivatedRoute){
     this.clientService.viewMeetings().subscribe({
         next : (m)=>{
             this.meetings = m
@@ -39,7 +41,7 @@ export class ViewMeetingsComponent {
 
              
 onAdd() {
-    this.router.navigate(['/edit-company/meetings/add-meeting']);
+    this.router.navigate(['add-meeting'],{relativeTo : this.route});
     // this.router.navigate(['attendace-register'])
 }
 
@@ -64,7 +66,7 @@ onDeleteMeeting(meeting:Meeting) {
 onQrCode(meeting:Meeting) {
      const id = meeting.id;
     const surveyORMeeting = "MEETING";
-    this.router.navigate(['/edit-company/meetings/generate-qr-code', `${id}`, `${surveyORMeeting}`]);
+    this.router.navigate(['generate-qr-code', `${id}`, `${surveyORMeeting}`],{relativeTo : this.route});
 }
 
 get getMeetings(){
@@ -73,7 +75,7 @@ get getMeetings(){
 
 onViewAttendance(meeting : Meeting){
     this.clientService.setClickedMeeting(meeting)
-     this.router.navigate(['/edit-company/meetings/view-attendaces'])
+     this.router.navigate(['view-attendaces'],{relativeTo : this.route})
 }
 
 refresh() {
