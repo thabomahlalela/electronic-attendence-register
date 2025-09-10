@@ -86,7 +86,7 @@ p{
  }
 
 #routed-view {
-   position: fixed;
+   /* position: fixed; */
    width: 700px;
    min-height: 500px;
    margin-left: 1130px;

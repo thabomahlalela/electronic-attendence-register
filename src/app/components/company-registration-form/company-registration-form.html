@@ -1,7 +1,7 @@
 
 
-<div id="container">
-    <div class="registration">
+ 
+    <div  class="registration">
     <h2>Registration form</h2>
     <form [formGroup]="form" (ngSubmit)="registerCompany()">
         <p> 
@@ -31,9 +31,9 @@
             <label>TelNo:</label>
             <input  [placeholder]="telNoPlaceholder" id="four" name="telNo" type="text" formControlName="telNo">
         </p>
-        <button type="submit">Register</button>
+        <button type="submit" (click)="onNoClick()">Register</button>
 
     </form>
    
 </div>
-</div>
+
