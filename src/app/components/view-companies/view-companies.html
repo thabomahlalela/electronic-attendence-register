@@ -47,7 +47,7 @@
         </thead>
 
         <tbody>
-             @for(company of getCompanies; track company.id) {
+             @for(company of myCompanies; track company.id) {
                   <tr  (click)="onCompany(company)">
                
                 <td>{{company.id}}</td>

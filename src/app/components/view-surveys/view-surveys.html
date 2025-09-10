@@ -9,8 +9,10 @@
   </div>
     
         <div id="list-of-surveys">
-          
-          <button matMiniFab (click)="onAdd()">
+          <button id="refresh-btn" matMiniFab (click)="onRefresh()">
+            <mat-icon>cached</mat-icon>
+          </button>
+          <button id="add-btn" matMiniFab (click)="onAdd()">
             <mat-icon>add_circle_outline</mat-icon>
           </button>
          <table>
