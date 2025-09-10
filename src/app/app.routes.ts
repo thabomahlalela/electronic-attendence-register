@@ -40,7 +40,12 @@ export const routes: Routes = [
             {
                 path : 'view-comments',
                 component:ViewComplaintsComponent
+            },
+            {
+                path:'view-infor',
+                component:CompanyInfoComponent
             }
+
         ]
         
     },

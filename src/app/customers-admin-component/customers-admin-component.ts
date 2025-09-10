@@ -13,6 +13,8 @@ import { ClientService } from '../clientService';
   styleUrl: './customers-admin-component.css'
 })
 export class CustomersAdminComponent implements OnInit {
+
+
    private router = inject(Router);
    private clientService = inject(ClientService)
    private company! : Company;
@@ -33,16 +35,15 @@ export class CustomersAdminComponent implements OnInit {
    
   }
 
+   onHome() {
+    this.router.navigate(['custom-admin','view-infor'])
   
+    }
 
-   
-  
+
     onAdd(){
-      
-      // console.log('click me!!!!')
+       
       this.router.navigate(['custom-admin','view-surveys'])
-  
-     
     }
   
     onUsers(){
