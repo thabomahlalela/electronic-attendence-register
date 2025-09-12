@@ -45,7 +45,7 @@ onAdd() {
 }
 
 onDeleteMeeting(meeting:Meeting) {
-    this.meetings = this.meetings.filter((s) => s.title !== meeting.title);
+    this.meetings = this.meetings.filter((s) => s.id !== meeting.id);
 
       let  snackBarRef =this._snackBar.open(this.message, this.action, {duration:5000});
 
@@ -57,9 +57,9 @@ onDeleteMeeting(meeting:Meeting) {
         this.meetings.push(meeting)
      this.cdr.detectChanges()
 
-    })
+    });
 
-
+    this.clientService.deleteMeeting(meeting);
 }
 
 onQrCode(meeting:Meeting) {

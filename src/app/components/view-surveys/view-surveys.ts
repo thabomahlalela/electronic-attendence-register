@@ -109,7 +109,7 @@ onList() {
 
 
 onDeleteSurvey(survey:SurveyObj) {
-  let a = this.data.filter((s)=>s.title !== survey.title);
+  let a = this.data.filter((s)=>s.id !== survey.id);
   this.data = a;
 
   let  snackBarRef =this._snackBar.open(this.message, this.action, {duration:5000});
@@ -121,7 +121,9 @@ onDeleteSurvey(survey:SurveyObj) {
     snackBarRef.onAction().subscribe(()=>{
        this.data.push(survey);
        this.cdr.detectChanges();
-    })
+    });
+
+    this.clientService.deleteSurvey(survey);
      
    
 }

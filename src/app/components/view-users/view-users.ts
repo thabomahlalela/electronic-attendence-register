@@ -44,7 +44,7 @@ constructor(private route : ActivatedRoute){
   }
 
   removeUser(user : Person){
-    this.users = this.users.filter((s)=> s.employNO !== user.employNO)
+    this.users = this.users.filter((s)=> s.id !== user.id)
     let snackBarRef = this._snackBar.open(this.message, this.action, {duration:5000});
 
     snackBarRef.afterDismissed().subscribe(() => {
@@ -55,7 +55,9 @@ constructor(private route : ActivatedRoute){
       this.users.push(user);
       this.cdr.detectChanges();
     
-    })
+    });
+
+    this.clientService.deletePerson(user);
   }
 
   refresh() {
