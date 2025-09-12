@@ -1,4 +1,4 @@
-<div id="container">
+<div id="container"  #qrcodeContainer>
   <label id="heading">{{surveyORMeeting}}</label>
    
 
@@ -6,7 +6,7 @@
     @if(getIsloading) {
     <img width="500" height="500" src="https://cdn-icons-gif.flaticon.com/7994/7994392.gif"/>
   }@else {
-    <qrcode [colorLight]="'#0000000'" [qrdata]="url" [width]="500" [errorCorrectionLevel]="'M'"></qrcode>
+    <qrcode  [elementType]="'canvas'"  [colorDark]="'#333333'"  [colorLight]="'#ffffff'" [qrdata]="url" [width]="500" [errorCorrectionLevel]="'M'"></qrcode>
 
   }
   
@@ -18,6 +18,9 @@
 
     <button id="generate-btn" mat-raised-button (click)="onGenerate()">Generate</button>
      
+    <button id="download-btn" matMiniFab (click)="onDownload()">
+      <mat-icon>get_app</mat-icon>
+    </button>
     
   </div>
 </div>

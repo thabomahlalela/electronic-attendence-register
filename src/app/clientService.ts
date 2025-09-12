@@ -48,15 +48,16 @@ private http = inject(HttpClient)
     
 
       registerCompany(company : Company) :void{
-        console.log(company)
+        console.log(company);
         this.http.post("/api/capture-company",company).subscribe({});
 
         
       }
 
-      
-
-      
+      deRegisterCompany(company : Company) {
+        console.log(company.id);
+        this.http.delete(`/api/delete-company/${company.id}`).subscribe();
+      }
 
       captureSurvey(survey: SurveyObj):void{
         console.log(survey)
@@ -66,6 +67,12 @@ private http = inject(HttpClient)
         this.http.patch("/api/capture-surveys",this.company).subscribe();
 
 
+      }
+
+      deleteSurvey(survey:SurveyObj) {
+        console.log(survey.id)
+        this.http.delete(`/api/delete-survey/${survey.id}`).subscribe();
+        
       }
 
     captureMeeting(meeting: Meeting):void{
@@ -81,8 +88,14 @@ private http = inject(HttpClient)
         let people: Person[] = []
         people.push(person);
         this.company.people = people
-         this.http.post("/api/capture-person",this.company).subscribe()
+         this.http.post("/api/capture-person",this.company).subscribe();
 
+     }
+
+     deletePerson(person:Person) {
+         console.log(person.id);
+
+        this.http.delete(`/api/delete-person/${person.id}`).subscribe();
      }
 
   captureAttences(meeting : Meeting) {
@@ -118,6 +131,10 @@ private http = inject(HttpClient)
    }
    viewMeetings(){
         return this.http.get<Meeting[]>(`/api/View-Meetings/${this.company.id}`)
+   }
+
+   deleteMeeting(meeting:Meeting) {
+    this.http.delete(`/api/delete-meeting/${meeting.id}`).subscribe();
    }
 
    viewAttendance(){

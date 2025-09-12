@@ -9,6 +9,7 @@ import { debounceTime, Subscription } from 'rxjs';
 import { Company } from '../../models/company.models';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { CompanyRegistrationForm } from '../company-registration-form/company-registration-form';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-view-companies',
@@ -17,14 +18,20 @@ import { CompanyRegistrationForm } from '../company-registration-form/company-re
   styleUrl: './view-companies.css'
 })
 export class ViewCompanies {
-   readonly dialog = inject(MatDialog);
-
+ readonly dialog = inject(MatDialog);
+ private _snackBar = inject(MatSnackBar);
  private service = inject(ClientService);
  private router = inject(Router);
  private companies! : Company[] 
  private viewCompanies! : Company[]
  private cdr = inject(ChangeDetectorRef);
  subscription! : Subscription;
+isUndo = false;
+
+ message = 'company deleted';
+    action ='undo';
+ 
+
 
 
 
@@ -100,6 +107,28 @@ export class ViewCompanies {
       this.viewCompanies = this.companies
        console.log(company?.name,company?.email)
     }
+
+     let  snackBarRef =this._snackBar.open(this.message, this.action, {duration:5000});
+
+      if(this.isUndo === true) {
+        this.isUndo = false;
+      }
+
+    snackBarRef.afterDismissed().subscribe(()=> {
+      console.log("snackbar dismised");
+        
+      if(this.isUndo) {
+
+      } else {
+    this.service.deRegisterCompany(company!);
+      }
+    });
+
+    snackBarRef.onAction().subscribe(()=>{
+        this.companies.push(company!);
+     this.cdr.detectChanges();
+     this.isUndo =true;
+    });
       
   } 
 
