@@ -48,10 +48,15 @@ private http = inject(HttpClient)
     
 
       registerCompany(company : Company) :void{
-        console.log(company)
+        console.log(company);
         this.http.post("/api/capture-company",company).subscribe({});
 
         
+      }
+
+      deRegisterCompany(company : Company) {
+        console.log(company.id);
+        this.http.delete(`/api/delete-company/${company.id}`).subscribe();
       }
 
       captureSurvey(survey: SurveyObj):void{
@@ -83,7 +88,7 @@ private http = inject(HttpClient)
         let people: Person[] = []
         people.push(person);
         this.company.people = people
-         this.http.post("/api/capture-person",this.company).subscribe()
+         this.http.post("/api/capture-person",this.company).subscribe();
 
      }
 

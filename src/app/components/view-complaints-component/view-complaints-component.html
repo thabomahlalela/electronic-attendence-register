@@ -67,8 +67,11 @@
 </div>
 
 
- <div id="qr-code">
-<qrcode [colorLight]="'#0000000'" [qrdata]="`http://localhost:4200/capture-comments/${company.id}` " [width]="500" [errorCorrectionLevel]="'M'"></qrcode>
+ <div id="qr-code" #qrcodeContainer>
+<qrcode [elementType]="'canvas'" [colorDark]="'#333333'"  [colorLight]="'#ffffff'" [qrdata]="`http://localhost:4200/capture-comments/${company.id}` " [width]="500" [errorCorrectionLevel]="'M'"></qrcode>
+<button matMiniFab id="download-btn" (click)="onDownload()">
+     <mat-icon>get_app</mat-icon>
+</button>
 
     </div>
 

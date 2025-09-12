@@ -36,6 +36,9 @@ export class CompanyRegistrationForm {
     sector : new FormControl('',[Validators.required]), 
      email : new FormControl('',[Validators.required]),
      telNo : new FormControl('',[Validators.required]), 
+     
+     
+     
 
   });
 
@@ -45,6 +48,7 @@ export class CompanyRegistrationForm {
   onNoClick(): void {
     this.dialogRef.close();
      this.router.navigate(['/view-companies']);
+     console.log(this.form)
   }
 
   registerCompany(): void {

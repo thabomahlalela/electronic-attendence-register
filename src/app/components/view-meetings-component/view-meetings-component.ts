@@ -5,6 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ClientService } from '../../clientService';
+
  
 
 
@@ -19,6 +20,8 @@ export class ViewMeetingsComponent {
     private router = inject(Router);
     private cdr = inject(ChangeDetectorRef);
     private _snackBar = inject(MatSnackBar);
+    isUndo = false;
+ 
     message = 'meeting deleted';
     action ='undo';
  
@@ -49,17 +52,26 @@ onDeleteMeeting(meeting:Meeting) {
 
       let  snackBarRef =this._snackBar.open(this.message, this.action, {duration:5000});
 
+      if(this.isUndo === true) {
+        this.isUndo = false;
+      }
+
     snackBarRef.afterDismissed().subscribe(()=> {
-      console.log("snackbar dismised")
+      console.log("snackbar dismised");
+        
+      if(this.isUndo) {
+
+      } else {
+    this.clientService.deleteMeeting(meeting);
+      }
     });
 
     snackBarRef.onAction().subscribe(()=>{
         this.meetings.push(meeting)
      this.cdr.detectChanges()
-
+     this.isUndo =true;
     });
 
-    this.clientService.deleteMeeting(meeting);
 }
 
 onQrCode(meeting:Meeting) {

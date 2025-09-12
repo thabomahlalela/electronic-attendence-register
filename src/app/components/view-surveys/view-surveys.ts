@@ -35,6 +35,7 @@ export class ViewSurveys implements OnInit {
  isGenerateQrCode = false;
  isAddSurvey = false;
  isQuesttionClicked = false;
+ isUndo = false;
  readonly panelOpenState = signal(false);
  data = DUMMY_SURVEY;
  questions! : Question[]
@@ -114,16 +115,28 @@ onDeleteSurvey(survey:SurveyObj) {
 
   let  snackBarRef =this._snackBar.open(this.message, this.action, {duration:5000});
 
+  
+      if(this.isUndo === true) {
+        this.isUndo = false;
+      }
+
+
     snackBarRef.afterDismissed().subscribe(()=> {
-      console.log("snackbar dismised")
+      console.log("snackbar dismised");
+      if(this.isUndo) {
+
+      } else {
+    this.clientService.deleteSurvey(survey);
+
+      }
     });
 
     snackBarRef.onAction().subscribe(()=>{
        this.data.push(survey);
        this.cdr.detectChanges();
+       this.isUndo = true;
     });
 
-    this.clientService.deleteSurvey(survey);
      
    
 }

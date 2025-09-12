@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, inject, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, inject, OnInit, ViewChild} from '@angular/core';
 import { Question } from '../../models/question.model';
 import { ClientService } from '../../clientService';
 import { T } from '@angular/cdk/keycodes';
@@ -16,6 +16,10 @@ export class ViewComplaintsComponent implements OnInit{
    
 newQuestion!:Question[]
 cdr = inject(ChangeDetectorRef);
+ @ViewChild('qrcodeContainer', { static: false }) qrcodeContainer!: ElementRef;
+  
+ 
+
 
 
 constructor(private dataService : ClientService){
@@ -54,6 +58,17 @@ ngOnInit():  void{
 
   }
 
+  onDownload() {
+    const canvas = this.qrcodeContainer.nativeElement.querySelector('canvas');
+    const url = canvas.toDataURL('image/png');
+
+    // Create a download link
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'qr-code.png';
+    a.click();
+  }
+
 
   get company(){
     return this.dataService.company
@@ -69,3 +84,4 @@ ngOnInit():  void{
 
 
 }
+
