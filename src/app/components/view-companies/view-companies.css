@@ -10,12 +10,32 @@
 
  table {
    
-    width: 1588px;
+    width: 1559px;
     border-collapse: collapse;
     box-shadow: 0 5px 10px lightslategray;
     background-color: white;
     text-align: left;
-    overflow: hidden;
+   
+ }
+
+ .ACTIVE {
+   background-color: cadetblue  ;
+   color: white;
+   display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.4rem 0;
+  border-radius: 2rem;
+ }
+
+  .IN-ACTIVE{
+   background-color:darkred  ;
+   color: white;
+   display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.4rem 0;
+  border-radius: 2rem;
  }
 
  thead {
@@ -124,10 +144,10 @@
  }
 
  #container {
-  width: 1599px;
+  width: 1569px;
   height: auto;
-  margin-left: -150px;
-  margin-top: -66px;
+  margin-left: -0px;
+  margin-top: 0px;
   /* border: solid darkblue; */
   background-color: white;
    

@@ -1,39 +1,71 @@
 
 
-<div id="container">
-    <div class="registration">
+ 
+    <div  class="registration">
     <h2>Registration form</h2>
-    <form [formGroup]="form" (ngSubmit)="registerCompany()">
+    <form [formGroup]="form" (ngSubmit)="registerCompany()" #f="ngForm">
         <p> 
             <label>Company-name:</label>
-            <input [placeholder]="companyNamePlaceholder" name="Company-name" type="text" formControlName="companyName" required minlength="3" maxlength="20">
+            <input [placeholder]="companyNamePlaceholder" name="Company-name" type="text" required formControlName="companyName" required minlength="3" maxlength="20">
+            @if( form.controls.companyName.touched && form.controls.companyName.invalid){
+                <h4>*Name is required</h4>
 
+            }
         </p>
         <p>
             <label>City:</label>
-            <input [placeholder]="cityPlaceholder" id="one" name="city" type="text" formControlName="city">
+            <input [placeholder]="cityPlaceholder" id="one" name="city" type="text"  required formControlName="city">
+             @if( form.controls.city.touched && form.controls.city.invalid){
+                <h4>*City is required</h4>
+
+            }
         </p>
 
         <p>
             <label>Address:</label>
-            <input [placeholder]="addressPlaceholder" id="four" name="address" type="text" formControlName="address">
+            <input [placeholder]="addressPlaceholder" id="four" name="address" type="text" required formControlName="address">
+             @if( form.controls.address.touched && form.controls.address.invalid){
+                <h4>*Address is required</h4>
+
+            }
         </p>
 
         <p>
             <label>Sector:</label>
-            <input  [placeholder]="sectorPlaceholder" id="two" name="sector" type="text" formControlName="sector">
+           
+             <select  id ="sector"  required  formControlName="sector">
+                <option>Technology</option>
+                <option>Health</option>
+                <option>Retail</option>
+                <option>Finance</option>
+                <option>Other</option>
+             </select>
+              @if( form.controls.sector.touched && form.controls.sector.invalid){
+                <h4>*Sector is required</h4>
+
+            }
+
         </p>
         <p>
             <label>Email:</label>
-            <input [placeholder]="emailPlaceholder" id="three" name="email" type="text" formControlName="email">
+            <input [placeholder]="emailPlaceholder" id="three" name="email" type="text"  requuired formControlName="email">
+             @if( form.controls.email.touched && form.controls.email.invalid){
+                <h4>*Email is required</h4>
+
+            }
         </p>
         <p>
             <label>TelNo:</label>
-            <input  [placeholder]="telNoPlaceholder" id="four" name="telNo" type="text" formControlName="telNo">
+            <input  [placeholder]="telNoPlaceholder" id="four" name="telNo" type="text"  required formControlName="telNo">
+             @if( form.controls.telNo.touched && form.controls.telNo.invalid){
+                <h4>*TelNo is required</h4>
+
+            }
         </p>
-        <button type="submit">Register</button>
+        <button type="submit" [disabled]="!f.valid" (click)="onNoClick()">Register</button>
+    
 
     </form>
    
 </div>
-</div>
+

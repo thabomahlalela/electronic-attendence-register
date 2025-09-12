@@ -2,13 +2,15 @@ import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ClientService } from '../../clientService';
 import { Router } from '@angular/router';
+import { MatDialogRef, MatDialogClose, MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { ViewCompanies } from '../view-companies/view-companies';
  
  
 
  
 @Component({
   selector: 'app-company-registration-form',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, MatDialogClose],
   templateUrl: './company-registration-form.html',
   styleUrl: './company-registration-form.css'
 })
@@ -19,9 +21,11 @@ export class CompanyRegistrationForm {
   sectorPlaceholder ='';
   emailPlaceholder ='';
   telNoPlaceholder ='';
-
+   readonly dialogRef = inject(MatDialogRef<ViewCompanies>)
     private router = inject(Router)
-    constructor(private clientService : ClientService){}
+    constructor(private clientService : ClientService){
+      
+    }
   
 
 
@@ -32,10 +36,20 @@ export class CompanyRegistrationForm {
     sector : new FormControl('',[Validators.required]), 
      email : new FormControl('',[Validators.required]),
      telNo : new FormControl('',[Validators.required]), 
+     
+     
+     
 
   });
 
   
+
+
+  onNoClick(): void {
+    this.dialogRef.close();
+     this.router.navigate(['/view-companies']);
+     console.log(this.form)
+  }
 
   registerCompany(): void {
     this.clientService.registerCompany({
@@ -84,23 +98,6 @@ export class CompanyRegistrationForm {
     if(this.form.controls['telNo'].pristine){
       this.telNoPlaceholder= 'required telNo'
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-    this.router.navigate(['view-companies']);
-
-    console.log(this.form.value)
-
 
 }
 }

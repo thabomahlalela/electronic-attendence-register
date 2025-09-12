@@ -6,10 +6,10 @@
 }
 #sub-container{
     height: 945px;
-    width: 100%;
+    width: 1620px;
     margin-left: 300px;
     margin-top: -940px;
-    border: solid white;
+    /* border: solid red; */
     background-color: whitesmoke;
     overflow-y: scroll;
       
@@ -29,19 +29,15 @@
     justify-content: center;
     align-items: center;
     justify-content: space-around;
-    width: 1650px;
-    height: 100vh;
+    width: 1570px;
+    /* height: 100vh; */
     /* border: solid red; */
     margin-top: 10px;
     margin-left: 10px;
+    /* overflow-y: scroll; */
 }
 
-h1 {
-    position: absolute;
-    margin-top: 15px;
-    margin-left: 350px;
-    color: darkblue;
-}
+ 
 
 #logo {
     margin-left: 350px;
@@ -61,10 +57,13 @@ h1 {
 }
 
   #header{
-     
+     display: flex;
+     justify-content: center;
+     align-items: center;
     height: 70px;
     width: 100%;
     background-color: darkblue;
+    color: white;
     margin-top: -17px;
     /* transform: translate(290px,-17px); */
 }
@@ -93,15 +92,11 @@ h1 {
     width: 300px;
     height: 200px;
     margin-top: 80px;
-    /* border: solid black; */
+    
 }
 
 
-h1{
-    transform: translate(330px,18px);
-    color: white;
-
-}
+ 
 #logo{
     transform: translate(240px,-35px);
 }
@@ -139,5 +134,135 @@ h1{
   left: 245px;
   border-left: 1px solid black;
   height: 935px;
+}
+
+#view-staticstics{
+    width: 1600px;
+    height: 700px;
+    margin-right: 30px;
+    margin-top: 60px;
+    
+}
+
+.stat-card{
+    padding:16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 600px;
+    margin-left: 800px;
+
+}
+.stat-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500px;
+}
+.stat-value{
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 8px 0;
+    
+}
+.stat-change{
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+}
+.stat-change.positive{
+    color: green;
+
+}
+.stat-change.negative{
+    color: red;
+}
+.arrow{
+    font-size: 18px;
+    margin-right: 4px;
+}
+
+
+
+
+
+.stat-cards{
+    padding:16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 600px;
+    margin-top: -110px;
+    margin-left: 180px;
+   
+}
+.stat-headers{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500px;
+}
+.stat-values{
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 8px 0;
+    
+}
+.stat-changes{
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+}
+.stat-changes.positive{
+    color: green;
+
+}
+.stat-changes.negative{
+    color: red;
+}
+.arrows{
+    font-size: 18px;
+    margin-right: 4px;
+}
+.icons{
+    color: blue;
+}
+
+.industries{
+    margin-top: 100px;
+    width: 1400px;
+    margin-left: 100px;
+    
+}
+h3{
+    margin-left: 30px;
+}
+
+.industry-row{
+    
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    color: black;
+   
+} 
+#industry-header{
+    margin-left: 500px;
+}
+
+#percentage{
+    margin-left: 20px;
+}
+
+
+
+#progress-bar{
+    /* border: solid; */
+    width: 1100px;
+    margin-left: 20px;
+    height: 15px;
+    border-radius: 10px;
+
+    
 }
 

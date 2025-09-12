@@ -7,6 +7,8 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatIcon } from '@angular/material/icon';
 import { debounceTime, Subscription } from 'rxjs';
 import { Company } from '../../models/company.models';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { CompanyRegistrationForm } from '../company-registration-form/company-registration-form';
 
 @Component({
   selector: 'app-view-companies',
@@ -15,20 +17,47 @@ import { Company } from '../../models/company.models';
   styleUrl: './view-companies.css'
 })
 export class ViewCompanies {
+   readonly dialog = inject(MatDialog);
 
  private service = inject(ClientService);
  private router = inject(Router);
  private companies! : Company[] 
  private viewCompanies! : Company[]
-private cdr = inject(ChangeDetectorRef);
+ private cdr = inject(ChangeDetectorRef);
  subscription! : Subscription;
+
+
+
+
  form = new FormGroup({
       searchControl : new FormControl()
   })
 
   formDeregister = new FormGroup({
       deregisterControl : new FormControl()
-  })
+  });
+
+
+  
+  openDialog(): void {
+    const dialogConfig = new MatDialogConfig();
+
+      dialogConfig.width = '500px'; // Set the desired width
+
+    const dialogRef = this.dialog.open(CompanyRegistrationForm, dialogConfig);
+    dialogRef.afterClosed().subscribe(result => {
+        this.service.viewCompanies().subscribe(
+        {
+            next : (s)=>{
+              this.companies = s
+              this.viewCompanies = s
+              this.cdr.detectChanges()
+            } 
+        }
+    )
+      
+    });
+  }
 
 
    constructor(){
@@ -84,7 +113,8 @@ private cdr = inject(ChangeDetectorRef);
   }
 
   onAdd() {
-    this.router.navigate(['/register-company'])
+    // this.router.navigate(['/register-company']);
+   
   }
 
   onCompany(company:Company){

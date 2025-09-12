@@ -9,17 +9,21 @@
                 -2px -2px 4px;
 }
 
-#container {
+/* #container {
     width: 1400px;
     height: 800px;
-    /* border: solid darkblue; */
+    border: solid darkblue;
     margin-top: -155px;
     margin-left: -700px;
     display: flex;
     justify-content: center;
     align-items: center;
+} */
+
+dialog {
+    width: 430px;
+    height: auto;
 }
- 
 
 h2{
     text-align : center;
@@ -63,4 +67,16 @@ input{
     border-radius: 5px;
     box-sizing: border-box;
      
+}
+select{
+    width: 230px;
+    height: 40px;
+    padding: 10px; 
+     margin-bottom: 20px;
+    border-radius: 5px;
+     border: 1px solid #ccc;
+      box-sizing: border-box;
+}
+h4{
+    color: red;
 }
