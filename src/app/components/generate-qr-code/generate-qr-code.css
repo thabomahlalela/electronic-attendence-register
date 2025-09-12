@@ -29,6 +29,10 @@
     /* margin-top: 538px; */
 }
 
+#download-btn {
+    background-color: white;
+}
+
 input {
     text-align: center;
 }
