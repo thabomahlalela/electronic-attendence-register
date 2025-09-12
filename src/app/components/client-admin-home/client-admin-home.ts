@@ -16,19 +16,13 @@ import { Company } from '../../models/company.models';
   templateUrl: './client-admin-home.html',
   styleUrl: './client-admin-home.css'
 })
-export class ClientAdminHome implements OnInit {
+export class ClientAdminHome {
 router = inject(Router);
 service = inject(ClientService);
 private cdr = inject(ChangeDetectorRef);
 click=true;
 
-tech!:Company[];
-finance!:Company[];
-other!:Company[];
-health!:Company[];
-retail!:Company[];
 
-sector!:String[];
 
 
 
@@ -53,78 +47,5 @@ sector!:String[];
 
 
 
-  industries = [
-    {
-      name:'Technology',
-      value:45,
-      color:'primary'
-    },
-{
-      name:'Finance',
-      value:25,
-      color:'accent'
-    },
-
-
-{
-      name:'Healthcare',
-      value:15,
-      color:'warn'
-    },
-    {
-      name:'Retail',
-      value:10,
-      color:'red'
-    },
-
-    {
-      name:'other',
-      value:45,
-      color:'blue'
-    },
-
-  ]
-
-
-  ngOnInit(): void {
-     this.service.viewCompanies().subscribe({
-        
-            next : (s)=>{
-              console.log(s)
-              
-             for(let i = 0; s.length > 0; i++){
-
-              this.sector.push(s[i].sector)
-              
-              console.log(s[i].sector)
-              
-                // if(s[i].sector.){
-                  
-                //   this.tech.push(s[i])
-                // }
-                // if(s[i].sector === 'Health'){
-                //   this.health.push(s[i])
-                // }
-                // if(s[i].sector === 'Retail'){
-                //   this.retail.push(s[i])
-                // }
-
-                // if(s[i].sector !== 'Other'){
-                //   this.other.push(s[i])
-                // }
-
-                // if(s[i].sector === 'Finance'){
-                //   this.finance.push(s[i])
-                // }
-              }
-              
-              // this.cdr.detectChanges()
-              
-            } 
-            
-          
-        })
-        // console.log(this.sector)
-        
-  }
+  
 }
