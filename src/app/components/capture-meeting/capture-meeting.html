@@ -5,40 +5,70 @@
         
         <p>
             <h2>Meeting Title</h2>
+        
         <p>
             <label>title</label>
             <input type="text" name="title" formControlName="title" >
-        </p>
+           @if(form.get('title')?.invalid && form.get('title')?.touched){
+            <h5>Tittle is required</h5>
+            <!-- <span>
+                @if(form.controls['title'].errors?.['minLength']){
+                    <h5>min of 5 characters required</h5>
+
+                }
+            </span> -->
+           }
+
+           <span>
+                @if(form.controls['title'].errors?.['minLength']){
+                    <h5>min of 5 characters required</h5>
+
+                }
+            </span>
+        
         <p>
             <label>description</label>
             <input type="txt" name="description" formControlName ="description">
+             @if(form.get('description')?.invalid && form.get('description')?.touched){
+            <h5>Description is required</h5>
+
+           }
         </p>
         <p>
-            <label>startTime</label>
+            <label>start-time</label>
             <input type="time" name="startTime" formControlName="startTime">
+             @if(form.get('startTime')?.invalid && form.get('startTime')?.touched){
+            <h5>Start-time is required</h5>
+
+           }
         </p>
         <p>
-            <label>endTime</label>
+            <label>end-time</label>
             <input  type="time" name="endTime" formControlName ="endTime">
+             @if(form.get('endTime')?.invalid && form.get('endTime')?.touched){
+            <h5>End-time is required</h5>
+
+           }
         </p>
         <p>
             <label>date</label>
-            <input type="date" name="location" formControlName ="date">
+            <input type="date" name="date" formControlName ="date">
+             @if(form.get('date')?.invalid && form.get('date')?.touched){
+            <h5>Date is required</h5>
+
+           }
         </p>
         <p>
             <label>location</label>
             <input type="txt" name="location" formControlName ="location">
+             @if(form.get('location')?.invalid && form.get('location')?.touched){
+            <h5>Location is required</h5>
+
+           }
         </p>
-        <!-- <p>
-            <label>status</label>
-            <input type="txt" name="status" formControlName="status">
-        </p>
+        
         <p>
-            <label>attendees</label>
-            <input type="text" name="attendees" formControlName="attendees">
-        </p> -->
-        <p>
-            <button type="submit">create meeting</button>
+            <button [disabled]="!form.valid"  type="submit">create meeting</button>
 
            
         </p>

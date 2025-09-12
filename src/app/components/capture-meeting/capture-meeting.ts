@@ -1,8 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ClientService } from '../../clientService';
-import id from '@angular/common/locales/extra/id';
 import { ActivatedRoute, Router } from '@angular/router';
+
 
 
 @Component({
@@ -12,8 +12,10 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrl: './capture-meeting.css'
 })
 export class CaptureMeeting {
+[x: string]: any;
 
   private router = inject(Router)
+// title: any;
   
   constructor(private clientService : ClientService,private route :ActivatedRoute){}
   
@@ -21,14 +23,15 @@ export class CaptureMeeting {
 
 
   form = new FormGroup({
-    title : new FormControl('',Validators.required),
-    description: new FormControl(''),
-    startTime : new FormControl(''),
-    endTime : new FormControl(''),
-    date : new FormControl(''),
-    location : new FormControl(''),
-    status : new FormControl(''),
-    attendees : new FormControl(''),
+    title : new FormControl('',[Validators.required,Validators.minLength(5)]),
+    description: new FormControl('',Validators.required),
+    startTime : new FormControl('',Validators.required),
+    endTime : new FormControl('',Validators.required),
+    date : new FormControl('',Validators.required),
+    location : new FormControl('',Validators.required),
+    status : new FormControl('',Validators.required),
+    attendees : new FormControl('',Validators.required),
+    
     
 
   })
@@ -47,6 +50,7 @@ captureMeeting():void{
   // attendees :''
 
   })
+  console.log(this.form.value)
 
   const meeting = this.form.value
   console.log(meeting)
@@ -54,6 +58,8 @@ captureMeeting():void{
   
 
  }
+
+
 
   
 

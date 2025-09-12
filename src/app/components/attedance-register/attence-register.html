@@ -7,18 +7,41 @@
             <p>
                 <label>name:</label>
                 <input type="text"  formControlName="name">
+                @if(form.get('name')?.invalid && form.get('name')?.touched){
+                    <h5>Name is required</h5>
+                }
+                
+                
             </p>
             <p>
                 <label>surname:</label>
                 <input type="text" formControlName="surname"/>
+                @if(form.get('surname')?.invalid && form.get('surname')?.touched){
+                    <h5>Surname is required</h5>
+                }
             </p>
             <p>
                 <label>email:</label>
                 <input type="text"  formControlName="email"/>
+               
+                 @if(form.get('email')?.invalid && form.get('email')?.touched){
+                <span>
+                    @if(form.get('email')?.errors?.['required']){
+                        <h5>Email is required</h5>
+                    }
+                </span>
+                <span>
+                    @if(form.get('email')?.errors?.['email']){
+                    <h5>please enter a valid email address</h5>
+
+                }
+
+                </span>
+           }
             </p>
            
             <p>
-                <button type="submit">submit</button>
+                <button [disabled]="!form.valid" type="submit">submit</button>
             </p>
         
     </form>
