@@ -123,14 +123,17 @@ sectors:Company[]=[];
                 }
                 
               }
+              this.cdr.detectChanges()
               
               
               
             } 
+             
             
           
         })
-         this.cdr.detectChanges()
+        
+
          console.log(this.tech ,this.health,this.other,this.finance,this.retail,this.sectors)
         
   }
