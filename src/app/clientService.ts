@@ -17,10 +17,12 @@ import { Attendance } from "./models/attendance.model";
 })
 export class ClientService{
   
-private http = inject(HttpClient)
+    private http = inject(HttpClient);
+     
     private viewedCompany!:Company;
     private viewedSurvey! : SurveyObj;
     private viewedMeeting! : Meeting;
+     
     clientOptions= [
         {
             id:'1',
@@ -38,7 +40,7 @@ private http = inject(HttpClient)
             path:'register-company',
         }
     ]
-    private _questions: string[] = [];
+    private questions!: Question[];
 
    
     setClickedCompany(company:Company) {
@@ -48,10 +50,15 @@ private http = inject(HttpClient)
     
 
       registerCompany(company : Company) :void{
-        console.log(company)
+        console.log(company);
         this.http.post("/api/capture-company",company).subscribe({});
 
         
+      }
+
+      deRegisterCompany(company : Company) {
+        console.log(company.id);
+        this.http.delete(`/api/delete-company/${company.id}`).subscribe();
       }
 
       captureSurvey(survey: SurveyObj):void{
@@ -62,6 +69,12 @@ private http = inject(HttpClient)
         this.http.patch("/api/capture-surveys",this.company).subscribe();
 
 
+      }
+
+      deleteSurvey(survey:SurveyObj) {
+        console.log(survey.id)
+        this.http.delete(`/api/delete-survey/${survey.id}`).subscribe();
+        
       }
 
     captureMeeting(meeting: Meeting):void{
@@ -77,8 +90,14 @@ private http = inject(HttpClient)
         let people: Person[] = []
         people.push(person);
         this.company.people = people
-         this.http.post("/api/capture-person",this.company).subscribe()
+         this.http.post("/api/capture-person",this.company).subscribe();
 
+     }
+
+     deletePerson(person:Person) {
+         console.log(person.id);
+
+        this.http.delete(`/api/delete-person/${person.id}`).subscribe();
      }
 
   captureAttences(meeting : Meeting) {
@@ -99,10 +118,11 @@ private http = inject(HttpClient)
    }
    setClickedSurvey(survey :SurveyObj){
     this.viewedSurvey = survey;
+    console.log(this.viewedSurvey.title)
    }
    viewQuestions(){
-        console.log(this.viewedSurvey.id)
-        return this.http.get<Question[]>(`/api/view-Questions/${this.viewedSurvey.id}`)
+         
+        return  this.http.get<Question[]>(`/api/view-Questions/${this.viewedSurvey.id}`) ;
    }
 
    viewAnswers(questionId : number){
@@ -114,6 +134,10 @@ private http = inject(HttpClient)
    }
    viewMeetings(){
         return this.http.get<Meeting[]>(`/api/View-Meetings/${this.company.id}`)
+   }
+
+   deleteMeeting(meeting:Meeting) {
+    this.http.delete(`/api/delete-meeting/${meeting.id}`).subscribe();
    }
 
    viewAttendance(){
@@ -130,9 +154,15 @@ private http = inject(HttpClient)
         return this.viewedCompany
     }
 
-    get questions():string[]{
-        return this._questions
+    // get questions():string[]{
+    //     return this._questions
+    // }
+
+    get survey():SurveyObj {
+        return this.viewedSurvey
     }
+
+     
 
     // addQuestion():void{
     //     this._questions.push('');
@@ -144,7 +174,6 @@ private http = inject(HttpClient)
     }
     deleteComplaints(numbers:number){
         this.http.delete(`/api/deleteComplaints/${numbers}`).subscribe({
-            
             
         })
         

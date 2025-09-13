@@ -5,13 +5,14 @@ import { AboutCompany } from "./components/about-company/about-company";
 import { CommentsComponent } from './components/comments-component/comments-component';
 import { ViewComplaintsComponent } from "./components/view-complaints-component/view-complaints-component";
 import { Meeting } from './models/meeting.models';
+import { StatisticsComponent } from './components/statistics-component/statistics-component';
 
  
 
 @Component({
   selector: 'app-root',
 
-  imports: [RouterOutlet, AboutCompany, CommentsComponent, ViewComplaintsComponent],
+  imports: [RouterOutlet, AboutCompany, CommentsComponent, ViewComplaintsComponent,StatisticsComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

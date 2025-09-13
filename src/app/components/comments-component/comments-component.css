@@ -14,6 +14,7 @@
      /* margin-left: 800px;  */
      margin-top: 40px;
      color: white;
+     
 } 
 #horizontal-line{
     width: 2590px;
@@ -92,4 +93,20 @@ h4{
 textarea{
     margin-left: 200px;
 }
-
+@media(min-width:380px){
+    #container{
+        /* backgrou
+        nd-color: red; */
+        #action{
+            margin-left: -800px;
+        }
+        #containerTwo{
+            margin-left: 200px;
+        }
+    }
+}
+@media(max-width:481px){
+    #container{
+        /* background-color: red; */
+    }
+}

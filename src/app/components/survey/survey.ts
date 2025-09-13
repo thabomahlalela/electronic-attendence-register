@@ -50,7 +50,10 @@ export class Survey implements OnInit {
         console.log(this.surveys.find((s)=>s.id== this.id)!.questions![i].question +" Answer " + this.form.value.options[i] )
       }
       console.log(this.surveys.find((s)=>s.id== this.id),"check")
-      this.clientService.captureSurveyAnswers(this.surveys.find((s)=>s.id== this.id)!)
+      
+      if(this.form.valid) {
+        this.clientService.captureSurveyAnswers(this.surveys.find((s)=>s.id== this.id)!);
+      }
         
      }
 

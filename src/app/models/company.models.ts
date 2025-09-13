@@ -19,3 +19,5 @@ export interface Company {
     meetings? : Meeting[]
     people? : Person[]
 }
+
+
