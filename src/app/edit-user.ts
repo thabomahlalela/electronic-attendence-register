@@ -1,5 +1,8 @@
-import { Directive, HostListener, Input} from '@angular/core';
+import { Directive, HostListener, inject, Input} from '@angular/core';
 import { DUMMY_USERS } from './components/dummies/dummy-user';
+import { Person } from './models/person.model';
+import { P } from '@angular/cdk/keycodes';
+import { ClientService } from './clientService';
 
 @Directive({
   selector: '[appEditUser]',
@@ -12,8 +15,9 @@ import { DUMMY_USERS } from './components/dummies/dummy-user';
 })
 
 export class EditUser {
-  @Input() empNO! : string;
-  private users = DUMMY_USERS;
+  @Input() person! : Person;
+  private clientService = inject(ClientService);
+  // private users = DUMMY_USERS;
    private cellIndex! : number;
    private columnName = '';
 
@@ -73,7 +77,8 @@ export class EditUser {
       newElement.value = trElement.textContent + ""
       newElement.style.position = 'relative'
       newElement.style.marginTop = '30px'
-      newElement.style.width = '70px'
+      newElement.style.width = '200px'
+      newElement.style.borderBottomRightRadius = '10px'
       if(this.columnName === 'Date'){
         console.log('check im date ')
         newElement.type = "date";
@@ -94,25 +99,24 @@ export class EditUser {
           console.log(newElement.value);
 
           trElement.textContent = newElement.value
-          let user = this.users.find((s)=>s.employNO === this.empNO)
-          console.log(user?.surname)
+          
 
-          if(user){
+          
             if(this.columnName === "Name"){
-              user.name =trElement.textContent
+              this.person.name =trElement.textContent
+              console.log(this.person)
             }
              if(this.columnName === "Surname"){
-              user.surname =trElement.textContent
+              this.person.surname =trElement.textContent
+              console.log(this.person)
             }
              if(this.columnName === "Email"){
-              user.email =trElement.textContent
+              this.person.email =trElement.textContent
+              console.log(this.person)
             }
 
-            console.log(user)
-            
-          }
-
-
+           
+          this.clientService.updatePerson(this.person)
           parent!.replaceChild(trElement,newElement);
          
 
@@ -124,8 +128,8 @@ export class EditUser {
       })
       parent!.replaceChild(newElement,trElement);
     }else{
-    this.users = this.users.filter((s)=>s.employNO !== this.empNO)
-    console.log(this.users)
+    // this.users = this.users.filter((s)=>s.employNO !== this.empNO)
+    // console.log(this.users)
     }
     
   }

@@ -27,6 +27,8 @@ private  cdr = inject(ChangeDetectorRef);
 private _snackBar = inject(MatSnackBar);
 message = 'user deleted';
 action = "undo";
+isUndo = false;
+
 constructor(private route : ActivatedRoute){
   this.clientService.viewEmployees().subscribe({
     next : (e)=>{
@@ -44,18 +46,30 @@ constructor(private route : ActivatedRoute){
   }
 
   removeUser(user : Person){
-    this.users = this.users.filter((s)=> s.employNO !== user.employNO)
+    this.users = this.users.filter((s)=> s.id !== user.id)
     let snackBarRef = this._snackBar.open(this.message, this.action, {duration:5000});
 
+    
+      if(this.isUndo === true) {
+        this.isUndo = false;
+      }
+      
     snackBarRef.afterDismissed().subscribe(() => {
-      console.log("snackbar dismised")
+      console.log("snackbar dismised");
+       if(this.isUndo) {
+
+      } else {
+    this.clientService.deletePerson(user);
+
+      }
     });
 
     snackBarRef.onAction().subscribe(() => {
       this.users.push(user);
       this.cdr.detectChanges();
-    
-    })
+    this.isUndo = true;
+    });
+
   }
 
   refresh() {

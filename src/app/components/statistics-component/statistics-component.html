@@ -1,0 +1,116 @@
+
+ <div id="view-staticstics">
+
+               <mat-card class="stat-card">
+                   <div class="stat-header">
+                      <span class="tittle">Active Companies</span>
+                       <mat-icon class="icons" color="primary">business</mat-icon>
+                    </div>
+
+                    <div class="stat-value">75</div>
+                    <div class="stat-change positive">
+                             <mat-icon class="arrow">arrow_upward</mat-icon>
+                             20% from last month
+                    </div>
+                    
+                </mat-card>
+
+
+             <mat-card class="stat-cards">
+                   <div class="stat-headers">
+                      <span class="tittle">Total Companies</span>
+                       <mat-icon class="icons" color="primary">business</mat-icon>
+                    </div>
+
+                    <div class="stat-values">1,250</div>
+                    <div class="stat-changes positive">
+                             <mat-icon class="arrows">arrow_upward</mat-icon>
+                             15% from last month
+                    </div>
+                    
+                </mat-card>
+
+
+
+             <mat-card class="industries">
+                    <h3 id="industry-header">Industry Breakdown</h3>
+                    
+                
+                    <div class="industry-row">     
+                        <h3>Technology</h3>
+                         <mat-progress-bar id="progress-bar"
+                        mode="determinate"
+                        value="{{tech.length}}"
+                        ></mat-progress-bar> 
+                        <div id="percentage">
+                        {{sectors.length}}%
+                        </div>
+                        
+                    </div> 
+                   
+                    <div class="industry-row">     
+                        <h3>Finance</h3>
+                         <mat-progress-bar id="progress-bar"
+                        mode="determinate"
+                        value="{{finance.length}}"
+                        ></mat-progress-bar> 
+                        <div id="percentage">
+                        {{sectors.length}}%
+                        </div>
+
+                        
+                    </div> 
+                            
+                   <div class="industry-row">     
+                        <h3>Health</h3>
+                         <mat-progress-bar id="progress-bar"
+                        mode="determinate"
+                        value="{{health.length}}"
+                        ></mat-progress-bar> 
+                        <div id="percentage">
+                        {{sectors.length}}%
+                        </div>
+                        
+                    </div> 
+                    
+                     <div class="industry-row">     
+                        <h3>Retail</h3>
+                         <mat-progress-bar id="progress-bar"
+                        mode="determinate"
+                        value="{{retail.length}}"
+                        ></mat-progress-bar> 
+                        <div id="percentage">
+                        {{sectors.length}}%
+                        </div>
+                        
+                    </div> 
+
+
+                    
+                
+                     <div class="industry-row">     
+                        <h3>Other</h3>
+                         <mat-progress-bar id="progress-bar"
+                        mode="determinate"
+                        value="{{other.length}}"
+                        ></mat-progress-bar> 
+                        <div id="percentage">
+                        {{sectors.length}}%
+                        </div>
+                        
+                    </div> 
+                    
+
+
+            </mat-card>
+
+
+
+
+
+
+
+        </div>
+    
+
+         

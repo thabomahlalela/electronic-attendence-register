@@ -21,10 +21,9 @@ export class CustomersAdminComponent implements OnInit {
 
   ngOnInit(): void {
        
-
     this.clientService.viewCompanies().subscribe({
       next : (companies)=>{
-        this.company = companies.find((company)=> company.id == 2)!
+        this.company = companies.find((company)=> company.id == 1)!
         console.log(this.getCompany)
          this.clientService.setClickedCompany(this.getCompany)
         this.cdr.detectChanges()

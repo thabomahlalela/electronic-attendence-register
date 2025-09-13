@@ -17,12 +17,14 @@ import { ViewAttendances } from './view-attendances/view-attendances';
 import { CustomersAdminComponent } from './customers-admin-component/customers-admin-component';
 import { ViewComplaintsComponent } from './components/view-complaints-component/view-complaints-component';
 import { CommentsComponent } from './components/comments-component/comments-component';
+import { StatisticsComponent } from './components/statistics-component/statistics-component';
 
 export const routes: Routes = [
     {
         path :'custom-admin',
         component : CustomersAdminComponent,
         children:[
+            
 
             { 
                 path :'view-surveys',
@@ -79,6 +81,10 @@ export const routes: Routes = [
         path:'',
         component:ClientAdminHome,
         children:[
+            {
+                path: '',
+                component: StatisticsComponent
+            },
             
     {
         path:'view-companies',

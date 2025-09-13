@@ -1,5 +1,6 @@
-import { Directive, Input, input } from '@angular/core';
+import { Directive, inject, Input, input } from '@angular/core';
 import { Company } from './models/company.models';
+import { ClientService } from './clientService';
 
 @Directive({
   selector: '[appEditCompanyInfo]',
@@ -9,6 +10,7 @@ import { Company } from './models/company.models';
 })
 export class EditCompanyInfo {
     @Input() company! : Company
+    private clientService = inject(ClientService);
 
   constructor() {}
   onClick(event : MouseEvent){
@@ -16,7 +18,15 @@ export class EditCompanyInfo {
      const trElement = (event.target as HTMLInputElement)
       const siblings = trElement.parentElement!.children;
       const bigBrother = trElement.previousElementSibling;
-      
+
+      console.log(bigBrother?.textContent)
+      if(bigBrother?.textContent === ""){
+       
+               this.company.status =  trElement.textContent;
+                console.log("im status ",this.company)
+                this.clientService.updateCompany(this.company)
+        return;
+      }
      
       
       // for(let i = 0; i < siblings!.length;i++){
@@ -84,9 +94,11 @@ export class EditCompanyInfo {
                 parent!.replaceChild(newElement,trElement);
                 return
             }
+            trElement.value = newElement.value
             if(bigBrother?.textContent === "Name:"){
               console.log("im name")
-              this.company.name =  trElement.value
+              this.company.name = trElement.value
+              
 
             }else if(bigBrother?.textContent === "City:"){
               console.log("im City")
@@ -119,14 +131,17 @@ export class EditCompanyInfo {
 
 
 
-            trElement.value = newElement.value
+            
+             this.clientService.updateCompany(this.company)
             parent!.replaceChild(trElement,newElement);
+            
                   
               
           }
       
       })
-       
+      
+
        parent!.replaceChild(newElement,trElement);
      
   }

@@ -1,14 +1,15 @@
-import { ChangeDetectorRef, Component, DestroyRef, inject, Input, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, DestroyRef, ElementRef, inject, Input, OnInit, ViewChild } from '@angular/core';
 import { FormsModule, RequiredValidator } from '@angular/forms';
-import { MatButton } from '@angular/material/button';
+import { MatButton, MatButtonModule } from '@angular/material/button';
+import { MatIcon } from '@angular/material/icon';
 import { ActivatedRoute, Router } from '@angular/router';
 import { QRCodeComponent } from 'angularx-qrcode';
-import { interval } from 'rxjs';
+ 
 
 
 @Component({
   selector: 'app-generate-qr-code',
-  imports: [QRCodeComponent, MatButton, FormsModule],
+  imports: [QRCodeComponent, MatButton, FormsModule, MatIcon, MatButtonModule],
   templateUrl: './generate-qr-code.html',
   styleUrl: './generate-qr-code.css'
 })
@@ -24,6 +25,7 @@ url ='url';
 isLoading = false;
 isGenerate = true;
 destroy = inject(DestroyRef);
+ @ViewChild('qrcodeContainer', { static: false }) qrcodeContainer!: ElementRef;
 
  
 ngOnInit(): void {
@@ -58,6 +60,17 @@ ngOnInit(): void {
 
   onView() {
     
+  }
+
+  onDownload() {
+    const canvas = this.qrcodeContainer.nativeElement.querySelector('canvas');
+    const url = canvas.toDataURL('image/png');
+
+    // Create a download link
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'qr-code.png';
+    a.click();
   }
 
 
