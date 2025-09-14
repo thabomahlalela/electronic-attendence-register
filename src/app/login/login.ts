@@ -43,19 +43,19 @@ export class Login implements OnInit {
 
 
     onSubmit() {
-       if(this.form.controls["email"].pristine) {
-        this.emailPlaceholder = 'required';
-       }
+      //  if(this.form.controls["email"].pristine) {
+      //   this.emailPlaceholder = 'required';
+      //  }
 
-       if(this.form.controls["password"].pristine) {
-        this.passwordPlaHolder = 'required';
-       }
+      //  if(this.form.controls["password"].pristine) {
+      //   this.passwordPlaHolder = 'required';
+      //  }
 
-       if(this.form.valid) {
+      //  if(this.form.valid) {
         
          this.clientService.login(this.form.value.email,this.form.value.password)
-       }
-       console.log(this.form.valid)
+      //  }
+      //  console.log(this.form.valid)
 
 
     }

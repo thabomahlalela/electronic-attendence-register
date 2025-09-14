@@ -65,7 +65,7 @@ ngOnInit(): void {
   }
 
   onHome() {
-    this.router.navigate(['']);
+    this.router.navigate(['client-admin-home']);
   }
 
   onComments(){
