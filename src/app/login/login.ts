@@ -1,13 +1,7 @@
-<<<<<<< HEAD
 import { Location } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
- 
-=======
-import { Component, inject } from '@angular/core';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ClientService } from '../clientService';
->>>>>>> 19ec16ebd3aa896f7911f92b8a5100ba7995f6ac
 
 @Component({
   selector: 'app-login',
@@ -19,11 +13,8 @@ export class Login implements OnInit {
  
   emailPlaceholder='email';
   passwordPlaHolder ='password';
-<<<<<<< HEAD
   location = inject(Location); 
-=======
   private clientService = inject(ClientService)
->>>>>>> 19ec16ebd3aa896f7911f92b8a5100ba7995f6ac
    
     form:FormGroup = new FormGroup({
       email :new FormControl('',{
@@ -53,7 +44,11 @@ export class Login implements OnInit {
         this.passwordPlaHolder = 'required';
        }
 
-       this.clientService.login(this.form.value.email,this.form.value.password)
+       if(this.form.valid) {
+        
+         this.clientService.login(this.form.value.email,this.form.value.password)
+       }
+
 
     }
 }
