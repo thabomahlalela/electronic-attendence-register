@@ -13,7 +13,7 @@ export function redirectToLoginOnRefresh(envInjector : EnvironmentInjector) : ()
       if(isPageRefresh){
       localStorage.clear();
        const router = inject(Router);
-       setTimeout(()=> router.navigate(['login']))
+       setTimeout(()=> router.navigate(['']))
 
     }
     })

@@ -1,4 +1,5 @@
-import { Component, inject } from '@angular/core';
+import { Location } from '@angular/common';
+import { Component, HostListener, inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ClientService } from '../clientService';
 
@@ -8,9 +9,11 @@ import { ClientService } from '../clientService';
   templateUrl: './login.html',
   styleUrl: './login.css'
 })
-export class Login {
+export class Login implements OnInit {
+ 
   emailPlaceholder='email';
   passwordPlaHolder ='password';
+  location = inject(Location); 
   private clientService = inject(ClientService)
    
     form:FormGroup = new FormGroup({
@@ -22,6 +25,22 @@ export class Login {
       }),
     });
 
+     
+
+     ngOnInit(): void {
+    //   history.pushState('','',location.href);
+    //   window.onpopstate = () => {
+    //   history.pushState('','',location.href);
+    //  }
+  }
+
+  @HostListener('window:postate',['$event'])
+  onPopstate(event:any):void {
+    event.preventDefault();
+      history.pushState('','',location.href);
+
+  }
+
 
     onSubmit() {
        if(this.form.controls["email"].pristine) {
@@ -32,7 +51,12 @@ export class Login {
         this.passwordPlaHolder = 'required';
        }
 
-       this.clientService.login(this.form.value.email,this.form.value.password)
+       if(this.form.valid) {
+        
+         this.clientService.login(this.form.value.email,this.form.value.password)
+       }
+       console.log(this.form.valid)
+
 
     }
 }

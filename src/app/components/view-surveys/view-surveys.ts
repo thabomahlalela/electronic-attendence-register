@@ -69,11 +69,10 @@ onList() {
     
      
      this.clientService.setClickedSurvey(survey);
-     
      this.cdr.detectChanges();
-
-    
-    console.log(this.activeRoute.url)
+     this.clientService.viewQuestions().subscribe((questions) => this.clientService.setQuestions(questions));
+    this.cdr.detectChanges()
+;     
      this.router.navigate(['more-info'],{relativeTo : this.route});
 
       

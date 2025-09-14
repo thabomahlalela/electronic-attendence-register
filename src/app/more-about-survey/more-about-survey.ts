@@ -10,7 +10,7 @@ import { Question } from '../models/question.model';
   templateUrl: './more-about-survey.html',
   styleUrl: './more-about-survey.css'
 })
-export class MoreAboutSurvey implements OnInit {
+export class MoreAboutSurvey   {
 
 route = inject(ActivatedRoute);
 servive = inject(ClientService);
@@ -23,34 +23,23 @@ cdr = inject(ChangeDetectorRef)
 survey!:SurveyObj;
 id!:number;
 
-  ngOnInit(): void {
-        
-   this.servive.viewQuestions().subscribe({
-      next:(q) => {
-        this.questions = q
-        this.cdr.detectChanges();
-      }
-      
-    });
-     
-    console.log(this.survey.title)
-    
-}
+   
 
 onQuestion(question:Question) {
-  
+  this.cdr.detectChanges();
  this.question = question;
  this.servive.viewAnswers(this.question.id).subscribe((s) =>{
      this.answers = s.answers!
-     this.cdr.detectChanges();
+     
   });
+     this.cdr.detectChanges();
       
 }
 
 
 get getQuestions() {
   
-return this.questions;
+return this.servive.getQuestions;
 }
 
 get getSurvey() {

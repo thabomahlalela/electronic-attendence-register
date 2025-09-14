@@ -22,12 +22,16 @@ import { MoreAboutSurvey } from './more-about-survey/more-about-survey';
 import { Login } from './login/login';
 
 export const routes: Routes = [
+
+    {
+        path:'',
+        component:Login
+    },
+
     {
         path :'custom-admin',
         component : CustomersAdminComponent,
         children:[
-            
-
             { 
                 path :'view-surveys',
                 component : ViewSurveys,
@@ -77,7 +81,7 @@ export const routes: Routes = [
                 component:ViewComplaintsComponent
             },
             {
-                path:'view-infor',
+                path:'',
                 component:CompanyInfoComponent
                 
             }
@@ -86,7 +90,7 @@ export const routes: Routes = [
         
     },
     {
-        path:'',
+        path:'client-admin-home',
         component:ClientAdminHome,
         children:[
             {

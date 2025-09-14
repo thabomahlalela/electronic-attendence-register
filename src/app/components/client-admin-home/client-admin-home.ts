@@ -40,13 +40,14 @@ click=true;
 
 
   onCompanies() {
-    this.router.navigate(['/view-companies'])
+    this.router.navigate(['/client-admin-home/view-companies']);
     this.click=false;
   }
 
 
 
   onHome() {
+    this.router.navigate(['/client-admin-home']);
 
   }
 

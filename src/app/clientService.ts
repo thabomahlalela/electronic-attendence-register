@@ -138,8 +138,11 @@ export class ClientService{
     this.viewedSurvey = survey;
     console.log(this.viewedSurvey.title)
    }
+
+   setQuestions(questions:Question[]){
+    this.questions = questions
+   }
    viewQuestions(){
-         
         return  this.http.get<Question[]>(`/api/view-Questions/${this.viewedSurvey.id}`) ;
    }
 
@@ -173,7 +176,7 @@ export class ClientService{
         localStorage.setItem('authToken',authres.token)
         localStorage.setItem('roles',JSON.stringify(authres.roles))
       if(authres.roles.includes('ROLE_ClientADMIN')){
-        this.router.navigate([""])
+        this.router.navigate(["client-admin-home"])
       }else if(authres.roles.includes('ROLE_CustomADMIN')){
         this.router.navigate(['custom-admin'])
         this.viewedCompany = authres.person.company!
@@ -189,6 +192,10 @@ export class ClientService{
    }
     get getOptions() {
         return this.clientOptions
+    }
+
+    get getQuestions(): Question[] {
+      return this.questions
     }
 
     get company(){
