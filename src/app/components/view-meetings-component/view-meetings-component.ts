@@ -31,6 +31,7 @@ export class ViewMeetingsComponent {
    private clientService = inject(ClientService);
    
    constructor(private route :ActivatedRoute){
+
     this.clientService.viewMeetings().subscribe({
         next : (m)=>{
             this.meetings = m
