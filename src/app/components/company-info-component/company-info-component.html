@@ -87,16 +87,24 @@
     <input class="email" [value]="info.email" readonly appEditCompanyInfo [company]="info" />
 
     <label id="status" >Status:</label>
-    <!-- <input class="status" [value]="info.status"  readonly appEditCompanyInfo [company]="info"/> -->
-        <mat-button-toggle-group id="statuss" name="fontStyle" aria-label="Font Style" [(ngModel)]="selectedValue"  (click)="onToggle()" appEditCompanyInfo [company]="info">
+    @if(roles.includes('ROLE_ClientADMIN')){
+       <mat-button-toggle-group id="statuss" name="fontStyle" aria-label="Font Style" [(ngModel)]="selectedValue"  (click)="onToggle()" appEditCompanyInfo [company]="info">
         <mat-button-toggle value="ACTIVE">ACTIVE</mat-button-toggle>
         <mat-button-toggle value='IN-ACTIVE'>IN-ACTIVE</mat-button-toggle>
       </mat-button-toggle-group>
 
+    }@else {
+       <mat-button-toggle-group id="statuss" name="fontStyle" aria-label="Font Style"  >
+        <mat-button-toggle [value]="info.status">{{info.status}}</mat-button-toggle>
+        <!-- <mat-button-toggle value='IN-ACTIVE'>IN-ACTIVE</mat-button-toggle> -->
+      </mat-button-toggle-group>
+    }
+    <!-- <input class="status" [value]="info.status"  readonly appEditCompanyInfo [company]="info"/> -->
+       
 
 
     
-    <button id="update" mat-button>Update</button>
+    <!-- <button id="update" mat-button>{{roles[0]}}</button> -->
     </div>
 
 </div>

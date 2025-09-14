@@ -55,6 +55,7 @@ export class Login implements OnInit {
         
          this.clientService.login(this.form.value.email,this.form.value.password)
        }
+       console.log(this.form.valid)
 
 
     }

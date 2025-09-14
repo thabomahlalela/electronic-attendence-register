@@ -176,7 +176,7 @@ export class ClientService{
         localStorage.setItem('authToken',authres.token)
         localStorage.setItem('roles',JSON.stringify(authres.roles))
       if(authres.roles.includes('ROLE_ClientADMIN')){
-        this.router.navigate([""])
+        this.router.navigate(["client-admin-home"])
       }else if(authres.roles.includes('ROLE_CustomADMIN')){
         this.router.navigate(['custom-admin'])
         this.viewedCompany = authres.person.company!

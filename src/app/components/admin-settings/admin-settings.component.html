@@ -1,0 +1,77 @@
+    <div id="box">
+  
+
+ <div id="settings">
+     <header id="header">
+    <h2>Settings</h2>
+ </header> 
+
+ <!-- @for(option of settingsOptions; track option.id) {
+    <div id="option" (click)="onClick(option.id)">
+        {{option.name}}
+    </div>
+ } -->
+ 
+ </div>
+ </div>
+
+ <div id="settings-choosen-option">
+    @if (isChangingUsername) {
+        <div class="forms">
+            <form [formGroup]="usernameForm" (ngSubmit)="onSubmit()" >
+                <!-- <input id="oldUsername-input" [ngClass]="getClass1" type="email" name="oldUsername" formControlName = "oldUsername" [placeholder]="oldUsernamePlaceholder"/>
+                <input id="newUsername-input" [ngClass]="getClass1" type="email" name="newUsername" formControlName = "newUsername" [placeholder]="newUsernamePlaceholder"/> -->
+                <div id="btns">
+                    <button type="submit">submit</button>
+                     <button>Cancel</button>
+                </div>
+
+                <div id="responce">
+                    @if(isOldUsernameMatching) {
+                        {{'New username: '}}
+                        <p id="responce-massage">successfully updated</p>
+                    }
+
+                     @if(isOldUsernameNotMatching) {
+                        {{'New username: N/a'}}
+                        <p id="responce-massage">incorrect old username</p>
+                    }
+                </div>
+
+               
+                
+            </form>
+        </div>
+    }
+
+    @if (isChangingPassword) {
+         <div class="forms">
+            <form [formGroup]="passwordForm" (ngSubmit)="onSubmitPasswordForm()" >
+                <!-- <input id="oldPassword-input" [ngClass]="getClass"   name="oldPassword" formControlName = "oldPassword" [placeholder]='oldPasswordPlaceholder'/>
+                <div id="passwords" [ngClass]="getClass" formGroupName="passwords">
+                   <input type="text" [ngClass]="getClass" name="newPassword" formControlName="newPassword" [placeholder]="newPasswordPlaceholder">
+                   <input type="text" [ngClass]="getClass" name="confirmPassword" formControlName="confirmPassword"  [placeholder] ="confirmPasswordPlaceholder">
+                </div> -->
+                <div id="btns">
+                    <button type="submit">submit</button>
+                     <button>Cancel</button>
+                </div>
+
+                <div id="responce">
+                    @if(isOldPasswordMatching) {
+                        {{'New username: '}}
+                        <p id="responce-massage">successfully updated</p>
+                    }
+
+                     @if(isOldPasswordNotMatching) {
+                        {{'New username: N/a'}}
+                        <p id="responce-massage">incorrect old password</p>
+                    }
+                </div>
+
+               
+                
+            </form>
+        </div>
+    }
+ </div>

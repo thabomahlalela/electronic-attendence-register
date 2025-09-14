@@ -19,6 +19,7 @@ export class CompanyInfoComponent {
 
 
   selectedValue=''
+  roles = JSON.parse(localStorage.getItem('roles')!)
 
   info:Company = this.clientService.company
 
