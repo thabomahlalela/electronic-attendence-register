@@ -8,6 +8,7 @@ import { Survey } from "../survey/survey";
 import { MatCard } from '@angular/material/card';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { Company } from '../../models/company.models';
+import { I } from '@angular/cdk/keycodes';
 
  
 @Component({
@@ -16,14 +17,26 @@ import { Company } from '../../models/company.models';
   templateUrl: './client-admin-home.html',
   styleUrl: './client-admin-home.css'
 })
-export class ClientAdminHome {
+export class ClientAdminHome implements OnInit {
+ 
 router = inject(Router);
 service = inject(ClientService);
 private cdr = inject(ChangeDetectorRef);
 click=true;
 
 
+ ngOnInit(): void {
+    //  this.service.login().subscribe({
+    //    next: (s)=>{
+    //     console.log(s.person)
+    //      console.log(s.roles)
+    //      console.log(s.person.company)
+    //      console.log(s.token)
 
+         
+    //    }
+    //  })
+  }
 
 
   onCompanies() {

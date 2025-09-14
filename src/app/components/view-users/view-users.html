@@ -39,12 +39,12 @@
              @for(user of getUsers; track user.id) {
                   <tr  >
                
-                <td appEditUser [empNO]="user.employNO">{{user.name}}</td>
-                <td appEditUser [empNO]="user.employNO">{{user.surname}}</td>
+                <td appEditUser [person]="user">{{user.name}}</td>
+                <td appEditUser [person]="user">{{user.surname}}</td>
                 <td>{{user.employNO}}</td>
-                <td appEditUser [empNO]="user.employNO">{{user.email}}</td>
+                <td appEditUser [person]="user">{{user.email}}</td>
                 <td><button class="icons" matMiniFab>
-                 <mat-icon appEditUser [empNO]="user.employNO"  (click)="removeUser(user)">delete_outline</mat-icon>
+                 <mat-icon appEditUser   (click)="removeUser(user)">delete_outline</mat-icon>
             </button></td>
                 
             </tr>

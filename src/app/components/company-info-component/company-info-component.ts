@@ -41,7 +41,7 @@ export class CompanyInfoComponent {
   }
 
 onToggle(){
-  
+  console.log(this.selectedValue)
 
   
   

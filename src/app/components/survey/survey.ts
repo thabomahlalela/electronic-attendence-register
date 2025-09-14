@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, inject, OnInit } from '@angular/core';
 import {DUMMY_SURVEY} from '../dummies/dummy-survey';
 import {SurveyObj}from '../../models/survey.model'
 import { FormArray, FormBuilder, FormControl, FormGroup, NgForm, NgModel, ReactiveFormsModule, Validators } from '@angular/forms';
@@ -17,8 +17,9 @@ export class Survey implements OnInit {
     
      private route = inject(ActivatedRoute);
      private clientService = inject(ClientService);
-     private surveys : SurveyObj[]  = DUMMY_SURVEY;
-     private fb = inject(FormBuilder);;
+     private survey! : SurveyObj ;
+     private fb = inject(FormBuilder);
+     private cdr = inject(ChangeDetectorRef);
      form! : FormGroup;
      private id!:number;
 
@@ -28,10 +29,20 @@ export class Survey implements OnInit {
         console.log(this.id)
       
       });
-     this.form = new FormGroup({
-         options : this.fb.array(this.surveys.find((s)=>s.id==this.id)!.questions!.map(s =>new FormControl(),Validators.required))
+      this.clientService.viewSurvey(this.id).subscribe({
+        next : (survey)=>{
+          this.survey = survey;
+          console.log(survey)
+           this.form = new FormGroup({
+           options : this.fb.array(survey.questions!.map(s =>new FormControl(),Validators.required))
 
      })
+          this.cdr.detectChanges();
+
+        }
+      })
+
+    
     }
 
     get options() : FormArray{
@@ -41,24 +52,21 @@ export class Survey implements OnInit {
      onSubmit(){
       console.log(this.form.value.options[0],this.form.value.options[1],this.form.value.options[2],this.form.value.options[3],this.form.value.options[3])
       
-      for(let i =0;i < this.surveys.find((s)=>s.id== this.id)!.questions!.length;i++){
+      for(let i =0;i < this.survey.questions!.length;i++){
         // this.surveys.find((s)=>s.id== this.id)!.questions![i].answers = this.form.value.options[i]
         let answers : string[] = []
         answers.push( this.form.value.options[i])
-        this.surveys.find((s)=>s.id== this.id)!.questions![i].answers = answers
+        this.survey.questions![i].answers = answers
 
-        console.log(this.surveys.find((s)=>s.id== this.id)!.questions![i].question +" Answer " + this.form.value.options[i] )
+        console.log(this.survey.questions![i].question +" Answer " + this.form.value.options[i] )
       }
-      console.log(this.surveys.find((s)=>s.id== this.id),"check")
-      
-      if(this.form.valid) {
-        this.clientService.captureSurveyAnswers(this.surveys.find((s)=>s.id== this.id)!);
-      }
+      console.log(this.survey,"check")
+      this.clientService.captureSurveyAnswers(this.survey)
         
      }
 
-     get survey() {
-      return this.surveys.find((s)=>s.id== this.id)
+     get getSurvey() {
+      return this.survey
      }
 
 

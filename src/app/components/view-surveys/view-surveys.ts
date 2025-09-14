@@ -46,7 +46,7 @@ export class ViewSurveys implements OnInit {
 
   ngOnInit(): void {
     
-    this.clientService.viewSurvey().subscribe({
+    this.clientService.viewSurveys().subscribe({
       next : (s)=>{
          this.surveys= s;
         console.log(s)
@@ -104,6 +104,7 @@ onList() {
     this.clientService.viewAnswers(question.id).subscribe({
       next : (s) => {
         this.answers = s.answers!
+        this.cdr.detectChanges();
       }
     })
   }
@@ -141,7 +142,7 @@ onDeleteSurvey(survey:SurveyObj) {
 }
 
 onRefresh() {
-  this.clientService.viewSurvey().subscribe({
+  this.clientService.viewSurveys().subscribe({
       next : (s)=>{
          this.surveys= s;
         console.log(s)

@@ -14,14 +14,14 @@
 
 
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
-        <header>{{survey!.title}}</header>
-        <article>{{survey!.description}}</article>
+        <header>{{getSurvey!.title}}</header>
+        <article>{{getSurvey!.description}}</article>
             <div formArrayName="options">
                             <div *ngFor="let control of options.controls; let i = index">
                                 <label>
                                     <!-- @for(question of surveys[i].question;track question.question){ -->
                                         <ul>
-                                            <li>{{survey!.questions![i].question}}</li>
+                                            <li>{{getSurvey.questions![i].question}}</li>
                                             <!-- <input type="text" [formControlName] = "i"> -->
                                                  <textarea [formControlName] = "i"></textarea>
                                             <!-- <input type="text"> -->

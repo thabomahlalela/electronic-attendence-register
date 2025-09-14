@@ -33,6 +33,7 @@ export class CreateUser {
       employNO : '',
       email : this.form.value.email
      })
+     console.log(localStorage.getItem('roles'))
 
      this.router.navigate(['users'],{relativeTo : this.route})
 

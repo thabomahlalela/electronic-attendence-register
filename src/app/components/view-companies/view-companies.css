@@ -18,6 +18,8 @@
    
  }
 
+ 
+ 
  .ACTIVE {
    background-color: cadetblue  ;
    color: white;
@@ -28,7 +30,7 @@
   border-radius: 2rem;
  }
 
-  .IN-ACTIVE{
+  .IN-ACTIVE {
    background-color:darkred  ;
    color: white;
    display: flex;

@@ -10,6 +10,9 @@ import { inject } from "@angular/core";
 import { Observable } from "rxjs";
 import { Person } from "./models/person.model";
 import { Attendance } from "./models/attendance.model";
+import { AuthResponse } from "./models/authResponse.model";
+import { Router } from "@angular/router";
+
 
 
 @Injectable({
@@ -18,6 +21,7 @@ import { Attendance } from "./models/attendance.model";
 export class ClientService{
   
     private http = inject(HttpClient);
+    private router = inject(Router)
      
     private viewedCompany!:Company;
     private viewedSurvey! : SurveyObj;
@@ -55,6 +59,10 @@ export class ClientService{
 
         
       }
+      updateCompany(company : Company){
+        console.log("im about to update company")
+         this.http.patch("/api/update-company",company).subscribe();
+      }
 
       deRegisterCompany(company : Company) {
         console.log(company.id);
@@ -66,7 +74,7 @@ export class ClientService{
         let surveys : SurveyObj[] = []
         surveys.push(survey) 
         this.company.surveys = surveys
-        this.http.patch("/api/capture-surveys",this.company).subscribe();
+        this.http.patch("/api/update-company",this.company).subscribe();
 
 
       }
@@ -81,7 +89,7 @@ export class ClientService{
         let meetings: Meeting[] = []
         meetings.push(meeting);
         this.company.meetings = meetings
-        this.http.patch("/api/capture-surveys",this.company).subscribe();
+        this.http.patch("/api/update-company",this.company).subscribe();
 
      }  
 
@@ -92,6 +100,12 @@ export class ClientService{
         this.company.people = people
          this.http.post("/api/capture-person",this.company).subscribe();
 
+     }
+
+     updatePerson(person : Person){
+        console.log("about to update person")
+        person.company = this.company
+        this.http.patch("/api/update-person",person).subscribe()
      }
 
      deletePerson(person:Person) {
@@ -112,9 +126,13 @@ export class ClientService{
      return this.http.get<Company[]>("/api/view-companies")
    }
 
-   viewSurvey(){
+   viewSurveys(){
     console.log(this.company.id)
      return this.http.get<SurveyObj[]>(`/api/view-surveys/${this.company.id}`)
+   }
+
+   viewSurvey(surveyId : number){
+     return this.http.get<SurveyObj>(`/api/view-survey/${surveyId}`)
    }
    setClickedSurvey(survey :SurveyObj){
     this.viewedSurvey = survey;
@@ -141,6 +159,29 @@ export class ClientService{
 
    viewAttendance(){
          return this.http.get<Person[]>(`/api/view-attendances/${this.viewedMeeting.id}`)
+   }
+
+   login(username : string,password :string){
+    console.log(username,password)
+    return this.http.post<AuthResponse>("/api/my-login",{username : username,password :password}).subscribe({
+      next : (authres)=>{
+        console.log(authres.person)
+        console.log(authres.roles)
+        console.log(authres.person.company)
+        console.log(authres.token)
+        localStorage.setItem('authToken',authres.token)
+        localStorage.setItem('roles',JSON.stringify(authres.roles))
+      if(authres.roles.includes('ROLE_ClientADMIN')){
+        this.router.navigate([""])
+      }else if(authres.roles.includes('ROLE_CustomADMIN')){
+        this.router.navigate(['custom-admin'])
+        this.viewedCompany = authres.person.company!
+      }
+
+
+
+      }
+    })
    }
    setClickedMeeting(meeting : Meeting){
         this.viewedMeeting = meeting

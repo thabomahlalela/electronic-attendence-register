@@ -4,6 +4,7 @@ import { Router, RouterOutlet } from '@angular/router';
 import { CustomersAdmin } from './customer-admin.service';
 import { Company } from '../models/company.models';
 import { ClientService } from '../clientService';
+import { C } from '@angular/cdk/keycodes';
 
 
 @Component({
@@ -22,16 +23,16 @@ export class CustomersAdminComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.company = this.clientService.company
        
-
-    this.clientService.viewCompanies().subscribe({
-      next : (companies)=>{
-        this.company = companies.find((company)=> company.id == 1)!
-        console.log(this.getCompany)
-         this.clientService.setClickedCompany(this.getCompany)
-        this.cdr.detectChanges()
-      }
-    })
+    // this.clientService.viewCompanies().subscribe({
+    //   next : (companies)=>{
+    //     this.company = companies.find((company)=> company.id == 1)!
+    //     console.log(this.getCompany)
+    //      this.clientService.setClickedCompany(this.getCompany)
+    //     this.cdr.detectChanges()
+    //   }
+    // })
    
   }
 
