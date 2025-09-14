@@ -62,8 +62,8 @@ captureSurvey() :void{
   questions : this.questions
     
   })
-    // console.log(this.form.controls['question'].value)
-    this.router.navigate(['surveys'],{relativeTo : this.route})
+     
+    this.router.navigate(['../'],{relativeTo : this.route})
     console.log(this.form.value)
 
 

@@ -38,7 +38,6 @@ onQuestion(question:Question) {
 
 
 get getQuestions() {
-  
 return this.servive.getQuestions;
 }
 

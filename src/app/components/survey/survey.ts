@@ -3,13 +3,13 @@ import {DUMMY_SURVEY} from '../dummies/dummy-survey';
 import {SurveyObj}from '../../models/survey.model'
 import { FormArray, FormBuilder, FormControl, FormGroup, NgForm, NgModel, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';
 import { ClientService } from '../../clientService';
 
 
 @Component({
   selector: 'app-survey',
-  imports: [ReactiveFormsModule,CommonModule],
+  imports: [ReactiveFormsModule,CommonModule, RouterOutlet],
   templateUrl: './survey.html',
   styleUrl: './survey.css'
 })
@@ -22,7 +22,7 @@ export class Survey implements OnInit {
      private cdr = inject(ChangeDetectorRef);
      form! : FormGroup;
      private id!:number;
-
+     isSubmitted = false;
     ngOnInit(): void {
       this.route.paramMap.subscribe(param => {
         this.id = parseInt(param.get('id')!) ;
@@ -61,7 +61,13 @@ export class Survey implements OnInit {
         console.log(this.survey.questions![i].question +" Answer " + this.form.value.options[i] )
       }
       console.log(this.survey,"check")
-      this.clientService.captureSurveyAnswers(this.survey)
+      
+      if(this.form.valid) {
+        this.clientService.captureSurveyAnswers(this.survey);
+        this.isSubmitted = true;
+        this.cdr.detectChanges();
+      }
+        
         
      }
 

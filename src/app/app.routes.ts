@@ -20,6 +20,7 @@ import { CommentsComponent } from './components/comments-component/comments-comp
 import { StatisticsComponent } from './components/statistics-component/statistics-component';
 import { MoreAboutSurvey } from './more-about-survey/more-about-survey';
 import { Login } from './login/login';
+import { Submited } from './submited/submited';
 
 export const routes: Routes = [
 
@@ -183,6 +184,12 @@ export const routes: Routes = [
     {
         path:'survey/:id',
         component:Survey,
+        children:[
+            {
+        path:'submited',
+        component:Submited
+    }
+        ]
     },
     {
         path : 'attendace-register/:id',
@@ -202,6 +209,7 @@ export const routes: Routes = [
     {
         path:"login",
         component:Login,
-    }
+    },
+    
 
 ];

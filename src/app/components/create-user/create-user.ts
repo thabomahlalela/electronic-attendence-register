@@ -32,10 +32,10 @@ export class CreateUser {
       surname :this.form.value.surname,
       employNO : '',
       email : this.form.value.email
-     })
+     });
      console.log(localStorage.getItem('roles'))
 
-     this.router.navigate(['users'],{relativeTo : this.route})
+     this.router.navigate(['../'],{relativeTo : this.route})
 
    }
 }
