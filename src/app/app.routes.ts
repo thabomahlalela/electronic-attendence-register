@@ -21,6 +21,7 @@ import { StatisticsComponent } from './components/statistics-component/statistic
 import { MoreAboutSurvey } from './more-about-survey/more-about-survey';
 import { Login } from './login/login';
 import { Submited } from './submited/submited';
+import { AdminSettingsComponent } from './components/admin-settings/admin-settings.component';
 
 export const routes: Routes = [
 
@@ -98,6 +99,13 @@ export const routes: Routes = [
                 path: '',
                 component: StatisticsComponent
             },
+            
+
+            {
+                path:'credentials',
+                component:AdminSettingsComponent
+            }
+            ,
             
     {
         path:'view-companies',
