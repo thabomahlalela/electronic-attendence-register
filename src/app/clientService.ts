@@ -138,6 +138,10 @@ export class ClientService{
     this.viewedSurvey = survey;
     console.log(this.viewedSurvey.title)
    }
+
+   setQuestions(questions:Question[]){
+    this.questions = questions
+   }
    viewQuestions(){
         return  this.http.get<Question[]>(`/api/view-Questions/${this.viewedSurvey.id}`) ;
    }
@@ -188,6 +192,10 @@ export class ClientService{
    }
     get getOptions() {
         return this.clientOptions
+    }
+
+    get getQuestions(): Question[] {
+      return this.questions
     }
 
     get company(){

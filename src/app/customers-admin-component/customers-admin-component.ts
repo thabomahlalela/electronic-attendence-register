@@ -37,7 +37,7 @@ export class CustomersAdminComponent implements OnInit {
   }
 
    onHome() {
-    this.router.navigate(['custom-admin','view-infor'])
+    this.router.navigate(['custom-admin'])
   
     }
 

@@ -1,5 +1,5 @@
 import { Location } from '@angular/common';
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, HostListener, inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ClientService } from '../clientService';
 
@@ -28,10 +28,17 @@ export class Login implements OnInit {
      
 
      ngOnInit(): void {
+    //   history.pushState('','',location.href);
+    //   window.onpopstate = () => {
+    //   history.pushState('','',location.href);
+    //  }
+  }
+
+  @HostListener('window:postate',['$event'])
+  onPopstate(event:any):void {
+    event.preventDefault();
       history.pushState('','',location.href);
-     window.onpopstate = () => {
-      history.pushState('','',location.href);
-     }
+
   }
 
 
