@@ -16,6 +16,10 @@ input{
     border-radius: 5px;
     box-sizing: border-box;
 
+
+}
+h5{
+    color: red;
 }
 h2{
     text-align : center;

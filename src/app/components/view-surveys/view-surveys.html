@@ -29,7 +29,7 @@
            
               @for(survey of getSurvey; track survey.id) {
                  <tr > 
-                <th>01</th>
+                <th>{{survey.id}}</th>
                 <th (click)="onSurvey(survey)">{{survey.title}}</th>
                  <button id="btn-icon" matMiniFab (click)="onDeleteSurvey(survey)">
                   <mat-icon id="icon">delete</mat-icon>
@@ -43,44 +43,6 @@
         </tbody>
  </table>
         </div>
-  
-
-   
-
-    @if(isSurveyClicked) {
-       <div id="more-about-survey">
-        <div id="title">
-          <header >
-           <h4>{{clickedSurvey.title}}</h4>
-          </header>
-        </div>
-
-        <div id="questions">
-          <div id="questions-header">
-            <header>Questions</header>
-          </div>
-          <ul>
-          @for(question of getQuestion; track question.id) {
-            <li (click)="onQuestion(question)" >{{question.question}}</li>
-          }
-          </ul>
-        </div>
-        <div id="answers">
-          <div id="amswers-header">
-            <header>Answers</header>
-             
-          @if(isQuesttionClicked) {
-             <ul>
-          @for(answer of getAnswers ; track $index+1) {
-            <li ><p>{{answer}}</p></li>
-          }
-          </ul>
-          }
-          
-          </div>
-        </div>
-    </div>
-    }
 
     <div id="routed-view">
       <router-outlet/>
@@ -88,7 +50,4 @@
  
  </div>
    
-      
- 
- 
-
+    

@@ -37,6 +37,7 @@ export class ViewMeetingsComponent {
             this.cdr.detectChanges()
         }
     })
+    console.log(this.meetings)
    }
     
 

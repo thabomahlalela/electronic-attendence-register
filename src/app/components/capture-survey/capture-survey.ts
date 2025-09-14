@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { FormGroup } from '@angular/forms';
 import { Question } from '../../models/question.model';
 import { ClientService } from '../../clientService';
@@ -30,13 +30,13 @@ quee!: Question;
   
   
   form = new FormGroup({
-     title: new FormControl(''),
+     title: new FormControl('', Validators.required),
+     description: new FormControl('',Validators.required ),
      
-     description: new FormControl(''),
   })
   form1 = new FormGroup({
   
-     question: new FormControl(''),
+     question: new FormControl('',Validators.required),
      
   })
 
@@ -64,6 +64,7 @@ captureSurvey() :void{
   })
     // console.log(this.form.controls['question'].value)
     this.router.navigate(['surveys'],{relativeTo : this.route})
+    console.log(this.form.value)
 
 
 }

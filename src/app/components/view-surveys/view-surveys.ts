@@ -37,9 +37,10 @@ export class ViewSurveys implements OnInit {
  isQuesttionClicked = false;
  isUndo = false;
  readonly panelOpenState = signal(false);
- data = DUMMY_SURVEY;
- questions! : Question[]
+ questions! : Question[];
+ surveys!:SurveyObj[];
  answers! : string[]
+ activeRoute = inject(ActivatedRoute);
 
  constructor(private route :ActivatedRoute){}
 
@@ -47,7 +48,7 @@ export class ViewSurveys implements OnInit {
     
     this.clientService.viewSurveys().subscribe({
       next : (s)=>{
-        this.data = s
+         this.surveys= s;
         console.log(s)
          this.cdr.detectChanges()
 
@@ -63,31 +64,32 @@ onList() {
   }
 
   onSurvey(survey:SurveyObj) {
+    
     this.isSurveyClicked = true;
+    
      
-    this.clickedSurvey = survey;
-     this.cdr.detectChanges()
      this.clientService.setClickedSurvey(survey);
-    this.clientService.viewQuestions().subscribe({
-      next:(q) => {
-        this.questions = q
-        this.cdr.detectChanges()
-      }
-      
-    })
+     
+     this.cdr.detectChanges();
 
-     this.router.navigate(['surveys'],{relativeTo : this.route});
+    
+    console.log(this.activeRoute.url)
+     this.router.navigate(['more-info'],{relativeTo : this.route});
+
+      
   }
 
   
 
   onAdd() {
      this.isSurveyClicked = false;
+     this.cdr.detectChanges();
     this.router.navigate(['add-survey'],{relativeTo : this.route});
   }
 
   onGenerateQRCode(survey:SurveyObj) {
     this.isSurveyClicked = false;
+    this.cdr.detectChanges();
     const id = survey.id;
     const surveyORMeeting = "SURVEY";
      
@@ -103,6 +105,7 @@ onList() {
     this.clientService.viewAnswers(question.id).subscribe({
       next : (s) => {
         this.answers = s.answers!
+        this.cdr.detectChanges();
       }
     })
   }
@@ -110,11 +113,9 @@ onList() {
 
 
 onDeleteSurvey(survey:SurveyObj) {
-  let a = this.data.filter((s)=>s.id !== survey.id);
-  this.data = a;
+   this.surveys = this.surveys.filter((s) => s.id !== survey.id);
 
   let  snackBarRef =this._snackBar.open(this.message, this.action, {duration:5000});
-
   
       if(this.isUndo === true) {
         this.isUndo = false;
@@ -132,7 +133,7 @@ onDeleteSurvey(survey:SurveyObj) {
     });
 
     snackBarRef.onAction().subscribe(()=>{
-       this.data.push(survey);
+       this.surveys.push(survey)
        this.cdr.detectChanges();
        this.isUndo = true;
     });
@@ -144,7 +145,7 @@ onDeleteSurvey(survey:SurveyObj) {
 onRefresh() {
   this.clientService.viewSurveys().subscribe({
       next : (s)=>{
-        this.data = s
+         this.surveys= s;
         console.log(s)
          this.cdr.detectChanges()
 
@@ -155,7 +156,7 @@ onRefresh() {
 }
 
 get getSurvey() {
-  return this.data;
+  return this.surveys;
 }
 
 get getClickedSurvey() {
@@ -166,7 +167,7 @@ get getClickedQuestion() {
   return this.clickedQuestion;
 }
   get getQuestion(){
-    return this.questions;
+    return this.clientService;
   }
 
   get getAnswers(){

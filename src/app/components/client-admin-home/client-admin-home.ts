@@ -26,16 +26,16 @@ click=true;
 
 
  ngOnInit(): void {
-     this.service.login().subscribe({
-       next: (s)=>{
-        console.log(s.person)
-         console.log(s.roles)
-         console.log(s.person.company)
-         console.log(s.token)
+    //  this.service.login().subscribe({
+    //    next: (s)=>{
+    //     console.log(s.person)
+    //      console.log(s.roles)
+    //      console.log(s.person.company)
+    //      console.log(s.token)
 
          
-       }
-     })
+    //    }
+    //  })
   }
 
 

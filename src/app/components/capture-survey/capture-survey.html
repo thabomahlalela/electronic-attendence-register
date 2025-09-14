@@ -6,18 +6,23 @@
     <p>
         <label>Title:</label>
         <input type="text" name="title" formControlName="title">
+         @if(form.get('title')?.invalid && form.get('title')?.touched){
+            <h5>Tittle is required</h5>
+           }
     </p>
     <form [formGroup]="form1" >
         <p>
         <label >Questions:</label>
         <input type="text"  formControlName ="question">
-        <!-- @for(question of questions; track question; let i =$index){
-         <input type="text"  name="questions"  [(ngModel)]="questions[i]" placeholder="Question {{i +1}}">
-        } -->
+        @if(form1.get('question')?.invalid && form1.get('question')?.touched){
+            <h5>Question is required</h5>
+        }
+        
+        
         
     </p>
      <p>
-        <button type="reset" id="add" (click)="addClick()">+</button>
+        <button [disabled]="!form1.valid" type="reset" id="add" (click)="addClick()">+</button>
     </p>
     </form>
     
@@ -29,10 +34,13 @@
     <mat-label>add description</mat-label>
     <textarea matInput name="description"  formControlName="description"></textarea>
   </mat-form-field>
+  @if(form.get('description')?.invalid && form.get('description')?.touched){
+            <h5>Description is required</h5>
+        }
     </p>
     
     <p>
-        <button type= "submit" >submit</button>
+        <button [disabled]="!form.valid" type= "submit" >submit</button>
     </p>
    
 
@@ -54,12 +62,7 @@
    
 
 </div>
-<div>
-    @for (item of questions; track item.id) {
-        <li>{{item.question}}</li>
-    }
-</div>
-
+ 
 
  
 

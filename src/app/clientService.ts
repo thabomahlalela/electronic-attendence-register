@@ -11,6 +11,7 @@ import { Observable } from "rxjs";
 import { Person } from "./models/person.model";
 import { Attendance } from "./models/attendance.model";
 import { AuthResponse } from "./models/authResponse.model";
+import { Router } from "@angular/router";
 
 
 
@@ -19,10 +20,13 @@ import { AuthResponse } from "./models/authResponse.model";
 })
 export class ClientService{
   
-private http = inject(HttpClient)
+    private http = inject(HttpClient);
+    private router = inject(Router)
+     
     private viewedCompany!:Company;
     private viewedSurvey! : SurveyObj;
     private viewedMeeting! : Meeting;
+     
     clientOptions= [
         {
             id:'1',
@@ -40,7 +44,7 @@ private http = inject(HttpClient)
             path:'register-company',
         }
     ]
-    private _questions: string[] = [];
+    private questions!: Question[];
 
    
     setClickedCompany(company:Company) {
@@ -132,10 +136,11 @@ private http = inject(HttpClient)
    }
    setClickedSurvey(survey :SurveyObj){
     this.viewedSurvey = survey;
+    console.log(this.viewedSurvey.title)
    }
    viewQuestions(){
-        console.log(this.viewedSurvey.id)
-        return this.http.get<Question[]>(`/api/view-Questions/${this.viewedSurvey.id}`)
+         
+        return  this.http.get<Question[]>(`/api/view-Questions/${this.viewedSurvey.id}`) ;
    }
 
    viewAnswers(questionId : number){
@@ -157,8 +162,27 @@ private http = inject(HttpClient)
          return this.http.get<Person[]>(`/api/view-attendances/${this.viewedMeeting.id}`)
    }
 
-   login(){
-    return this.http.post<AuthResponse>("/api/my-login",{username : "thabo",password :"thabo123"})
+   login(username : string,password :string){
+    console.log(username,password)
+    return this.http.post<AuthResponse>("/api/my-login",{username : username,password :password}).subscribe({
+      next : (authres)=>{
+        console.log(authres.person)
+        console.log(authres.roles)
+        console.log(authres.person.company)
+        console.log(authres.token)
+        localStorage.setItem('authToken',authres.token)
+        localStorage.setItem('roles',JSON.stringify(authres.roles))
+      if(authres.roles.includes('ROLE_ClientADMIN')){
+        this.router.navigate([""])
+      }else if(authres.roles.includes('ROLE_CustomADMIN')){
+        this.router.navigate(['custom-admin'])
+        this.viewedCompany = authres.person.company!
+      }
+
+
+
+      }
+    })
    }
    setClickedMeeting(meeting : Meeting){
         this.viewedMeeting = meeting
@@ -171,9 +195,15 @@ private http = inject(HttpClient)
         return this.viewedCompany
     }
 
-    get questions():string[]{
-        return this._questions
+    // get questions():string[]{
+    //     return this._questions
+    // }
+
+    get survey():SurveyObj {
+        return this.viewedSurvey
     }
+
+     
 
     // addQuestion():void{
     //     this._questions.push('');
@@ -185,7 +215,6 @@ private http = inject(HttpClient)
     }
     deleteComplaints(numbers:number){
         this.http.delete(`/api/deleteComplaints/${numbers}`).subscribe({
-            
             
         })
         

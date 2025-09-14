@@ -1,7 +1,8 @@
 import { Component, Inject, inject } from '@angular/core';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ClientService } from '../../clientService';
 import { ActivatedRoute, Router } from '@angular/router';
+ 
 
 @Component({
   selector: 'app-create-user',
@@ -16,9 +17,9 @@ export class CreateUser {
   constructor(private route :ActivatedRoute){}
    form : FormGroup = new FormGroup(
     {
-      name : new FormControl(''),
-      surname : new FormControl(''),
-      email : new FormControl(''),
+      name : new FormControl('',Validators.required),
+      surname : new FormControl('',Validators.required),
+      email : new FormControl('',[Validators.required,Validators.email]),
 
     }
    )
@@ -32,6 +33,7 @@ export class CreateUser {
       employNO : '',
       email : this.form.value.email
      })
+     console.log(localStorage.getItem('roles'))
 
      this.router.navigate(['users'],{relativeTo : this.route})
 

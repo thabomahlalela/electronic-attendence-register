@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ClientService } from '../../clientService';
 import { Meeting } from '../../models/meeting.models';
 import { Person } from '../../models/person.model';
@@ -13,7 +13,10 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AttenceRegister {
     route = inject(ActivatedRoute);
+    // private fb =inject(FormBuilder);
     id!:number;
+
+     constructor(private clientService : ClientService){}
 
   ngOnInit(): void {
       this.route.paramMap.subscribe(param => {
@@ -25,11 +28,6 @@ export class AttenceRegister {
 
      }
     
-
-
-
-
-
 
    meetings:Meeting[] = [{
       id:1,
@@ -46,13 +44,12 @@ export class AttenceRegister {
 
 
 
-  constructor(private clientService : ClientService){}
+ 
   form = new FormGroup({
-    name :new FormControl(''),
-    surname : new FormControl(''),
-    email : new FormControl(''),
-    phoneNumber : new FormControl(''),
-    date : new FormControl('') ,
+    name :new FormControl('',Validators.required),
+    surname : new FormControl('',Validators.required),
+    email : new FormControl('',[Validators.required,Validators.email]),
+    
 
     
     })
@@ -72,6 +69,7 @@ export class AttenceRegister {
    meeting.people = people
 
     this.clientService.captureAttences(meeting)
+    console.log(this.form.value)
   
 
    }

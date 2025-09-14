@@ -20,12 +20,18 @@ input{
 h2{
     text-align : center;
     margin-top: 20px;
+
+}
+h5{
+    color: red;
 }
 
 button{
     
     height: 25px;
+   
     background-color: #8e918e;
+    /* background-color: blue; */
     color: #fff;
     border:none;
     border-radius: 5px;

@@ -4,6 +4,7 @@ import { Router, RouterOutlet } from '@angular/router';
 import { CustomersAdmin } from './customer-admin.service';
 import { Company } from '../models/company.models';
 import { ClientService } from '../clientService';
+import { C } from '@angular/cdk/keycodes';
 
 
 @Component({
@@ -13,6 +14,8 @@ import { ClientService } from '../clientService';
   styleUrl: './customers-admin-component.css'
 })
 export class CustomersAdminComponent implements OnInit {
+
+
    private router = inject(Router);
    private clientService = inject(ClientService)
    private company! : Company;
@@ -20,28 +23,28 @@ export class CustomersAdminComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.company = this.clientService.company
        
-    this.clientService.viewCompanies().subscribe({
-      next : (companies)=>{
-        this.company = companies.find((company)=> company.id == 1)!
-        console.log(this.getCompany)
-         this.clientService.setClickedCompany(this.getCompany)
-        this.cdr.detectChanges()
-      }
-    })
+    // this.clientService.viewCompanies().subscribe({
+    //   next : (companies)=>{
+    //     this.company = companies.find((company)=> company.id == 1)!
+    //     console.log(this.getCompany)
+    //      this.clientService.setClickedCompany(this.getCompany)
+    //     this.cdr.detectChanges()
+    //   }
+    // })
    
   }
 
+   onHome() {
+    this.router.navigate(['custom-admin','view-infor'])
   
+    }
 
-   
-  
+
     onAdd(){
-      
-      // console.log('click me!!!!')
+       
       this.router.navigate(['custom-admin','view-surveys'])
-  
-     
     }
   
     onUsers(){

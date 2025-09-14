@@ -63,7 +63,7 @@ button {
      position: absolute;
      width: 1000px;
      min-height: auto;
-     border: solid darkblue;
+     /* border: solid darkblue; */
      margin-left: 30px;
      margin-top: 60px;
 }
