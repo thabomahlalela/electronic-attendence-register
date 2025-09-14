@@ -1,3 +1,7 @@
+import { Component, inject } from '@angular/core';
+import { AbstractControl, EmailValidator, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+// import { AdminService } from '../admin-home/AdminService.service';
+import { CommonModule } from '@angular/common';
 // import { Component, inject } from '@angular/core';
 // import { AbstractControl, EmailValidator, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 // import { AdminService } from '../admin-home/AdminService.service';
@@ -38,6 +42,8 @@
 //   newPasswordPlaceholder ='new password';
 //   confirmPasswordPlaceholder = 'confirm password';
   
+  // adminService = inject(AdminService);
+  // student = this.adminService.getStudent;
 //   adminService = inject(AdminService);
 //   student = this.adminService.getStudent;
 
@@ -90,6 +96,16 @@
 //       this.newUsernamePlaceholder = 'required';
 //     }
   
+  //  if(this.usernameForm.value.oldUsername === this.adminService.getStudent.user?.username) {
+  //   if(this.isOldUsernameNotMatching == true) {
+  //     this.isOldUsernameNotMatching = false
+  //   }
+  //   if(this.usernameForm.valid) {
+  //   this.isOldUsernameMatching = true;
+  //     const student = this.adminService.getStudent;
+  //   student.emailAddress = this.usernameForm.value.newUsername!;
+  //   this.adminService.updateAdmin(student);
+  //   }
 //    if(this.usernameForm.value.oldUsername === this.adminService.getStudent.user?.username) {
 //     if(this.isOldUsernameNotMatching == true) {
 //       this.isOldUsernameNotMatching = false
@@ -102,6 +118,12 @@
 //     }
     
     
+  //  } else {
+  //   if(this.isOldUsernameMatching == true) {
+  //     this.isOldUsernameMatching = false;
+  //   }
+  //   this.isOldUsernameNotMatching = true;
+  //  }
 //    } else {
 //     if(this.isOldUsernameMatching == true) {
 //       this.isOldUsernameMatching = false;
@@ -130,11 +152,21 @@
 //       this.confirmPasswordPlaceholder = 'do not match'
 //     }
 
+    // if(this.passwordForm.value.oldPassword == this.adminService.getStudent.user?.password.slice(6)) {
+    //   if(this.isOldPasswordNotMatching == true) {
+    //     this.isOldPasswordNotMatching = false;
+    //   }
 //     if(this.passwordForm.value.oldPassword == this.adminService.getStudent.user?.password.slice(6)) {
 //       if(this.isOldPasswordNotMatching == true) {
 //         this.isOldPasswordNotMatching = false;
 //       }
 
+  //   } else {
+  //     if(this.isOldPasswordMatching= true) {
+  //       this.isOldPasswordMatching = false;
+  //     }
+  //     this.isOldPasswordNotMatching = true;
+  //   }
 //     } else {
 //       if(this.isOldPasswordMatching= true) {
 //         this.isOldPasswordMatching = false;
@@ -160,7 +192,26 @@
 //       if(this.isChangingUsername == true) {
 //         this.isChangingUsername = false;
 //       }
+//   onClick(option:string) {
+//     if(option === '0') {
+//       if(this.isChangingPassword == true) {
+//         this.isChangingPassword = false;
+//       }
+//       if(this.isChangingUsername == true) {
+//         this.isChangingUsername = false;
+//       }
 
+//       this.isChangingUsername = true;
+//     } else if (option === '1') {
+//       if(this.isChangingUsername == true) {
+//         this.isChangingUsername = false;
+//       }
+//       if(this.isChangingPassword == true) {
+//         this.isChangingPassword = false;
+//       }
+//       this.isChangingPassword = true;
+//     }
+//   }
 //       this.isChangingUsername = true;
 //     } else if (option === '1') {
 //       if(this.isChangingUsername == true) {
@@ -176,22 +227,38 @@
 //   get settingsOptions() {
 //     return this.options
 //   }
+//   get settingsOptions() {
+//     return this.options
+//   }
 
 //     get getClass() {
+//     get getClass() {
     
+//        return {
+//       'my-class':this.isPasswordFormSubmited,
+//       'invalid': this.passwordForm.controls['oldPassword'].pristine,
 //        return {
 //       'my-class':this.isPasswordFormSubmited,
 //       'invalid': this.passwordForm.controls['oldPassword'].pristine,
 
 //     }
 // }
+//     }
+// }
 
+//  get getClass1() {
 //  get getClass1() {
     
 //        return {
 //       'my-class1':this.isUsernameFormSubmitted,
 //       'invalid': this.usernameForm.controls['oldUsername'].pristine,
+//        return {
+//       'my-class1':this.isUsernameFormSubmitted,
+//       'invalid': this.usernameForm.controls['oldUsername'].pristine,
 
+//     }
+// }
+// }
 //     }
 // }
 // }

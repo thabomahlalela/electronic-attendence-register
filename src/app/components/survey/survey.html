@@ -11,9 +11,10 @@
              }
     } -->
 
-
-
-    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    @if(isSubmitted) {
+        <router-outlet/> 
+    } @else {
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
         <header>{{getSurvey!.title}}</header>
         <article>{{getSurvey!.description}}</article>
             <div formArrayName="options">
@@ -36,6 +37,9 @@
 
                     <Button>submit</Button>
     </form>
+    }
+
+    
       
  </div>
 

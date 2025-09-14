@@ -50,11 +50,12 @@ captureMeeting():void{
   // attendees :''
 
   })
-  console.log(this.form.value)
+
+   
 
   const meeting = this.form.value
   console.log(meeting)
- this.router.navigate(['meetings'],{relativeTo : this.route})
+ this.router.navigate(['../'],{relativeTo : this.route})
   
 
  }
