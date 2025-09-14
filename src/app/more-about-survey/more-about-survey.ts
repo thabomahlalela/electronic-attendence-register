@@ -38,12 +38,13 @@ id!:number;
 }
 
 onQuestion(question:Question) {
-  
+  this.cdr.detectChanges();
  this.question = question;
  this.servive.viewAnswers(this.question.id).subscribe((s) =>{
      this.answers = s.answers!
-     this.cdr.detectChanges();
+     
   });
+     this.cdr.detectChanges();
       
 }
 

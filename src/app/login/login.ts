@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Location } from '@angular/common';
+import { Component, inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+ 
 
 @Component({
   selector: 'app-login',
@@ -7,9 +9,11 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
   templateUrl: './login.html',
   styleUrl: './login.css'
 })
-export class Login {
+export class Login implements OnInit {
+ 
   emailPlaceholder='email';
   passwordPlaHolder ='password';
+  location = inject(Location); 
    
     form:FormGroup = new FormGroup({
       email :new FormControl('',{
@@ -19,6 +23,15 @@ export class Login {
         validators:[Validators.required]
       }),
     });
+
+     
+
+     ngOnInit(): void {
+      history.pushState('','',location.href);
+     window.onpopstate = () => {
+      history.pushState('','',location.href);
+     }
+  }
 
 
     onSubmit() {

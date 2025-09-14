@@ -121,7 +121,6 @@ export class ClientService{
     console.log(this.viewedSurvey.title)
    }
    viewQuestions(){
-         
         return  this.http.get<Question[]>(`/api/view-Questions/${this.viewedSurvey.id}`) ;
    }
 

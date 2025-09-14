@@ -7,7 +7,7 @@
                        <mat-icon class="icons" color="primary">business</mat-icon>
                     </div>
 
-                    <div class="stat-value">75</div>
+                    <div class="stat-value">{{numberOfActiveCompanies}}</div>
                     <div class="stat-change positive">
                              <mat-icon class="arrow">arrow_upward</mat-icon>
                              20% from last month
@@ -22,7 +22,7 @@
                        <mat-icon class="icons" color="primary">business</mat-icon>
                     </div>
 
-                    <div class="stat-values">1,250</div>
+                    <div class="stat-values">{{totalNumberOfCompanies}}</div>
                     <div class="stat-changes positive">
                              <mat-icon class="arrows">arrow_upward</mat-icon>
                              15% from last month
@@ -40,10 +40,10 @@
                         <h3>Technology</h3>
                          <mat-progress-bar id="progress-bar"
                         mode="determinate"
-                        value="{{20}}"
+                        value="{{techPercent}}"
                         ></mat-progress-bar> 
                         <div id="percentage">
-                        {{sectors.length}}%
+                        {{techPercent + "%"}}
                         </div>
                         
                     </div> 
@@ -55,7 +55,7 @@
                         value="{{finance.length}}"
                         ></mat-progress-bar> 
                         <div id="percentage">
-                        {{sectors.length}}%
+                        {{financePercent + "%"}}
                         </div>
 
                         
@@ -65,10 +65,10 @@
                         <h3>Health</h3>
                          <mat-progress-bar id="progress-bar"
                         mode="determinate"
-                        value="{{health.length}}"
+                        value="{{healthPercent}}"
                         ></mat-progress-bar> 
                         <div id="percentage">
-                        {{sectors.length}}%
+                        {{healthPercent + "%"}}
                         </div>
                         
                     </div> 
@@ -77,10 +77,10 @@
                         <h3>Retail</h3>
                          <mat-progress-bar id="progress-bar"
                         mode="determinate"
-                        value="{{retail.length}}"
+                        value="{{retailPercent}}"
                         ></mat-progress-bar> 
                         <div id="percentage">
-                        {{sectors.length}}%
+                        {{retailPercent + "%"}}
                         </div>
                         
                     </div> 
@@ -92,10 +92,10 @@
                         <h3>Other</h3>
                          <mat-progress-bar id="progress-bar"
                         mode="determinate"
-                        value="{{other.length}}"
+                        value="{{otherPercent}}" 
                         ></mat-progress-bar> 
                         <div id="percentage">
-                        {{sectors.length}}%
+                        {{otherPercent + "%"}}
                         </div>
                         
                     </div> 

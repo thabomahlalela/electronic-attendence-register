@@ -33,11 +33,11 @@ export class AboutCompany implements OnInit {
 
 ngOnInit(): void {
       this.service.getComplaints().subscribe({
-    next :(resData) => {
-      
+      next :(resData) => {
+
            this.number = resData.length
            this.cdr.detectChanges()
-        
+
        
          
     }
