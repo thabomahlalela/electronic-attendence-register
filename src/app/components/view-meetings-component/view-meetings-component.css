@@ -96,14 +96,14 @@ p{
 #myButton{
    position: absolute;
    margin-left: 1060px;
-    margin-top: -60px;
+    margin-top: -45px;
    background-color: white;
 }
 #refreshBtn{
    position: absolute;
    /* margin-bottom: -1050px; */
    margin-left: 1010px;
-   margin-top: -60px;
+   margin-top: -45px;
    background-color: white;
 }
 

@@ -45,6 +45,10 @@ export const routes: Routes = [
                 path:'generate-qr-code/:id/:surveyORMeeting',
                 component:GenerateQrCode
             },
+              {
+                path:'more-info',
+                component:MoreAboutSurvey,
+            }
             
                 ]
             },

@@ -66,4 +66,14 @@ export class Login implements OnInit {
 
 
     }
+
+    get getError(){
+       if(this.form.valid) {
+          return this.clientService.getError
+       }
+
+       return ;
+    
+    };
+    
 }

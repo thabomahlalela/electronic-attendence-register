@@ -50,7 +50,7 @@
              @for(company of myCompanies; track company.id) {
                   <tr  (click)="onCompany(company)">
                @if(company.name !== 'my company'){
-                 <td>{{company.id}}</td>
+                 <td>{{$index}}</td>
                 <td>{{company.name}}</td>
                  <td>{{company.registrationNO}}</td>
                 <td>{{company.city}}</td>

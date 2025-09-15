@@ -12,39 +12,9 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './attence-register.css'
 })
 export class AttenceRegister {
-    route = inject(ActivatedRoute);
-    // private fb =inject(FormBuilder);
-    id!:number;
-
-     constructor(private clientService : ClientService){}
-
-  ngOnInit(): void {
-      this.route.paramMap.subscribe(param => {
-        this.id = parseInt(param.get('id')!) ;
-        console.log(this.id)
-      
-      });
-   
-
-     }
-    
-
-   meetings:Meeting[] = [{
-      id:1,
-      title:"Project",
-      description:"Register Attendence",
-      startTime:"07:00",
-      endTime:"10:00",
-      date : '',
-      location:"03 Smollet road",
-      status:"Happening",
-      
-    },]
-
-
-
-
- 
+     private route = inject(ActivatedRoute);
+     private  id!:number;
+     private  meeting!:Meeting
   form = new FormGroup({
     name :new FormControl('',Validators.required),
     surname : new FormControl('',Validators.required),
@@ -53,10 +23,34 @@ export class AttenceRegister {
 
     
     })
+    // private fb =inject(FormBuilder);
+   
+
+     constructor(private clientService : ClientService){}
+
+     ngOnInit(): void {
+        this.route.paramMap.subscribe(param => {
+          this.id = parseInt(param.get('id')!) ;
+          console.log(this.id)
+        
+        });
+
+        this.clientService.viewMeeting(this.id).subscribe({
+          next : (meeting)=>{
+            this.meeting = meeting
+            console.log(this.meeting)
+          }
+        })
+    
+
+     }
+    
+
+   
    
 
    captureAttendecy(){
-   let  meeting : Meeting = this.meetings.find((meeting)=>meeting.id == this.id)!
+   
    let people : Person[] =[
       {
       id :0,
@@ -66,9 +60,9 @@ export class AttenceRegister {
         email : this.form.value.email!
     }
    ]
-   meeting.people = people
+   this.meeting.people = people
 
-    this.clientService.captureAttences(meeting)
+    this.clientService.captureAttences(this.meeting)
     console.log(this.form.value)
   
 
