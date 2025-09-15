@@ -19,7 +19,7 @@
      
         <thead>
             <tr>
-                <th>Id</th>
+                <th>No</th>
                 <th>Name</th>
                 <th>Action</th>
             </tr>
@@ -27,9 +27,9 @@
 
         <tbody>
            
-              @for(survey of getSurvey; track survey.id) {
+              @for(survey of getSurvey; track $index +1 ) {
                  <tr > 
-                <th>{{survey.id}}</th>
+                <th>{{$index}}</th>
                 <th (click)="onSurvey(survey)">{{survey.title}}</th>
                  <button id="btn-icon" matMiniFab (click)="onDeleteSurvey(survey)">
                   <mat-icon id="icon">delete</mat-icon>

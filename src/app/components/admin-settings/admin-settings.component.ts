@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectorRef, Component, inject } from '@angular/core';
 import { AbstractControl, EmailValidator, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ClientService } from '../../clientService';
@@ -37,6 +37,7 @@ export class AdminSettingsComponent {
   oldPasswordPlaceholder = 'old password';
   newPasswordPlaceholder ='new password';
   confirmPasswordPlaceholder = 'confirm password';
+  cdr = inject(ChangeDetectorRef);
   
   adminService = inject(ClientService);
   // student = this.adminService.getStudent;
@@ -73,7 +74,7 @@ export class AdminSettingsComponent {
         validators: [Validators.required]
       }),
     }, {
-      validators:[matchingPasswords]
+      // validators:[matchingPasswords]
     })
   })
 
@@ -121,6 +122,7 @@ export class AdminSettingsComponent {
     if(option === '0') {
       if(this.isChangingPassword == true) {
         this.isChangingPassword = false;
+        
       }
       if(this.isChangingUsername == true) {
         this.isChangingUsername = false;

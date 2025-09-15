@@ -47,11 +47,11 @@
     @if (isChangingPassword) {
          <div class="forms">
             <form [formGroup]="passwordForm" (ngSubmit)="onSubmitPasswordForm()" >
-                <!-- <input id="oldPassword-input" [ngClass]="getClass"   name="oldPassword" formControlName = "oldPassword" [placeholder]='oldPasswordPlaceholder'/>
+                <input id="oldPassword-input" [ngClass]="getClass"   name="oldPassword" formControlName = "oldPassword" [placeholder]='oldPasswordPlaceholder'/>
                 <div id="passwords" [ngClass]="getClass" formGroupName="passwords">
                    <input type="text" [ngClass]="getClass" name="newPassword" formControlName="newPassword" [placeholder]="newPasswordPlaceholder">
                    <input type="text" [ngClass]="getClass" name="confirmPassword" formControlName="confirmPassword"  [placeholder] ="confirmPasswordPlaceholder">
-                </div> -->
+                </div>
                 <div id="btns">
                     <button type="submit">submit</button>
                      <button>Cancel</button>
