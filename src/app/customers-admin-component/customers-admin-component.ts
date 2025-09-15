@@ -16,6 +16,7 @@ import { C } from '@angular/cdk/keycodes';
 export class CustomersAdminComponent implements OnInit {
 
 
+
    private router = inject(Router);
    private clientService = inject(ClientService)
    private company! : Company;
@@ -60,6 +61,11 @@ export class CustomersAdminComponent implements OnInit {
     onMeeting(){
       this.router.navigate(['custom-admin','view-meetings'])
   
+    }
+
+    onLogOut() {
+       localStorage.clear();
+    this.router.navigate(['']);
     }
     get getCompany(){
       return this.company

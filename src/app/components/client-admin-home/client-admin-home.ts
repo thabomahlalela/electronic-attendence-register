@@ -57,7 +57,8 @@ click=true;
   }
 
   onLogout() {
-
+    localStorage.clear();
+    this.router.navigate(['']);
   }
 
   get options() {

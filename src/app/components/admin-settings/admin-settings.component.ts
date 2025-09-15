@@ -3,17 +3,17 @@ import { AbstractControl, EmailValidator, FormControl, FormGroup, ReactiveFormsM
 import { CommonModule } from '@angular/common';
 import { ClientService } from '../../clientService';
 
-function matchingPasswords(control: AbstractControl) {
-  const password = control.get('newPassword')?.value;
-  const confirmPassword = control.get('confirmPassword')?.value;
+// function matchingPasswords(control: AbstractControl) {
+//   const password = control.get('newPassword')?.value;
+//   const confirmPassword = control.get('confirmPassword')?.value;
 
-  if(confirmPassword === password) {
+//   if(confirmPassword === password) {
     
-    return null;
-  }
+//     return null;
+//   }
 
-  return {passwordsDoNotMatch:true}
-}
+//   return {passwordsDoNotMatch:true}
+// }
 
 
 @Component({
@@ -40,7 +40,9 @@ export class AdminSettingsComponent {
   cdr = inject(ChangeDetectorRef);
   
   adminService = inject(ClientService);
-  // student = this.adminService.getStudent;
+ 
+ 
+   
 
   options = [
     {

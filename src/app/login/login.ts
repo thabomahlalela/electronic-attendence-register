@@ -15,6 +15,13 @@ export class Login   {
   passwordPlaHolder ='password';
   location = inject(Location); 
   private clientService = inject(ClientService)
+
+   constructor() {
+    window.history.pushState(null,'', localStorage['href']);
+    window.onpopstate = function() {
+       window.history.pushState(null,'', localStorage['href']);
+    }
+  }
    
     form:FormGroup = new FormGroup({
       email :new FormControl('',{
@@ -25,14 +32,7 @@ export class Login   {
       }),
     });
 
-
-    constructor() {
-       window.history.pushState(null,'',localStorage['href']);
-      window.onpopstate = function() {
-      window.history.pushState(null,'',localStorage['href']);
-     }
-    }
-     
+ 
 
      
 
