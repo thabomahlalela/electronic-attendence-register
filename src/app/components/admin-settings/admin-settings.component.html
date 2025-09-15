@@ -6,11 +6,11 @@
     <h2>Settings</h2>
  </header> 
 
- <!-- @for(option of settingsOptions; track option.id) {
+ @for(option of settingsOptions; track option.id) {
     <div id="option" (click)="onClick(option.id)">
         {{option.name}}
     </div>
- } -->
+ }
  
  </div>
  </div>
@@ -19,8 +19,8 @@
     @if (isChangingUsername) {
         <div class="forms">
             <form [formGroup]="usernameForm" (ngSubmit)="onSubmit()" >
-                <!-- <input id="oldUsername-input" [ngClass]="getClass1" type="email" name="oldUsername" formControlName = "oldUsername" [placeholder]="oldUsernamePlaceholder"/>
-                <input id="newUsername-input" [ngClass]="getClass1" type="email" name="newUsername" formControlName = "newUsername" [placeholder]="newUsernamePlaceholder"/> -->
+                <input id="oldUsername-input" [ngClass]="getClass1" type="email" name="oldUsername" formControlName = "oldUsername" [placeholder]="oldUsernamePlaceholder"/>
+                <input id="newUsername-input" [ngClass]="getClass1" type="email" name="newUsername" formControlName = "newUsername" [placeholder]="newUsernamePlaceholder"/>
                 <div id="btns">
                     <button type="submit">submit</button>
                      <button>Cancel</button>
@@ -47,11 +47,11 @@
     @if (isChangingPassword) {
          <div class="forms">
             <form [formGroup]="passwordForm" (ngSubmit)="onSubmitPasswordForm()" >
-                <!-- <input id="oldPassword-input" [ngClass]="getClass"   name="oldPassword" formControlName = "oldPassword" [placeholder]='oldPasswordPlaceholder'/>
+                <input id="oldPassword-input" [ngClass]="getClass"   name="oldPassword" formControlName = "oldPassword" [placeholder]='oldPasswordPlaceholder'/>
                 <div id="passwords" [ngClass]="getClass" formGroupName="passwords">
                    <input type="text" [ngClass]="getClass" name="newPassword" formControlName="newPassword" [placeholder]="newPasswordPlaceholder">
                    <input type="text" [ngClass]="getClass" name="confirmPassword" formControlName="confirmPassword"  [placeholder] ="confirmPasswordPlaceholder">
-                </div> -->
+                </div>
                 <div id="btns">
                     <button type="submit">submit</button>
                      <button>Cancel</button>

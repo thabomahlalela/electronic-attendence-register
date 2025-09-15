@@ -44,6 +44,11 @@ click=true;
     this.click=false;
   }
 
+  onSetings() {
+    this.router.navigate(['/client-admin-home/credentials']);
+
+  }
+
 
 
   onHome() {

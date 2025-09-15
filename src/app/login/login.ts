@@ -1,5 +1,5 @@
 import { Location } from '@angular/common';
-import { Component, HostListener, inject, OnInit } from '@angular/core';
+import { Component,  inject } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ClientService } from '../clientService';
 
@@ -9,7 +9,7 @@ import { ClientService } from '../clientService';
   templateUrl: './login.html',
   styleUrl: './login.css'
 })
-export class Login implements OnInit {
+export class Login{
  
   emailPlaceholder='email';
   passwordPlaHolder ='password';
@@ -32,22 +32,11 @@ export class Login implements OnInit {
       }),
     });
 
+ 
+
      
 
-     ngOnInit(): void {
-    //   history.pushState('','',location.href);
-    //   window.onpopstate = () => {
-    //   history.pushState('','',location.href);
-    //  }
-  }
-
-  @HostListener('window:postate',['$event'])
-  onPopstate(event:any):void {
-    event.preventDefault();
-      history.pushState('','',location.href);
-
-  }
-
+   
 
     onSubmit() {
        if(this.form.controls["email"].pristine) {
