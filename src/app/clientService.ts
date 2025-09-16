@@ -23,9 +23,7 @@ export class ClientService{
     private http = inject(HttpClient);
     private router = inject(Router)
     private error? : string;
-    
-    
-     
+    private person! : Person;
     private viewedCompany!:Company;
     private viewedSurvey! : SurveyObj;
     private viewedMeeting! : Meeting;
@@ -107,8 +105,11 @@ export class ClientService{
 
      updatePerson(person : Person){
         console.log("about to update person")
+        if(!person.company){
         person.company = this.company
+        }
         this.http.patch("/api/update-person",person).subscribe()
+        this.person = person
      }
 
      deletePerson(person:Person) {
@@ -180,18 +181,23 @@ export class ClientService{
         console.log(authres.person)
         console.log(authres.roles)
         console.log(authres.person.company)
+        console.log(authres.person.user)
         console.log(authres.token)
+        this.person = authres.person
         localStorage.setItem('authToken',authres.token)
         localStorage.setItem('roles',JSON.stringify(authres.roles))
       if(authres.roles.includes('ROLE_ClientADMIN')){
         this.router.navigate(["client-admin-home"])
       }else if(authres.roles.includes('ROLE_CustomADMIN')){
+        if(authres.person.company?.status !== 'IN-ACTIVE'){
         this.router.navigate(['custom-admin'])
         this.viewedCompany = authres.person.company!
+       
+        }else{
+           this.error = 'company is deactivated'
+        }
       }
-
-
-        this.error = ''
+        // this.error = ''
       },
       error : (error)=>{
         this.error = error.error
@@ -200,6 +206,18 @@ export class ClientService{
     
     }  )
    }
+
+
+
+   verifyPassword(username : string,password :string){
+    console.log(username,password)
+    return this.http.post<AuthResponse>("/api/my-login",{username : username,password :password});
+   }
+
+
+
+
+
    setClickedMeeting(meeting : Meeting){
         this.viewedMeeting = meeting
    }
@@ -217,6 +235,9 @@ export class ClientService{
 
     get getError(){
       return this.error;
+    }
+    get getPerson(){
+      return this.person;
     }
 
     // get questions():string[]{

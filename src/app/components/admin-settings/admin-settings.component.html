@@ -41,6 +41,9 @@
                
                 
             </form>
+             @if(getusernameError){
+            <p id="errorMessage">{{getusernameError}}</p>
+             }
         </div>
     }
 
@@ -72,6 +75,9 @@
                
                 
             </form>
+             @if(getError){
+            <p id="errorMessage1">{{getError}}</p>
+             }
         </div>
     }
  </div>
