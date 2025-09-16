@@ -83,6 +83,11 @@ export const routes: Routes = [
                 component:ViewComplaintsComponent
             },
             {
+                path:'credentials',
+                component:AdminSettingsComponent
+            }
+            ,
+            {
                 path:'',
                 component:CompanyInfoComponent
                 

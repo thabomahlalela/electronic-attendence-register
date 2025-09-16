@@ -5,11 +5,12 @@ import { CustomersAdmin } from './customer-admin.service';
 import { Company } from '../models/company.models';
 import { ClientService } from '../clientService';
 import { C } from '@angular/cdk/keycodes';
+import { MatBadgeModule } from '@angular/material/badge';
 
 
 @Component({
   selector: 'app-customers-admin-component',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet,MatBadgeModule],
   templateUrl: './customers-admin-component.html',
   styleUrl: './customers-admin-component.css'
 })
@@ -51,8 +52,12 @@ export class CustomersAdminComponent implements OnInit {
     onUsers(){
       console.log('route user')
      this.router.navigate(['custom-admin','view-users'])
-      
   
+    }
+
+    onSetings() {
+     this.router.navigate(['custom-admin','credentials'])
+
     }
 
     onComments(){
