@@ -22,6 +22,9 @@ export class ClientService{
   
     private http = inject(HttpClient);
     private router = inject(Router)
+    private error? : string;
+    
+    
      
     private viewedCompany!:Company;
     private viewedSurvey! : SurveyObj;
@@ -115,6 +118,7 @@ export class ClientService{
      }
 
   captureAttences(meeting : Meeting) {
+    console.log(meeting)
       this.http.patch("/api/update-meeting",meeting).subscribe()
    }
 
@@ -157,6 +161,10 @@ export class ClientService{
         return this.http.get<Meeting[]>(`/api/View-Meetings/${this.company.id}`)
    }
 
+   viewMeeting(meetingID : number){
+     return this.http.get<Meeting>(`/api/view-meeting/${meetingID}`)
+   }
+
    deleteMeeting(meeting:Meeting) {
     this.http.delete(`/api/delete-meeting/${meeting.id}`).subscribe();
    }
@@ -167,7 +175,7 @@ export class ClientService{
 
    login(username : string,password :string){
     console.log(username,password)
-    return this.http.post<AuthResponse>("/api/my-login",{username : username,password :password}).subscribe({
+    this.http.post<AuthResponse>("/api/my-login",{username : username,password :password}).subscribe({
       next : (authres)=>{
         console.log(authres.person)
         console.log(authres.roles)
@@ -183,9 +191,14 @@ export class ClientService{
       }
 
 
-
+        this.error = ''
+      },
+      error : (error)=>{
+        this.error = error.error
+        console.log(error.error)
       }
-    })
+    
+    }  )
    }
    setClickedMeeting(meeting : Meeting){
         this.viewedMeeting = meeting
@@ -200,6 +213,10 @@ export class ClientService{
 
     get company(){
         return this.viewedCompany
+    }
+
+    get getError(){
+      return this.error;
     }
 
     // get questions():string[]{

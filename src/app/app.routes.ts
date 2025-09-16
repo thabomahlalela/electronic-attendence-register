@@ -19,14 +19,16 @@ import { ViewComplaintsComponent } from './components/view-complaints-component/
 import { CommentsComponent } from './components/comments-component/comments-component';
 import { StatisticsComponent } from './components/statistics-component/statistics-component';
 import { MoreAboutSurvey } from './more-about-survey/more-about-survey';
-import { Login } from './login/login';
 import { Submited } from './submited/submited';
 import { AdminSettingsComponent } from './components/admin-settings/admin-settings.component';
+import { CustomersAdmin } from './customers-admin-component/customer-admin.service';
+import { Login } from './login/login';
+
 
 export const routes: Routes = [
 
     {
-        path:'',
+        path:"",
         component:Login
     },
 
@@ -46,6 +48,10 @@ export const routes: Routes = [
                 path:'generate-qr-code/:id/:surveyORMeeting',
                 component:GenerateQrCode
             },
+              {
+                path:'more-info',
+                component:MoreAboutSurvey,
+            }
             
                 ]
             },

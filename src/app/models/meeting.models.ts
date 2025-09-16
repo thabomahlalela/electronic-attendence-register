@@ -1,3 +1,4 @@
+import { Company } from "./company.models";
 import { Person } from "./person.model";
 
 
@@ -11,4 +12,5 @@ export interface Meeting{
     location : string;
     status : string;
     people?:Person[];
+    company? :Company;
 }

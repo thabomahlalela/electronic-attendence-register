@@ -1,4 +1,4 @@
-// import { Location } from '@angular/common';
+import { Location } from '@angular/common';
 import { Component,  inject } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ClientService } from '../clientService';
@@ -9,7 +9,7 @@ import { ClientService } from '../clientService';
   templateUrl: './login.html',
   styleUrl: './login.css'
 })
-export class Login   {
+export class Login{
  
   emailPlaceholder='email';
   passwordPlaHolder ='password';
@@ -55,4 +55,14 @@ export class Login   {
 
 
     }
+
+    get getError(){
+       if(this.form.valid) {
+          return this.clientService.getError
+       }
+
+       return ;
+    
+    };
+    
 }
