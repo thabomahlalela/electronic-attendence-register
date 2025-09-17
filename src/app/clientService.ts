@@ -109,7 +109,7 @@ export class ClientService{
         person.company = this.company
         }
         this.http.patch("/api/update-person",person).subscribe()
-        this.person = person
+        
      }
 
      deletePerson(person:Person) {
@@ -120,7 +120,7 @@ export class ClientService{
 
   captureAttences(meeting : Meeting) {
     console.log(meeting)
-      this.http.patch("/api/update-meeting",meeting).subscribe()
+      this.http.patch("/api/capture-attendance",meeting).subscribe()
    }
 
    captureSurveyAnswers(survey : SurveyObj){

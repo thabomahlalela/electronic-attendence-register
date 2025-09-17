@@ -51,6 +51,9 @@ export const routes: Routes = [
               {
                 path:'more-info',
                 component:MoreAboutSurvey,
+            }, {
+                path:'credentials',
+                component:AdminSettingsComponent
             }
             
                 ]
@@ -88,6 +91,11 @@ export const routes: Routes = [
                 path : 'view-comments',
                 component:ViewComplaintsComponent
             },
+            {
+                path:'credentials',
+                component:AdminSettingsComponent
+            }
+            ,
             {
                 path:'',
                 component:CompanyInfoComponent

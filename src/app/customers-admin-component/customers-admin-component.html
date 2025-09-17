@@ -10,8 +10,9 @@
       <li (click)="onHome()">Home</li>
       <li (click)="onAdd()">Survey</li>
       <li (click)="onUsers()">Users</li>
-      <li (click)="onComments()">Complaints/compliments</li>
+      <li matBadgeColor="accent" [matBadge]="0" matBadgeOverlap="false" (click)="onComments() ">Complaints/compliments</li>
       <li (click)="onMeeting()">Meetings</li>
+      <li (click)="onSetings()">settings</li>
       <li (click)="onLogOut()">Log-out</li>
    
       
