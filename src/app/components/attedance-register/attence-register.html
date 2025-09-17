@@ -1,7 +1,10 @@
 
 
 <div  class="box">
-    <form [formGroup]="form" (ngSubmit)="captureAttendecy()">
+    @if(isSubmitted) {
+    <router-outlet/> 
+    } @else {
+        <form [formGroup]="form" (ngSubmit)="captureAttendecy()">
         <p>
             <h2>Attendence Register</h2>
             <p>
@@ -45,4 +48,6 @@
             </p>
         
     </form>
+    }
+    
 </div>

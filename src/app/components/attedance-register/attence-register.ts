@@ -1,21 +1,23 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectorRef, Component, inject } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ClientService } from '../../clientService';
 import { Meeting } from '../../models/meeting.models';
 import { Person } from '../../models/person.model';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-attence-register',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule,RouterOutlet],
   templateUrl: './attence-register.html',
   styleUrl: './attence-register.css'
 })
 export class AttenceRegister {
      private route = inject(ActivatedRoute);
+     cdr = inject(ChangeDetectorRef);
      private  id!:number;
-     private  meeting!:Meeting
-  form = new FormGroup({
+     private  meeting!:Meeting;
+     isSubmitted = false;
+     form = new FormGroup({
     name :new FormControl('',Validators.required),
     surname : new FormControl('',Validators.required),
     email : new FormControl('',[Validators.required,Validators.email]),
@@ -64,7 +66,9 @@ export class AttenceRegister {
 
     this.clientService.captureAttences(this.meeting)
     console.log(this.form.value)
-  
+
+    this.isSubmitted = true;
+    this.cdr.detectChanges();
 
    }
 

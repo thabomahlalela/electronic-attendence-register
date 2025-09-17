@@ -213,6 +213,13 @@ export const routes: Routes = [
     {
         path : 'attendace-register/:id',
         component : AttenceRegister,
+        children:[
+            {
+        path:'submited',
+        component:Submited
+    }
+        ]
+
     },
 
     {
@@ -223,7 +230,13 @@ export const routes: Routes = [
     ,
     {
         path :"capture-comments/:id",
-        component:CommentsComponent
+        component:CommentsComponent,
+        children:[
+            {
+        path:'submited',
+        component:Submited
+    }
+        ]
     },
     {
         path:"login",

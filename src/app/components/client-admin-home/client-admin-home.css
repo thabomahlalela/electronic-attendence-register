@@ -118,21 +118,10 @@
     color: black;
 }
 
-#horizontal-line{
-    width: 2072px;
-    transform: translate(-800px,-20px);
-    
-}
+ 
 .background{
     background-color: white;
     height: 100vh;
     position: relative;
 }
-.vertical-line{
-  position: absolute;
-  top: 5px;
-  left: 245px;
-  border-left: 1px solid black;
-  height: 935px;
-}
-
+ 
