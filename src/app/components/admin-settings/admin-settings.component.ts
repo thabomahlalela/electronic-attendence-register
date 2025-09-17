@@ -2,6 +2,7 @@ import { ChangeDetectorRef, Component, inject } from '@angular/core';
 import { AbstractControl, EmailValidator, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ClientService } from '../../clientService';
+import { Person } from '../../models/person.model';
 
 // function matchingPasswords(control: AbstractControl) {
 //   const password = control.get('newPassword')?.value;
@@ -37,9 +38,15 @@ export class AdminSettingsComponent {
   oldPasswordPlaceholder = 'old password';
   newPasswordPlaceholder ='new password';
   confirmPasswordPlaceholder = 'confirm password';
-  cdr = inject(ChangeDetectorRef);
+ ;
   
-  adminService = inject(ClientService);
+    private cdr = inject(ChangeDetectorRef);
+    
+    private adminService = inject(ClientService);
+    private person : Person =  this.adminService.getPerson
+    private error = this.adminService.getError;
+    private usernameError? : string;
+    private count = 1
  
  
    
@@ -68,6 +75,7 @@ export class AdminSettingsComponent {
     oldPassword : new FormControl('', {
       validators:[Validators.required]
     }),
+
     passwords : new  FormGroup({
       newPassword : new FormControl('', {
         validators:[Validators.required]
@@ -83,6 +91,7 @@ export class AdminSettingsComponent {
 
 
   onSubmit(){
+    console.log(this.person.user?.username)
 
     this.isUsernameFormSubmitted = true;
     if(this.usernameForm.controls['oldUsername'].pristine) {
@@ -92,7 +101,22 @@ export class AdminSettingsComponent {
     if(this.usernameForm.controls['newUsername'].pristine) {
       this.newUsernamePlaceholder = 'required';
     }
-  
+   
+    if(this.usernameForm.value.oldUsername !== this.person.user?.username){
+      this.usernameError = 'old username is incorrect'
+    }else{
+      if(this.count == 1){
+        this.count = 2
+        this.person.user!.username = this.usernameForm.value.newUsername!;
+        console.log(this.person.user?.username)
+        this.adminService.updatePerson(this.person)
+        this.usernameError = 'old username is correct'
+        this.usernameForm.value.newUsername = ''
+      }else{
+        this.usernameError = 'try again later'
+      }
+      
+    }
     
      
   }
@@ -115,8 +139,30 @@ export class AdminSettingsComponent {
       this.passwordForm.controls['passwords'].controls['confirmPassword'].reset();
       this.confirmPasswordPlaceholder = 'do not match'
     }
+    console.log(this.passwordForm.value.passwords!.confirmPassword!)
 
-     
+     this.adminService.verifyPassword(this.person.user!.username,this.passwordForm.value.oldPassword!).subscribe({
+           next : (authres)=>{
+             console.log(authres.person)
+             console.log(authres.roles)
+             console.log(authres.person.company)
+             console.log(authres.person.user)
+             console.log(authres.token)
+             this.person = authres.person
+              this.error = 'password correct'
+              this.cdr.detectChanges()
+              this.person.user!.password = this.passwordForm.value.passwords!.confirmPassword!
+
+               this.adminService.updatePerson(this.person)
+           },
+           error : (error)=>{
+             console.log(error.error)
+             this.error = error.error
+              this.cdr.detectChanges()
+
+            }
+         
+         })
     
   }
 
@@ -147,7 +193,7 @@ export class AdminSettingsComponent {
   }
 
     get getClass() {
-    
+      
        return {
       'my-class':this.isPasswordFormSubmited,
       'invalid': this.passwordForm.controls['oldPassword'].pristine,
@@ -163,4 +209,21 @@ export class AdminSettingsComponent {
 
     }
 }
+
+  get getError(){
+       if(this.passwordForm.valid) {
+          return this.error
+       }
+
+       return ;
+    
+    };
+
+    get getusernameError(){
+       if(this.usernameForm.valid) {
+          return this.usernameError;
+        }
+
+       return ;
+    }
 }

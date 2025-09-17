@@ -1,4 +1,5 @@
 import { Company } from "./company.models";
+import { User } from "./user.model";
 
 export interface Person {
     id : number,
@@ -7,6 +8,7 @@ export interface Person {
     employNO : string,
     email : string,
     company? : Company
+    user? : User
 }
 
 
