@@ -248,6 +248,10 @@ export class ClientService{
         return this.viewedSurvey
     }
 
+    get meeting() {
+      return this.viewedMeeting;
+    }
+
      
 
     // addQuestion():void{

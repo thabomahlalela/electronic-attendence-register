@@ -23,6 +23,7 @@ import { Submited } from './submited/submited';
 import { AdminSettingsComponent } from './components/admin-settings/admin-settings.component';
 import { CustomersAdmin } from './customers-admin-component/customer-admin.service';
 import { Login } from './login/login';
+import { MoreAboutMeeting } from './components/more-about-meeting/more-about-meeting';
 
 
 export const routes: Routes = [
@@ -191,6 +192,10 @@ export const routes: Routes = [
                     {
                         path : 'view-attendaces',
                         component : ViewAttendances
+                    },
+                    {
+                        path:"meeting",
+                        component:MoreAboutMeeting
                     }
                 ]
             },

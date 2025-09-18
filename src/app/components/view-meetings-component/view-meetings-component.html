@@ -8,7 +8,8 @@
         </header>
     </div>
 
-    <div id="meetings-menu">
+    @if(isHome) {
+           <div id="meetings-menu">
         <ul>
             <li (click)="onUpComing()">upcoming</li>
             <li (click)="onOnGoing()">ongoing</li>
@@ -21,7 +22,7 @@
 
            @for(meeting of getMeetings; track meeting.id) {
                 @if (meeting.status === "TODAY") {
-                            <mat-card class="example-card" appearance="outlined">
+                            <mat-card class="example-card" appearance="outlined" (click)="onMeeting(meeting)">
   <mat-card-header>
     <div mat-card-avatar ></div>
     
@@ -45,7 +46,7 @@
 
             @for(meeting of getMeetings; track meeting.id) {
                 @if (meeting.status === "UPCOMING") {
-                            <mat-card class="example-card" appearance="outlined">
+                            <mat-card class="example-card" appearance="outlined" (click)="onMeeting(meeting)">
   <mat-card-header>
     <div mat-card-avatar ></div>
     
@@ -73,7 +74,7 @@
 
             @for(meeting of getMeetings; track meeting.id) {
                 @if (meeting.status === "ONGOING") {
-                            <mat-card class="example-card" appearance="outlined">
+                            <mat-card class="example-card" appearance="outlined" (click)="onMeeting(meeting)">
   <mat-card-header>
     <div mat-card-avatar ></div>
     
@@ -97,8 +98,8 @@
         <div id="past-meeting">
         <label>past</label>
           @for(meeting of getMeetings; track meeting.id) {
-                @if (meeting.status === "ONGOING") {
-                            <mat-card class="example-card" appearance="outlined">
+                @if (meeting.status === "PAST-MEETING") {
+                            <mat-card class="example-card" appearance="outlined" (click)="onMeeting(meeting)">
   <mat-card-header>
     <div mat-card-avatar ></div>
     
@@ -116,90 +117,8 @@
             }
         </div>
     }
-    
-
-    <!-- <div id="list-of-meetings">
-
-        <button id= "refreshBtn" matMiniFab (click)="refresh()">
-            <mat-icon>cached</mat-icon>
-        </button> 
-        
-        <button id= "myButton" matMiniFab (click)="onAdd()">
-            <mat-icon>add_circle_outline</mat-icon>
-        </button>   
-      
-       <div id="list-of-surveys">
-        <table>
-     
-        <thead>
-            <tr>
-                <th>Tittle</th>
-                <th>Description</th>
-                <th>start Time</th>
-                <th>end Time</th>
-                <th>Date</th>
-                <th>Location</th>
-                <th>Status</th>
-                <th></th>
-                
-                
-                
-            </tr>
-        </thead>
-
-        <tbody>
-             @for(meeting of getMeetings; track meeting.id) {
-                  <tr  >
-               
-                <td>{{meeting.title}}</td>
-                <td>{{meeting.description}}</td>
-                <td>{{meeting.date}}</td>
-                <td>{{meeting.startTime}}</td>
-                <td>{{meeting.endTime}}</td>
-                <td>{{meeting.date}}</td>
-                <td>{{meeting.location}}</td>
-                <td>{{meeting.status}}</td>
-                <td> 
-                    
-                    <button (click)="onDeleteMeeting(meeting)" class="icons" matMiniFab>
-                            <mat-icon>delete_outline</mat-icon>
-                    </button>
-                    
-                   
-                    @if(meeting.status === 'UPCOMING'){
-                        <button id="qr-code-btn" class="icons" matMiniFab (click)="onQrCode(meeting)">
-                            <mat-icon>qr_code</mat-icon>
-                        </button>
-                    }@else {
-                        <button id="qr-code-btn" class="icons" matMiniFab (click)="onViewAttendance(meeting)">
-                            <mat-icon>view_module</mat-icon>
-                        </button>
-                    }
-                    
-                </td>
-
-
-         
-                
-                
-            </tr>
-        }
-          
-
-            
-        </tbody>
-
-
- </table>
-       </div>
-
+    }
  
-  <div id="routed-view">
-        <router-outlet/> 
-    </div>
- 
-
-  
-    </div> -->
+    <router-outlet/>
    
  </div>

@@ -23,7 +23,8 @@ export class ViewMeetingsComponent {
     private _snackBar = inject(MatSnackBar);
     isUpcoming = true;
     isOngoing = false;
-    isPast= false
+    isPast= false;
+    isHome = true;
     isUndo = false;
  
     message = 'meeting deleted';
@@ -51,6 +52,15 @@ export class ViewMeetingsComponent {
 onAdd() {
     this.router.navigate(['add-meeting'],{relativeTo : this.route});
     // this.router.navigate(['attendace-register'])
+}
+
+onMeeting(meeting:Meeting) {
+  this.isUpcoming = false;
+    this.isOngoing = false;
+    this.isPast= false;
+    this.isHome = false;
+    this.clientService.setClickedMeeting(meeting);
+    this.router.navigate(['meeting'],{relativeTo : this.route});
 }
 
 onDeleteMeeting(meeting:Meeting) {

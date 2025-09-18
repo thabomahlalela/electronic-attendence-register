@@ -1,0 +1,70 @@
+#back-btn {
+    position: absolute;
+    margin-left: 50px;
+    margin-top: -350px;
+    width: 40px;
+    height: 40px;
+    /* background-color: white; */
+    border: none;
+}
+
+#header {
+    margin-top: 50px;
+    margin-left: 880px;
+}
+
+label {
+    position: absolute;
+    margin-top: 40px;
+    margin-left: 40px;
+    font-size: 20px;
+   font-weight: 400;
+}
+
+
+.example-card{
+    margin-top: 100px;
+    margin-left: 40px;
+    width: 1700px;
+}
+
+#date {
+    width: 1500px;
+    height: 70px;
+     display: flex;
+     align-items: center;
+     border-bottom:solid darkgray ;
+     border-width: 1px;
+    margin-left: 100px;
+}
+
+#date-span {
+    margin-left: 20px;
+    font-size: large;
+    font-weight: 100;
+}
+
+#time-span {
+     margin-left: 20px;
+    font-size: large;
+    font-weight: 100;
+}
+
+#location-span {
+    margin-left: 20px;
+    font-size: large;
+    font-weight: 100;
+}
+
+#location-meeting {
+    margin-left: 1300px;
+
+}
+
+#date-meeting {
+    margin-left: 1330px;
+}
+
+#time-meeting {
+     margin-left: 1330px;
+}
