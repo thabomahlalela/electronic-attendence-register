@@ -8,10 +8,117 @@
         </header>
     </div>
 
+    <div id="meetings-menu">
+        <ul>
+            <li (click)="onUpComing()">upcoming</li>
+            <li (click)="onOnGoing()">ongoing</li>
+            <li (click)="onPast()">past</li>
+        </ul>
+    </div>
+    @if(isUpcoming) {
+        <div id="today-meetings">
+        <label>Today</label>
+
+           @for(meeting of getMeetings; track meeting.id) {
+                @if (meeting.status === "TODAY") {
+                            <mat-card class="example-card" appearance="outlined">
+  <mat-card-header>
+    <div mat-card-avatar ></div>
+    
+    <mat-card-title>{{meeting.title}}</mat-card-title>
+    <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+  </mat-card-header>
+  <!-- <img mat-card-image src="https://material.angular.dev/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+  <mat-card-content id="date-meeting">
+     {{meeting.date}}
+  </mat-card-content>
+ 
+</mat-card>
+                }
+            }
+      
+        
+    </div>
+
+    <div id="from-tomorrow-meetings">
+        <label>Tomorrow</label>
+
+            @for(meeting of getMeetings; track meeting.id) {
+                @if (meeting.status === "UPCOMING") {
+                            <mat-card class="example-card" appearance="outlined">
+  <mat-card-header>
+    <div mat-card-avatar ></div>
+    
+    <mat-card-title>{{meeting.title}}</mat-card-title>
+     
+    <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+  </mat-card-header>
+  <!-- <img mat-card-image src="https://material.angular.dev/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+  <mat-card-content id="date-meeting">
+     {{meeting.date}}
+  </mat-card-content>
+ 
+</mat-card>
+                }
+            }
+
+    
+    </div>
+
+    }
+
+    @if (isOngoing) {
+        <div id="onGoing-meetings">
+        <label>on-going</label>
+
+            @for(meeting of getMeetings; track meeting.id) {
+                @if (meeting.status === "ONGOING") {
+                            <mat-card class="example-card" appearance="outlined">
+  <mat-card-header>
+    <div mat-card-avatar ></div>
+    
+    <mat-card-title>{{meeting.title}}</mat-card-title>
+     
+    <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+  </mat-card-header>
+  <!-- <img mat-card-image src="https://material.angular.dev/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+  <mat-card-content id="date-meeting">
+     {{meeting.date}}
+  </mat-card-content>
+ 
+</mat-card>
+                }
+            }
+        </div>
+    }
+
+
+    @if(isPast) {
+        <div id="past-meeting">
+        <label>past</label>
+          @for(meeting of getMeetings; track meeting.id) {
+                @if (meeting.status === "ONGOING") {
+                            <mat-card class="example-card" appearance="outlined">
+  <mat-card-header>
+    <div mat-card-avatar ></div>
+    
+    <mat-card-title>{{meeting.title}}</mat-card-title>
+     
+    <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+  </mat-card-header>
+  <!-- <img mat-card-image src="https://material.angular.dev/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+  <mat-card-content id="date-meeting">
+     {{meeting.date}}
+  </mat-card-content>
+ 
+</mat-card>
+                }
+            }
+        </div>
+    }
     
 
-
-    <div id="list-of-meetings">
+    <!-- <div id="list-of-meetings">
 
         <button id= "refreshBtn" matMiniFab (click)="refresh()">
             <mat-icon>cached</mat-icon>
@@ -86,15 +193,13 @@
  </table>
        </div>
 
-  <!-- <button id= "refreshBtn" matMiniFab >sync</button>   -->
+ 
   <div id="routed-view">
         <router-outlet/> 
     </div>
  
 
- <!-- <button id="add-button" class="icons" matMiniFab (click)="onAdd()">
-            +
- </button> -->
-    </div>
+  
+    </div> -->
    
  </div>

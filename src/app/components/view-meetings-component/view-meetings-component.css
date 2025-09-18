@@ -107,6 +107,70 @@ p{
    background-color: white;
 }
 
+#meetings-menu {
+   width: 1400px;
+   height: 70px;
+   /* border: solid darkblue; */
+   margin-top: 20px;
+   margin-left: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul{
+   text-align: center;
+   display: flex;
+   flex-direction: row;
+   gap: 500px;
+   list-style: none;
+   font-size:large;
+   /* border-bottom:solid lightgray ; */
+   border-width: 1px;
+   padding: 0;
+   margin: 0;
+   overflow: hidden;
+}
+
+
+ ul li {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+
+ }
+
+ ul li:hover {
+   color: darkblue;
+ }
+
+ul li:before{
+   content: "";
+   position: absolute;
+   inset: calc(100% -3px)  0 0 0;
+   background: darkblue;
+    /* scale: 0 1; */
+    /* translate:0s 0.3s ; */
+   
+
+}
+
+ul:hover li::before {
+   scale: 1;
+}
+
+/* li:hover::after{
+   content: ' ';
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   color: #fff;
+} */
+
+
+
 #list-of-surveys {
      position: absolute;
      width: 1085px;
@@ -116,4 +180,54 @@ p{
      margin-top: 0px;
 }
 
+#today-meetings {
+   width: 1700px;
+   min-height: 200px;
+   /* border: solid darkblue; */
+   margin-left: 50px;
+   margin-top: 20px;
+}
+
+#from-tomorrow-meetings {
+   width: 1700px;
+   min-height: 200px;
+   /* border: solid darkblue; */
+   margin-left: 50px;
+   margin-top: 20px;
+}
+
+#onGoing-meetings {
+   width: 1700px;
+   min-height: 200px;
+   /* border: solid darkblue; */
+   margin-left: 50px;
+   margin-top: 20px;
+}
+
+#past-meeting {
+    width: 1700px;
+   min-height: 200px;
+   /* border: solid lightblue; */
+   margin-left: 50px;
+   margin-top: 20px;
+}
+
+label {
+   font-size: 20px;
+   font-weight: 400;
+}
+
+.example-header-image {
+   /* margin-left: -180px; */
+}
+
+#date-meeting {
+   margin-top: -20px;
+   margin-left: 60px;
+}
+
+
+.example-card {
+   margin-top: 20px;
+}
  

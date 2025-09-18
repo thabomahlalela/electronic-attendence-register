@@ -5,13 +5,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ClientService } from '../../clientService';
+import { MatCardModule } from '@angular/material/card';
 
  
 
 
 @Component({
   selector: 'app-view-meetings-component',
-  imports: [MatIcon, MatButtonModule, RouterOutlet],
+  imports: [MatIcon, MatButtonModule, RouterOutlet,MatCardModule],
   templateUrl: './view-meetings-component.html',
   styleUrl: './view-meetings-component.css'
 })
@@ -20,6 +21,9 @@ export class ViewMeetingsComponent {
     private router = inject(Router);
     private cdr = inject(ChangeDetectorRef);
     private _snackBar = inject(MatSnackBar);
+    isUpcoming = true;
+    isOngoing = false;
+    isPast= false
     isUndo = false;
  
     message = 'meeting deleted';
@@ -74,6 +78,49 @@ onDeleteMeeting(meeting:Meeting) {
      this.isUndo =true;
     });
 
+}
+
+onUpComing() {
+  if(this.isUpcoming == false){
+    this.isUpcoming = true;
+  }
+
+  if(this.isOngoing == true) {
+    this.isOngoing = false;
+  }
+
+  if(this.isPast == true) {
+    this.isPast = false;
+  }
+}
+
+onOnGoing() {
+  if(this.isOngoing == false) {
+    this.isOngoing = true;
+  }
+
+  if(this.isUpcoming == true){
+    this.isUpcoming = false;
+  }
+
+  if(this.isPast == true) {
+    this.isPast = false;
+  }
+
+}
+
+onPast() {
+   if(this.isPast == false) {
+    this.isPast = true;
+  }
+
+  if(this.isUpcoming == true){
+    this.isUpcoming = false;
+  }
+
+   if(this.isOngoing == true) {
+    this.isOngoing = false;
+  }
 }
 
 onQrCode(meeting:Meeting) {
