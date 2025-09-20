@@ -1,0 +1,129 @@
+<div id="container">
+  <div id="header">
+    <header>
+      <h3>meetings</h3>
+    </header>
+  </div>
+  <div id="add-btn">
+    <button  matMiniFab (click)="openDialog()">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+
+  <div id="meetings-menu">
+    <ul>
+      <li (click)="onUpComing()">upcoming</li>
+      <li (click)="onOnGoing()">ongoing</li>
+      <li (click)="onPast()">past</li>
+    </ul>
+  </div>
+  @if(isUpcoming) {
+  <div id="today-meetings">
+    <label>Today</label>
+    @if(todayMeetings.length !== 0) { @for(meeting of todayMeetings; track meeting.id) {
+
+    <mat-card class="example-card" appearance="outlined">
+      <mat-card-header>
+        <div mat-card-avatar></div>
+
+        <mat-card-title>{{ meeting.title }}</mat-card-title>
+        <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+      </mat-card-header>
+      <!-- <img mat-card-image src="https://material.angular.dev/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+      <mat-card-content id="date-meeting">
+        {{ meeting.date }}
+      </mat-card-content>
+
+      <button id="delete-btn" matMiniFab (click)="onDeleteMeeting(meeting)">
+        <mat-icon>delete</mat-icon>
+      </button>
+      <div id="more-info" (click)="onMeeting(meeting)">></div>
+    </mat-card>
+
+    } } @else {
+    <p id="message">there are no scheduled meetings today</p>
+    }
+  </div>
+
+  <div id="from-tomorrow-meetings">
+    <label>Tomorrow</label>
+    @if(upcomingMeetings.length !== 0) { @for(meeting of upcomingMeetings; track meeting.id) { @if
+    (meeting.status === "UPCOMING") {
+    <mat-card class="example-card" appearance="outlined">
+      <mat-card-header>
+        <div mat-card-avatar></div>
+
+        <mat-card-title>{{ meeting.title }}</mat-card-title>
+
+        <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+      </mat-card-header>
+      <!-- <img mat-card-image src="https://material.angular.dev/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+      <mat-card-content id="date-meeting">
+        {{ meeting.date }}
+      </mat-card-content>
+
+      <button id="delete-btn" matMiniFab (click)="onDeleteMeeting(meeting)">
+        <mat-icon>delete</mat-icon>
+      </button>
+      <div id="more-info" (click)="onMeeting(meeting)">></div>
+    </mat-card>
+    } } }@else {
+    <p>no scheduled meetings</p>
+    }
+  </div>
+
+  } @if (isOngoing) {
+  <div id="onGoing-meetings">
+    <label>on-going</label>
+
+    @if(ongoingMeetings.length !== 0) { @for(meeting of ongoingMeetings; track meeting.id) {
+    <mat-card class="example-card" appearance="outlined">
+      <mat-card-header>
+        <div mat-card-avatar></div>
+
+        <mat-card-title>{{ meeting.title }}</mat-card-title>
+
+        <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+      </mat-card-header>
+      <!-- <img mat-card-image src="https://material.angular.dev/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+      <mat-card-content id="date-meeting">
+        {{ meeting.date }}
+      </mat-card-content>
+      <button id="delete-btn" matMiniFab (click)="onDeleteMeeting(meeting)">
+        <mat-icon>delete</mat-icon>
+      </button>
+      <div id="more-info" (click)="onMeeting(meeting)">></div>
+      <div id="icon"></div>
+    </mat-card>
+    } }@else {
+    <p>there are no on going meetings</p>
+    }
+  </div>
+  } @if(isPast) {
+  <div id="past-meeting">
+    <label>past</label>
+    @if(pastMeetings.length !==0) { @for(meeting of pastMeetings; track meeting.id) {
+    <mat-card class="example-card" appearance="outlined">
+      <mat-card-header>
+        <div mat-card-avatar></div>
+
+        <mat-card-title>{{ meeting.title }}</mat-card-title>
+
+        <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+      </mat-card-header>
+      <!-- <img mat-card-image src="https://material.angular.dev/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+      <mat-card-content id="date-meeting">
+        {{ meeting.date }}
+      </mat-card-content>
+
+      <button id="delete-btn" matMiniFab (click)="onDeleteMeeting(meeting)">
+        <mat-icon>delete</mat-icon>
+      </button>
+      <div id="more-info" (click)="onMeeting(meeting)">></div>
+    </mat-card>
+    } } @else {
+    <p>there are no past meetings</p>
+    }
+  </div>
+  }
+</div>

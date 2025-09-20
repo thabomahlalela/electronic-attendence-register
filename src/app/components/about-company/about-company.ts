@@ -69,6 +69,7 @@ ngOnInit(): void {
   }
 
   onComments(){
+    this.service.setIsHomeMeeting(true)
     this.router.navigate(['edit-company/comments']);
   }
 

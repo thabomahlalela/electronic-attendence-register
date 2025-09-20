@@ -21,8 +21,16 @@
                             
                             </mat-card>
 
-                            <button id="back-btn">
+                            <button id="back-btn" (click)="onBack()">
                                 <
                             </button>
+                              <button  id="btn-icon-qr-code" matMiniFab (click)="onGenerateQRCode()">
+                                    <mat-icon>qr_code</mat-icon>
+                             </button>
+                            <div id="routed">
+                                <router-outlet/> 
+                            </div>
 
-                            <label>Attendecees</label>
+                            <div id="atendencees">     
+                                <app-view-attendances/> 
+                            </div>

@@ -1,6 +1,6 @@
 .container{
      width: 100%;
-    /* min-height: 200px; */
+    height: 100vh;
     /* border:solid orange;  */
     background-color: whitesmoke;
    overflow-y: scroll;
@@ -58,9 +58,10 @@ h1 {
    position: absolute;
    margin-top: 100px;
    width: 100%;
-   min-height: 800px;
+   min-height: 1300px;
    background-color: white;
    /* border: solid grey; */
+   /* overflow: scroll; */
  }
 
 

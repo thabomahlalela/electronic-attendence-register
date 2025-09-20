@@ -24,6 +24,7 @@ import { AdminSettingsComponent } from './components/admin-settings/admin-settin
 import { CustomersAdmin } from './customers-admin-component/customer-admin.service';
 import { Login } from './login/login';
 import { MoreAboutMeeting } from './components/more-about-meeting/more-about-meeting';
+import { CompanyMeetings } from './components/company-meetings/company-meetings';
 
 
 export const routes: Routes = [
@@ -182,20 +183,28 @@ export const routes: Routes = [
                 component:ViewMeetingsComponent,
                 children:[
                     {
+                        path:'',
+                        component:CompanyMeetings
+                    }
+                    ,
+                    {
                         path:'add-meeting',
                         component:CaptureMeeting
                     },
-                    {
-                        path:'generate-qr-code/:id/:surveyORMeeting',
-                        component:GenerateQrCode,
-                    },
+                  
                     {
                         path : 'view-attendaces',
                         component : ViewAttendances
                     },
                     {
                         path:"meeting",
-                        component:MoreAboutMeeting
+                        component:MoreAboutMeeting,
+                        children:[
+                              {
+                        path:'generate-qr-code/:id/:surveyORMeeting',
+                        component:GenerateQrCode,
+                    },
+                        ]
                     }
                 ]
             },

@@ -27,6 +27,7 @@ export class ClientService{
     private viewedCompany!:Company;
     private viewedSurvey! : SurveyObj;
     private viewedMeeting! : Meeting;
+    isMeetingHome = true;
      
     clientOptions= [
         {
@@ -160,6 +161,10 @@ export class ClientService{
    }
    viewMeetings(){
         return this.http.get<Meeting[]>(`/api/View-Meetings/${this.company.id}`)
+   }
+
+   setIsHomeMeeting(isHome:boolean) {
+    this.isMeetingHome = isHome;
    }
 
    viewMeeting(meetingID : number){

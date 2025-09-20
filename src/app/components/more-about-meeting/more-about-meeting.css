@@ -21,6 +21,25 @@ label {
    font-weight: 400;
 }
 
+#btn-icon-qr-code {
+    position: absolute;
+   margin-left: 1680px;
+   margin-top: -260px;
+}
+
+#routed {
+    width: 600px;
+    height: 600px;
+    /* border: solid darkblue; */
+    margin-left: 1120px;
+    margin-top: 20px;
+}
+
+#atendencees {
+    margin-top: -600px;
+    margin-left: 50px;
+}
+
 
 .example-card{
     margin-top: 100px;
