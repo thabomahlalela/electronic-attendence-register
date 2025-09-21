@@ -250,7 +250,7 @@ label {
   position: absolute;
   width: 50px;
   height: 50px;
-  border: solid darkblue;
+  /* border: solid darkblue; */
   margin-top: 10px;
   margin-left: 2px;
   background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsQy6f1WeIO85PUlHyxpjSzTIV3BwCuXkl-iZJpOb9KRJ1S45qqcjNMWw&s');
@@ -272,5 +272,10 @@ p {
   height: 70px;
   margin-left: 50px;
   margin-top: 40px;
-  /* border: solid darkblue; */
+ 
+   
+}
+
+button{
+  background-color: white;
 }

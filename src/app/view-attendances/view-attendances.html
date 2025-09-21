@@ -10,7 +10,14 @@
         <label>attendencees{{" "}}{{getUsers.length}}</label>
     <!-- </div> -->
 
-
+ <div id="btns">
+    <button matMiniFab (click)="onRefresh()">
+        <mat-icon>refresh</mat-icon>
+    </button>
+    <button matMiniFab (click)="onDownload()">
+        <mat-icon>download</mat-icon>
+    </button>
+ </div>
 
     <div id="list-of-users">
       

@@ -25,6 +25,7 @@ label {
     position: absolute;
    margin-left: 1680px;
    margin-top: -260px;
+   background-color: white;
 }
 
 #routed {

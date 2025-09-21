@@ -111,7 +111,23 @@ export class CompanyMeetings {
   }
 
   onDeleteMeeting(meeting: Meeting) {
-    this.meetings = this.meetings.filter((s) => s.id !== meeting.id);
+    if (meeting.status === 'UPCOMING') {
+            this.upcoming = this.upcoming.filter((s) => s.id !== meeting.id);
+          }
+     if (meeting.status === 'ONGOING') {
+            this.onGoing = this.onGoing.filter((s) => s.id !== meeting.id);
+          }
+
+    if (meeting.status === 'TODAY') {      
+            this.today= this.today.filter((s) => s.id !== meeting.id);
+          }
+    
+    if (meeting.status === 'PAST-MEETING') {
+            this.past = this.past.filter((s) => s.id !== meeting.id);
+          }
+
+
+     
 
     let snackBarRef = this._snackBar.open(this.message, this.action, { duration: 5000 });
 
@@ -129,7 +145,20 @@ export class CompanyMeetings {
     });
 
     snackBarRef.onAction().subscribe(() => {
-      this.meetings.push(meeting);
+       if (meeting.status === 'UPCOMING') {
+            this.upcoming.push(meeting);
+          }
+     if (meeting.status === 'ONGOING') {
+            this.onGoing.push(meeting);
+          }
+
+    if (meeting.status === 'TODAY') {      
+            this.today.push(meeting);
+          }
+    
+    if (meeting.status === 'PAST-MEETING') {
+            this.past.push(meeting);
+          }
       this.cdr.detectChanges();
       this.isUndo = true;
     });
