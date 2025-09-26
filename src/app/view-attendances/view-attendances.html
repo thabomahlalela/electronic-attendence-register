@@ -10,7 +10,11 @@
         <label>attendencees{{" "}}{{getUsers.length}}</label>
     <!-- </div> -->
 
- <div id="btns">
+ 
+
+    <div id="list-of-users">
+        @if(getUsers.length !==0) {
+            <div id="btns">
     <button matMiniFab (click)="onRefresh()">
         <mat-icon>refresh</mat-icon>
     </button>
@@ -18,11 +22,28 @@
         <mat-icon>download</mat-icon>
     </button>
  </div>
+            @for(user of getUsers; track user.id) {
+            <mat-card class="example-card" appearance="outlined">
+      <mat-card-header>
+        <div mat-card-avatar></div>
 
-    <div id="list-of-users">
-      
+        <mat-card-title id="name-surname">{{user.name}}  {{" "}} {{user.surname}}</mat-card-title>
+        <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+      </mat-card-header>
+      <!-- <img mat-card-image src="https://material.angular.dev/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+      <mat-card-content id="email">
+        {{user.email}}
+      </mat-card-content>
+      <div id="icon"></div>
+
+    </mat-card>
+        }    
+        } @else {
+            <p>there are no attendencees</p>
+        }
+        
        
- <table>
+ <!-- <table>
         
      
         <thead>
@@ -49,7 +70,7 @@
 
             
         </tbody>
- </table>
+ </table> -->
     </div>
     
 </div>

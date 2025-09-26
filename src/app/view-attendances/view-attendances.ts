@@ -3,11 +3,12 @@ import { ClientService } from '../clientService';
 import { Person } from '../models/person.model';
 import { MatIcon } from '@angular/material/icon';
 import { MatButtonModule } from "@angular/material/button";
+import { MatCardModule } from '@angular/material/card';
  
 
 @Component({
   selector: 'app-view-attendances',
-  imports: [MatIcon, MatButtonModule, MatButtonModule],
+  imports: [MatIcon, MatButtonModule, MatButtonModule,MatCardModule],
   templateUrl: './view-attendances.html',
   styleUrl: './view-attendances.css'
 })
