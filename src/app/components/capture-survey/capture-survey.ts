@@ -8,6 +8,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIcon } from '@angular/material/icon';
 import { filter } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
+import { MatDialogRef } from '@angular/material/dialog';
+import { CompanySurveys } from '../company-surveys/company-surveys';
 
 @Component({
   selector: 'app-capture-survey',
@@ -16,10 +18,12 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrl: './capture-survey.css'
 })
 export class CaptureSurvey {
-  private router = inject(Router)
-  questions : Question[] = []
-  que! :[{text:''}]
-quee!: Question;
+  private router = inject(Router);
+   readonly dialogRef = inject(MatDialogRef<CompanySurveys>);
+
+  questions : Question[] = [];
+  que! :[{text:''}];
+  quee!: Question;
 
 
  
@@ -63,9 +67,11 @@ captureSurvey() :void{
     
   })
      
-    this.router.navigate(['../'],{relativeTo : this.route})
-    console.log(this.form.value)
-
+    // this.router.navigate(['../'],{relativeTo : this.route})
+    // console.log(this.form.value);
+    this.dialogRef.close();
+     this.router.navigate(['/surveys',{relativeTo : this.route}]);
+    
 
 }
 
@@ -74,7 +80,7 @@ captureSurvey() :void{
   }
 
   deleteQuetion(quee:Question){
-    console.log(quee)
+    console.log(quee);
    const data = this.questions.filter((s) => s.question !== quee.question);
    this.questions = data;
    

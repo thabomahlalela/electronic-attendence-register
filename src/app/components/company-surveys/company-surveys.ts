@@ -1,28 +1,25 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, inject, OnInit, Output, signal } from '@angular/core';
-import { MatExpansionModule } from '@angular/material/expansion';
- 
- import { DUMMY_SURVEY } from '../dummies/dummy-survey';
-import { MatIcon } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { SurveyObj } from '../../models/survey.model';
+import { ChangeDetectorRef, Component, inject, signal } from '@angular/core';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router, ActivatedRoute, RouterOutlet } from '@angular/router';
+import { ClientService } from '../../clientService';
+import { Question } from '../../models/question.model';
+import { SurveyObj } from '../../models/survey.model';
+import { CaptureSurvey } from '../capture-survey/capture-survey';
+import { MatButtonModule } from '@angular/material/button';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIcon } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
-import { Question } from '../../models/question.model';
-import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
-import { ClientService } from '../../clientService';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { CaptureSurvey } from '../capture-survey/capture-survey';
 
 @Component({
-  selector: 'app-view-surveys',
+  selector: 'app-company-surveys',
   imports: [MatIcon, MatExpansionModule, MatTableModule, MatButtonModule, MatFormFieldModule, MatInputModule, RouterOutlet],
-  templateUrl: './view-surveys.html',
-  styleUrl: './view-surveys.css',
-   changeDetection: ChangeDetectionStrategy.OnPush,
+  templateUrl: './company-surveys.html',
+  styleUrl: './company-surveys.css'
 })
-export class ViewSurveys implements OnInit {
+export class CompanySurveys {
   
  private _snackBar = inject(MatSnackBar);
  cdr = inject(ChangeDetectorRef);
@@ -71,11 +68,7 @@ onList() {
     this.isSurveyClicked = true;
     
      
-     this.clientService.setClickedSurvey(survey);
-     this.cdr.detectChanges();
-     this.clientService.viewQuestions().subscribe((questions) => this.clientService.setQuestions(questions));
-    this.cdr.detectChanges()
-;     
+     this.clientService.setClickedSurvey(survey);     
      this.router.navigate(['more-info'],{relativeTo : this.route});
 
       
@@ -106,17 +99,7 @@ onList() {
     });
   }
 
-  onGenerateQRCode(survey:SurveyObj) {
-    this.isSurveyClicked = false;
-    this.cdr.detectChanges();
-    const id = survey.id;
-    const surveyORMeeting = "SURVEY";
-     
-    // this.url.emit('/survey');
-    console.log('emit')
-    this.router.navigate(['generate-qr-code', `${id}`, `${surveyORMeeting}`],{relativeTo : this.route});
-
-  }
+  
 
   onQuestion(question:Question) {
     this.isQuesttionClicked = true;

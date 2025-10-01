@@ -18,13 +18,14 @@ import { CustomersAdminComponent } from './customers-admin-component/customers-a
 import { ViewComplaintsComponent } from './components/view-complaints-component/view-complaints-component';
 import { CommentsComponent } from './components/comments-component/comments-component';
 import { StatisticsComponent } from './components/statistics-component/statistics-component';
-import { MoreAboutSurvey } from './more-about-survey/more-about-survey';
+import { MoreAboutSurvey } from './components/more-about-survey/more-about-survey';
 import { Submited } from './submited/submited';
 import { AdminSettingsComponent } from './components/admin-settings/admin-settings.component';
 import { CustomersAdmin } from './customers-admin-component/customer-admin.service';
 import { Login } from './login/login';
 import { MoreAboutMeeting } from './components/more-about-meeting/more-about-meeting';
 import { CompanyMeetings } from './components/company-meetings/company-meetings';
+import { CompanySurveys } from './components/company-surveys/company-surveys';
 
 
 export const routes: Routes = [
@@ -150,22 +151,29 @@ export const routes: Routes = [
                 path:'surveys',
                 component:ViewSurveys,
                 children:[
-                    {
-                path:'add-survey',
-                component:CaptureSurvey
-            },
-            {
-                path:'generate-qr-code/:id/:surveyORMeeting',
-                component:GenerateQrCode
-            },
-
+              {
+                path:'',
+                component:CompanySurveys,
+                
+              },
+              
             {
                 path:'more-info',
                 component:MoreAboutSurvey,
+                children:[
+                     {
+                path:'generate-qr-code/:id/:surveyORMeeting',
+                component:GenerateQrCode
+            }
+                ]
+            }
+
+              
+           
+                  ]
             }
             
-                  ]
-            },
+            ,
             {
          
                 path:'users',

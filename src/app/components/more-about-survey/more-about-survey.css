@@ -1,0 +1,48 @@
+ label {
+   position: absolute;
+   font-size: x-large;
+   margin-top: 50px;
+   margin-left: 100px;
+ }
+
+ #questions {
+   position: absolute;
+   width: 1000px;
+   min-height: 200px;
+   /* border: solid darkblue; */
+   margin-top: -630px;
+   margin-left: 100px;
+   display: flex;
+   flex-direction: column;
+   gap: 30px;
+ }
+
+ #dr-code-btn {
+  width: 100%;
+ }
+
+#qr-code {
+  width: 600px;
+  min-height: 710px;
+  /* border: solid darkblue; */
+  margin-left: 1210px;
+  margin-top: 100px;
+}
+
+ mat-panel-title {
+  margin-top: 20px;
+  height: 100px;
+
+ }
+
+ #content {
+   margin-top: 20px;
+ }
+
+ #user-response {
+   margin-top: -20px;
+   margin-left: 70px;
+ }
+
+
+ 

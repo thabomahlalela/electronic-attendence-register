@@ -24,6 +24,7 @@ incomingURL ='';
 url ='url';
 isLoading = false;
 isGenerate = true;
+isNotGenerated = true;
 destroy = inject(DestroyRef);
  @ViewChild('qrcodeContainer', { static: false }) qrcodeContainer!: ElementRef;
 
@@ -43,6 +44,7 @@ ngOnInit(): void {
   onGenerate() {
      this.isLoading=true;
      this.isGenerate = false;
+     this.isNotGenerated = false;
         setTimeout(()=> {
      this.isLoading=!this.isLoading;
      this.cdr.detectChanges()

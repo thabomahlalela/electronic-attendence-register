@@ -98,7 +98,6 @@ export class CompanyMeetings {
 
   onAdd() {
     // this.router.navigate(['add-meeting'], { relativeTo: this.route });
-    // this.router.navigate(['attendace-register'])
   }
 
   onMeeting(meeting: Meeting) {

@@ -1,0 +1,32 @@
+ <label>Survey Questions & Responses</label>
+ <div id="qr-code">
+  <button mat-raised-button id="dr-code-btn" (click)="onGenerateQRCode()">
+    Qr-Code
+  </button>
+  <router-outlet/>
+ </div>
+ <div id="questions">
+  @for (question of getQuestions; track question.id) {
+     
+     <mat-accordion>
+  <mat-expansion-panel  hideToggle>
+     
+    <p>This is the primary content of the panel.</p>
+  </mat-expansion-panel>
+  <mat-expansion-panel  id="question" (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+    <mat-expansion-panel-header>
+      <mat-panel-title>Question{{$index + 1}}: {{question.question}} </mat-panel-title>
+    </mat-expansion-panel-header>
+    @for(answer of question.answers; track $index) {
+      <p>{{`userId->${$index + 1}:` }} {{answer}}</p>
+    } 
+  </mat-expansion-panel>
+</mat-accordion>
+  }
+   
+
+      
+    
+
+     
+ </div>

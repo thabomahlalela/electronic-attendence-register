@@ -16,9 +16,9 @@
 
   <div id="btns">
 
-    <button id="generate-btn" mat-raised-button (click)="onGenerate()">Generate</button>
+    <button  id="generate-btn" mat-raised-button (click)="onGenerate()">Generate</button>
      
-    <button id="download-btn" matMiniFab (click)="onDownload()">
+    <button [disabled]="isNotGenerated" id="download-btn" matMiniFab (click)="onDownload()">
       <mat-icon>get_app</mat-icon>
     </button>
     

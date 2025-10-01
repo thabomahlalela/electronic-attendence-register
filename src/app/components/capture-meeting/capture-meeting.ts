@@ -2,6 +2,8 @@ import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ClientService } from '../../clientService';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CompanyMeetings } from '../company-meetings/company-meetings';
+import { MatDialogRef } from '@angular/material/dialog';
 
 
 
@@ -14,7 +16,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class CaptureMeeting {
 [x: string]: any;
 
-  private router = inject(Router)
+  private router = inject(Router);
+   readonly dialogRef = inject(MatDialogRef<CompanyMeetings>);
+
 // title: any;
   
   constructor(private clientService : ClientService,private route :ActivatedRoute){}
@@ -49,13 +53,17 @@ captureMeeting():void{
   status: 'UPCOMING'
   // attendees :''
 
-  })
+  });
+
+  this.dialogRef.close();
+  this.router.navigate(['/meetings',{relativeTo: this.route}]);
+  
 
    
 
   const meeting = this.form.value
   console.log(meeting)
- this.router.navigate(['../'],{relativeTo : this.route})
+//  this.router.navigate(['/meetings'],{relativeTo : this.route})
   
 
  }

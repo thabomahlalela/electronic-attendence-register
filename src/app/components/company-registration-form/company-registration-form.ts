@@ -21,7 +21,7 @@ export class CompanyRegistrationForm {
   sectorPlaceholder ='';
   emailPlaceholder ='';
   telNoPlaceholder ='';
-   readonly dialogRef = inject(MatDialogRef<ViewCompanies>)
+   readonly dialogRef = inject(MatDialogRef<ViewCompanies>);
     private router = inject(Router)
     constructor(private clientService : ClientService){
       

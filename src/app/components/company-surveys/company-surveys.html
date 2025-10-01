@@ -1,0 +1,49 @@
+<div id="container">
+  
+  <div id="header">
+    <header >
+      <h3>
+        Survey
+      </h3>
+    </header>
+  </div>
+    <label>My Surveys</label>
+        <div id="list-of-surveys">
+          <button id="add-btn"  mat-raised-button (click)="onAdd()" >
+            + New survey
+          </button>
+          <button id="refresh-btn" mat-raised-button   (click)="onRefresh()">
+             refresh
+          </button>
+         <table>
+     
+        <thead>
+            <tr>
+                <th id="tittle-column">Title</th>
+                <th  class="my-actions">actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+           
+              @for(survey of getSurvey; track $index +1 ) {
+                 <tr > 
+                
+                <th (click)="onSurvey(survey)">{{survey.title}}</th>
+                <th>
+                  <span class="my-actions" (click)="onDeleteSurvey(survey)">delete</span> |
+                  <span class="my-actions" (click)="onSurvey(survey)">view-results</span>
+                </th>
+                 
+                </tr>
+              }
+            
+        </tbody>
+ </table>
+        </div>
+
+    
+ 
+ </div>
+   
+    
