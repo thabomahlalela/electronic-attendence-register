@@ -45,7 +45,7 @@
     }
   </div>
 
-  <div id="from-tomorrow-meetings">
+  <div id="tomorrow-meetings">
     <label>Tomorrow</label>
     @if(upcomingMeetings.length !== 0) { @for(meeting of upcomingMeetings; track meeting.id) { @if
     (meeting.status === "UPCOMING") {
@@ -70,6 +70,11 @@
     } } }@else {
     <p>no scheduled meetings</p>
     }
+  </div>
+
+  <div id="upcoming">
+    <label>upcoming</label>
+
   </div>
 
   } @if (isOngoing) {

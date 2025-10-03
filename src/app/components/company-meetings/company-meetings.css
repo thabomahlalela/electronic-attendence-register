@@ -172,10 +172,18 @@ ul:hover li::before {
   margin-top: 20px;
 }
 
-#from-tomorrow-meetings {
+#tomorrow-meetings {
   width: 1700px;
   min-height: 200px;
-  /* border: solid darkblue; */
+  border: solid darkblue;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+
+#upcoming {
+   width: 1700px;
+  min-height: 200px;
+  border: solid darkblue;
   margin-left: 50px;
   margin-top: 20px;
 }
